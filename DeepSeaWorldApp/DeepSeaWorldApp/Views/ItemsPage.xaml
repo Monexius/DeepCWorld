@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="DeepSeaWorldApp.Views.ItemsPage" Title="{Binding Title}" x:Name="BrowseItemsPage">
+
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView x:Name="ItemsListView" ItemsSource="{Binding Items}" VerticalOptions="FillAndExpand" HasUnevenRows="true" RefreshCommand="{Binding LoadItemsCommand}" IsPullToRefreshEnabled="true" IsRefreshing="{Binding IsBusy, Mode=OneWay}" CachingStrategy="RecycleElement" ItemSelected="OnItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <!--
+                            <StackLayout Padding="10">
+                                <Label Text="{Binding Time}" 
+                                       Style="{DynamicResource ListItemTextStyle}" FontSize="24" />
+                                <Label Text="{Binding Name}"
+                                       Style="{DynamicResource ListItemDetailTextStyle}" FontSize="24" />
+                                <Label Text="{Binding Location}" 
+                                       Style="{DynamicResource ListItemTextStyle}" FontSize="18" />
+                            </StackLayout>
+                            -->
+                            <Grid Margin="10">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="60"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                                <Label HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" Text="{Binding Time}" 
+                                       Style="{DynamicResource ListItemTextStyle}" FontSize="24" />
+                                <Label HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Text="{Binding Name}"
+                                       Style="{DynamicResource ListItemDetailTextStyle}" FontSize="24" />
+                                <Label HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Text="{Binding Location}" 
+                                       Style="{DynamicResource ListItemTextStyle}" FontSize="18" />
+                                
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

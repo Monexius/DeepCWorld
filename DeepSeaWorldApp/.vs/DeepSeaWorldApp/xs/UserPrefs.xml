@@ -1,0 +1,42 @@
+﻿<Properties StartupConfiguration="{596D3C9C-9A0C-4BD5-9EB6-D37ACD885166}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="DeepSeaWorldApp/Views/HomePage.xaml">
+    <Files>
+      <File FileName="DeepSeaWorldApp/Views/MainPage.xaml" Line="74" Column="14" />
+      <File FileName="DeepSeaWorldApp/Views/HomePage.xaml" Line="34" Column="15" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="DeepSeaWorldApp" expanded="True">
+            <Node name="DeepSeaWorldApp" expanded="True">
+              <Node name="Dependencies" expanded="True">
+                <Node name="PackageDependencies" expanded="True" />
+                <Node name="SdkDependencies" expanded="True" />
+              </Node>
+              <Node name="Views" expanded="True">
+                <Node name="HomePage.xaml" expanded="True" selected="True" />
+              </Node>
+            </Node>
+            <Node name="DeepSeaWorldApp.Android" expanded="True">
+              <Node name="Resources" expanded="True">
+                <Node name="drawable" expanded="True" />
+              </Node>
+            </Node>
+            <Node name="DeepSeaWorldApp.iOS" expanded="True">
+              <Node name="References" expanded="True" />
+              <Node name="Resources" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.DeepSeaWorldApp.Android PreferredExecutionTarget="Android.Pixel_XL_API_27" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.DeepSeaWorldApp.iOS automaticSigning="False" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.CF4C450C-D700-4EBB-BC59-FD07156F63F5" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
