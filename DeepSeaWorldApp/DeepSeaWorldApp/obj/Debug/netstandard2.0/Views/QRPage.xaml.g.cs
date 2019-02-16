@@ -13,7 +13,7 @@
 namespace DeepSeaWorldApp.Views {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Views/QRPage.xaml")]
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Views\\QRPage.xaml")]
     public partial class QRPage : global::ZXing.Net.Mobile.Forms.ZXingScannerPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]

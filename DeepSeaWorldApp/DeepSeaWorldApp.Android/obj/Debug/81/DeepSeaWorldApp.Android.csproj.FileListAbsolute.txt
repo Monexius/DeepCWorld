@@ -51,6 +51,8 @@ C:\Users\Kamilos\Documents\GitHub\DeepCWorld\DeepSeaWorldApp\DeepSeaWorldApp.And
 C:\Users\Kamilos\Documents\GitHub\DeepCWorld\DeepSeaWorldApp\DeepSeaWorldApp.Android\obj\Debug\81\uploadflags.txt
 C:\Users\Kamilos\.nuget\packages\xamarin.forms\3.3.0.967583\lib\MonoAndroid10\FormsViewGroup.dll
 C:\Users\Kamilos\.nuget\packages\xamarin.forms\3.3.0.967583\lib\MonoAndroid10\Xamarin.Forms.Platform.Android.dll
+C:\Users\Kamilos\Documents\GitHub\DeepCWorld\DeepSeaWorldApp\DeepSeaWorldApp\bin\Debug\netstandard2.0\DeepSeaWorldApp.dll
+C:\Users\Kamilos\Documents\GitHub\DeepCWorld\DeepSeaWorldApp\DeepSeaWorldApp\bin\Debug\netstandard2.0\DeepSeaWorldApp.dll
 C:\Users\Kamilos\Documents\GitHub\DeepCWorld\DeepSeaWorldApp\DeepSeaWorldApp.Android\bin\Debug\Mono.Android.pdb
 C:\Users\Kamilos\Documents\GitHub\DeepCWorld\DeepSeaWorldApp\DeepSeaWorldApp.Android\bin\Debug\mscorlib.pdb
 C:\Users\Kamilos\Documents\GitHub\DeepCWorld\DeepSeaWorldApp\DeepSeaWorldApp.Android\bin\Debug\System.Core.pdb
