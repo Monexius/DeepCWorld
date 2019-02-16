@@ -877,31 +877,34 @@
     ]
   },
   "packageFolders": {
-    "/Users/james/.nuget/packages/": {}
+    "C:\\Users\\Kamilos\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/james/Projects/DeepSeaWorldApp/DeepSeaWorldApp.Android/DeepSeaWorldApp.Android.csproj",
+      "projectUniqueName": "C:\\Users\\Kamilos\\Documents\\GitHub\\DeepCWorld\\DeepSeaWorldApp\\DeepSeaWorldApp.Android\\DeepSeaWorldApp.Android.csproj",
       "projectName": "DeepSeaWorldApp.Android",
-      "projectPath": "/Users/james/Projects/DeepSeaWorldApp/DeepSeaWorldApp.Android/DeepSeaWorldApp.Android.csproj",
-      "packagesPath": "/Users/james/.nuget/packages/",
-      "outputPath": "/Users/james/Projects/DeepSeaWorldApp/DeepSeaWorldApp.Android/obj",
+      "projectPath": "C:\\Users\\Kamilos\\Documents\\GitHub\\DeepCWorld\\DeepSeaWorldApp\\DeepSeaWorldApp.Android\\DeepSeaWorldApp.Android.csproj",
+      "packagesPath": "C:\\Users\\Kamilos\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Kamilos\\Documents\\GitHub\\DeepCWorld\\DeepSeaWorldApp\\DeepSeaWorldApp.Android\\obj\\",
       "projectStyle": "PackageReference",
+      "skipContentFileWrite": true,
       "configFilePaths": [
-        "/Users/james/.config/NuGet/NuGet.Config"
+        "C:\\Users\\Kamilos\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "monoandroid81"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "monoandroid81": {
           "projectReferences": {
-            "/Users/james/Projects/DeepSeaWorldApp/DeepSeaWorldApp/DeepSeaWorldApp.csproj": {
-              "projectPath": "/Users/james/Projects/DeepSeaWorldApp/DeepSeaWorldApp/DeepSeaWorldApp.csproj"
+            "C:\\Users\\Kamilos\\Documents\\GitHub\\DeepCWorld\\DeepSeaWorldApp\\DeepSeaWorldApp\\DeepSeaWorldApp.csproj": {
+              "projectPath": "C:\\Users\\Kamilos\\Documents\\GitHub\\DeepCWorld\\DeepSeaWorldApp\\DeepSeaWorldApp\\DeepSeaWorldApp.csproj"
             }
           }
         }
