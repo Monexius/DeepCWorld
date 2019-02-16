@@ -789,6 +789,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
+          "MySql.Data": "8.0.15",
           "SQLite.Net-PCL": "3.1.1",
           "Xamarin.Forms": "3.5.0.129452",
           "ZXing.Net.Mobile": "2.4.1",
@@ -1508,6 +1509,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
+          "MySql.Data": "8.0.15",
           "SQLite.Net-PCL": "3.1.1",
           "Xamarin.Forms": "3.5.0.129452",
           "ZXing.Net.Mobile": "2.4.1",
@@ -2227,6 +2229,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
+          "MySql.Data": "8.0.15",
           "SQLite.Net-PCL": "3.1.1",
           "Xamarin.Forms": "3.5.0.129452",
           "ZXing.Net.Mobile": "2.4.1",
@@ -2946,6 +2949,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
+          "MySql.Data": "8.0.15",
           "SQLite.Net-PCL": "3.1.1",
           "Xamarin.Forms": "3.5.0.129452",
           "ZXing.Net.Mobile": "2.4.1",
