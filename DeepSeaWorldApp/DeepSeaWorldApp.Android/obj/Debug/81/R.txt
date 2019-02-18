@@ -1290,8 +1290,6 @@ int mipmap ic_launcher 0x7f030000
 int mipmap icon 0x7f030001
 int mipmap icon_round 0x7f030002
 int mipmap launcher_foreground 0x7f030003
-int string ApplicationName 0x7f08003e
-int string Hello 0x7f08003d
 int string abc_action_bar_home_description 0x7f080016
 int string abc_action_bar_up_description 0x7f080017
 int string abc_action_menu_overflow_description 0x7f080018

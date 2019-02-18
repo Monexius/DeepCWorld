@@ -21,7 +21,7 @@ namespace DeepSeaWorldApp.iOS
 
         }
 
-        public SQLite.Net.SQLiteConnection CreateConnection()
+        public SQLite.SQLiteConnection CreateConnection()
         {
             var SQLiteFile = "DeepSeaWorldSQLite.db";
 
@@ -41,8 +41,7 @@ namespace DeepSeaWorldApp.iOS
                 File.Copy(existingDB, path);
             }
 
-            var iOSPlatform = new SQLite.Net.Platform.XamarinIOS.SQLitePlatformIOS();
-            var conn = new SQLite.Net.SQLiteConnection(iOSPlatform, path);
+            var conn = new SQLite.SQLiteConnection(path);
 
 
             return conn;

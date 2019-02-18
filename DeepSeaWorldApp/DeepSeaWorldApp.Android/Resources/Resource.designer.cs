@@ -26,8 +26,6 @@ namespace DeepSeaWorldApp.Droid
 		
 		public static void UpdateIdValues()
 		{
-			global::SQLite.Net.Platform.XamarinAndroid.Resource.String.ApplicationName = global::DeepSeaWorldApp.Droid.Resource.String.ApplicationName;
-			global::SQLite.Net.Platform.XamarinAndroid.Resource.String.Hello = global::DeepSeaWorldApp.Droid.Resource.String.Hello;
 			global::Xamarin.Forms.Platform.Android.Resource.Animation.abc_fade_in = global::DeepSeaWorldApp.Droid.Resource.Animation.abc_fade_in;
 			global::Xamarin.Forms.Platform.Android.Resource.Animation.abc_fade_out = global::DeepSeaWorldApp.Droid.Resource.Animation.abc_fade_out;
 			global::Xamarin.Forms.Platform.Android.Resource.Animation.abc_grow_fade_in_from_bottom = global::DeepSeaWorldApp.Droid.Resource.Animation.abc_grow_fade_in_from_bottom;
@@ -6062,12 +6060,6 @@ namespace DeepSeaWorldApp.Droid
 		
 		public partial class String
 		{
-			
-			// aapt resource value: 0x7f08003e
-			public const int ApplicationName = 2131230782;
-			
-			// aapt resource value: 0x7f08003d
-			public const int Hello = 2131230781;
 			
 			// aapt resource value: 0x7f080016
 			public const int abc_action_bar_home_description = 2131230742;

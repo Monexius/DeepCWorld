@@ -3655,8 +3655,6 @@ containing a value of this type.
         public static int launcher_foreground=0x7f030003;
     }
     public static final class string {
-        public static int ApplicationName=0x7f08003e;
-        public static int Hello=0x7f08003d;
         public static int abc_action_bar_home_description=0x7f080016;
         public static int abc_action_bar_up_description=0x7f080017;
         public static int abc_action_menu_overflow_description=0x7f080018;

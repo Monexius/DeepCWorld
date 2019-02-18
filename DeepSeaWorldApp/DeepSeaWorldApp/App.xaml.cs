@@ -2,6 +2,7 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using DeepSeaWorldApp.Views;
+using SQLite;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace DeepSeaWorldApp
@@ -13,13 +14,25 @@ namespace DeepSeaWorldApp
         {
             InitializeComponent();
 
-
             MainPage = new MainPage();
+
         }
 
         protected override void OnStart()
         {
             // Handle when your app starts
+            DeepSeaWorldSQLiteConnectionService conn = new DeepSeaWorldSQLiteConnectionService();
+
+            App.Current.MainPage.DisplayAlert("app","start","before");
+
+            if (conn.conn() == true)
+            {
+                App.Current.MainPage.DisplayAlert("Connection", "true", "ok");
+            }
+            else
+            {
+                App.Current.MainPage.DisplayAlert("Connection", "false", "not ok");
+            }
         }
 
         protected override void OnSleep()
@@ -31,5 +44,7 @@ namespace DeepSeaWorldApp
         {
             // Handle when your app resumes
         }
+
+
     }
 }

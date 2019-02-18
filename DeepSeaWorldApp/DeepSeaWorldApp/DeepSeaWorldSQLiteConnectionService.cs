@@ -1,4 +1,4 @@
-﻿using SQLite.Net;
+﻿using SQLite;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,7 +13,28 @@ namespace DeepSeaWorldApp
         public DeepSeaWorldSQLiteConnectionService()
         {
             dbConn = DependencyService.Get<DeepSeaWorldSQLiteInterface>().CreateConnection();
+
         }
 
+        public Boolean conn()
+        {
+            bool tb = false;
+            var tab1 = dbConn.GetTableInfo("map");
+
+            if (tab1 == null)
+            {
+                tb = false;
+            }
+            else
+            {
+                tb = true;
+            }
+
+            return tb;
+
+        }
     }
+
+
+
 }
