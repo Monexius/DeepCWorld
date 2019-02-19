@@ -27,24 +27,10 @@ namespace DeepSeaWorldApp.iOS
 
             string folder = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
             string directory = Path.Combine(folder, "..", "Library", "Databases");
-
-            //if (!Directory.Exists(directory))
-            //{
-            //    Directory.CreateDirectory(directory);
-            //}
-
             string path = Path.Combine(directory, SQLiteFile);
-
-            //if (!File.Exists(path))
-            //{
-            //    var existingDB = NSBundle.MainBundle.PathForResource("DeepSeaWorldSQLite", "db");
-            //    File.Copy(existingDB, path);
-            //}
-
             var conn = new SQLite.SQLiteConnection(path);
             return conn;
         }
-
 
     }
 }
