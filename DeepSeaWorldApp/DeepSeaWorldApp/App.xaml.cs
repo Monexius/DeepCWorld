@@ -22,10 +22,11 @@ namespace DeepSeaWorldApp
         {
             // Handle when your app starts
             DeepSeaWorldSQLiteConnectionService conn = new DeepSeaWorldSQLiteConnectionService();
+           
 
             App.Current.MainPage.DisplayAlert("app","start","before");
 
-            if (conn.conn() == true)
+            if (conn.connTest() == true)
             {
                 App.Current.MainPage.DisplayAlert("Connection", "true", "ok");
             }

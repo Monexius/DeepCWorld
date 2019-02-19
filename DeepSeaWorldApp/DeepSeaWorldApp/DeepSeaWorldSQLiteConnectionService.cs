@@ -16,7 +16,7 @@ namespace DeepSeaWorldApp
 
         }
 
-        public Boolean conn()
+        public Boolean connTest()
         {
             bool tb = false;
             var tab1 = dbConn.GetTableInfo("map");
@@ -31,7 +31,6 @@ namespace DeepSeaWorldApp
             }
 
             return tb;
-
         }
     }
 
