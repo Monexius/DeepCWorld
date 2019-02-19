@@ -35,14 +35,13 @@ namespace DeepSeaWorldApp.iOS
 
             string path = Path.Combine(directory, SQLiteFile);
 
-            if (!File.Exists(path))
-            {
-                var existingDB = NSBundle.MainBundle.PathForResource("DeepSeaWorldSQLite", "db");
-                File.Copy(existingDB, path);
-            }
+            //if (!File.Exists(path))
+            //{
+            //    var existingDB = NSBundle.MainBundle.PathForResource("DeepSeaWorldSQLite", "db");
+            //    File.Copy(existingDB, path);
+            //}
 
             var conn = new SQLite.SQLiteConnection(path);
-
 
             return conn;
         }

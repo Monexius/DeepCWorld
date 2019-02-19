@@ -13,8 +13,8 @@ namespace DeepSeaWorldApp
         public DeepSeaWorldSQLiteConnectionService()
         {
             dbConn = DependencyService.Get<DeepSeaWorldSQLiteInterface>().CreateConnection();
-
         }
+
 
         public Boolean connTest()
         {
@@ -33,7 +33,5 @@ namespace DeepSeaWorldApp
             return tb;
         }
     }
-
-
 
 }

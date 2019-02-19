@@ -25,7 +25,6 @@ namespace DeepSeaWorldApp.Droid
 
         }
 
-
         public SQLite.SQLiteConnection CreateConnection()
         {
             var sqliteFile = "DeepSeaWorldSQLite.db";
@@ -34,7 +33,6 @@ namespace DeepSeaWorldApp.Droid
             var conn = new SQLite.SQLiteConnection(path);
             return conn;
         }
-
 
     }
 }

@@ -21,8 +21,7 @@ namespace DeepSeaWorldApp
         protected override void OnStart()
         {
             // Handle when your app starts
-            DeepSeaWorldSQLiteConnectionService conn = new DeepSeaWorldSQLiteConnectionService();
-           
+            DeepSeaWorldSQLiteConnectionService conn = new DeepSeaWorldSQLiteConnectionService();        
 
             App.Current.MainPage.DisplayAlert("app","start","before");
 
