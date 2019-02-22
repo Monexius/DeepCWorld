@@ -23,8 +23,6 @@ namespace DeepSeaWorldApp
             // Handle when your app starts
             DeepSeaWorldSQLiteConnectionService conn = new DeepSeaWorldSQLiteConnectionService();        
 
-            App.Current.MainPage.DisplayAlert("app","start","before");
-
             if (conn.connTest() == true)
             {
                 App.Current.MainPage.DisplayAlert("Connection", "true", "ok");
@@ -33,6 +31,21 @@ namespace DeepSeaWorldApp
             {
                 App.Current.MainPage.DisplayAlert("Connection", "false", "not ok");
             }
+
+            DeepSeaWorldMySQLDBConn myCon = new DeepSeaWorldMySQLDBConn();
+
+            myCon.DBconn();
+
+            //if (myCon.DBconn == true)
+            //{
+            //    App.Current.MainPage.DisplayAlert("Connection", "true", "ok");
+            //}
+            //else
+            //{
+            //    App.Current.MainPage.DisplayAlert("Connection", "false", "not ok");
+            //}
+
+
         }
 
         protected override void OnSleep()
