@@ -661,7 +661,7 @@
           "lib/xamarinios10/_._": {}
         }
       },
-      "Xamarin.Forms/3.5.0.129452": {
+      "Xamarin.Forms/3.5.0.169047": {
         "type": "package",
         "compile": {
           "lib/Xamarin.iOS10/Xamarin.Forms.Core.dll": {},
@@ -817,7 +817,7 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "MySql.Data": "8.0.15",
-          "Xamarin.Forms": "3.5.0.129452",
+          "Xamarin.Forms": "3.5.0.169047",
           "ZXing.Net.Mobile": "2.4.1",
           "ZXing.Net.Mobile.Forms": "2.4.1",
           "sqlite-net-pcl": "1.5.231"
@@ -1408,7 +1408,7 @@
           "lib/xamarinios10/_._": {}
         }
       },
-      "Xamarin.Forms/3.5.0.129452": {
+      "Xamarin.Forms/3.5.0.169047": {
         "type": "package",
         "compile": {
           "lib/Xamarin.iOS10/Xamarin.Forms.Core.dll": {},
@@ -1564,7 +1564,7 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "MySql.Data": "8.0.15",
-          "Xamarin.Forms": "3.5.0.129452",
+          "Xamarin.Forms": "3.5.0.169047",
           "ZXing.Net.Mobile": "2.4.1",
           "ZXing.Net.Mobile.Forms": "2.4.1",
           "sqlite-net-pcl": "1.5.231"
@@ -2155,7 +2155,7 @@
           "lib/xamarinios10/_._": {}
         }
       },
-      "Xamarin.Forms/3.5.0.129452": {
+      "Xamarin.Forms/3.5.0.169047": {
         "type": "package",
         "compile": {
           "lib/Xamarin.iOS10/Xamarin.Forms.Core.dll": {},
@@ -2311,7 +2311,7 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "MySql.Data": "8.0.15",
-          "Xamarin.Forms": "3.5.0.129452",
+          "Xamarin.Forms": "3.5.0.169047",
           "ZXing.Net.Mobile": "2.4.1",
           "ZXing.Net.Mobile.Forms": "2.4.1",
           "sqlite-net-pcl": "1.5.231"
@@ -2902,7 +2902,7 @@
           "lib/xamarinios10/_._": {}
         }
       },
-      "Xamarin.Forms/3.5.0.129452": {
+      "Xamarin.Forms/3.5.0.169047": {
         "type": "package",
         "compile": {
           "lib/Xamarin.iOS10/Xamarin.Forms.Core.dll": {},
@@ -3058,7 +3058,7 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "MySql.Data": "8.0.15",
-          "Xamarin.Forms": "3.5.0.129452",
+          "Xamarin.Forms": "3.5.0.169047",
           "ZXing.Net.Mobile": "2.4.1",
           "ZXing.Net.Mobile.Forms": "2.4.1",
           "sqlite-net-pcl": "1.5.231"
@@ -6057,10 +6057,10 @@
         "system.xml.xdocument.nuspec"
       ]
     },
-    "Xamarin.Forms/3.5.0.129452": {
-      "sha512": "KzD3ZBRKvVspTMtdLTCDBJ6thf2Pi6AUYuIIKwzTf/6WOtelgpe2Zq0aj/eAgVNO52qx4OGTmcscjuf9nOZVvA==",
+    "Xamarin.Forms/3.5.0.169047": {
+      "sha512": "bDUiWsvlU949lyf8gw5ROVQ0kRr1dB8daiWATYCXuOXv/iODsbq/8NmNVxhV2WbOo8b8wJMe7SqZG4V/CQlYuQ==",
       "type": "package",
-      "path": "xamarin.forms/3.5.0.129452",
+      "path": "xamarin.forms/3.5.0.169047",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -6196,6 +6196,7 @@
         "lib/uap10.0/Xamarin.Forms.Core.pdb",
         "lib/uap10.0/Xamarin.Forms.Core.xml",
         "lib/uap10.0/Xamarin.Forms.Platform.UAP.dll",
+        "lib/uap10.0/Xamarin.Forms.Platform.UAP.pdb",
         "lib/uap10.0/Xamarin.Forms.Platform.UAP.pri",
         "lib/uap10.0/Xamarin.Forms.Platform.UAP/AutoSuggestStyle.xbf",
         "lib/uap10.0/Xamarin.Forms.Platform.UAP/FormsCommandBarStyle.xbf",
@@ -6216,7 +6217,7 @@
         "lib/uap10.0/Xamarin.Forms.Xaml.dll",
         "lib/uap10.0/Xamarin.Forms.Xaml.pdb",
         "lib/uap10.0/Xamarin.Forms.Xaml.xml",
-        "xamarin.forms.3.5.0.129452.nupkg.sha512",
+        "xamarin.forms.3.5.0.169047.nupkg.sha512",
         "xamarin.forms.nuspec"
       ]
     },
@@ -6272,7 +6273,7 @@
     "Xamarin.iOS,Version=v1.0": [
       "DeepSeaWorldApp >= 1.0.0",
       "MySql.Data >= 8.0.15",
-      "Xamarin.Forms >= 3.5.0.129452",
+      "Xamarin.Forms >= 3.5.0.169047",
       "sqlite-net-pcl >= 1.5.231"
     ]
   },
@@ -6319,7 +6320,7 @@
           },
           "Xamarin.Forms": {
             "target": "Package",
-            "version": "[3.5.0.129452, )"
+            "version": "[3.5.0.169047, )"
           },
           "sqlite-net-pcl": {
             "target": "Package",
