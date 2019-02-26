@@ -18,6 +18,8 @@ C:\Users\Kamilos\Documents\GitHub\DeepCWorld\DeepSeaWorldApp\DeepSeaWorldApp.And
 C:\Users\Kamilos\Documents\GitHub\DeepCWorld\DeepSeaWorldApp\DeepSeaWorldApp.Android\obj\Debug\81\android\assets\System.dll
 C:\Users\Kamilos\Documents\GitHub\DeepCWorld\DeepSeaWorldApp\DeepSeaWorldApp.Android\obj\Debug\81\android\assets\System.IO.Compression.dll
 C:\Users\Kamilos\Documents\GitHub\DeepCWorld\DeepSeaWorldApp\DeepSeaWorldApp.Android\obj\Debug\81\android\assets\System.Net.Http.dll
+C:\Users\Kamilos\Documents\GitHub\DeepCWorld\DeepSeaWorldApp\DeepSeaWorldApp.Android\obj\Debug\81\android\assets\System.Net.Http.Extensions.dll
+C:\Users\Kamilos\Documents\GitHub\DeepCWorld\DeepSeaWorldApp\DeepSeaWorldApp.Android\obj\Debug\81\android\assets\System.Net.Http.Primitives.dll
 C:\Users\Kamilos\Documents\GitHub\DeepCWorld\DeepSeaWorldApp\DeepSeaWorldApp.Android\obj\Debug\81\android\assets\System.Security.AccessControl.dll
 C:\Users\Kamilos\Documents\GitHub\DeepCWorld\DeepSeaWorldApp\DeepSeaWorldApp.Android\obj\Debug\81\android\assets\System.Security.Permissions.dll
 C:\Users\Kamilos\Documents\GitHub\DeepCWorld\DeepSeaWorldApp\DeepSeaWorldApp.Android\obj\Debug\81\android\assets\System.Security.Principal.Windows.dll
@@ -79,3 +81,5 @@ C:\Users\Kamilos\Documents\GitHub\DeepCWorld\DeepSeaWorldApp\DeepSeaWorldApp.And
 C:\Users\Kamilos\Documents\GitHub\DeepCWorld\DeepSeaWorldApp\DeepSeaWorldApp.Android\obj\Debug\81\android\assets\System.Security.Cryptography.ProtectedData.dll
 C:\Users\Kamilos\Documents\GitHub\DeepCWorld\DeepSeaWorldApp\DeepSeaWorldApp.Android\obj\Debug\81\android\assets\System.Security.dll
 C:\Users\Kamilos\Documents\GitHub\DeepCWorld\DeepSeaWorldApp\DeepSeaWorldApp.Android\obj\Debug\81\android\assets\Mono.Security.dll
+C:\Users\Kamilos\Documents\GitHub\DeepCWorld\DeepSeaWorldApp\DeepSeaWorldApp.Android\obj\Debug\81\android\assets\System.Runtime.InteropServices.dll
+C:\Users\Kamilos\Documents\GitHub\DeepCWorld\DeepSeaWorldApp\DeepSeaWorldApp.Android\obj\Debug\81\android\assets\System.Net.Primitives.dll

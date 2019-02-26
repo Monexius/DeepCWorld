@@ -10,6 +10,8 @@ SQLitePCLRaw.core
 SQLitePCLRaw.lib.e_sqlite3
 SQLitePCLRaw.provider.e_sqlite3
 System.Configuration.ConfigurationManager
+System.Net.Http.Extensions
+System.Net.Http.Primitives
 System.Runtime
 System.Security.AccessControl
 System.Security.Permissions
@@ -45,3 +47,4 @@ ZXingNetMobile
 netstandard
 System.Reflection.Extensions
 System.Text.Encoding.CodePages
+Newtonsoft.Json
