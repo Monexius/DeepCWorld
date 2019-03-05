@@ -152,5 +152,3 @@ C:\Users\Kamilos\Documents\GitHub\DeepCWorld\DeepSeaWorldApp\DeepSeaWorldApp.iOS
 C:\Users\Kamilos\Documents\GitHub\DeepCWorld\DeepSeaWorldApp\DeepSeaWorldApp.iOS\bin\iPhoneSimulator\Debug\SQLitePCLRaw.provider.sqlite3.dll
 C:\Users\Kamilos\Documents\GitHub\DeepCWorld\DeepSeaWorldApp\DeepSeaWorldApp.iOS\bin\iPhoneSimulator\Debug\System.Net.Http.Extensions.dll
 C:\Users\Kamilos\Documents\GitHub\DeepCWorld\DeepSeaWorldApp\DeepSeaWorldApp.iOS\bin\iPhoneSimulator\Debug\System.Net.Http.Primitives.dll
-C:\Users\Kamilos\Documents\GitHub\DeepCWorld\DeepSeaWorldApp\DeepSeaWorldApp.iOS\bin\iPhoneSimulator\Debug\Newtonsoft.Json.dll
-C:\Users\Kamilos\Documents\GitHub\DeepCWorld\DeepSeaWorldApp\DeepSeaWorldApp.iOS\bin\iPhoneSimulator\Debug\Newtonsoft.Json.pdb

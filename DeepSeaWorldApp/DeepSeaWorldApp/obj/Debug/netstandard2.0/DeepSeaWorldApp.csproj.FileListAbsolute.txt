@@ -34,5 +34,4 @@ C:\Users\Kamilos\Documents\GitHub\DeepCWorld\DeepSeaWorldApp\DeepSeaWorldApp\obj
 C:\Users\Kamilos\Documents\GitHub\DeepCWorld\DeepSeaWorldApp\DeepSeaWorldApp\obj\Debug\netstandard2.0\DeepSeaWorldApp.AssemblyInfo.cs
 C:\Users\Kamilos\Documents\GitHub\DeepCWorld\DeepSeaWorldApp\DeepSeaWorldApp\obj\Debug\netstandard2.0\DeepSeaWorldApp.dll
 C:\Users\Kamilos\Documents\GitHub\DeepCWorld\DeepSeaWorldApp\DeepSeaWorldApp\obj\Debug\netstandard2.0\DeepSeaWorldApp.pdb
-C:\Users\Kamilos\Documents\GitHub\DeepCWorld\DeepSeaWorldApp\DeepSeaWorldApp\obj\Debug\netstandard2.0\XamlC.stamp
 C:\Users\Kamilos\Documents\GitHub\DeepCWorld\DeepSeaWorldApp\DeepSeaWorldApp\obj\Debug\netstandard2.0\DeepSeaWorldApp.csprojAssemblyReference.cache

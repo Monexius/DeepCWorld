@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETStandard,Version=v2.0/",
-    "signature": "2abfb490b95ff4a63ae654b7f0d7313e5416f357"
+    "signature": "ced5fd95f831d0d872a48df3e1b5598bbaa8e9c7"
   },
   "compilationOptions": {},
   "targets": {
@@ -13,7 +13,6 @@
           "Microsoft.Net.Http": "2.2.29",
           "MySql.Data": "8.0.15",
           "NETStandard.Library": "2.0.3",
-          "Newtonsoft.Json": "12.0.1",
           "Xamarin.Forms": "3.5.0.169047",
           "ZXing.Net.Mobile": "2.4.1",
           "ZXing.Net.Mobile.Forms": "2.4.1",
@@ -74,14 +73,6 @@
       "NETStandard.Library/2.0.3": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "1.1.0"
-        }
-      },
-      "Newtonsoft.Json/12.0.1": {
-        "runtime": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {
-            "assemblyVersion": "12.0.0.0",
-            "fileVersion": "12.0.1.22727"
-          }
         }
       },
       "sqlite-net-pcl/1.5.231": {
@@ -280,13 +271,6 @@
       "sha512": "sha512-st47PosZSHrjECdjeIzZQbzivYBJFv6P2nv4cj2ypdI204DO+vZ7l5raGMiX4eXMJ53RfOIg+/s4DHVZ54Nu2A==",
       "path": "netstandard.library/2.0.3",
       "hashPath": "netstandard.library.2.0.3.nupkg.sha512"
-    },
-    "Newtonsoft.Json/12.0.1": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-jmVyoEyk0In8r+AObYQyFKVFm7uSRzE0XSHSbEtBJcZDMV6DqJoyB4FLcHwprPVhAh826so0db3DIKXVnpGoPA==",
-      "path": "newtonsoft.json/12.0.1",
-      "hashPath": "newtonsoft.json.12.0.1.nupkg.sha512"
     },
     "sqlite-net-pcl/1.5.231": {
       "type": "package",

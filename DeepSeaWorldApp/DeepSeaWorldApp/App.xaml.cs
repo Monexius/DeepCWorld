@@ -32,10 +32,6 @@ namespace DeepSeaWorldApp
                 App.Current.MainPage.DisplayAlert("Connection", "false", "not ok");
             }
 
-            DeepSeaWorldMySQLDBConn myCon = new DeepSeaWorldMySQLDBConn();
-
-            myCon.DBConnAsync();
-
 
         }
 

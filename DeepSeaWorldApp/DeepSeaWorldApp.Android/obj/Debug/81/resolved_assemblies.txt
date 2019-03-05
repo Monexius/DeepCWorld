@@ -7,7 +7,6 @@ C:\Users\Kamilos\Documents\GitHub\DeepCWorld\DeepSeaWorldApp\DeepSeaWorldApp.And
 C:\Users\Kamilos\Documents\GitHub\DeepCWorld\DeepSeaWorldApp\DeepSeaWorldApp.Android\obj\Debug\81\android\assets\Mono.Android.dll
 C:\Users\Kamilos\Documents\GitHub\DeepCWorld\DeepSeaWorldApp\DeepSeaWorldApp.Android\obj\Debug\81\android\assets\mscorlib.dll
 C:\Users\Kamilos\Documents\GitHub\DeepCWorld\DeepSeaWorldApp\DeepSeaWorldApp.Android\obj\Debug\81\android\assets\MySql.Data.dll
-C:\Users\Kamilos\Documents\GitHub\DeepCWorld\DeepSeaWorldApp\DeepSeaWorldApp.Android\obj\Debug\81\android\assets\Newtonsoft.Json.dll
 C:\Users\Kamilos\Documents\GitHub\DeepCWorld\DeepSeaWorldApp\DeepSeaWorldApp.Android\obj\Debug\81\android\assets\SQLite-net.dll
 C:\Users\Kamilos\Documents\GitHub\DeepCWorld\DeepSeaWorldApp\DeepSeaWorldApp.Android\obj\Debug\81\android\assets\SQLitePCLRaw.batteries_green.dll
 C:\Users\Kamilos\Documents\GitHub\DeepCWorld\DeepSeaWorldApp\DeepSeaWorldApp.Android\obj\Debug\81\android\assets\SQLitePCLRaw.batteries_v2.dll
