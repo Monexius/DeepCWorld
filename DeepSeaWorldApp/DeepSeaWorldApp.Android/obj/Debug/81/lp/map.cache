@@ -3,6 +3,7 @@ FastAndroidCamera
 FormsViewGroup
 Google.Protobuf
 MySql.Data
+Newtonsoft.Json
 SQLite-net
 SQLitePCLRaw.batteries_green
 SQLitePCLRaw.batteries_v2
@@ -47,4 +48,3 @@ ZXingNetMobile
 netstandard
 System.Reflection.Extensions
 System.Text.Encoding.CodePages
-Newtonsoft.Json
