@@ -73,6 +73,7 @@
   <ItemGroup>
     <Compile Include="DeepSeaWorldSQLiteConnectionAndroid.cs" />
     <Compile Include="MainActivity.cs" />
+    <Compile Include="MySQLSync.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SplashActivity.cs" />

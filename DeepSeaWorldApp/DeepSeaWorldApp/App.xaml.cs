@@ -3,6 +3,9 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using DeepSeaWorldApp.Views;
 using SQLite;
+using System.IO;
+using Newtonsoft.Json;
+using DeepSeaWorldApp.DBClasses;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace DeepSeaWorldApp
@@ -30,6 +33,19 @@ namespace DeepSeaWorldApp
             else
             {
                 App.Current.MainPage.DisplayAlert("Connection", "false", "not ok");
+            }
+
+            DeepSeaWorldMySQLDBConn con = new DeepSeaWorldMySQLDBConn();
+
+
+
+            if (con.syncTest() == true)
+            {
+                App.Current.MainPage.DisplayAlert("sync", "true", "ok");
+            }
+            else
+            {
+                App.Current.MainPage.DisplayAlert("sync", "false", "not ok");
             }
 
 

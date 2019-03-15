@@ -1,13 +1,18 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
+using System.Json;
 using System.Text;
 
 namespace DeepSeaWorldApp.DBClasses
 {
-    class FAQ
+    public class FAQ
     {
         int FAQ_ID { get; set; }
-        string FAQ_Questions { get; set; }
+        public string FAQ_Question { get; set; }
         string FAQ_Anwswere { get; set; }
+
     }
+
+    
 }
