@@ -8,10 +8,15 @@ namespace DeepSeaWorldApp.DBClasses
 {
     public class FAQ
     {
-        int FAQ_ID { get; set; }
+        public int FAQ_ID { get; set; }
         public string FAQ_Question { get; set; }
-        string FAQ_Anwswere { get; set; }
+        public string FAQ_Anwswere { get; set; }
 
+    }
+
+    public class RootObject
+    {
+        public List<FAQ> faq { get; set; }
     }
 
     

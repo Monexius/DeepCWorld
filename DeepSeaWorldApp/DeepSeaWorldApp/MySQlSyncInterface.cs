@@ -11,6 +11,5 @@ namespace DeepSeaWorldApp
     public interface MySQlSyncInterface
     {
         Task<List<FAQ>> MySQLConnection();
-
     }
 }

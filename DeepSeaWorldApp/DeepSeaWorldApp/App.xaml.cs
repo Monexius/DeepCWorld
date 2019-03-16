@@ -48,8 +48,6 @@ namespace DeepSeaWorldApp
                 App.Current.MainPage.DisplayAlert("sync", "false", "not ok");
             }
 
-            con.saveFile();
-
         }
 
         protected override void OnSleep()

@@ -27,17 +27,6 @@ namespace DeepSeaWorldApp
 
         }
 
-        public void saveFile()
-        {
-            string path = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
-            string fpath = Path.Combine(path, "faq.json");
-            using (var file = File.Open(fpath, FileMode.Create, FileAccess.Write))
-            using (var strm = new StreamWriter(file))
-            {
-                strm.Write(sync);
-            }
-        }
-
 
         public Boolean syncTest()
         {

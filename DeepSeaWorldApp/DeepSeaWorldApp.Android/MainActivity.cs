@@ -33,6 +33,10 @@ namespace DeepSeaWorldApp.Droid
                 global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
                 app = new App();
                 LoadApplication(app);
+
+                MySQLSync s = new MySQLSync();
+                s.saveFile(s.MySQLConnection());
+
             }catch(Exception ex)
             {
                 throw ex;

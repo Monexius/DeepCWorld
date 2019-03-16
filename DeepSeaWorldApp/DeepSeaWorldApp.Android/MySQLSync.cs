@@ -26,6 +26,7 @@ namespace DeepSeaWorldApp.Droid
         List<FAQ> faq = new List<FAQ>();
         Uri url = new Uri("http://127.0.0.1:80/scripts/dbContent.php");
         
+
         public MySQLSync()
         {
 
@@ -44,6 +45,18 @@ namespace DeepSeaWorldApp.Droid
                 faq = JsonConvert.DeserializeObject<List<FAQ>>(content);
 
             return faq;
+        }
+
+
+        public void saveFile(Task<List<FAQ>> M)
+        {
+            string path = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
+            string fpath = Path.Combine(path, "faq.json");
+            using (var file = File.Open(fpath, FileMode.Create, FileAccess.Write))
+            using (var strm = new StreamWriter(file))
+            {
+                strm.Write(M);
+            }
         }
     }
 }
