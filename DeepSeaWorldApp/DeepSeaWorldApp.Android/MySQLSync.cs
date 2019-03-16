@@ -15,6 +15,7 @@ using DeepSeaWorldApp.DBClasses;
 using DeepSeaWorldApp.Droid;
 using Newtonsoft.Json;
 using Xamarin.Forms;
+using Xamarin.Essentials;
 
 [assembly: Dependency(typeof(MySQLSync))]
 namespace DeepSeaWorldApp.Droid
@@ -22,38 +23,27 @@ namespace DeepSeaWorldApp.Droid
     class MySQLSync : MySQlSyncInterface
     {
 
-        FAQ faq = new FAQ();
-        Uri url = new Uri("http://127.0.0.1:80/scripts/dbContent.php/");
-
+        List<FAQ> faq = new List<FAQ>();
+        Uri url = new Uri("http://127.0.0.1:80/scripts/dbContent.php");
+        
         public MySQLSync()
         {
 
         }
 
-        public async Task<FAQ> MySQLConnection()
+        public async Task<List<FAQ>> MySQLConnection()
         {
 
             HttpClient client = new HttpClient();
-            client.BaseAddress = new Uri("http://127.0.0.1:80");
+            client.BaseAddress = new Uri("http://127.0.0.1:80/scripts/dbConector.php");
             var resp = await client.GetAsync(url);
 
             client.MaxResponseContentBufferSize = 256000;
-
     
                 var content = resp.Content.ReadAsStringAsync().Result;
-                faq = JsonConvert.DeserializeObject<FAQ>(content);
+                faq = JsonConvert.DeserializeObject<List<FAQ>>(content);
 
             return faq;
-        }
-
-        public async Task WriteAsync()
-        {
-            HttpClient client = new HttpClient();
-            var resp = await client.GetAsync(url);
-            string path = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
-            string fpath = Path.Combine(path, "faq.txt");
-            string faqF = JsonConvert.SerializeObject(resp, Formatting.Indented);
-            File.WriteAllText(fpath, faqF);
         }
     }
 }

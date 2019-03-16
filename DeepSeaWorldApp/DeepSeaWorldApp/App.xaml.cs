@@ -6,6 +6,7 @@ using SQLite;
 using System.IO;
 using Newtonsoft.Json;
 using DeepSeaWorldApp.DBClasses;
+using Xamarin.Essentials;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace DeepSeaWorldApp
@@ -23,6 +24,7 @@ namespace DeepSeaWorldApp
 
         protected override void OnStart()
         {
+
             // Handle when your app starts
             DeepSeaWorldSQLiteConnectionService conn = new DeepSeaWorldSQLiteConnectionService();        
 
@@ -37,8 +39,6 @@ namespace DeepSeaWorldApp
 
             DeepSeaWorldMySQLDBConn con = new DeepSeaWorldMySQLDBConn();
 
-
-
             if (con.syncTest() == true)
             {
                 App.Current.MainPage.DisplayAlert("sync", "true", "ok");
@@ -48,6 +48,7 @@ namespace DeepSeaWorldApp
                 App.Current.MainPage.DisplayAlert("sync", "false", "not ok");
             }
 
+            con.saveFile();
 
         }
 
@@ -61,6 +62,13 @@ namespace DeepSeaWorldApp
             // Handle when your app resumes
         }
 
+        protected void OnAppearing()
+        {
+            MessagingCenter.Subscribe<MainPage>(this, "Internet connection has been lost", (sender) =>
+            {
+                Device.BeginInvokeOnMainThread(() => { App.Current.MainPage.DisplayAlert("No internet Connection", "connection lost", "ok"); });
+            });
+        }
 
     }
 }
