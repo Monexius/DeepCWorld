@@ -8,6 +8,7 @@ using Android.OS;
 using Android.Net;
 using DeepSeaWorldApp.Views;
 using System.Net;
+using DeepSeaWorldApp.DBClasses;
 
 namespace DeepSeaWorldApp.Droid
 {
@@ -34,9 +35,9 @@ namespace DeepSeaWorldApp.Droid
                 app = new App();
                 LoadApplication(app);
 
-                MySQLSync sync = new MySQLSync();
-                await sync.MySQLConnection();
-             //   sync.SaveFile(sync.MySQLConnection());
+                MySQLSync<FAQ> sync = new MySQLSync<FAQ>();
+            //    await sync.MySQLConnection();
+                sync.SaveFile(sync.MySQLConnection());
 
             }catch(Exception ex)
             {

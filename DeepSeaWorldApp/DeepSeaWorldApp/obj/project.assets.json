@@ -1337,29 +1337,30 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Kamilos\\.nuget\\packages\\": {},
+    "C:\\Users\\Kamil\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Kamilos\\Source\\Repos\\Monexius\\DeepCWorld\\DeepSeaWorldApp\\DeepSeaWorldApp\\DeepSeaWorldApp.csproj",
+      "projectUniqueName": "C:\\Users\\Kamil\\source\\repos\\Monexius\\DeepCWorld\\DeepSeaWorldApp\\DeepSeaWorldApp\\DeepSeaWorldApp.csproj",
       "projectName": "DeepSeaWorldApp",
-      "projectPath": "C:\\Users\\Kamilos\\Source\\Repos\\Monexius\\DeepCWorld\\DeepSeaWorldApp\\DeepSeaWorldApp\\DeepSeaWorldApp.csproj",
-      "packagesPath": "C:\\Users\\Kamilos\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Kamilos\\Source\\Repos\\Monexius\\DeepCWorld\\DeepSeaWorldApp\\DeepSeaWorldApp\\obj\\",
+      "projectPath": "C:\\Users\\Kamil\\source\\repos\\Monexius\\DeepCWorld\\DeepSeaWorldApp\\DeepSeaWorldApp\\DeepSeaWorldApp.csproj",
+      "packagesPath": "C:\\Users\\Kamil\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Kamil\\source\\repos\\Monexius\\DeepCWorld\\DeepSeaWorldApp\\DeepSeaWorldApp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Kamilos\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Kamil\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netstandard2.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

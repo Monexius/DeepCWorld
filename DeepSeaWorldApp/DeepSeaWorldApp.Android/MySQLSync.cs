@@ -16,12 +16,15 @@ using DeepSeaWorldApp.Droid;
 using Newtonsoft.Json;
 using Xamarin.Forms;
 using Xamarin.Essentials;
+using System.Json;
 
-[assembly: Dependency(typeof(MySQLSync))]
+[assembly: Dependency(typeof(MySQLSync<>))]
 namespace DeepSeaWorldApp.Droid
 {
-    class MySQLSync : MySQlSyncInterface
+    public class MySQLSync<T> : MySQlSyncInterface<T> where T : class
     {
+        [JsonProperty("data")]
+        public List<T> Data { get; set; }
 
         public MySQLSync()
         {
@@ -29,33 +32,38 @@ namespace DeepSeaWorldApp.Droid
         }
 
         // connection and retriving data from server database, serialization of data to json  
-        public async Task<List<FAQ>> MySQLConnection()
+        public async Task<List<T>> MySQLConnection()
         {
-            RootObject root = new RootObject();
+
             HttpClient client = new HttpClient();
             Uri url = new Uri("http://10.0.2.2/scripts/dbContent.php");
-            client.BaseAddress = new Uri("http://10.0.2.2/"); 
+            client.BaseAddress = new Uri("http://10.0.2.2/");
             var resp = await client.GetAsync(url);
-            client.MaxResponseContentBufferSize = 256000;
-            
-            // checking responce from the server if responce is succesfull retrive data to json
-            if(resp.IsSuccessStatusCode)
-            { 
-                var content = resp.Content.ReadAsStringAsync().Result;
-                root.faq = JsonConvert.DeserializeObject<List<FAQ>>(content);
-            }
-            return root.faq;
+            var content = resp.Content.ReadAsStringAsync().Result;
+           
+            string path = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
+            string fpath = Path.Combine(path, "faq.json");
+            string json = JsonConvert.SerializeObject(content, Formatting.Indented);
+            File.WriteAllText(fpath, json);
+
+            Data = JsonConvert.DeserializeObject<List<T>>(content, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore, Formatting = Formatting.Indented });
+
+            return Data;
         }
 
-        //public void SaveFile(Task<List<FAQ>> M)
-        //{
-        //    string path = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
-        //    string fpath = Path.Combine(path, "faq.json");
-        //    using (var file = File.Open(fpath, FileMode.Create, FileAccess.Write))
-        //    using (var strm = new StreamWriter(file))
-        //    {
-        //        strm.Write(M);
-        //    }
-        //}
+        public void SaveFile(Task<List<FAQ>> M)
+        {
+            string path = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
+            string fpath = Path.Combine(path, "faq.json");
+            string json = JsonConvert.SerializeObject(M, Formatting.Indented);
+            File.WriteAllText(fpath, json);
+
+            //using (var file = File.Open(fpath, FileMode.Create, FileAccess.Write))
+            //using (var strm = new StreamWriter(file))
+            //{
+            //    strm.Write(M);
+            //}
+        }
     }
+
 }

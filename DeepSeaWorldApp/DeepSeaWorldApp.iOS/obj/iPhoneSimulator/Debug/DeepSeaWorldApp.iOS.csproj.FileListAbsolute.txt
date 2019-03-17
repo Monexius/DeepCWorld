@@ -176,6 +176,8 @@ C:\Users\Kamil\Source\Repos\Monexius\DeepCWorld\DeepSeaWorldApp\DeepSeaWorldApp.
 C:\Users\Kamil\Source\Repos\Monexius\DeepCWorld\DeepSeaWorldApp\DeepSeaWorldApp.iOS\bin\iPhoneSimulator\Debug\System.Security.Permissions.dll
 C:\Users\Kamil\Source\Repos\Monexius\DeepCWorld\DeepSeaWorldApp\DeepSeaWorldApp.iOS\bin\iPhoneSimulator\Debug\System.Security.Principal.Windows.dll
 C:\Users\Kamil\Source\Repos\Monexius\DeepCWorld\DeepSeaWorldApp\DeepSeaWorldApp.iOS\bin\iPhoneSimulator\Debug\System.Text.Encoding.CodePages.dll
+C:\Users\Kamil\Source\Repos\Monexius\DeepCWorld\DeepSeaWorldApp\DeepSeaWorldApp.iOS\bin\iPhoneSimulator\Debug\Xamarin.Essentials.dll
+C:\Users\Kamil\Source\Repos\Monexius\DeepCWorld\DeepSeaWorldApp\DeepSeaWorldApp.iOS\bin\iPhoneSimulator\Debug\Xamarin.Essentials.pdb
 C:\Users\Kamil\Source\Repos\Monexius\DeepCWorld\DeepSeaWorldApp\DeepSeaWorldApp.iOS\bin\iPhoneSimulator\Debug\Xamarin.Forms.Core.dll
 C:\Users\Kamil\Source\Repos\Monexius\DeepCWorld\DeepSeaWorldApp\DeepSeaWorldApp.iOS\bin\iPhoneSimulator\Debug\Xamarin.Forms.Core.pdb
 C:\Users\Kamil\Source\Repos\Monexius\DeepCWorld\DeepSeaWorldApp\DeepSeaWorldApp.iOS\bin\iPhoneSimulator\Debug\Xamarin.Forms.Platform.dll
@@ -236,5 +238,3 @@ C:\Users\Kamil\Source\Repos\Monexius\DeepCWorld\DeepSeaWorldApp\DeepSeaWorldApp.
 C:\Users\Kamil\Source\Repos\Monexius\DeepCWorld\DeepSeaWorldApp\DeepSeaWorldApp.iOS\obj\iPhoneSimulator\Debug\DeepSeaWorldApp.iOS.csproj.CopyComplete
 C:\Users\Kamil\Source\Repos\Monexius\DeepCWorld\DeepSeaWorldApp\DeepSeaWorldApp.iOS\obj\iPhoneSimulator\Debug\DeepSeaWorldApp.iOS.exe
 C:\Users\Kamil\Source\Repos\Monexius\DeepCWorld\DeepSeaWorldApp\DeepSeaWorldApp.iOS\obj\iPhoneSimulator\Debug\DeepSeaWorldApp.iOS.pdb
-C:\Users\Kamil\Source\Repos\Monexius\DeepCWorld\DeepSeaWorldApp\DeepSeaWorldApp.iOS\bin\iPhoneSimulator\Debug\Xamarin.Essentials.dll
-C:\Users\Kamil\Source\Repos\Monexius\DeepCWorld\DeepSeaWorldApp\DeepSeaWorldApp.iOS\bin\iPhoneSimulator\Debug\Xamarin.Essentials.pdb

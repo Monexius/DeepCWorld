@@ -18,13 +18,13 @@ namespace DeepSeaWorldApp
 {
     class DeepSeaWorldMySQLDBConn 
     {
-        Task<List<FAQ>> sync;
+        //Task<List<FAQ>> sync;
 
-        public DeepSeaWorldMySQLDBConn()
-        {
-            sync = DependencyService.Get<MySQlSyncInterface>().MySQLConnection();
+        //public DeepSeaWorldMySQLDBConn()
+        //{
+        //    sync = DependencyService.Get<MySQlSyncInterface>().MySQLConnection();
 
-        }
+        //}
 
     }
 
