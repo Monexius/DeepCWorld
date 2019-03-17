@@ -19,33 +19,12 @@ namespace DeepSeaWorldApp
     class DeepSeaWorldMySQLDBConn 
     {
         Task<List<FAQ>> sync;
-        
 
         public DeepSeaWorldMySQLDBConn()
         {
             sync = DependencyService.Get<MySQlSyncInterface>().MySQLConnection();
 
         }
-
-
-        public Boolean syncTest()
-        {
-            bool tb = false;
-            var tab1 = sync.IsCompleted;
-
-            if (tab1 == true)
-            {
-                tb = false;
-            }
-            else
-            {
-                tb = true;
-            }
-
-            return tb;
-        }
-
-
 
     }
 

@@ -18,7 +18,7 @@ namespace DeepSeaWorldApp.Droid
         bool hasNotified = false;
         System.Timers.Timer timer = new System.Timers.Timer();
 
-        protected override void OnCreate(Bundle savedInstanceState)
+        protected override async void OnCreate(Bundle savedInstanceState)
         {
             try
             {
@@ -34,8 +34,9 @@ namespace DeepSeaWorldApp.Droid
                 app = new App();
                 LoadApplication(app);
 
-                MySQLSync s = new MySQLSync();
-                s.saveFile(s.MySQLConnection());
+                MySQLSync sync = new MySQLSync();
+                await sync.MySQLConnection();
+             //   sync.SaveFile(sync.MySQLConnection());
 
             }catch(Exception ex)
             {
@@ -48,7 +49,7 @@ namespace DeepSeaWorldApp.Droid
             global::ZXing.Net.Mobile.Android.PermissionsHandler.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
 
-        // connection timer
+        // networrk connection timer
         private void Timer_Elapsed(object sender, EventArgs e)
         {
             timer.Stop();
@@ -68,7 +69,7 @@ namespace DeepSeaWorldApp.Droid
         // network connection check
         public bool CheckInternetConnection()
         {
-            string checkUrl = "http://127.0.0.1";
+            string checkUrl = "http://10.0.2.2";
             try
             {
                 HttpWebRequest webRequest = (HttpWebRequest)WebRequest.Create(checkUrl);

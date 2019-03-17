@@ -23,40 +23,39 @@ namespace DeepSeaWorldApp.Droid
     class MySQLSync : MySQlSyncInterface
     {
 
-        List<FAQ> faq = new List<FAQ>();
-        Uri url = new Uri("http://127.0.0.1:80/scripts/dbContent.php");
-        
-
         public MySQLSync()
         {
 
         }
 
+        // connection and retriving data from server database, serialization of data to json  
         public async Task<List<FAQ>> MySQLConnection()
         {
-
+            RootObject root = new RootObject();
             HttpClient client = new HttpClient();
-            client.BaseAddress = new Uri("http://127.0.0.1:80/scripts/dbConector.php");
+            Uri url = new Uri("http://10.0.2.2/scripts/dbContent.php");
+            client.BaseAddress = new Uri("http://10.0.2.2/"); 
             var resp = await client.GetAsync(url);
-
             client.MaxResponseContentBufferSize = 256000;
-    
+            
+            // checking responce from the server if responce is succesfull retrive data to json
+            if(resp.IsSuccessStatusCode)
+            { 
                 var content = resp.Content.ReadAsStringAsync().Result;
-                faq = JsonConvert.DeserializeObject<List<FAQ>>(content);
-
-            return faq;
-        }
-
-
-        public void saveFile(Task<List<FAQ>> M)
-        {
-            string path = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
-            string fpath = Path.Combine(path, "faq.json");
-            using (var file = File.Open(fpath, FileMode.Create, FileAccess.Write))
-            using (var strm = new StreamWriter(file))
-            {
-                strm.Write(M);
+                root.faq = JsonConvert.DeserializeObject<List<FAQ>>(content);
             }
+            return root.faq;
         }
+
+        //public void SaveFile(Task<List<FAQ>> M)
+        //{
+        //    string path = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
+        //    string fpath = Path.Combine(path, "faq.json");
+        //    using (var file = File.Open(fpath, FileMode.Create, FileAccess.Write))
+        //    using (var strm = new StreamWriter(file))
+        //    {
+        //        strm.Write(M);
+        //    }
+        //}
     }
 }

@@ -37,16 +37,6 @@ namespace DeepSeaWorldApp
                 App.Current.MainPage.DisplayAlert("Connection", "false", "not ok");
             }
 
-            DeepSeaWorldMySQLDBConn con = new DeepSeaWorldMySQLDBConn();
-
-            if (con.syncTest() == true)
-            {
-                App.Current.MainPage.DisplayAlert("sync", "true", "ok");
-            }
-            else
-            {
-                App.Current.MainPage.DisplayAlert("sync", "false", "not ok");
-            }
 
         }
 
