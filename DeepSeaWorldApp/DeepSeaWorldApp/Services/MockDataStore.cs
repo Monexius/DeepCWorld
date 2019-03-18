@@ -36,6 +36,7 @@ namespace DeepSeaWorldApp.Services
             {
                 items.Add(item);
             }
+
         }
 
         public async Task<bool> AddItemAsync(Item item)
@@ -70,6 +71,12 @@ namespace DeepSeaWorldApp.Services
         public async Task<IEnumerable<Item>> GetItemsAsync(bool forceRefresh = false)
         {
             return await Task.FromResult(items);
+        }
+
+       public static Item getItemByTime(string time)
+        {
+            Item item = new Item { Id = Guid.NewGuid().ToString(), Time = "10:30", Name = "Meet a Reptile", Location = "Shark Classroom" };
+            return item;
         }
     }
 }

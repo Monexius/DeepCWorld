@@ -7,10 +7,11 @@ namespace DeepSeaWorldApp.ViewModels
     public class ItemDetailViewModel : BaseViewModel
     {
         public Item Item { get; set; }
-        public ItemDetailViewModel(Item item = null)
+        public ItemDetailViewModel(Item item)
         {
-            Title = item?.Time;
+            Title = item.Name;
             Item = item;
         }
+
     }
 }

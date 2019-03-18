@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage BackgroundImage="background.png" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="DeepSeaWorldApp.Views.HomePage" xmlns:vm="clr-namespace:DeepSeaWorldApp.ViewModels" Title="{Binding Title}">
-    <ContentPage.BindingContext>
-        <vm:HomeViewModel />
-    </ContentPage.BindingContext>
+<ContentPage BackgroundImage="background.png" 
+             xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="DeepSeaWorldApp.Views.HomePage" 
+             xmlns:vm="clr-namespace:DeepSeaWorldApp.ViewModels" Title="{Binding Title}">
+
     <ContentPage.Resources>
         <ResourceDictionary>
             <!--Page Level Resources: Compatibile with Xamarin Live Player -->
@@ -11,24 +13,39 @@
             <Color x:Key="LightTextColor">#999999</Color>
         </ResourceDictionary>
     </ContentPage.Resources>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="?"
+                     Clicked="OnFAQClicked" />
+        <ToolbarItem Text="+"
+                     Clicked="OnSettingsClicked" />
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="120" />
                 <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="2*" />
+                <RowDefinition Height="3*" />
+                <RowDefinition Height="3*" />
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-            <Image Source="deep_sea.png" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Aspect="Fill" />
-            <Image Source="deep_sea.png" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" BackgroundColor="Navy" />
-            <BoxView Grid.Row="2" Grid.Column="0" BackgroundColor="Blue" />
-            <BoxView Grid.Row="2" Grid.Column="1" BackgroundColor="Fuchsia" />
-            <BoxView Grid.Row="3" Grid.Column="0" BackgroundColor="Gray" />
-            <BoxView Grid.Row="3" Grid.Column="1" BackgroundColor="Green" />
-            <BoxView Grid.Row="4" Grid.Column="0" BackgroundColor="Lime" />
-            <BoxView Grid.Row="4" Grid.Column="1" BackgroundColor="Maroon" />
+            <Image Source="deep_sea.png" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" 
+                   Aspect="AspectFit" BackgroundColor="White"/>
+<!--            <Label x:Name="timerText" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" 
+                   Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3"
+                   BackgroundColor="White" FontSize="24" TextColor="Red" />-->
+            <Button x:Name="timerText" Text="" Clicked="OnViewMapClicked" 
+                    Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
+                    BackgroundColor="Silver" FontSize="18" />
+            <ImageButton x:Name="promoImage" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"
+                         Source="deep_sea.png" Clicked="OnPromoClicked"/>
+            <BoxView Grid.Row="3" Grid.Column="0" BackgroundColor="silver"/>
+            <BoxView Grid.Row="3" Grid.Column="1" BackgroundColor="silver"/>
+            <BoxView Grid.Row="4" Grid.Column="0" BackgroundColor="silver"/>
+            <BoxView Grid.Row="4" Grid.Column="1" BackgroundColor="silver"/>
         </Grid>
     </ContentPage.Content>
 </ContentPage>

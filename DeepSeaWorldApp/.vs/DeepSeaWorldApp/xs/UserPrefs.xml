@@ -1,37 +1,32 @@
-﻿<Properties StartupConfiguration="{596D3C9C-9A0C-4BD5-9EB6-D37ACD885166}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="DeepSeaWorldApp/Views/HomePage.xaml">
+﻿<Properties StartupConfiguration="{10E2A7FF-2BF5-4C5C-9609-9DF2634FB291}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="DeepSeaWorldApp.iOS/DeepSeaWorldSQLiteConnectioniOS.cs">
     <Files>
-      <File FileName="DeepSeaWorldApp/Views/MainPage.xaml" Line="74" Column="14" />
-      <File FileName="DeepSeaWorldApp/Views/HomePage.xaml" Line="34" Column="15" />
+      <File FileName="DeepSeaWorldApp/obj/Debug/netstandard2.0/App.xaml.g.cs" Line="14" Column="2" />
+      <File FileName="DeepSeaWorldApp/App.xaml.cs" Line="23" Column="14" />
+      <File FileName="DeepSeaWorldApp/DeepSeaWorldMySQLDBConn.cs" Line="1" Column="1" />
+      <File FileName="DeepSeaWorldApp/DeepSeaWorldSQLiteConnectionService.cs" Line="1" Column="1" />
+      <File FileName="DeepSeaWorldApp/DeepSeaWorldSQLiteInterface.cs" Line="1" Column="1" />
+      <File FileName="DeepSeaWorldApp.Android/DeepSeaWorldSQLiteConnectionAndroid.cs" Line="1" Column="1" />
+      <File FileName="DeepSeaWorldApp.iOS/DeepSeaWorldSQLiteConnectioniOS.cs" Line="36" Column="2" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="DeepSeaWorldApp" expanded="True">
             <Node name="DeepSeaWorldApp" expanded="True">
-              <Node name="Dependencies" expanded="True">
-                <Node name="PackageDependencies" expanded="True" />
-                <Node name="SdkDependencies" expanded="True" />
-              </Node>
-              <Node name="Views" expanded="True">
-                <Node name="HomePage.xaml" expanded="True" selected="True" />
-              </Node>
+              <Node name="DBClasses" expanded="True" />
+              <Node name="App.xaml" expanded="True" />
             </Node>
-            <Node name="DeepSeaWorldApp.Android" expanded="True">
-              <Node name="Resources" expanded="True">
-                <Node name="drawable" expanded="True" />
-              </Node>
-            </Node>
+            <Node name="DeepSeaWorldApp.Android" expanded="True" />
             <Node name="DeepSeaWorldApp.iOS" expanded="True">
-              <Node name="References" expanded="True" />
-              <Node name="Resources" expanded="True" />
+              <Node name="DeepSeaWorldSQLiteConnectioniOS.cs" selected="True" />
             </Node>
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.ItemProperties.DeepSeaWorldApp.Android PreferredExecutionTarget="Android.Pixel_XL_API_27" />
+  <MonoDevelop.Ide.ItemProperties.DeepSeaWorldApp.Android AndroidDesignerPreferredTheme="Theme.DeviceDefault.NoActionBar.Fullscreen" PreferredExecutionTarget="Android.Pixel_XL_API_27" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.ItemProperties.DeepSeaWorldApp.iOS automaticSigning="False" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.CF4C450C-D700-4EBB-BC59-FD07156F63F5" />

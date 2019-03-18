@@ -4934,7 +4934,7 @@ namespace DeepSeaWorldApp.Droid
 			public const int ic_vol_type_tv_light = 2130837774;
 			
 			// aapt resource value: 0x7f02010f
-			public const int map = 2130837775;
+			public const int map_icon = 2130837775;
 			
 			// aapt resource value: 0x7f020110
 			public const int mdpi_320x480_android = 2130837776;

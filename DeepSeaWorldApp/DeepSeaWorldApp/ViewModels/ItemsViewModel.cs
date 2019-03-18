@@ -7,6 +7,7 @@ using Xamarin.Forms;
 
 using DeepSeaWorldApp.Models;
 using DeepSeaWorldApp.Views;
+using DeepSeaWorldApp.Services;
 
 namespace DeepSeaWorldApp.ViewModels
 {
@@ -21,12 +22,6 @@ namespace DeepSeaWorldApp.ViewModels
             Items = new ObservableCollection<Item>();
             LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
 
-            MessagingCenter.Subscribe<NewItemPage, Item>(this, "AddItem", async (obj, item) =>
-            {
-                var newItem = item as Item;
-                Items.Add(newItem);
-                await DataStore.AddItemAsync(newItem);
-            });
         }
 
         async Task ExecuteLoadItemsCommand()
@@ -42,7 +37,16 @@ namespace DeepSeaWorldApp.ViewModels
                 var items = await DataStore.GetItemsAsync(true);
                 foreach (var item in items)
                 {
-                    Items.Add(item);
+                    int itemHour = Convert.ToInt32(item.Time.Substring(0, 2));
+                    int itemMinute = Convert.ToInt32(item.Time.Substring(3, 2));
+                    if (itemHour > NextEventService.GetNextEventHour())
+                    {
+                        Items.Add(item);
+                    }
+                    if(itemHour == NextEventService.GetNextEventHour() && itemMinute == 30 && NextEventService.GetNextEventMinute() == 30)
+                    {
+                        Items.Add(item);
+                    }
                 }
             }
             catch (Exception ex)

@@ -26,13 +26,18 @@ namespace DeepSeaWorldApp.Views
 
             var item = new Item
             {
-                Time = "Item 1",
-                Name = "This is an item description.",
-                Location = "Location 1"
+                Time = "10:30",
+                Name = "Event One",
+                Location = "Location One"
             };
 
             viewModel = new ItemDetailViewModel(item);
             BindingContext = viewModel;
+        }
+
+        void OnMapClicked(object sender, System.EventArgs e)
+        {
+            Navigation.PushAsync(new MapPage());
         }
     }
 }

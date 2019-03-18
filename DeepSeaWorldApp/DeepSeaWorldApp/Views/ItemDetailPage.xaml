@@ -1,9 +1,53 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="DeepSeaWorldApp.Views.ItemDetailPage" Title="{Binding Title}">
-    <StackLayout Spacing="20" Padding="15">
-        <Label Text="Text:" FontSize="Medium" />
-        <Label Text="{Binding Item.Text}" FontSize="Small" />
-        <Label Text="Description:" FontSize="Medium" />
-        <Label Text="{Binding Item.Description}" FontSize="Small" />
-    </StackLayout>
+        <ContentPage.Content>
+        <Grid Margin="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            
+            <Label Grid.Row="0" Grid.Column="0"
+                   Text="Event:" FontSize="24"
+                   VerticalTextAlignment="Center" 
+                   />
+            <Label Grid.Row="0" Grid.Column="1"
+                   Text="{Binding Item.Name}" FontSize="24"
+                   Margin="10" FontAttributes="Bold"
+                   VerticalTextAlignment="Center" 
+                   />
+            
+            <Label Grid.Row="1" Grid.Column="0"
+                   Text="Location:" FontSize="24"
+                   VerticalTextAlignment="Center" 
+                   />
+            <Label Grid.Row="1" Grid.Column="1"
+                   Text="{Binding Item.Location}"
+                   FontSize="24" FontAttributes="Bold"
+                   Margin="10"
+                   VerticalTextAlignment="Center" 
+                   />
+            
+            <Label Grid.Row="2" Grid.Column="0"
+                   Text="Time:" FontSize="24"
+                   VerticalTextAlignment="Center" 
+                   />
+            <Label Grid.Row="2" Grid.Column="1"
+                   Text="{Binding Item.Time}"
+                   FontSize="24" FontAttributes="Bold"
+                   Margin="10"
+                   VerticalTextAlignment="Center" 
+                   />
+            <ImageButton Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"
+                   Source="deep_sea.png" Clicked="OnMapClicked"
+                   />
+                   
+        </Grid>
+    </ContentPage.Content>
 </ContentPage>
