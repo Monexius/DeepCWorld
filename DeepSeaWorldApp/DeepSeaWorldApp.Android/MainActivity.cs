@@ -9,6 +9,10 @@ using Android.Net;
 using DeepSeaWorldApp.Views;
 using System.Net;
 using DeepSeaWorldApp.DBClasses;
+using static DeepSeaWorldApp.DBClasses.DBs;
+using System.Collections.Generic;
+using System.IO;
+using Newtonsoft.Json;
 
 namespace DeepSeaWorldApp.Droid
 {
@@ -35,11 +39,20 @@ namespace DeepSeaWorldApp.Droid
                 app = new App();
                 LoadApplication(app);
 
+                List<FAQ> ls = new List<FAQ>();
                 MySQLSync<FAQ> sync = new MySQLSync<FAQ>();
-            //    await sync.MySQLConnection();
-                sync.SaveFile(sync.MySQLConnection());
+                await sync.MySQLConnection(ls);
 
-            }catch(Exception ex)
+                //sync.SaveCountAsync(5);
+
+                //   SaveFile(ls);
+
+
+
+              //  sqLiteSync.InsertUpdate(await sync.MySQLConnection());
+
+            }
+            catch(Exception ex)
             {
                 throw ex;
             }
@@ -49,6 +62,28 @@ namespace DeepSeaWorldApp.Droid
         {
             global::ZXing.Net.Mobile.Android.PermissionsHandler.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
+
+        //public void SaveFile(List<FAQ> ts)
+        //{
+        //    string path = Android.OS.Environment.ExternalStorageDirectory.AbsolutePath;
+        //    string fileName = "dbData.txt";
+        //    string fileName2 = "dbData2.txt";
+        //    string fPath = Path.Combine(path, fileName);
+        //    string fPath2 = Path.Combine(path, fileName2);
+        //    JsonSerializer serializer = new JsonSerializer();
+
+        //    string json = JsonConvert.SerializeObject(ts);
+        //    using (StreamWriter st = new StreamWriter(fPath))
+        //    using (JsonWriter writer = new JsonTextWriter(st))
+        //    {
+        //        serializer.Serialize(writer, json);
+        //    }
+        //    using (StreamWriter st = new StreamWriter(fPath2))
+        //    using (JsonWriter writer = new JsonTextWriter(st))
+        //    {
+        //        serializer.Serialize(writer, ts);
+        //    }
+        //}
 
         // networrk connection timer
         private void Timer_Elapsed(object sender, EventArgs e)

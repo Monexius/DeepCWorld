@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
-
 using Android.App;
 using Android.Content;
 using Android.OS;
@@ -13,26 +12,31 @@ using Android.Widget;
 using DeepSeaWorldApp.Droid;
 using Xamarin.Forms;
 using SQLite;
+using DeepSeaWorldApp.DBClasses;
+using System.Threading.Tasks;
 
-[assembly: Dependency(typeof(DeepSeaWorldSQLiteConnectionAndroid))]
+[assembly: Dependency(typeof(DeepSeaWorldApp.Droid.DeepSeaWorldSQLiteConnectionAndroid))]
 
 namespace DeepSeaWorldApp.Droid
 {
-    class DeepSeaWorldSQLiteConnectionAndroid : DeepSeaWorldSQLiteInterface
+    public class DeepSeaWorldSQLiteConnectionAndroid : DeepSeaWorldSQLiteInterface 
     {
+        
         public DeepSeaWorldSQLiteConnectionAndroid()
         {
 
         }
 
-        public SQLite.SQLiteConnection CreateConnection()
+        // creating sqlite connection
+        public SQLiteConnection CreateConnection()
         {
-            var sqliteFile = "DeepSeaWorldSQLite.db";
             string documentDir = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
-            var path = Path.Combine(documentDir, sqliteFile);
-            var conn = new SQLite.SQLiteConnection(path);
+            string sqliteFile = "DeepSeaWorldSQLite.db";
+            string path = Path.Combine(documentDir, sqliteFile);
+            var conn = new SQLiteConnection(path);
             return conn;
         }
+
 
     }
 }

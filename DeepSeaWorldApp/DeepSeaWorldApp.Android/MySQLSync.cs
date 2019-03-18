@@ -21,7 +21,7 @@ using System.Json;
 [assembly: Dependency(typeof(MySQLSync<>))]
 namespace DeepSeaWorldApp.Droid
 {
-    public class MySQLSync<T> : MySQlSyncInterface<T> where T : class
+    public class MySQLSync<T> : IMySQlSyncInterface<T> where T : class
     {
         [JsonProperty("data")]
         public List<T> Data { get; set; }
@@ -32,7 +32,7 @@ namespace DeepSeaWorldApp.Droid
         }
 
         // connection and retriving data from server database, serialization of data to json  
-        public async Task<List<T>> MySQLConnection()
+        public async Task<List<T>> MySQLConnection(List<T> ts)
         {
 
             HttpClient client = new HttpClient();
@@ -40,29 +40,42 @@ namespace DeepSeaWorldApp.Droid
             client.BaseAddress = new Uri("http://10.0.2.2/");
             var resp = await client.GetAsync(url);
             var content = resp.Content.ReadAsStringAsync().Result;
-           
-            string path = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
-            string fpath = Path.Combine(path, "faq.json");
-            string json = JsonConvert.SerializeObject(content, Formatting.Indented);
-            File.WriteAllText(fpath, json);
 
-            Data = JsonConvert.DeserializeObject<List<T>>(content, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore, Formatting = Formatting.Indented });
+            ts = JsonConvert.DeserializeObject<List<T>>(content, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore, Formatting = Formatting.Indented });
 
-            return Data;
+            Data = ts;
+
+            string path = Android.OS.Environment.ExternalStorageDirectory.AbsolutePath;
+            string fileName = "js1.json";
+            string fileName2 = "js2.json";
+            string fPath = Path.Combine(path, fileName);
+            string fPath2 = Path.Combine(path, fileName2);
+            JsonSerializer serializer = new JsonSerializer();
+
+            string json = JsonConvert.SerializeObject(ts);
+            using (StreamWriter st = new StreamWriter(fPath))
+            using (JsonWriter writer = new JsonTextWriter(st))
+            {
+                serializer.Serialize(writer, json);
+            }
+            using (StreamWriter st = new StreamWriter(fPath2))
+            using (JsonWriter writer = new JsonTextWriter(st))
+            {
+                serializer.Serialize(writer, ts);
+            }
+
+            return ts;
         }
 
-        public void SaveFile(Task<List<FAQ>> M)
+        public async Task SaveCountAsync(int count)
         {
-            string path = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
-            string fpath = Path.Combine(path, "faq.json");
-            string json = JsonConvert.SerializeObject(M, Formatting.Indented);
-            File.WriteAllText(fpath, json);
 
-            //using (var file = File.Open(fpath, FileMode.Create, FileAccess.Write))
-            //using (var strm = new StreamWriter(file))
-            //{
-            //    strm.Write(M);
-            //}
+            string backingFile = Path.Combine(Android.OS.Environment.ExternalStorageDirectory.AbsolutePath, "/mypath/");
+            string tFile = Path.Combine(Android.OS.Environment.ExternalStorageDirectory.AbsolutePath, "count.txt");
+            using (var writer = File.CreateText(backingFile))
+            {
+                await writer.WriteLineAsync(count.ToString());
+            }
         }
     }
 

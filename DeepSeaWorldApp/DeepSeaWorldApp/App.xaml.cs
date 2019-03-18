@@ -7,12 +7,15 @@ using System.IO;
 using Newtonsoft.Json;
 using DeepSeaWorldApp.DBClasses;
 using Xamarin.Essentials;
+using System.Collections.Generic;
+using static DeepSeaWorldApp.DBClasses.DBs;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace DeepSeaWorldApp
 {
     public partial class App : Application
     {
+        public object DisplayAllert { get; private set; }
 
         public App()
         {
@@ -24,19 +27,10 @@ namespace DeepSeaWorldApp
 
         protected override void OnStart()
         {
+            DeepSeaWorldMySQLDBConn<DBs> mySQLDataBaseCheck = new DeepSeaWorldMySQLDBConn<DBs>();
+            //  mySQLDataBaseCheck.tablesData;
 
-            // Handle when your app starts
-            DeepSeaWorldSQLiteConnectionService conn = new DeepSeaWorldSQLiteConnectionService();        
-
-            if (conn.connTest() == true)
-            {
-                App.Current.MainPage.DisplayAlert("Connection", "true", "ok");
-            }
-            else
-            {
-                App.Current.MainPage.DisplayAlert("Connection", "false", "not ok");
-            }
-
+            mySQLDataBaseCheck.SaveFile(mySQLDataBaseCheck.tablesData);
 
         }
 

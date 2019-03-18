@@ -8,7 +8,8 @@ namespace DeepSeaWorldApp
 {
     public class DeepSeaWorldSQLiteConnectionService
     {
-        SQLiteConnection dbConn;
+        readonly SQLiteConnection dbConn;
+
 
         public DeepSeaWorldSQLiteConnectionService()
         {
@@ -16,22 +17,6 @@ namespace DeepSeaWorldApp
         }
 
 
-        public Boolean connTest()
-        {
-            bool tb = false;
-            var tab1 = dbConn.GetTableInfo("map");
-
-            if (tab1 == null)
-            {
-                tb = false;
-            }
-            else
-            {
-                tb = true;
-            }
-
-            return tb;
-        }
     }
 
 }

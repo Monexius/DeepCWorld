@@ -8,8 +8,10 @@ using System.Threading.Tasks;
 
 namespace DeepSeaWorldApp
 {
-    public interface MySQlSyncInterface<T> where T : class
+    public interface IMySQlSyncInterface<T> where T : class
     {
         List<T> Data { get; set; }
+        Task<List<T>> MySQLConnection(List<T> Data);
+
     }
 }
