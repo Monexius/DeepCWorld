@@ -20,7 +20,7 @@ namespace DeepSeaWorldApp
 
         protected override void OnStart()
         {
-             //Handle when your app starts
+            // Handle when your app starts
             DeepSeaWorldSQLiteConnectionService conn = new DeepSeaWorldSQLiteConnectionService();        
 
             if (conn.connTest() == true)

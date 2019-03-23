@@ -73,10 +73,28 @@ namespace DeepSeaWorldApp.Services
             return await Task.FromResult(items);
         }
 
-       public static Item getItemByTime(string time)
+        public async Task<Item> GetItemByTime(string time)
         {
-            Item item = new Item { Id = Guid.NewGuid().ToString(), Time = "10:30", Name = "Meet a Reptile", Location = "Shark Classroom" };
-            return item;
+            Item item = new Item();
+            Item fail = new Item
+            {
+                Id = Guid.NewGuid().ToString(),
+                Time = "10:30",
+                Name = "FAIL",
+                Location = "Shark Classroom"
+            };
+            foreach (var i in items)
+            {
+                if (i.Time == time)
+                {
+                    item = i;
+                }
+            }
+            if(item.Name == "")
+            {
+                item = fail;
+            }
+            return await Task.FromResult(item);
         }
     }
 }

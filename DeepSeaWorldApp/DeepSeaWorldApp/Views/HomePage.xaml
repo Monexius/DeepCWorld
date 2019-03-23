@@ -16,8 +16,6 @@
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="?"
                      Clicked="OnFAQClicked" />
-        <ToolbarItem Text="+"
-                     Clicked="OnSettingsClicked" />
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <Grid>
@@ -42,10 +40,14 @@
                     BackgroundColor="Silver" FontSize="18" />
             <ImageButton x:Name="promoImage" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"
                          Source="deep_sea.png" Clicked="OnPromoClicked"/>
-            <BoxView Grid.Row="3" Grid.Column="0" BackgroundColor="silver"/>
-            <BoxView Grid.Row="3" Grid.Column="1" BackgroundColor="silver"/>
-            <BoxView Grid.Row="4" Grid.Column="0" BackgroundColor="silver"/>
-            <BoxView Grid.Row="4" Grid.Column="1" BackgroundColor="silver"/>
+            <ImageButton Source="deep_sea.png" Grid.Row="3" Grid.Column="0" BackgroundColor="Red"
+                         Clicked="OnBox1Clicked"/>
+            <ImageButton Source="deep_sea.png" Grid.Row="3" Grid.Column="1" BackgroundColor="Blue"
+                         Clicked="OnBox2Clicked"/>
+            <ImageButton Source="deep_sea.png" Grid.Row="4" Grid.Column="0" BackgroundColor="Green"
+                         Clicked="OnBox3Clicked"/>
+            <ImageButton Source="deep_sea.png" Grid.Row="4" Grid.Column="1" BackgroundColor="Yellow"
+                         Clicked="OnBox4Clicked"/>
         </Grid>
     </ContentPage.Content>
 </ContentPage>

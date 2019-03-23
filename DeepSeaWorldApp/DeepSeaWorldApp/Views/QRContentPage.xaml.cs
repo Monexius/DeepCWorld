@@ -51,7 +51,7 @@ namespace DeepSeaWorldApp.Views
         protected override void OnDisappearing()
         {
             base.OnDisappearing();
-            Navigation.PopAsync();
+            //Navigation.PopAsync();
         }
     }
 }

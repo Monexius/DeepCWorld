@@ -161,6 +161,10 @@
 -r=/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/Facades/System.Xml.XPath.XmlDocument.dll
 -r=/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/Facades/System.Xml.Xsl.Primitives.dll
 -r=/Users/james/.nuget/packages/google.protobuf/3.5.1/lib/netstandard1.0/Google.Protobuf.dll
+-r=/Users/james/.nuget/packages/microsoft.appcenter/1.13.2/lib/Xamarin.iOS10/Microsoft.AppCenter.dll
+-r=/Users/james/.nuget/packages/microsoft.appcenter/1.13.2/lib/Xamarin.iOS10/Microsoft.AppCenter.iOS.Bindings.dll
+-r=/Users/james/.nuget/packages/microsoft.appcenter.push/1.13.2/lib/Xamarin.iOS10/Microsoft.AppCenter.Push.dll
+-r=/Users/james/.nuget/packages/microsoft.appcenter.push/1.13.2/lib/Xamarin.iOS10/Microsoft.AppCenter.Push.iOS.Bindings.dll
 -r=/Users/james/.nuget/packages/microsoft.net.http/2.2.29/lib/Xamarin.iOS10/System.Net.Http.Extensions.dll
 -r=/Users/james/.nuget/packages/microsoft.net.http/2.2.29/lib/Xamarin.iOS10/System.Net.Http.Primitives.dll
 -r=/Users/james/.nuget/packages/mysql.data/8.0.15/lib/netstandard2.0/MySql.Data.dll

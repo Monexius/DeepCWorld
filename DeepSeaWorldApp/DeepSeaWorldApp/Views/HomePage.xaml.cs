@@ -4,15 +4,19 @@ using Xamarin.Forms;
 using DeepSeaWorldApp.Services;
 using DeepSeaWorldApp.Models;
 using DeepSeaWorldApp.ViewModels;
+using System.Threading.Tasks;
 
 namespace DeepSeaWorldApp.Views
 {
     public partial class HomePage : ContentPage
     {
         string eventName = "init";
+        public IDataStore<Item> DataStore => DependencyService.Get<IDataStore<Item>>() ?? new MockDataStore();
+
         public HomePage()
         {
             InitializeComponent();
+
 
             Device.StartTimer(TimeSpan.FromSeconds(1), () =>
             {
@@ -36,8 +40,10 @@ namespace DeepSeaWorldApp.Views
                     nextEventHour = currentHour;
                 }
                 nextEventTime = nextEventHour.ToString() + ":" + nextEventMinute.ToString();
-                Item item = MockDataStore.getItemByTime(nextEventTime);
+                var getitem = GetItemByTime(nextEventTime);
+                Item item = getitem.Result;
                 eventName = item.Name;
+                
                 //eventName =  //get event name based on the nextEventTime by getting the event where the time variable == nextEventTime
                 startsInMinutes = nextEventMinute - currentMinute;
                 startsInHours = nextEventHour - currentHour;
@@ -62,6 +68,13 @@ namespace DeepSeaWorldApp.Views
                 Device.BeginInvokeOnMainThread(() => timerText.Text = nextEventStartsIn);
                 return true;
             });
+
+
+        }
+
+        async Task<Item> GetItemByTime(string time)
+        {
+            return await DataStore.GetItemByTime(time);
         }
 
         void OnViewMapClicked(object sender, System.EventArgs e)
@@ -82,5 +95,22 @@ namespace DeepSeaWorldApp.Views
             string name = promoImage.Source.ToString();
             Navigation.PushAsync(new PromoPage(name));
         }
+        void OnBox1Clicked(object sender, System.EventArgs e)
+        {
+
+        }
+        void OnBox2Clicked(object sender, System.EventArgs e)
+        {
+
+        }
+        void OnBox3Clicked(object sender, System.EventArgs e)
+        {
+
+        }
+        void OnBox4Clicked(object sender, System.EventArgs e)
+        {
+
+        }
+
     }
 }

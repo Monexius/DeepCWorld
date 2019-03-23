@@ -7,6 +7,8 @@ using Xamarin.Forms;
 
 using DeepSeaWorldApp.Models;
 using DeepSeaWorldApp.Views;
+using DeepSeaWorldApp.Services;
+
 namespace DeepSeaWorldApp.ViewModels
 {
     public class PromoViewModel
@@ -27,9 +29,10 @@ namespace DeepSeaWorldApp.ViewModels
         }
         public PromoViewModel(string name)
         {
+            //get item by "name" (image source name) and fill contents
             News = new News
             {
-                Title = "News Title",
+                Title = name,
                 Lead = "Lead lorem ipsum lead lorem ipsum lead lorem ipsum",
                 Image = "deep_sea.png",
                 Body = "Body lorem ipsum body lorem ipsum body lorem ipsumbody lorem ipsumbody lorem ipsumbody lorem ipsumbody lorem ipsumbody lorem ipsum" +

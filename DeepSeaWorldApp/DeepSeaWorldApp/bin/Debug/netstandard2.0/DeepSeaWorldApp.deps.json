@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETStandard,Version=v2.0/",
-    "signature": "cac43328b6d1aa597edafb9aa8b99d8dd7379450"
+    "signature": "ca181d1b3059cd9c83fac30cb82078a644c268f2"
   },
   "compilationOptions": {},
   "targets": {
@@ -9,6 +9,7 @@
     ".NETStandard,Version=v2.0/": {
       "DeepSeaWorldApp/1.0.0": {
         "dependencies": {
+          "Microsoft.AppCenter.Push": "1.13.2",
           "Microsoft.Bcl": "1.1.10",
           "Microsoft.Net.Http": "2.2.29",
           "MySql.Data": "8.0.15",
@@ -31,6 +32,25 @@
           "lib/netstandard1.0/Google.Protobuf.dll": {
             "assemblyVersion": "3.5.1.0",
             "fileVersion": "3.5.1.0"
+          }
+        }
+      },
+      "Microsoft.AppCenter/1.13.2": {
+        "runtime": {
+          "lib/netstandard1.0/Microsoft.AppCenter.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "1.13.2.0"
+          }
+        }
+      },
+      "Microsoft.AppCenter.Push/1.13.2": {
+        "dependencies": {
+          "Microsoft.AppCenter": "1.13.2"
+        },
+        "runtime": {
+          "lib/netstandard1.0/Microsoft.AppCenter.Push.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "1.13.2.0"
           }
         }
       },
@@ -238,6 +258,20 @@
       "sha512": "sha512-j/gbpRZ68sgvdi/vXI39Cj/jWG4d1dtDqfWbkjC9dErNWu/dFcIlq1LIgLscea+llZ6nzm06wz/JGziOegAL7Q==",
       "path": "google.protobuf/3.5.1",
       "hashPath": "google.protobuf.3.5.1.nupkg.sha512"
+    },
+    "Microsoft.AppCenter/1.13.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-cpVIrVh1AzUj2s7ENwSJqV70JIH/NvptmdN3P3tejwa+YX+icYR+nKyg9ftmzmlEOCwylJ1XSPMwkE2yNXaE6A==",
+      "path": "microsoft.appcenter/1.13.2",
+      "hashPath": "microsoft.appcenter.1.13.2.nupkg.sha512"
+    },
+    "Microsoft.AppCenter.Push/1.13.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-95SmTDZyVkaiK+kUnnWmjwVY4fwkJg8h0fUTMkefKMAQQRuf/ZefmW0agpmiRwYxRg3G32mfPkNz9irIwn+u0Q==",
+      "path": "microsoft.appcenter.push/1.13.2",
+      "hashPath": "microsoft.appcenter.push.1.13.2.nupkg.sha512"
     },
     "Microsoft.Bcl/1.1.10": {
       "type": "package",

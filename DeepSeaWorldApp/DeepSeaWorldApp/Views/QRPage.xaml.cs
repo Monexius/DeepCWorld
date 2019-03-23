@@ -33,8 +33,7 @@ namespace DeepSeaWorldApp.Views
                         await DisplayAlert("Scanned result", result.Text, "OK");
                     }
                 });
-            }
-
+        }
 
         protected override void OnAppearing()
             {

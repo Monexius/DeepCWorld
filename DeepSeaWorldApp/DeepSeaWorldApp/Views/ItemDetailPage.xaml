@@ -45,7 +45,7 @@
                    VerticalTextAlignment="Center" 
                    />
             <ImageButton Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"
-                   Source="deep_sea.png" Clicked="OnMapClicked"
+                   Source="map.jpg" Clicked="OnMapClicked"
                    />
                    
         </Grid>

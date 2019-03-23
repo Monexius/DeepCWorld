@@ -41,7 +41,7 @@
                 </OnPlatform>
             </NavigationPage.Icon>
             <x:Arguments>
-                <views:QRButtonPage />
+                <views:QRPage />
             </x:Arguments>
         </NavigationPage>
         
@@ -65,7 +65,7 @@
                 </OnPlatform>
             </NavigationPage.Icon>
             <x:Arguments>
-                <views:QRPage/>
+                <views:QRContentPage/>
             </x:Arguments>
         </NavigationPage>
         
