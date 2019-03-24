@@ -1,9 +1,8 @@
 ﻿using Newtonsoft.Json;
+using SQLite;
 using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Json;
-using System.Text;
+
 
 namespace DeepSeaWorldApp.DBClasses
 {
@@ -13,125 +12,226 @@ namespace DeepSeaWorldApp.DBClasses
 
         public class FAQ 
         {
-            [JsonProperty("FAQ_ID")]
-            public string ID { get; set; }
+            [JsonProperty("FAQ_ID")][PrimaryKey]
+            public int ID { get; set; }
             [JsonProperty("FAQ_Question")]
             public string FAQ_Question { get; set; }
-            [JsonProperty("FAQ_Anwsere")]
+            [JsonProperty("FAQ_Anwswere")]
             public string FAQ_Anwswere { get; set; }
         }
 
         // list of data from faq table
         public class FAQList
         {
-            public List<FAQ> Faq { get; set; }
+            public FAQ[] Faq { get; set; }
         }
 
         public class Events
         {
-            [JsonProperty("Event_ID")]
-            int ID { get; set; }
+            [JsonProperty("Event_ID")][PrimaryKey]
+            public int ID { get; set; }
             [JsonProperty("Event_Name")]
-            string Event_Name { get; set; }
+            public string Event_Name { get; set; }
             [JsonProperty("Event_Description")]
-            string Event_Description { get; set; }
+            public string Event_Description { get; set; }
             [JsonProperty("Event_IMG")]
-            string Event_IMG { get; set; }
+            public string Event_IMG { get; set; }
             [JsonProperty("Event_Location")]
-            string Event_Location { get; set; }
+            public string Event_Location { get; set; }
             [JsonProperty("Event_Day")]
-            string Event_Day { get; set; }
+            public string Event_Day { get; set; }
             [JsonProperty("Event_Time")]
-            string Event_Time { get; set; }
+            public string Event_Time { get; set; }
         }
 
         // list of data from events table
         public class EventsList
         {
-            public List<Events> Events { get; set; }
+            public Events[] Events { get; set; }
         }
 
         public class Exhibition
         {
-            [JsonProperty("Exhibition_ID")]
-            int ID { get; set; }
+            [JsonProperty("Exhibition_ID")][PrimaryKey]
+            public int ID { get; set; }
             [JsonProperty("Exhibition_QRCode_Pos")]
-            int Exhibition_QRCode_Pos { get; }
+            public int Exhibition_QRCode_Pos { get; }
             [JsonProperty("Exhibition_Description")]
-            string Exhibition_Description { get; set; }
+            public string Exhibition_Description { get; set; }
             [JsonProperty("Exhibition_IMG_Name")]
-            string Exhibition_IMG_Name { get; set; }
+            public string Exhibition_IMG_Name { get; set; }
             [JsonProperty("Exhibition_IMG")]
-            string Exhibition_IMG { get; set; }
+            public string Exhibition_IMG { get; set; }
             [JsonProperty("Exhibition_Video_Name")]
-            string Exhibition_Video_Name { get; set; }
+            public string Exhibition_Video_Name { get; set; }
             [JsonProperty("Exhibition_Video")]
-            string Exhibition_Video { get; set; }
+            public string Exhibition_Video { get; set; }
             [JsonProperty("Exhibition_Name")]
-            string Exhibition_Name { get; set; }
+            public string Exhibition_Name { get; set; }
             [JsonProperty("QRCode_Name")]
-            string QRCode_Name { get; }
+            public string QRCode_Name { get; }
         }
 
         // list of data from Exhibition table
         public class ExhibitionList
         {
-            public List<Exhibition> Exhibitions { get; set; }
+            public Exception[] Exhibitions { get; set; }
         }
 
         public class Map
         {
-            [JsonProperty("Map_ID")]
-            int ID { get; set; }
+            [JsonProperty("Map_ID")][PrimaryKey]
+            public int ID { get; set; }
             [JsonProperty("Map_IMG")]
-            string Map_IMG { get; set; }
+            public string Map_IMG { get; set; }
         }
 
         // list of data from Map table
         public class MapList
         {
-            public List<Map> Map { get; set; }
+            public Map[] Map { get; set; }
         }
 
         public class News
         {
-            [JsonProperty("News_ID")]
-            int ID { get; set; }
+            [JsonProperty("News_ID")][PrimaryKey]
+            public int ID { get; set; }
             [JsonProperty("News_Title")]
-            string News_Title { get; set; }
+            public string News_Title { get; set; }
             [JsonProperty("News_Info")]
-            string News_Brief_Info { get; set; }
+            public string News_Brief_Info { get; set; }
             [JsonProperty("News_IMG")]
-            string News_IMG { get; set; }
+            public string News_IMG { get; set; }
             [JsonProperty("News_Article")]
-            string News_Article { get; set; }
+            public string News_Article { get; set; }
             [JsonProperty("Notifications")]
-            string Notifications { get; set; }
+            public string Notifications { get; set; }
         }
 
         // list of data from News table
         public class NewsList
         {
-            public List<News> News { get; set; }
+            public News[] News { get; set; }
         }
 
         public class QRCodes
         {
-            [JsonProperty("QRCodes_ID")]
-            int ID { get; set; }
+            [JsonProperty("QRCodes_ID")][PrimaryKey]
+            public int ID { get; set; }
             [JsonProperty("QRCodes_Name")]
-            string QRCodes_Name { get; set; }
+            public string QRCodes_Name { get; set; }
             [JsonProperty("QRCodes_IMG")]
-            string QRCodes_IMG { get; set; }
+            public string QRCodes_IMG { get; set; }
             [JsonProperty("QRCodes_Pos")]
-            int QRCodes_Pos { get; set; }
+            public int QRCodes_Pos { get; set; }
         }
 
         // list of data from QRCodes table
         public class QRCodesList
         {
-            public List<QRCodes> QRs { get; set; }
+            public QRCodes[] QRs { get; set; }
         }
+
+
+
+        public class Data
+        {
+            [JsonProperty("FAQ_ID")]
+            [PrimaryKey]
+            public string FAQ_ID { get; set; }
+            [JsonProperty("FAQ_Question")]
+            public string FAQ_Question { get; set; }
+            [JsonProperty("FAQ_Anwsere")]
+            public string FAQ_Anwswere { get; set; }
+
+            [JsonProperty("Event_ID")]
+            [PrimaryKey]
+            public int Event_ID { get; set; }
+            [JsonProperty("Event_Name")]
+            public string Event_Name { get; set; }
+            [JsonProperty("Event_Description")]
+            public string Event_Description { get; set; }
+            [JsonProperty("Event_IMG")]
+            public string Event_IMG { get; set; }
+            [JsonProperty("Event_Location")]
+            public string Event_Location { get; set; }
+            [JsonProperty("Event_Day")]
+            public string Event_Day { get; set; }
+            [JsonProperty("Event_Time")]
+            public string Event_Time { get; set; }
+
+            [JsonProperty("Exhibition_ID")]
+            [PrimaryKey]
+            public int Exhibition_ID { get; set; }
+            [JsonProperty("Exhibition_QRCode_Pos")]
+            public int Exhibition_QRCode_Pos { get; }
+            [JsonProperty("Exhibition_Description")]
+            public string Exhibition_Description { get; set; }
+            [JsonProperty("Exhibition_IMG_Name")]
+            public string Exhibition_IMG_Name { get; set; }
+            [JsonProperty("Exhibition_IMG")]
+            public string Exhibition_IMG { get; set; }
+            [JsonProperty("Exhibition_Video_Name")]
+            public string Exhibition_Video_Name { get; set; }
+            [JsonProperty("Exhibition_Video")]
+            public string Exhibition_Video { get; set; }
+            [JsonProperty("Exhibition_Name")]
+            public string Exhibition_Name { get; set; }
+            [JsonProperty("QRCode_Name")]
+            public string QRCode_Name { get; }
+
+            [JsonProperty("Map_ID")]
+            [PrimaryKey]
+            public int Map_ID { get; set; }
+            [JsonProperty("Map_IMG")]
+            public string Map_IMG { get; set; }
+
+            [JsonProperty("News_ID")]
+            [PrimaryKey]
+            public int News_ID { get; set; }
+            [JsonProperty("News_Title")]
+            public string News_Title { get; set; }
+            [JsonProperty("News_Info")]
+            public string News_Brief_Info { get; set; }
+            [JsonProperty("News_IMG")]
+            public string News_IMG { get; set; }
+            [JsonProperty("News_Article")]
+            public string News_Article { get; set; }
+            [JsonProperty("Notifications")]
+            public string Notifications { get; set; }
+
+            [JsonProperty("QRCodes_ID")]
+            [PrimaryKey]
+            public int QRCodes_ID { get; set; }
+            [JsonProperty("QRCodes_Name")]
+            public string QRCodes_Name { get; set; }
+            [JsonProperty("QRCodes_IMG")]
+            public string QRCodes_IMG { get; set; }
+            [JsonProperty("QRCodes_Pos")]
+            public int QRCodes_Pos { get; set; }
+        }
+
+        public class dbList
+        {
+            public List<Data> DataList { get; set; }
+        }
+
+        public class DataL
+        {
+            public List<FAQList> fList { get; set; }
+            public List<EventsList> eList { get; set; }
+            public List<ExhibitionList> exList { get; set; }
+            public List<MapList> mList { get; set; }
+            public List<NewsList> nList { get; set; }
+            public List<QRCodesList> qrList { get; set; }
+        }
+
+        //public class dbList2
+        //{
+        //    public List<DataL> DataList2 { get; set; }
+        //}
+
+
 
     }
 

@@ -1,30 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
-using Android.App;
-using Android.Content;
-using Android.OS;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
-using DeepSeaWorldApp.DBClasses;
 using DeepSeaWorldApp.Droid;
 using Newtonsoft.Json;
 using Xamarin.Forms;
-using Xamarin.Essentials;
-using System.Json;
+using static DeepSeaWorldApp.DBClasses.DBs;
 
 [assembly: Dependency(typeof(MySQLSync<>))]
 namespace DeepSeaWorldApp.Droid
 {
     public class MySQLSync<T> : IMySQlSyncInterface<T> where T : class
     {
-        [JsonProperty("data")]
-        public List<T> Data { get; set; }
 
         public MySQLSync()
         {
@@ -32,7 +19,7 @@ namespace DeepSeaWorldApp.Droid
         }
 
         // connection and retriving data from server database, serialization of data to json  
-        public async Task<List<T>> MySQLConnection(List<T> ts)
+        public async Task<DataL> MySQLConnection(Data[] ts, DataL dataL)
         {
 
             HttpClient client = new HttpClient();
@@ -41,13 +28,25 @@ namespace DeepSeaWorldApp.Droid
             var resp = await client.GetAsync(url);
             var content = resp.Content.ReadAsStringAsync().Result;
 
-            ts = JsonConvert.DeserializeObject<List<T>>(content, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore, Formatting = Formatting.Indented });
+        
 
-            Data = ts;
+            ts = JsonConvert.DeserializeObject<Data[]>(content, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore, Formatting = Formatting.Indented });
+         
+
+               foreach(Data d in ts)
+                {
+                    if(d.Equals("FAQ_ID"))
+                    {
+                        
+                    }
+
+                }
+            
+            
 
             string path = Android.OS.Environment.ExternalStorageDirectory.AbsolutePath;
-            string fileName = "js1.json";
-            string fileName2 = "js2.json";
+            string fileName2 = "js3.txt";
+            string fileName = "js.txt";
             string fPath = Path.Combine(path, fileName);
             string fPath2 = Path.Combine(path, fileName2);
             JsonSerializer serializer = new JsonSerializer();
@@ -64,19 +63,11 @@ namespace DeepSeaWorldApp.Droid
                 serializer.Serialize(writer, ts);
             }
 
-            return ts;
+            return dataL;
         }
 
-        public async Task SaveCountAsync(int count)
-        {
 
-            string backingFile = Path.Combine(Android.OS.Environment.ExternalStorageDirectory.AbsolutePath, "/mypath/");
-            string tFile = Path.Combine(Android.OS.Environment.ExternalStorageDirectory.AbsolutePath, "count.txt");
-            using (var writer = File.CreateText(backingFile))
-            {
-                await writer.WriteLineAsync(count.ToString());
-            }
-        }
+
     }
 
 }

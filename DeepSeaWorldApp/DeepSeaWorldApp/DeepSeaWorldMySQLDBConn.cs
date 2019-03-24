@@ -23,8 +23,8 @@ namespace DeepSeaWorldApp
 
         public DeepSeaWorldMySQLDBConn()
         {
-          //  TsAsync = DependencyService.Get<IMySQlSyncInterface<T>>().MySQLConnection(sync);
-     //       sync = DependencyService.Get<IMySQlSyncInterface<T>>().Data;
+            //TsAsync = DependencyService.Get<IMySQlSyncInterface<T>>().MySQLConnection(sync);
+            //sync = DependencyService.Get<IMySQlSyncInterface<T>>().Data;
         }
 
        public List<T> tablesData
@@ -33,27 +33,6 @@ namespace DeepSeaWorldApp
             set => this.tablesData = TsAsync.Result;
         }
 
-        public void SaveFile(List<T> ts)
-        {
-            string path = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
-            string fileName = "dbData.txt";
-            string fileName2 = "dbData2.txt";
-            string fPath = Path.Combine(path, fileName);
-            string fPath2 = Path.Combine(path, fileName2);
-            JsonSerializer serializer = new JsonSerializer();
-    
-            string json = JsonConvert.SerializeObject(ts);
-            using (StreamWriter st = new StreamWriter(fPath))
-            using (JsonWriter writer = new JsonTextWriter(st))
-            {
-                serializer.Serialize(writer, json);
-            }
-            using (StreamWriter st = new StreamWriter(fPath2))
-            using (JsonWriter writer = new JsonTextWriter(st))
-            {
-                serializer.Serialize(writer, ts);
-            }
-        }
     }
 
 }

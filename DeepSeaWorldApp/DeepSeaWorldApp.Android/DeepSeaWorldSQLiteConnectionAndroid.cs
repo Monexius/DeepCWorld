@@ -1,19 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using Android.App;
-using Android.Content;
-using Android.OS;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
-using DeepSeaWorldApp.Droid;
 using Xamarin.Forms;
 using SQLite;
-using DeepSeaWorldApp.DBClasses;
 using System.Threading.Tasks;
+using static DeepSeaWorldApp.DBClasses.DBs;
 
 [assembly: Dependency(typeof(DeepSeaWorldApp.Droid.DeepSeaWorldSQLiteConnectionAndroid))]
 
@@ -28,13 +19,30 @@ namespace DeepSeaWorldApp.Droid
         }
 
         // creating sqlite connection
-        public SQLiteConnection CreateConnection()
+        public SQLiteAsyncConnection CreateConnection()
         {
             string documentDir = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
             string sqliteFile = "DeepSeaWorldSQLite.db";
             string path = Path.Combine(documentDir, sqliteFile);
-            var conn = new SQLiteConnection(path);
+            var conn = new SQLiteAsyncConnection(path);
             return conn;
+        }
+
+        public Task<List<FAQ>> GetItemAsync()
+        {
+            return CreateConnection().Table<FAQ>().ToListAsync();
+        }
+
+        public Task<int> SaveItemAsync(FAQList f)
+        {
+
+            if(f.Faq.First().ID != 0)
+            {
+                return CreateConnection().UpdateAsync(f.Faq);
+            }else
+            {
+                return CreateConnection().InsertAsync(f.Faq);
+            }
         }
 
 

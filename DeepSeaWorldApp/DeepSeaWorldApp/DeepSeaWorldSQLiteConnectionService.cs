@@ -8,7 +8,7 @@ namespace DeepSeaWorldApp
 {
     public class DeepSeaWorldSQLiteConnectionService
     {
-        readonly SQLiteConnection dbConn;
+        readonly SQLiteAsyncConnection dbConn;
 
 
         public DeepSeaWorldSQLiteConnectionService()

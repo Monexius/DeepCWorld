@@ -1,18 +1,15 @@
 ﻿using System;
 using Android.App;
 using Android.Content.PM;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
 using Android.OS;
 using Android.Net;
 using DeepSeaWorldApp.Views;
 using System.Net;
-using DeepSeaWorldApp.DBClasses;
 using static DeepSeaWorldApp.DBClasses.DBs;
-using System.Collections.Generic;
-using System.IO;
-using Newtonsoft.Json;
+using Android.Support.V4.App;
+using Android;
+using Android.Support.V4.Content;
+
 
 namespace DeepSeaWorldApp.Droid
 {
@@ -22,6 +19,7 @@ namespace DeepSeaWorldApp.Droid
         App app;
         bool hasNotified = false;
         System.Timers.Timer timer = new System.Timers.Timer();
+        Data[] ls;
 
         protected override async void OnCreate(Bundle savedInstanceState)
         {
@@ -34,22 +32,22 @@ namespace DeepSeaWorldApp.Droid
                 timer.Start();
                 timer.Interval = 2000;
                 timer.Elapsed += Timer_Elapsed;
+                PermissionCheck(); // storage permission 
                 ZXing.Net.Mobile.Forms.Android.Platform.Init();
                 global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
                 app = new App();
                 LoadApplication(app);
 
-                List<FAQ> ls = new List<FAQ>();
-                MySQLSync<FAQ> sync = new MySQLSync<FAQ>();
-                await sync.MySQLConnection(ls);
+                MySQLSync<Data> sync = new MySQLSync<Data>();
+              //  await sync.MySQLConnection(ls);
+                //ls.Faq = sync.MySQLConnection(ls.Faq).Result;
 
-                //sync.SaveCountAsync(5);
+                
 
-                //   SaveFile(ls);
+                DeepSeaWorldSQLiteConnectionAndroid dbsync = new DeepSeaWorldSQLiteConnectionAndroid();
+                //   await dbsync.GetItemAsync();
+              //  await dbsync.SaveItemAsync(ls);
 
-
-
-              //  sqLiteSync.InsertUpdate(await sync.MySQLConnection());
 
             }
             catch(Exception ex)
@@ -63,27 +61,6 @@ namespace DeepSeaWorldApp.Droid
             global::ZXing.Net.Mobile.Android.PermissionsHandler.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
 
-        //public void SaveFile(List<FAQ> ts)
-        //{
-        //    string path = Android.OS.Environment.ExternalStorageDirectory.AbsolutePath;
-        //    string fileName = "dbData.txt";
-        //    string fileName2 = "dbData2.txt";
-        //    string fPath = Path.Combine(path, fileName);
-        //    string fPath2 = Path.Combine(path, fileName2);
-        //    JsonSerializer serializer = new JsonSerializer();
-
-        //    string json = JsonConvert.SerializeObject(ts);
-        //    using (StreamWriter st = new StreamWriter(fPath))
-        //    using (JsonWriter writer = new JsonTextWriter(st))
-        //    {
-        //        serializer.Serialize(writer, json);
-        //    }
-        //    using (StreamWriter st = new StreamWriter(fPath2))
-        //    using (JsonWriter writer = new JsonTextWriter(st))
-        //    {
-        //        serializer.Serialize(writer, ts);
-        //    }
-        //}
 
         // networrk connection timer
         private void Timer_Elapsed(object sender, EventArgs e)
@@ -120,6 +97,30 @@ namespace DeepSeaWorldApp.Droid
                 if (!hasNotified)
                     hasNotified = false;
                 return false;
+            }
+        }
+
+        // checking access to storage
+        private void PermissionCheck()
+        {
+            if(ContextCompat.CheckSelfPermission(this, Manifest.Permission.WriteExternalStorage) == (int)Permission.Granted)
+            {
+            }else
+            {
+                StoragePermission();
+            }
+        }
+
+        // permit for storage access
+        private void StoragePermission()
+        {
+            if(ActivityCompat.ShouldShowRequestPermissionRationale(this, Manifest.Permission.WriteExternalStorage))
+            {
+                var requirePermission = new String[] { Manifest.Permission.WriteExternalStorage };
+                ActivityCompat.RequestPermissions(this, requirePermission, (int)RequestedPermission.Granted);
+            }else
+            {
+                ActivityCompat.RequestPermissions(this, new String[] { Manifest.Permission.WriteExternalStorage }, (int)RequestedPermission.Required);
             }
         }
 

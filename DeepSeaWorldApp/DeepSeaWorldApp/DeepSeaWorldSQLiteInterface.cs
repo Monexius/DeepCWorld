@@ -10,6 +10,6 @@ namespace DeepSeaWorldApp
     public interface DeepSeaWorldSQLiteInterface
     {
         // SQLite connection
-        SQLiteConnection CreateConnection();
+        SQLiteAsyncConnection CreateConnection();
     }
 }

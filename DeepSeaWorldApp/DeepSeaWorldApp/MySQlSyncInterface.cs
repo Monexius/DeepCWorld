@@ -1,17 +1,11 @@
-﻿using DeepSeaWorldApp.DBClasses;
-using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Net.Http;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
+using static DeepSeaWorldApp.DBClasses.DBs;
 
 namespace DeepSeaWorldApp
 {
     public interface IMySQlSyncInterface<T> where T : class
     {
-        List<T> Data { get; set; }
-        Task<List<T>> MySQLConnection(List<T> Data);
+        Task<DataL> MySQLConnection(Data[] data, DataL dataL);
 
     }
 }
