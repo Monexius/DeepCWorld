@@ -29,6 +29,18 @@
       "Microsoft.Bcl.Build/1.0.14": {
         "type": "package"
       },
+      "Microsoft.CSharp/4.5.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "Microsoft.CSharp"
+        ],
+        "compile": {
+          "ref/xamarinios10/_._": {}
+        },
+        "runtime": {
+          "lib/xamarinios10/_._": {}
+        }
+      },
       "Microsoft.Net.Http/2.2.29": {
         "type": "package",
         "dependencies": {
@@ -162,6 +174,22 @@
           "lib/Xamarin.iOS10/SQLitePCLRaw.batteries_v2.dll": {}
         }
       },
+      "SQLitePCLRaw.bundle_sqlcipher/1.1.10": {
+        "type": "package",
+        "dependencies": {
+          "SQLitePCLRaw.core": "1.1.10",
+          "SQLitePCLRaw.lib.sqlcipher.ios_unified.static": "1.1.10",
+          "SQLitePCLRaw.provider.internal.ios_unified": "1.1.10"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/SQLitePCLRaw.batteries_sqlcipher.dll": {},
+          "lib/Xamarin.iOS10/SQLitePCLRaw.batteries_v2.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/SQLitePCLRaw.batteries_sqlcipher.dll": {},
+          "lib/Xamarin.iOS10/SQLitePCLRaw.batteries_v2.dll": {}
+        }
+      },
       "SQLitePCLRaw.core/1.1.11": {
         "type": "package",
         "compile": {
@@ -169,6 +197,27 @@
         },
         "runtime": {
           "lib/Xamarin.iOS10/SQLitePCLRaw.core.dll": {}
+        }
+      },
+      "SQLitePCLRaw.lib.sqlcipher.ios_unified.static/1.1.10": {
+        "type": "package",
+        "compile": {
+          "lib/Xamarin.iOS10/SQLitePCLRaw.lib.sqlcipher.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/SQLitePCLRaw.lib.sqlcipher.dll": {}
+        }
+      },
+      "SQLitePCLRaw.provider.internal.ios_unified/1.1.10": {
+        "type": "package",
+        "dependencies": {
+          "SQLitePCLRaw.core": "1.1.10"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/SQLitePCLRaw.provider.internal.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/SQLitePCLRaw.provider.internal.dll": {}
         }
       },
       "SQLitePCLRaw.provider.sqlite3.ios_unified/1.1.11": {
@@ -892,10 +941,13 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "Microsoft.Bcl": "1.1.10",
+          "Microsoft.CSharp": "4.5.0",
           "Microsoft.Net.Http": "2.2.29",
           "MySql.Data": "8.0.15",
           "Newtonsoft.Json": "12.0.1",
+          "SQLitePCLRaw.bundle_sqlcipher": "1.1.10",
           "System.Json": "4.5.0",
+          "System.Linq": "4.3.0",
           "Xamarin.Essentials": "1.1.0",
           "Xamarin.Forms": "3.5.0.169047",
           "ZXing.Net.Mobile": "2.4.1",
@@ -938,6 +990,18 @@
       "Microsoft.Bcl.Build/1.0.14": {
         "type": "package"
       },
+      "Microsoft.CSharp/4.5.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "Microsoft.CSharp"
+        ],
+        "compile": {
+          "ref/xamarinios10/_._": {}
+        },
+        "runtime": {
+          "lib/xamarinios10/_._": {}
+        }
+      },
       "Microsoft.Net.Http/2.2.29": {
         "type": "package",
         "dependencies": {
@@ -1071,6 +1135,22 @@
           "lib/Xamarin.iOS10/SQLitePCLRaw.batteries_v2.dll": {}
         }
       },
+      "SQLitePCLRaw.bundle_sqlcipher/1.1.10": {
+        "type": "package",
+        "dependencies": {
+          "SQLitePCLRaw.core": "1.1.10",
+          "SQLitePCLRaw.lib.sqlcipher.ios_unified.static": "1.1.10",
+          "SQLitePCLRaw.provider.internal.ios_unified": "1.1.10"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/SQLitePCLRaw.batteries_sqlcipher.dll": {},
+          "lib/Xamarin.iOS10/SQLitePCLRaw.batteries_v2.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/SQLitePCLRaw.batteries_sqlcipher.dll": {},
+          "lib/Xamarin.iOS10/SQLitePCLRaw.batteries_v2.dll": {}
+        }
+      },
       "SQLitePCLRaw.core/1.1.11": {
         "type": "package",
         "compile": {
@@ -1078,6 +1158,27 @@
         },
         "runtime": {
           "lib/Xamarin.iOS10/SQLitePCLRaw.core.dll": {}
+        }
+      },
+      "SQLitePCLRaw.lib.sqlcipher.ios_unified.static/1.1.10": {
+        "type": "package",
+        "compile": {
+          "lib/Xamarin.iOS10/SQLitePCLRaw.lib.sqlcipher.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/SQLitePCLRaw.lib.sqlcipher.dll": {}
+        }
+      },
+      "SQLitePCLRaw.provider.internal.ios_unified/1.1.10": {
+        "type": "package",
+        "dependencies": {
+          "SQLitePCLRaw.core": "1.1.10"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/SQLitePCLRaw.provider.internal.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/SQLitePCLRaw.provider.internal.dll": {}
         }
       },
       "SQLitePCLRaw.provider.sqlite3.ios_unified/1.1.11": {
@@ -1719,10 +1820,13 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "Microsoft.Bcl": "1.1.10",
+          "Microsoft.CSharp": "4.5.0",
           "Microsoft.Net.Http": "2.2.29",
           "MySql.Data": "8.0.15",
           "Newtonsoft.Json": "12.0.1",
+          "SQLitePCLRaw.bundle_sqlcipher": "1.1.10",
           "System.Json": "4.5.0",
+          "System.Linq": "4.3.0",
           "Xamarin.Essentials": "1.1.0",
           "Xamarin.Forms": "3.5.0.169047",
           "ZXing.Net.Mobile": "2.4.1",
@@ -1765,6 +1869,18 @@
       "Microsoft.Bcl.Build/1.0.14": {
         "type": "package"
       },
+      "Microsoft.CSharp/4.5.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "Microsoft.CSharp"
+        ],
+        "compile": {
+          "ref/xamarinios10/_._": {}
+        },
+        "runtime": {
+          "lib/xamarinios10/_._": {}
+        }
+      },
       "Microsoft.Net.Http/2.2.29": {
         "type": "package",
         "dependencies": {
@@ -1898,6 +2014,22 @@
           "lib/Xamarin.iOS10/SQLitePCLRaw.batteries_v2.dll": {}
         }
       },
+      "SQLitePCLRaw.bundle_sqlcipher/1.1.10": {
+        "type": "package",
+        "dependencies": {
+          "SQLitePCLRaw.core": "1.1.10",
+          "SQLitePCLRaw.lib.sqlcipher.ios_unified.static": "1.1.10",
+          "SQLitePCLRaw.provider.internal.ios_unified": "1.1.10"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/SQLitePCLRaw.batteries_sqlcipher.dll": {},
+          "lib/Xamarin.iOS10/SQLitePCLRaw.batteries_v2.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/SQLitePCLRaw.batteries_sqlcipher.dll": {},
+          "lib/Xamarin.iOS10/SQLitePCLRaw.batteries_v2.dll": {}
+        }
+      },
       "SQLitePCLRaw.core/1.1.11": {
         "type": "package",
         "compile": {
@@ -1905,6 +2037,27 @@
         },
         "runtime": {
           "lib/Xamarin.iOS10/SQLitePCLRaw.core.dll": {}
+        }
+      },
+      "SQLitePCLRaw.lib.sqlcipher.ios_unified.static/1.1.10": {
+        "type": "package",
+        "compile": {
+          "lib/Xamarin.iOS10/SQLitePCLRaw.lib.sqlcipher.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/SQLitePCLRaw.lib.sqlcipher.dll": {}
+        }
+      },
+      "SQLitePCLRaw.provider.internal.ios_unified/1.1.10": {
+        "type": "package",
+        "dependencies": {
+          "SQLitePCLRaw.core": "1.1.10"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/SQLitePCLRaw.provider.internal.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/SQLitePCLRaw.provider.internal.dll": {}
         }
       },
       "SQLitePCLRaw.provider.sqlite3.ios_unified/1.1.11": {
@@ -2546,10 +2699,13 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "Microsoft.Bcl": "1.1.10",
+          "Microsoft.CSharp": "4.5.0",
           "Microsoft.Net.Http": "2.2.29",
           "MySql.Data": "8.0.15",
           "Newtonsoft.Json": "12.0.1",
+          "SQLitePCLRaw.bundle_sqlcipher": "1.1.10",
           "System.Json": "4.5.0",
+          "System.Linq": "4.3.0",
           "Xamarin.Essentials": "1.1.0",
           "Xamarin.Forms": "3.5.0.169047",
           "ZXing.Net.Mobile": "2.4.1",
@@ -2592,6 +2748,18 @@
       "Microsoft.Bcl.Build/1.0.14": {
         "type": "package"
       },
+      "Microsoft.CSharp/4.5.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "Microsoft.CSharp"
+        ],
+        "compile": {
+          "ref/xamarinios10/_._": {}
+        },
+        "runtime": {
+          "lib/xamarinios10/_._": {}
+        }
+      },
       "Microsoft.Net.Http/2.2.29": {
         "type": "package",
         "dependencies": {
@@ -2725,6 +2893,22 @@
           "lib/Xamarin.iOS10/SQLitePCLRaw.batteries_v2.dll": {}
         }
       },
+      "SQLitePCLRaw.bundle_sqlcipher/1.1.10": {
+        "type": "package",
+        "dependencies": {
+          "SQLitePCLRaw.core": "1.1.10",
+          "SQLitePCLRaw.lib.sqlcipher.ios_unified.static": "1.1.10",
+          "SQLitePCLRaw.provider.internal.ios_unified": "1.1.10"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/SQLitePCLRaw.batteries_sqlcipher.dll": {},
+          "lib/Xamarin.iOS10/SQLitePCLRaw.batteries_v2.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/SQLitePCLRaw.batteries_sqlcipher.dll": {},
+          "lib/Xamarin.iOS10/SQLitePCLRaw.batteries_v2.dll": {}
+        }
+      },
       "SQLitePCLRaw.core/1.1.11": {
         "type": "package",
         "compile": {
@@ -2732,6 +2916,27 @@
         },
         "runtime": {
           "lib/Xamarin.iOS10/SQLitePCLRaw.core.dll": {}
+        }
+      },
+      "SQLitePCLRaw.lib.sqlcipher.ios_unified.static/1.1.10": {
+        "type": "package",
+        "compile": {
+          "lib/Xamarin.iOS10/SQLitePCLRaw.lib.sqlcipher.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/SQLitePCLRaw.lib.sqlcipher.dll": {}
+        }
+      },
+      "SQLitePCLRaw.provider.internal.ios_unified/1.1.10": {
+        "type": "package",
+        "dependencies": {
+          "SQLitePCLRaw.core": "1.1.10"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/SQLitePCLRaw.provider.internal.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/SQLitePCLRaw.provider.internal.dll": {}
         }
       },
       "SQLitePCLRaw.provider.sqlite3.ios_unified/1.1.11": {
@@ -3373,10 +3578,13 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "Microsoft.Bcl": "1.1.10",
+          "Microsoft.CSharp": "4.5.0",
           "Microsoft.Net.Http": "2.2.29",
           "MySql.Data": "8.0.15",
           "Newtonsoft.Json": "12.0.1",
+          "SQLitePCLRaw.bundle_sqlcipher": "1.1.10",
           "System.Json": "4.5.0",
+          "System.Linq": "4.3.0",
           "Xamarin.Essentials": "1.1.0",
           "Xamarin.Forms": "3.5.0.169047",
           "ZXing.Net.Mobile": "2.4.1",
@@ -3520,6 +3728,74 @@
         "tools/Microsoft.Bcl.Build.Tasks.dll",
         "tools/Microsoft.Bcl.Build.targets",
         "tools/Uninstall.ps1"
+      ]
+    },
+    "Microsoft.CSharp/4.5.0": {
+      "sha512": "kaj6Wb4qoMuH3HySFJhxwQfe8R/sJsNJnANrvv8WdFPMoNbKY5htfNscv+LHCu5ipz+49m2e+WQXpLXr9XYemQ==",
+      "type": "package",
+      "path": "microsoft.csharp/4.5.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net45/_._",
+        "lib/netcore50/Microsoft.CSharp.dll",
+        "lib/netcoreapp2.0/_._",
+        "lib/netstandard1.3/Microsoft.CSharp.dll",
+        "lib/netstandard2.0/Microsoft.CSharp.dll",
+        "lib/portable-net45+win8+wp8+wpa81/_._",
+        "lib/uap10.0.16299/_._",
+        "lib/win8/_._",
+        "lib/wp80/_._",
+        "lib/wpa81/_._",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "microsoft.csharp.4.5.0.nupkg.sha512",
+        "microsoft.csharp.nuspec",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net45/_._",
+        "ref/netcore50/Microsoft.CSharp.dll",
+        "ref/netcore50/Microsoft.CSharp.xml",
+        "ref/netcore50/de/Microsoft.CSharp.xml",
+        "ref/netcore50/es/Microsoft.CSharp.xml",
+        "ref/netcore50/fr/Microsoft.CSharp.xml",
+        "ref/netcore50/it/Microsoft.CSharp.xml",
+        "ref/netcore50/ja/Microsoft.CSharp.xml",
+        "ref/netcore50/ko/Microsoft.CSharp.xml",
+        "ref/netcore50/ru/Microsoft.CSharp.xml",
+        "ref/netcore50/zh-hans/Microsoft.CSharp.xml",
+        "ref/netcore50/zh-hant/Microsoft.CSharp.xml",
+        "ref/netcoreapp2.0/_._",
+        "ref/netstandard1.0/Microsoft.CSharp.dll",
+        "ref/netstandard1.0/Microsoft.CSharp.xml",
+        "ref/netstandard1.0/de/Microsoft.CSharp.xml",
+        "ref/netstandard1.0/es/Microsoft.CSharp.xml",
+        "ref/netstandard1.0/fr/Microsoft.CSharp.xml",
+        "ref/netstandard1.0/it/Microsoft.CSharp.xml",
+        "ref/netstandard1.0/ja/Microsoft.CSharp.xml",
+        "ref/netstandard1.0/ko/Microsoft.CSharp.xml",
+        "ref/netstandard1.0/ru/Microsoft.CSharp.xml",
+        "ref/netstandard1.0/zh-hans/Microsoft.CSharp.xml",
+        "ref/netstandard1.0/zh-hant/Microsoft.CSharp.xml",
+        "ref/netstandard2.0/Microsoft.CSharp.dll",
+        "ref/netstandard2.0/Microsoft.CSharp.xml",
+        "ref/portable-net45+win8+wp8+wpa81/_._",
+        "ref/uap10.0.16299/_._",
+        "ref/win8/_._",
+        "ref/wp80/_._",
+        "ref/wpa81/_._",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "useSharedDesignerContext.txt",
+        "version.txt"
       ]
     },
     "Microsoft.Net.Http/2.2.29": {
@@ -3778,6 +4054,41 @@
         "sqlitepclraw.bundle_green.nuspec"
       ]
     },
+    "SQLitePCLRaw.bundle_sqlcipher/1.1.10": {
+      "sha512": "bQlbXRmK6XXFYQSLXsBVWcBjMghaCDtTXqstNyP1jcuLHTIuhnG4E9ZZyOLaEidlevtabjZ5iZWzhWhQiigQcA==",
+      "type": "package",
+      "path": "sqlitepclraw.bundle_sqlcipher/1.1.10",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/MonoAndroid/SQLitePCLRaw.batteries_sqlcipher.dll",
+        "lib/MonoAndroid/SQLitePCLRaw.batteries_v2.dll",
+        "lib/Xamarin.Mac20/SQLitePCLRaw.batteries_sqlcipher.dll",
+        "lib/Xamarin.Mac20/SQLitePCLRaw.batteries_v2.dll",
+        "lib/Xamarin.iOS10/SQLitePCLRaw.batteries_sqlcipher.dll",
+        "lib/Xamarin.iOS10/SQLitePCLRaw.batteries_v2.dll",
+        "lib/net35/SQLitePCLRaw.batteries_sqlcipher.dll",
+        "lib/net35/SQLitePCLRaw.batteries_v2.dll",
+        "lib/net40/SQLitePCLRaw.batteries_sqlcipher.dll",
+        "lib/net40/SQLitePCLRaw.batteries_v2.dll",
+        "lib/net45/SQLitePCLRaw.batteries_sqlcipher.dll",
+        "lib/net45/SQLitePCLRaw.batteries_v2.dll",
+        "lib/netcoreapp/SQLitePCLRaw.batteries_sqlcipher.dll",
+        "lib/netcoreapp/SQLitePCLRaw.batteries_v2.dll",
+        "lib/netstandard1.1/SQLitePCLRaw.batteries_sqlcipher.dll",
+        "lib/netstandard1.1/SQLitePCLRaw.batteries_v2.dll",
+        "lib/portable-net40+sl5+netcore45+wp8+MonoAndroid10+MonoTouch10+Xamarin.iOS10/SQLitePCLRaw.batteries_sqlcipher.dll",
+        "lib/portable-net40+sl5+netcore45+wp8+MonoAndroid10+MonoTouch10+Xamarin.iOS10/SQLitePCLRaw.batteries_v2.dll",
+        "lib/portable-net45+netcore45+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10/SQLitePCLRaw.batteries_sqlcipher.dll",
+        "lib/portable-net45+netcore45+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10/SQLitePCLRaw.batteries_v2.dll",
+        "lib/portable-net45+netcore45+wpa81+wp8+MonoAndroid10+MonoTouch10+Xamarin.iOS10/SQLitePCLRaw.batteries_sqlcipher.dll",
+        "lib/portable-net45+netcore45+wpa81+wp8+MonoAndroid10+MonoTouch10+Xamarin.iOS10/SQLitePCLRaw.batteries_v2.dll",
+        "lib/uap10.0/SQLitePCLRaw.batteries_sqlcipher.dll",
+        "lib/uap10.0/SQLitePCLRaw.batteries_v2.dll",
+        "sqlitepclraw.bundle_sqlcipher.1.1.10.nupkg.sha512",
+        "sqlitepclraw.bundle_sqlcipher.nuspec"
+      ]
+    },
     "SQLitePCLRaw.core/1.1.11": {
       "sha512": "QT17CyQAQIbTCu6pW5+uVA8BXqRzquiDI1tr5Un6c1YZcQydPmGPuYYng9xMs2UHUDYHbTu+JDkp55WR+qo9bQ==",
       "type": "package",
@@ -3802,6 +4113,30 @@
         "lib/wpa81/SQLitePCLRaw.core.dll",
         "sqlitepclraw.core.1.1.11.nupkg.sha512",
         "sqlitepclraw.core.nuspec"
+      ]
+    },
+    "SQLitePCLRaw.lib.sqlcipher.ios_unified.static/1.1.10": {
+      "sha512": "ctb+2y7dHvMppuTgignqf7gdYmAEBsvpze1cjifvxZepJB59ARAuUwa9Kw5t6qopF3OVe5UgX2siRagoalXHwg==",
+      "type": "package",
+      "path": "sqlitepclraw.lib.sqlcipher.ios_unified.static/1.1.10",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/Xamarin.iOS10/SQLitePCLRaw.lib.sqlcipher.dll",
+        "sqlitepclraw.lib.sqlcipher.ios_unified.static.1.1.10.nupkg.sha512",
+        "sqlitepclraw.lib.sqlcipher.ios_unified.static.nuspec"
+      ]
+    },
+    "SQLitePCLRaw.provider.internal.ios_unified/1.1.10": {
+      "sha512": "SlB4B7MFOmHNxtx1Q8PFSgE1poWGBFM9ya/itieFD6LsW9nXqigXdjEPcUkN6b1k8WIf6UCO2O8+aeSqf8vDmQ==",
+      "type": "package",
+      "path": "sqlitepclraw.provider.internal.ios_unified/1.1.10",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/Xamarin.iOS10/SQLitePCLRaw.provider.internal.dll",
+        "sqlitepclraw.provider.internal.ios_unified.1.1.10.nupkg.sha512",
+        "sqlitepclraw.provider.internal.ios_unified.nuspec"
       ]
     },
     "SQLitePCLRaw.provider.sqlite3.ios_unified/1.1.11": {
@@ -6936,9 +7271,12 @@
     "Xamarin.iOS,Version=v1.0": [
       "DeepSeaWorldApp >= 1.0.0",
       "Microsoft.Bcl >= 1.1.10",
+      "Microsoft.CSharp >= 4.5.0",
       "Microsoft.Net.Http >= 2.2.29",
       "MySql.Data >= 8.0.15",
       "Newtonsoft.Json >= 12.0.1",
+      "SQLitePCLRaw.bundle_sqlcipher >= 1.1.10",
+      "System.Linq >= 4.3.0",
       "Xamarin.Forms >= 3.5.0.169047",
       "sqlite-net-pcl >= 1.5.231"
     ]
@@ -6983,6 +7321,10 @@
             "target": "Package",
             "version": "[1.1.10, )"
           },
+          "Microsoft.CSharp": {
+            "target": "Package",
+            "version": "[4.5.0, )"
+          },
           "Microsoft.Net.Http": {
             "target": "Package",
             "version": "[2.2.29, )"
@@ -6994,6 +7336,14 @@
           "Newtonsoft.Json": {
             "target": "Package",
             "version": "[12.0.1, )"
+          },
+          "SQLitePCLRaw.bundle_sqlcipher": {
+            "target": "Package",
+            "version": "[1.1.10, )"
+          },
+          "System.Linq": {
+            "target": "Package",
+            "version": "[4.3.0, )"
           },
           "Xamarin.Forms": {
             "target": "Package",
