@@ -42,7 +42,7 @@ namespace DeepSeaWorldApp.Droid
                 LoadApplication(app);
 
                 MySQLSync<Data> sync = new MySQLSync<Data>();
-                await sync.MySQLConnection(ls, dataL);
+                await sync.MySQLConnection();
 
 
 

@@ -13,17 +13,17 @@ namespace DeepSeaWorldApp.DBClasses
         public class FAQ 
         {
             [JsonProperty("FAQ_ID")][PrimaryKey]
-            public int[] ID { get; set; }
+            public string ID { get; set; }
             [JsonProperty("FAQ_Question")]
-            public string[] FAQ_Question { get; set; }
+            public string FAQ_Question { get; set; }
             [JsonProperty("FAQ_Anwswere")]
-            public string[] FAQ_Anwswere { get; set; }
+            public string FAQ_Anwswere { get; set; }
         }
 
         // list of data from faq table
         public class FAQList
         {
-            public FAQ[] Faq { get; set; }
+            public List<FAQ> Faq { get; set; }
         }
 
         public class Events
@@ -47,7 +47,7 @@ namespace DeepSeaWorldApp.DBClasses
         // list of data from events table
         public class EventsList
         {
-            public Events[] Events { get; set; }
+            public List<Events> Events { get; set; }
         }
 
         public class Exhibition
@@ -75,7 +75,7 @@ namespace DeepSeaWorldApp.DBClasses
         // list of data from Exhibition table
         public class ExhibitionList
         {
-            public Exception[] Exhibitions { get; set; }
+            public List<Exception> Exhibitions { get; set; }
         }
 
         public class Map
@@ -89,7 +89,7 @@ namespace DeepSeaWorldApp.DBClasses
         // list of data from Map table
         public class MapList
         {
-            public Map[] Map { get; set; }
+            public List<Map> Map { get; set; }
         }
 
         public class News
@@ -98,20 +98,20 @@ namespace DeepSeaWorldApp.DBClasses
             public int ID { get; set; }
             [JsonProperty("News_Title")]
             public string News_Title { get; set; }
-            [JsonProperty("News_Info")]
+            [JsonProperty("News_Brief_Info")]
             public string News_Brief_Info { get; set; }
             [JsonProperty("News_IMG")]
             public string News_IMG { get; set; }
             [JsonProperty("News_Article")]
             public string News_Article { get; set; }
-            [JsonProperty("Notifications")]
+            [JsonProperty("Notofications")]
             public string Notifications { get; set; }
         }
 
         // list of data from News table
         public class NewsList
         {
-            public News[] News { get; set; }
+            public List<News> News { get; set; }
         }
 
         public class QRCodes
@@ -129,7 +129,7 @@ namespace DeepSeaWorldApp.DBClasses
         // list of data from QRCodes table
         public class QRCodesList
         {
-            public QRCodes[] QRs { get; set; }
+            public List<QRCodes> QRs { get; set; }
         }
 
 
@@ -138,77 +138,77 @@ namespace DeepSeaWorldApp.DBClasses
         {
             [JsonProperty("FAQ_ID")]
             [PrimaryKey]
-            public string[] FAQ_ID { get; set; }
+            public string FAQ_ID { get; set; }
             [JsonProperty("FAQ_Question")]
-            public string[] FAQ_Question { get; set; }
-            [JsonProperty("FAQ_Anwsere")]
-            public string[] FAQ_Anwswere { get; set; }
+            public string FAQ_Question { get; set; }
+            [JsonProperty("FAQ_Anwswere")]
+            public string FAQ_Anwswere { get; set; }
 
             [JsonProperty("Event_ID")]
             [PrimaryKey]
-            public int[] Event_ID { get; set; }
+            public string Event_ID { get; set; }
             [JsonProperty("Event_Name")]
-            public string[] Event_Name { get; set; }
+            public string Event_Name { get; set; }
             [JsonProperty("Event_Description")]
-            public string[] Event_Description { get; set; }
+            public string Event_Description { get; set; }
             [JsonProperty("Event_IMG")]
-            public string[] Event_IMG { get; set; }
+            public string Event_IMG { get; set; }
             [JsonProperty("Event_Location")]
-            public string[] Event_Location { get; set; }
+            public string Event_Location { get; set; }
             [JsonProperty("Event_Day")]
-            public string[] Event_Day { get; set; }
+            public string Event_Day { get; set; }
             [JsonProperty("Event_Time")]
-            public string[] Event_Time { get; set; }
+            public string Event_Time { get; set; }
 
             [JsonProperty("Exhibition_ID")]
             [PrimaryKey]
-            public int[] Exhibition_ID { get; set; }
+            public string Exhibition_ID { get; set; }
             [JsonProperty("Exhibition_QRCode_Pos")]
-            public int[] Exhibition_QRCode_Pos { get; }
+            public string Exhibition_QRCode_Pos { get; }
             [JsonProperty("Exhibition_Description")]
-            public string[] Exhibition_Description { get; set; }
+            public string Exhibition_Description { get; set; }
             [JsonProperty("Exhibition_IMG_Name")]
-            public string[] Exhibition_IMG_Name { get; set; }
+            public string Exhibition_IMG_Name { get; set; }
             [JsonProperty("Exhibition_IMG")]
-            public string[] Exhibition_IMG { get; set; }
+            public string Exhibition_IMG { get; set; }
             [JsonProperty("Exhibition_Video_Name")]
-            public string[] Exhibition_Video_Name { get; set; }
+            public string Exhibition_Video_Name { get; set; }
             [JsonProperty("Exhibition_Video")]
-            public string[] Exhibition_Video { get; set; }
+            public string Exhibition_Video { get; set; }
             [JsonProperty("Exhibition_Name")]
-            public string[] Exhibition_Name { get; set; }
+            public string Exhibition_Name { get; set; }
             [JsonProperty("QRCode_Name")]
-            public string[] QRCode_Name { get; }
+            public string QRCode_Name { get; }
 
             [JsonProperty("Map_ID")]
             [PrimaryKey]
-            public int[] Map_ID { get; set; }
+            public string Map_ID { get; set; }
             [JsonProperty("Map_IMG")]
-            public string[] Map_IMG { get; set; }
+            public string Map_IMG { get; set; }
 
             [JsonProperty("News_ID")]
             [PrimaryKey]
-            public int[] News_ID { get; set; }
+            public string News_ID { get; set; }
             [JsonProperty("News_Title")]
-            public string[] News_Title { get; set; }
-            [JsonProperty("News_Info")]
-            public string[] News_Brief_Info { get; set; }
+            public string News_Title { get; set; }
+            [JsonProperty("News_Brief_Info")]
+            public string News_Brief_Info { get; set; }
             [JsonProperty("News_IMG")]
-            public string[] News_IMG { get; set; }
+            public string News_IMG { get; set; }
             [JsonProperty("News_Article")]
-            public string[] News_Article { get; set; }
-            [JsonProperty("Notifications")]
-            public string[] Notifications { get; set; }
+            public string News_Article { get; set; }
+            [JsonProperty("Notofications")]
+            public string Notifications { get; set; }
 
             [JsonProperty("QRCodes_ID")]
             [PrimaryKey]
-            public int[] QRCodes_ID { get; set; }
+            public string QRCodes_ID { get; set; }
             [JsonProperty("QRCodes_Name")]
-            public string[] QRCodes_Name { get; set; }
+            public string QRCodes_Name { get; set; }
             [JsonProperty("QRCodes_IMG")]
-            public string[] QRCodes_IMG { get; set; }
+            public string QRCodes_IMG { get; set; }
             [JsonProperty("QRCodes_Pos")]
-            public int[] QRCodes_Pos { get; set; }
+            public string QRCodes_Pos { get; set; }
         }
 
         public class DbList

@@ -6,6 +6,6 @@ namespace DeepSeaWorldApp
 {
     public interface IMySQlSyncInterface<T> where T : class
     {
-        Task<List<Data>> MySQLConnection(Data data, DataL dataL);
+        Task<List<Data>> MySQLConnection();
     }
 }
