@@ -8,3 +8,4 @@ C:\Users\Kamilos\Source\Repos\Monexius\DeepCWorld\DeepSeaWorldApp\ToDoWebAPI\obj
 C:\Users\Kamilos\Source\Repos\Monexius\DeepCWorld\DeepSeaWorldApp\ToDoWebAPI\obj\Debug\netcoreapp2.0\ToDoWebAPI.AssemblyInfo.cs
 C:\Users\Kamilos\Source\Repos\Monexius\DeepCWorld\DeepSeaWorldApp\ToDoWebAPI\obj\Debug\netcoreapp2.0\ToDoWebAPI.dll
 C:\Users\Kamilos\Source\Repos\Monexius\DeepCWorld\DeepSeaWorldApp\ToDoWebAPI\obj\Debug\netcoreapp2.0\ToDoWebAPI.pdb
+C:\Users\Kamilos\Source\Repos\Monexius\DeepCWorld\DeepSeaWorldApp\ToDoWebAPI\obj\Debug\netcoreapp2.0\ToDoWebAPI.csprojAssemblyReference.cache

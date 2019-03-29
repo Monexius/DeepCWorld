@@ -1,0 +1,11 @@
+C:\Users\Kamilos\Source\Repos\Monexius\DeepCWorld\DeepSeaWorldApp\ToDoAPI\bin\Debug\netcoreapp2.0\ToDoAPI.deps.json
+C:\Users\Kamilos\Source\Repos\Monexius\DeepCWorld\DeepSeaWorldApp\ToDoAPI\bin\Debug\netcoreapp2.0\ToDoAPI.runtimeconfig.json
+C:\Users\Kamilos\Source\Repos\Monexius\DeepCWorld\DeepSeaWorldApp\ToDoAPI\bin\Debug\netcoreapp2.0\ToDoAPI.runtimeconfig.dev.json
+C:\Users\Kamilos\Source\Repos\Monexius\DeepCWorld\DeepSeaWorldApp\ToDoAPI\bin\Debug\netcoreapp2.0\ToDoAPI.dll
+C:\Users\Kamilos\Source\Repos\Monexius\DeepCWorld\DeepSeaWorldApp\ToDoAPI\obj\Debug\netcoreapp2.0\ToDoAPI.csprojAssemblyReference.cache
+C:\Users\Kamilos\Source\Repos\Monexius\DeepCWorld\DeepSeaWorldApp\ToDoAPI\obj\Debug\netcoreapp2.0\ToDoAPI.csproj.CoreCompileInputs.cache
+C:\Users\Kamilos\Source\Repos\Monexius\DeepCWorld\DeepSeaWorldApp\ToDoAPI\obj\Debug\netcoreapp2.0\ToDoAPI.AssemblyInfoInputs.cache
+C:\Users\Kamilos\Source\Repos\Monexius\DeepCWorld\DeepSeaWorldApp\ToDoAPI\obj\Debug\netcoreapp2.0\ToDoAPI.AssemblyInfo.cs
+C:\Users\Kamilos\Source\Repos\Monexius\DeepCWorld\DeepSeaWorldApp\ToDoAPI\bin\Debug\netcoreapp2.0\ToDoAPI.pdb
+C:\Users\Kamilos\Source\Repos\Monexius\DeepCWorld\DeepSeaWorldApp\ToDoAPI\obj\Debug\netcoreapp2.0\ToDoAPI.dll
+C:\Users\Kamilos\Source\Repos\Monexius\DeepCWorld\DeepSeaWorldApp\ToDoAPI\obj\Debug\netcoreapp2.0\ToDoAPI.pdb
