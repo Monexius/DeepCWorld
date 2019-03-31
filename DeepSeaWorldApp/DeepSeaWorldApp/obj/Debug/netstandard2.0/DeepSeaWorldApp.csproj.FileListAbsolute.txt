@@ -72,4 +72,3 @@ C:\Users\Kamilos\Source\Repos\Monexius\DeepCWorld\DeepSeaWorldApp\DeepSeaWorldAp
 C:\Users\Kamilos\Source\Repos\Monexius\DeepCWorld\DeepSeaWorldApp\DeepSeaWorldApp\obj\Debug\netstandard2.0\XamlC.stamp
 C:\Users\Kamilos\Source\Repos\Monexius\DeepCWorld\DeepSeaWorldApp\DeepSeaWorldApp\obj\Debug\netstandard2.0\DeepSeaWorldApp.dll
 C:\Users\Kamilos\Source\Repos\Monexius\DeepCWorld\DeepSeaWorldApp\DeepSeaWorldApp\obj\Debug\netstandard2.0\DeepSeaWorldApp.pdb
-C:\Users\Kamilos\Source\Repos\Monexius\DeepCWorld\DeepSeaWorldApp\DeepSeaWorldApp\obj\Debug\netstandard2.0\DeepSeaWorldApp.csprojAssemblyReference.cache
