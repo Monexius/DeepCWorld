@@ -19,10 +19,7 @@ namespace DeepSeaWorldApp.Droid
         App app;
         bool hasNotified = false;
         System.Timers.Timer timer = new System.Timers.Timer();
-
-
-        Data ls = new Data();
-        DataL dataL = new DataL();
+        Data[] ls;
 
         protected override async void OnCreate(Bundle savedInstanceState)
         {
@@ -42,8 +39,14 @@ namespace DeepSeaWorldApp.Droid
                 LoadApplication(app);
 
                 MySQLSync<Data> sync = new MySQLSync<Data>();
-                await sync.MySQLConnection(ls, dataL);
+              //  await sync.MySQLConnection(ls);
+                //ls.Faq = sync.MySQLConnection(ls.Faq).Result;
 
+                
+
+                DeepSeaWorldSQLiteConnectionAndroid dbsync = new DeepSeaWorldSQLiteConnectionAndroid();
+                //   await dbsync.GetItemAsync();
+              //  await dbsync.SaveItemAsync(ls);
 
 
             }
@@ -89,7 +92,7 @@ namespace DeepSeaWorldApp.Droid
                 hasNotified = false;
 
                 return true;
-            }catch (WebException)
+            }catch(WebException ex)
             {
                 if (!hasNotified)
                     hasNotified = false;
