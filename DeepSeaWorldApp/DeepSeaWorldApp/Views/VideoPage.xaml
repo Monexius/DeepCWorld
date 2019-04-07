@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:video="clr-namespace:FormsVideoLibrary"
+             x:Class="DeepSeaWorldApp.Views.VideoPage"
+             Title="Play Library Video">
+    <StackLayout>
+        <video:VideoPlayer x:Name="videoPlayer"
+                           VerticalOptions="FillAndExpand" />
+
+        <Button Text="Show Video Library"
+                Margin="10"
+                HorizontalOptions="Center"
+                Clicked="OnShowVideoLibraryClicked" />
+    </StackLayout>
+</ContentPage>-->
+
+<!--<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:video="clr-namespace:FormsVideoLibrary"
+             x:Class="DeepSeaWorldApp.Views.VideoPage"
+             Title="Play Video Resource">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="*"/>
+            
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>  
+                  
+        
+    <video:VideoPlayer x:Name="videoPlayer" Grid.Row="0" Grid.Column="0">
+        <video:VideoPlayer.Source>
+            <video:ResourceVideoSource>
+                <video:ResourceVideoSource.Path>
+                    <OnPlatform x:TypeArguments="x:String">
+                        <On Platform="iOS" Value="DSW_001.mp4" />
+                        <On Platform="Android" Value="AndroidApiVideo.mp4" />
+                        <On Platform="UWP" Value="Videos/UWPApiVideo.mp4" />
+                    </OnPlatform>
+                </video:ResourceVideoSource.Path>
+            </video:ResourceVideoSource>
+        </video:VideoPlayer.Source>
+    </video:VideoPlayer>
+    <Label Grid.Row="1" Grid.Column="0" Text="TEXT LABEL TEXT"/>
+   
+    </Grid>
+        </ContentPage.Content>
+</ContentPage>
+
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="DeepSeaWorldApp.Views.QRContentPage" 
+             Title="{Binding Name}" 
+             x:Name="BrowseItemsPage">-->
+    <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:video="clr-namespace:DeepSeaWorldApp.FormsVideoLibrary"
+             x:Class="DeepSeaWorldApp.Views.VideoPage"
+             Title="{Binding Name}"
+             x:Name="BrowseItemsPage"
+             BackgroundImage="background.png">
+
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView x:Name="ItemsListView" ItemsSource="{Binding Exhibits}" 
+                      VerticalOptions="FillAndExpand" HasUnevenRows="true" 
+                      RefreshCommand="{Binding LoadItemsCommand}" 
+                      IsPullToRefreshEnabled="false" 
+                      CachingStrategy="RecycleElement" 
+                      ItemSelected="OnItemSelected">
+                <ListView.ItemTemplate> 
+                    <DataTemplate>
+                        <ViewCell>
+                            <!--
+                            <StackLayout Padding="10">
+                                <Label Text="{Binding Time}" 
+                                       Style="{DynamicResource ListItemTextStyle}" FontSize="24" />
+                                <Label Text="{Binding Name}"
+                                       Style="{DynamicResource ListItemDetailTextStyle}" FontSize="24" />
+                                <Label Text="{Binding Location}" 
+                                       Style="{DynamicResource ListItemTextStyle}" FontSize="18" />
+                            </StackLayout>
+                            -->
+                            <Grid Margin="10">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="200"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                                <video:VideoPlayer x:Name="videoPlayer" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
+                                    <video:VideoPlayer.Source>
+                                        <video:ResourceVideoSource>
+                                            <video:ResourceVideoSource.Path>
+                                                <OnPlatform x:TypeArguments="x:String">
+                                                    <On Platform="iOS" Value="DSW_001.mp4" />
+                                                    <On Platform="Android" Value="AndroidApiVideo.mp4" />
+                                                    <On Platform="UWP" Value="Videos/UWPApiVideo.mp4" />
+                                                </OnPlatform>
+                                            </video:ResourceVideoSource.Path>
+                                        </video:ResourceVideoSource>
+                                    </video:VideoPlayer.Source>
+                                </video:VideoPlayer>
+                                <Label HorizontalTextAlignment="Center" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Text="{Binding Name}" 
+                                       Style="{DynamicResource ListItemTextStyle}" FontSize="24" />
+                                <ImageButton Source="deep_sea.png" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"
+                                             Clicked="ImageButtonClicked"/>
+                                <ImageButton Source="deep_sea.png" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"
+                                             Clicked="ImageButton2Clicked"/>
+                                <Label HorizontalTextAlignment="Center" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Text="{Binding Text1}"
+                                       Style="{DynamicResource ListItemDetailTextStyle}" FontSize="20" />
+                              
+                                
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+                </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

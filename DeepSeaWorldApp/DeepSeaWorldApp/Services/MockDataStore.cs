@@ -6,95 +6,97 @@ using DeepSeaWorldApp.Models;
 
 namespace DeepSeaWorldApp.Services
 {
-    public class MockDataStore : IDataStore<Item>
+    public class MockDataStore : IDataStore<Event>
     {
-        List<Item> items;
+        List<Event> events;
 
         public MockDataStore()
         {
-            items = new List<Item>();
-            var mockItems = new List<Item>
+            events = new List<Event>();
+            var mockEvents = new List<Event>
             {
-                new Item { Id = Guid.NewGuid().ToString(), Time = "10:30", Name="Meet a Reptile", Location="Shark Classroom"},
-                new Item { Id = Guid.NewGuid().ToString(), Time = "11:00", Name="Daily Morning Feed", Location="Various"},
-                new Item { Id = Guid.NewGuid().ToString(), Time = "11:30", Name="Seal Feed", Location= "Seal Harbour"},
-                new Item { Id = Guid.NewGuid().ToString(), Time = "12:00", Name="Rockpool Encounter", Location="Rockpool Main Hall"},
-                new Item { Id = Guid.NewGuid().ToString(), Time = "12:30", Name="Seahorse Talk", Location="Rockpool Main Hall"},
-                new Item { Id = Guid.NewGuid().ToString(), Time = "13:00", Name="Ocean Feed", Location="Underwater Tunnel"},
-                new Item { Id = Guid.NewGuid().ToString(), Time = "13:30", Name="Rain Forest Talk", Location="The Swamp"},
-                new Item { Id = Guid.NewGuid().ToString(), Time = "14:00", Name="Creepy Crawly Encounter", Location="Shark Classroom"},
-                new Item { Id = Guid.NewGuid().ToString(), Time = "14:30", Name="Daily Afternoon Feed", Location="Various"},
-                new Item { Id = Guid.NewGuid().ToString(), Time = "15:00", Name="Seal Feed", Location="Seal Harbour"},
-                new Item { Id = Guid.NewGuid().ToString(), Time = "15:30", Name="Meet a Reptile", Location="Shark Classroom"},
-                new Item { Id = Guid.NewGuid().ToString(), Time = "16:00", Name="Underwater Safari", Location="Underwater Tunnel"},
-                new Item { Id = Guid.NewGuid().ToString(), Time = "16:30", Name="Rockpool Encounter", Location="Rockpool Main Hall"},
-                new Item { Id = Guid.NewGuid().ToString(), Time = "17:00", Name="Creepy Crawly Encounter", Location="Shark Classroom"},
-                               
+                new Event { Id = Guid.NewGuid().ToString(), Time = "10:30", Name="Meet a Reptile", Location="Shark Classroom"},
+                new Event { Id = Guid.NewGuid().ToString(), Time = "11:00", Name="Daily Morning Feed", Location="Various"},
+                new Event { Id = Guid.NewGuid().ToString(), Time = "11:30", Name="Seal Feed", Location= "Seal Harbour"},
+                new Event { Id = Guid.NewGuid().ToString(), Time = "12:00", Name="Rockpool Encounter", Location="Rockpool Main Hall"},
+                new Event { Id = Guid.NewGuid().ToString(), Time = "12:30", Name="Seahorse Talk", Location="Rockpool Main Hall"},
+                new Event { Id = Guid.NewGuid().ToString(), Time = "13:00", Name="Ocean Feed", Location="Underwater Tunnel"},
+                new Event { Id = Guid.NewGuid().ToString(), Time = "13:30", Name="Rain Forest Talk", Location="The Swamp",
+                Description="rain forest talk description...", Image="deep_sea.png"},
+                new Event { Id = Guid.NewGuid().ToString(), Time = "14:00", Name="Creepy Crawly Encounter", Location="Shark Classroom"},
+                new Event { Id = Guid.NewGuid().ToString(), Time = "14:30", Name="Daily Afternoon Feed", Location="Various"},
+                new Event { Id = Guid.NewGuid().ToString(), Time = "15:00", Name="Seal Feed", Location="Seal Harbour"},
+                new Event { Id = Guid.NewGuid().ToString(), Time = "15:30", Name="Meet a Reptile", Location="Shark Classroom"},
+                new Event { Id = Guid.NewGuid().ToString(), Time = "16:00", Name="Underwater Safari", Location="Underwater Tunnel"},
+                new Event { Id = Guid.NewGuid().ToString(), Time = "16:30", Name="Rockpool Encounter", Location="Rockpool Main Hall",
+                Description="rockpool encounter description...", Image="deep_sea.png"},
+                new Event { Id = Guid.NewGuid().ToString(), Time = "17:00", Name="Creepy Crawly Encounter", Location="Shark Classroom",
+                Description="creepy crawly encounter description...", Image="deep_sea.png"},
             };
 
-            foreach (var item in mockItems)
+            foreach (var e in mockEvents)
             {
-                items.Add(item);
+                events.Add(e);
             }
 
         }
 
-        public async Task<bool> AddItemAsync(Item item)
+        public async Task<bool> AddItemAsync(Event e)
         {
-            items.Add(item);
+            events.Add(e);
 
             return await Task.FromResult(true);
         }
 
-        public async Task<bool> UpdateItemAsync(Item item)
+        public async Task<bool> UpdateItemAsync(Event e)
         {
-            var oldItem = items.Where((Item arg) => arg.Id == item.Id).FirstOrDefault();
-            items.Remove(oldItem);
-            items.Add(item);
+            var oldEvent = events.Where((Event arg) => arg.Id == e.Id).FirstOrDefault();
+            events.Remove(oldEvent);
+            events.Add(e);
 
             return await Task.FromResult(true);
         }
 
         public async Task<bool> DeleteItemAsync(string id)
         {
-            var oldItem = items.Where((Item arg) => arg.Id == id).FirstOrDefault();
-            items.Remove(oldItem);
+            var oldEvent = events.Where((Event arg) => arg.Id == id).FirstOrDefault();
+            events.Remove(oldEvent);
 
             return await Task.FromResult(true);
         }
 
-        public async Task<Item> GetItemAsync(string id)
+        public async Task<Event> GetItemAsync(string id)
         {
-            return await Task.FromResult(items.FirstOrDefault(s => s.Id == id));
+            return await Task.FromResult(events.FirstOrDefault(s => s.Id == id));
         }
 
-        public async Task<IEnumerable<Item>> GetItemsAsync(bool forceRefresh = false)
+        public async Task<IEnumerable<Event>> GetItemsAsync(bool forceRefresh = false)
         {
-            return await Task.FromResult(items);
+            return await Task.FromResult(events);
         }
 
-        public async Task<Item> GetItemByTime(string time)
+        public async Task<Event> GetItemByTime(string time)
         {
-            Item item = new Item();
-            Item fail = new Item
+            Event e = new Event();
+            Event fail = new Event
             {
                 Id = Guid.NewGuid().ToString(),
                 Time = "10:30",
                 Name = "FAIL",
                 Location = "Shark Classroom"
             };
-            foreach (var i in items)
+            foreach (var i in events)
             {
                 if (i.Time == time)
                 {
-                    item = i;
+                    e = i;
                 }
             }
-            if(item.Name == "")
+            if (e.Name == "")
             {
-                item = fail;
+                e = fail;
             }
-            return await Task.FromResult(item);
+            return await Task.FromResult(e);
         }
     }
 }

@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--<zxing:ZXingScannerPage xmlns="http://xamarin.com/schemas/2014/forms"
+<zxing:ZXingScannerPage xmlns="http://xamarin.com/schemas/2014/forms"
                         xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                         x:Class="DeepSeaWorldApp.Views.QRPage"
                         xmlns:zxing="clr-namespace:ZXing.Net.Mobile.Forms;assembly=ZXing.Net.Mobile.Forms"
                         Title="QR Code Scanner" OnScanResult="Handle_OnScanResult">
-</zxing:ZXingScannerPage>-->
-
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-                        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-                        x:Class="DeepSeaWorldApp.Views.QRPage"
-                        xmlns:zxing="clr-namespace:ZXing.Net.Mobile.Forms;assembly=ZXing.Net.Mobile.Forms"
-                        Title="QR Scanner">
+</zxing:ZXingScannerPage>
+<!--<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="DeepSeaWorldApp.Views.QRPage" 
+             xmlns:zxing="clr-namespace:ZXing.Net.Mobile.Forms;assembly=ZXing.Net.Mobile.Forms" 
+             Title="QR Scanner" >
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Refresh" />
     </ContentPage.ToolbarItems>
@@ -18,9 +17,6 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        <zxing:ZXingScannerView Grid.Row="1" x:Name="_scanView" 
-                                OnScanResult="Handle_OnScanResult" 
-                                IsScanning="true"
-                                 />
+        <zxing:ZXingScannerView Grid.Row="1" x:Name="_scanView" OnScanResult="Handle_OnScanResult" IsScanning="true" />
     </Grid>
-</ContentPage>  
+</ContentPage>-->

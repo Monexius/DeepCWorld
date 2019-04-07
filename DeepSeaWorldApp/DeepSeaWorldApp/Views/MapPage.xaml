@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="DeepSeaWorldApp.Views.MapPage">
-    <StackLayout>
-    <Label x:Name="label" Text="MapPage"/>
-    <Image Source="deep_sea.png"/>
-    </StackLayout>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="DeepSeaWorldApp.Views.MapPage"
+             BackgroundImage="background.png">
+            <Image Source="map.jpg" Rotation="270" Scale="1.5"/>
 </ContentPage>

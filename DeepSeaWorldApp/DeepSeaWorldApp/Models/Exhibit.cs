@@ -1,11 +1,12 @@
 ﻿using System;
-using System.Drawing;
+using SQLite;
+using Xamarin.Forms;
 
 namespace DeepSeaWorldApp.Models
 {
     public class Exhibit
     {
-
+        [PrimaryKey, AutoIncrement]
         public string Id { get; set; }
         public string Name { get; set; }
         public string Image1 { get; set; }

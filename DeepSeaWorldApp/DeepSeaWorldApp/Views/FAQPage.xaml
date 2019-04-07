@@ -1,6 +1,39 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="DeepSeaWorldApp.Views.FAQPage">
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="DeepSeaWorldApp.Views.FAQPage" 
+             Title="Frequently Asked Questions"
+             BackgroundImage="background.png">
+
     <ContentPage.Content>
-        <Label Text="FAQPage"/>
+        <StackLayout>
+            <ListView x:Name="listView"
+                      VerticalOptions="FillAndExpand" 
+                      HasUnevenRows="true" 
+                      CachingStrategy="RecycleElement" 
+                      >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid Margin="10">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                                <Label HorizontalTextAlignment="Center" VerticalTextAlignment="Center" 
+                                       Grid.Row="0" Grid.Column="0"
+                                       Text="{Binding Question}" FontSize="18" />
+                                <Label HorizontalTextAlignment="Center" VerticalTextAlignment="Center" 
+                                       Grid.Row="1" Grid.Column="0"
+                                       Text="{Binding Answer}" FontSize="18" />                           
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>

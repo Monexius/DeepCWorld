@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using DeepSeaWorldApp.Models;
+using DeepSeaWorldApp.ViewModels;
 using Xamarin.Forms;
 
 namespace DeepSeaWorldApp.Views
@@ -12,13 +13,13 @@ namespace DeepSeaWorldApp.Views
             InitializeComponent();
         }
 
-        public MapPage(string eventName)
-        {
-            InitializeComponent();
-            label.Text = eventName;
-            //get location associated with eventName
-            //display different image depending on location, displaying map with that location highlighted
-                //using switch case?
-        }
+        //public MapPage(Item eventItem)
+        //{
+        //    InitializeComponent();
+        //    BindingContext = new MapViewModel(eventItem);
+        //    //get location associated with eventName
+        //    //display different image depending on location, displaying map with that location highlighted
+        //        //using switch case?
+        //}
     }
 }

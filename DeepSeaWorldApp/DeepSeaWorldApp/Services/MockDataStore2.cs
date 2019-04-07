@@ -18,12 +18,6 @@ namespace DeepSeaWorldApp.Services
                 new Exhibit { Id = Guid.NewGuid().ToString(), Name = "Piranha Exhibit1", Image1 = "image1",
                 Image2 = "image2", Image3 = "image3", Text1 = "Fun Fact 1 about Piranhas 1",
                 Text2 = "Fun Fact 2 about Piranhas 2", Text3 = "Fun Fact 3 about Piranhas 3" },
-                new Exhibit { Id = Guid.NewGuid().ToString(), Name = "Piranha Exhibit2", Image1 = "image1",
-                Image2 = "image2", Image3 = "image3", Text1 = "Fun Fact 1 about Piranhas 1",
-                Text2 = "Fun Fact 2 about Piranhas 2", Text3 = "Fun Fact 3 about Piranhas 3" },
-                new Exhibit { Id = Guid.NewGuid().ToString(), Name = "Piranha Exhibit3", Image1 = "image1",
-                Image2 = "image2", Image3 = "image3", Text1 = "Fun Fact 1 about Piranhas 1",
-                Text2 = "Fun Fact 2 about Piranhas 2", Text3 = "Fun Fact 3 about Piranhas 3" },
             };
 
             foreach (var exhibit in mockExhibits)

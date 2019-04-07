@@ -3,7 +3,8 @@
              xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              x:Class="DeepSeaWorldApp.Views.HomePage" 
-             xmlns:vm="clr-namespace:DeepSeaWorldApp.ViewModels" Title="{Binding Title}">
+             xmlns:vm="clr-namespace:DeepSeaWorldApp.ViewModels" 
+             Title="{Binding Title}">
 
     <ContentPage.Resources>
         <ResourceDictionary>
@@ -21,7 +22,6 @@
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
                 <RowDefinition Height="2*" />
                 <RowDefinition Height="3*" />
                 <RowDefinition Height="3*" />
@@ -30,23 +30,24 @@
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-            <Image Source="deep_sea.png" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" 
-                   Aspect="AspectFit" BackgroundColor="White"/>
+<!--            <Image Source="deep_sea.png" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" 
+                   Aspect="AspectFit" BackgroundColor="White"/>-->
 <!--            <Label x:Name="timerText" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" 
                    Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3"
                    BackgroundColor="White" FontSize="24" TextColor="Red" />-->
-            <Button x:Name="timerText" Text="" Clicked="OnViewMapClicked" 
-                    Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
-                    BackgroundColor="Silver" FontSize="18" />
-            <ImageButton x:Name="promoImage" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"
+            <Button CornerRadius="0" x:Name="timerText" Text="" Clicked="OnViewMapClicked" 
+                    Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
+                    BackgroundColor="Silver" FontSize="18">
+            </Button>
+            <ImageButton x:Name="promoImage" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
                          Source="deep_sea.png" Clicked="OnPromoClicked"/>
-            <ImageButton Source="deep_sea.png" Grid.Row="3" Grid.Column="0" BackgroundColor="Red"
+            <ImageButton x:Name="homebox1" Source="fish1.jpg" Grid.Row="2" Grid.Column="0"
                          Clicked="OnBox1Clicked"/>
-            <ImageButton Source="deep_sea.png" Grid.Row="3" Grid.Column="1" BackgroundColor="Blue"
+            <ImageButton x:Name="homebox2" Source="fish1.jpg" Grid.Row="2" Grid.Column="1"
                          Clicked="OnBox2Clicked"/>
-            <ImageButton Source="deep_sea.png" Grid.Row="4" Grid.Column="0" BackgroundColor="Green"
+            <ImageButton x:Name="homebox3" Source="fish1.jpg" Grid.Row="3" Grid.Column="0"
                          Clicked="OnBox3Clicked"/>
-            <ImageButton Source="deep_sea.png" Grid.Row="4" Grid.Column="1" BackgroundColor="Yellow"
+            <ImageButton x:Name="homebox4" Source="fish1.jpg" Grid.Row="3" Grid.Column="1"
                          Clicked="OnBox4Clicked"/>
         </Grid>
     </ContentPage.Content>

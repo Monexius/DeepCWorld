@@ -11,12 +11,17 @@ namespace DeepSeaWorldApp.Views
     public partial class HomePage : ContentPage
     {
         string eventName = "init";
-        public IDataStore<Item> DataStore => DependencyService.Get<IDataStore<Item>>() ?? new MockDataStore();
-
+        public IDataStore<Event> DataStore => DependencyService.Get<IDataStore<Event>>() ?? new MockDataStore();
+        Event eventEvent;
         public HomePage()
         {
             InitializeComponent();
 
+            promoImage.Source = "fish1.jpg";
+            homebox1.Source = "fish1.jpg";
+            homebox2.Source = "fish1.jpg";
+            homebox3.Source = "fish1.jpg";
+            homebox4.Source = "fish1.jpg";
 
             Device.StartTimer(TimeSpan.FromSeconds(1), () =>
             {
@@ -27,26 +32,31 @@ namespace DeepSeaWorldApp.Views
                 int nextEventHour;
                 int startsInMinutes;
                 int startsInHours;
+                string nextEventMinuteString = "00";
 
                 if (currentMinute < 30)
                 {
                     nextEventMinute = 30;
+                    nextEventMinuteString = "30";
                     nextEventHour = currentHour;
 
                 }
                 else
                 {
                     nextEventMinute = 60;
-                    nextEventHour = currentHour;
+                    nextEventMinuteString = "00";
+                    nextEventHour = currentHour + 1;
                 }
-                nextEventTime = nextEventHour.ToString() + ":" + nextEventMinute.ToString();
-                var getitem = GetItemByTime(nextEventTime);
-                Item item = getitem.Result;
-                eventName = item.Name;
-                
+
+                nextEventTime = nextEventHour.ToString() + ":" + nextEventMinuteString;
+                var getevent = GetItemByTime(nextEventTime);
+                Event e = getevent.Result;
+                eventName = e.Name;
+                eventEvent = e;
+
                 //eventName =  //get event name based on the nextEventTime by getting the event where the time variable == nextEventTime
                 startsInMinutes = nextEventMinute - currentMinute;
-                startsInHours = nextEventHour - currentHour;
+                startsInHours = nextEventHour - currentHour - 1;
 
                 string nextEventStartsIn;
 
@@ -63,8 +73,6 @@ namespace DeepSeaWorldApp.Views
                     nextEventStartsIn = eventName + " starts in " + startsInHours.ToString() + " hours " + startsInMinutes.ToString() + " minutes";
                 }
 
-                int hourUntilNext = nextEventHour - DateTime.Now.Hour;
-                int minuteUntilNext = nextEventMinute - DateTime.Now.Minute;
                 Device.BeginInvokeOnMainThread(() => timerText.Text = nextEventStartsIn);
                 return true;
             });
@@ -72,7 +80,7 @@ namespace DeepSeaWorldApp.Views
 
         }
 
-        async Task<Item> GetItemByTime(string time)
+        async Task<Event> GetItemByTime(string time)
         {
             return await DataStore.GetItemByTime(time);
         }
@@ -80,7 +88,7 @@ namespace DeepSeaWorldApp.Views
         void OnViewMapClicked(object sender, System.EventArgs e)
         {
             //load map page and pass eventName. maybe use modal?
-            Navigation.PushAsync(new MapPage(eventName));
+            Navigation.PushAsync(new EventDetailPage(eventEvent));
         }
         void OnFAQClicked(object sender, System.EventArgs e)
         {
@@ -93,7 +101,7 @@ namespace DeepSeaWorldApp.Views
         void OnPromoClicked(object sender, System.EventArgs e)
         {
             string name = promoImage.Source.ToString();
-            Navigation.PushAsync(new PromoPage(name));
+            Navigation.PushAsync(new NewsDetailPage(name));
         }
         void OnBox1Clicked(object sender, System.EventArgs e)
         {

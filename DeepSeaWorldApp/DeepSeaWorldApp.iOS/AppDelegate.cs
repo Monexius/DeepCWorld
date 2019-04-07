@@ -4,6 +4,7 @@ using System.Linq;
 
 using Foundation;
 using UIKit;
+using UserNotifications;
 
 namespace DeepSeaWorldApp.iOS
 {
@@ -25,8 +26,17 @@ namespace DeepSeaWorldApp.iOS
             global::Xamarin.Forms.Forms.Init();
             ZXing.Net.Mobile.Forms.iOS.Platform.Init();
             LoadApplication(new App());
+            //// Request notification permissions from the user
+            //UNUserNotificationCenter.Current.RequestAuthorization(UNAuthorizationOptions.Alert, (approved, err) => {
+            //    // Handle approval
+            //});
+            //// Get current notification settings
+            //UNUserNotificationCenter.Current.GetNotificationSettings((settings) => {
+            //    var alertsAllowed = (settings.AlertSetting == UNNotificationSetting.Enabled);
+            //});
 
             return base.FinishedLaunching(app, options);
+
         }
     }
 }

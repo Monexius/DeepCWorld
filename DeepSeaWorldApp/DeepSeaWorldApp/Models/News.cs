@@ -1,12 +1,13 @@
 ﻿using System;
-using System.Drawing;
+using SQLite;
+using Xamarin.Forms;
 
 namespace DeepSeaWorldApp.Models
 {
     public class News
     {
-
-        public int ID { get; set; }
+        [PrimaryKey, AutoIncrement]
+        public string Id { get; set; }
         public string Title { get; set; }
         public string Lead { get; set; }
         public string Image { get; set; }

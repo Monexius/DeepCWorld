@@ -6,11 +6,11 @@ namespace DeepSeaWorldApp.ViewModels
 {
     public class FeatureDetailViewModel : BaseViewModel
     {
-        public Item Item { get; set; }
-        public FeatureDetailViewModel(Item item = null)
+        public Event Event { get; set; }
+        public FeatureDetailViewModel(Event e = null)
         {
-            Title = item?.Time;
-            Item = item;
+            Title = e?.Time;
+            Event = e;
         }
     }
 }

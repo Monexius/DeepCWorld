@@ -14,15 +14,11 @@ namespace DeepSeaWorldApp.Views {
     
     
     [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Views/QRPage.xaml")]
-    public partial class QRPage : global::Xamarin.Forms.ContentPage {
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        private global::ZXing.Net.Mobile.Forms.ZXingScannerView _scanView;
+    public partial class QRPage : global::ZXing.Net.Mobile.Forms.ZXingScannerPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private void InitializeComponent() {
             global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(QRPage));
-            _scanView = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::ZXing.Net.Mobile.Forms.ZXingScannerView>(this, "_scanView");
         }
     }
 }

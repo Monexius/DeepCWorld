@@ -5,7 +5,7 @@ using System.Linq;
 using Foundation;
 using UIKit;
 
-namespace DSW_Test1.iOS
+namespace DeepSeaWorldApp.iOS
 {
     public class Application
     {

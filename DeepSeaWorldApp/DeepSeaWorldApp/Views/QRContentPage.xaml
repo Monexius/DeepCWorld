@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              x:Class="DeepSeaWorldApp.Views.QRContentPage" 
              Title="{Binding Name}" 
-             x:Name="BrowseItemsPage">
+             x:Name="BrowseItemsPage"
+             BackgroundImage="background.png">
 
     <ContentPage.Content>
         <StackLayout>
@@ -41,6 +42,7 @@
                                 <Image Source="deep_sea.png" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"/>
                                 <Label HorizontalTextAlignment="Center" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Text="{Binding Text1}"
                                        Style="{DynamicResource ListItemDetailTextStyle}" FontSize="20" />
+                                
                                 
                             </Grid>
                         </ViewCell>

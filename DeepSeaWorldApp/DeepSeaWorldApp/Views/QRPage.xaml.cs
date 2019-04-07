@@ -38,13 +38,13 @@ namespace DeepSeaWorldApp.Views
         protected override void OnAppearing()
             {
                 base.OnAppearing();
-                _scanView.IsScanning = true;
+                //_scanView.IsScanning = true;
             }
 
             protected override void OnDisappearing()
             {
                 base.OnDisappearing();
-                _scanView.IsScanning = false;
+                //_scanView.IsScanning = false;
             }
         }
 }

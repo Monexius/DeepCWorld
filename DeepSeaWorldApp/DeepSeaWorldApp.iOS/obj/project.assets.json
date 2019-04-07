@@ -14,7 +14,7 @@
           "lib/netstandard1.0/Google.Protobuf.dll": {}
         }
       },
-      "Microsoft.AppCenter/1.13.2": {
+      "Microsoft.AppCenter/1.14.0": {
         "type": "package",
         "compile": {
           "lib/Xamarin.iOS10/Microsoft.AppCenter.dll": {},
@@ -25,10 +25,10 @@
           "lib/Xamarin.iOS10/Microsoft.AppCenter.iOS.Bindings.dll": {}
         }
       },
-      "Microsoft.AppCenter.Push/1.13.2": {
+      "Microsoft.AppCenter.Push/1.14.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.AppCenter": "1.13.2"
+          "Microsoft.AppCenter": "1.14.0"
         },
         "compile": {
           "lib/Xamarin.iOS10/Microsoft.AppCenter.Push.dll": {},
@@ -725,7 +725,18 @@
           "lib/xamarinios10/_._": {}
         }
       },
-      "Xamarin.Forms/3.6.0.220655": {
+      "Xam.Plugins.Notifier/3.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/Xamarin.iOS10/Plugin.LocalNotifications.Abstractions.dll": {},
+          "lib/Xamarin.iOS10/Plugin.LocalNotifications.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/Plugin.LocalNotifications.Abstractions.dll": {},
+          "lib/Xamarin.iOS10/Plugin.LocalNotifications.dll": {}
+        }
+      },
+      "Xamarin.Forms/3.6.0.293080": {
         "type": "package",
         "compile": {
           "lib/Xamarin.iOS10/Xamarin.Forms.Core.dll": {},
@@ -880,12 +891,13 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Microsoft.AppCenter.Push": "1.13.2",
+          "Microsoft.AppCenter.Push": "1.14.0",
           "Microsoft.Bcl": "1.1.10",
           "Microsoft.Net.Http": "2.2.29",
           "MySql.Data": "8.0.15",
           "Newtonsoft.Json": "12.0.1",
-          "Xamarin.Forms": "3.6.0.220655",
+          "Xam.Plugins.Notifier": "3.0.1",
+          "Xamarin.Forms": "3.6.0.293080",
           "ZXing.Net.Mobile": "2.4.1",
           "ZXing.Net.Mobile.Forms": "2.4.1",
           "sqlite-net-pcl": "1.5.231"
@@ -911,7 +923,7 @@
           "lib/netstandard1.0/Google.Protobuf.dll": {}
         }
       },
-      "Microsoft.AppCenter/1.13.2": {
+      "Microsoft.AppCenter/1.14.0": {
         "type": "package",
         "compile": {
           "lib/Xamarin.iOS10/Microsoft.AppCenter.dll": {},
@@ -922,10 +934,10 @@
           "lib/Xamarin.iOS10/Microsoft.AppCenter.iOS.Bindings.dll": {}
         }
       },
-      "Microsoft.AppCenter.Push/1.13.2": {
+      "Microsoft.AppCenter.Push/1.14.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.AppCenter": "1.13.2"
+          "Microsoft.AppCenter": "1.14.0"
         },
         "compile": {
           "lib/Xamarin.iOS10/Microsoft.AppCenter.Push.dll": {},
@@ -1540,7 +1552,18 @@
           "lib/xamarinios10/_._": {}
         }
       },
-      "Xamarin.Forms/3.6.0.220655": {
+      "Xam.Plugins.Notifier/3.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/Xamarin.iOS10/Plugin.LocalNotifications.Abstractions.dll": {},
+          "lib/Xamarin.iOS10/Plugin.LocalNotifications.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/Plugin.LocalNotifications.Abstractions.dll": {},
+          "lib/Xamarin.iOS10/Plugin.LocalNotifications.dll": {}
+        }
+      },
+      "Xamarin.Forms/3.6.0.293080": {
         "type": "package",
         "compile": {
           "lib/Xamarin.iOS10/Xamarin.Forms.Core.dll": {},
@@ -1695,12 +1718,13 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Microsoft.AppCenter.Push": "1.13.2",
+          "Microsoft.AppCenter.Push": "1.14.0",
           "Microsoft.Bcl": "1.1.10",
           "Microsoft.Net.Http": "2.2.29",
           "MySql.Data": "8.0.15",
           "Newtonsoft.Json": "12.0.1",
-          "Xamarin.Forms": "3.6.0.220655",
+          "Xam.Plugins.Notifier": "3.0.1",
+          "Xamarin.Forms": "3.6.0.293080",
           "ZXing.Net.Mobile": "2.4.1",
           "ZXing.Net.Mobile.Forms": "2.4.1",
           "sqlite-net-pcl": "1.5.231"
@@ -1726,7 +1750,7 @@
           "lib/netstandard1.0/Google.Protobuf.dll": {}
         }
       },
-      "Microsoft.AppCenter/1.13.2": {
+      "Microsoft.AppCenter/1.14.0": {
         "type": "package",
         "compile": {
           "lib/Xamarin.iOS10/Microsoft.AppCenter.dll": {},
@@ -1737,10 +1761,10 @@
           "lib/Xamarin.iOS10/Microsoft.AppCenter.iOS.Bindings.dll": {}
         }
       },
-      "Microsoft.AppCenter.Push/1.13.2": {
+      "Microsoft.AppCenter.Push/1.14.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.AppCenter": "1.13.2"
+          "Microsoft.AppCenter": "1.14.0"
         },
         "compile": {
           "lib/Xamarin.iOS10/Microsoft.AppCenter.Push.dll": {},
@@ -2355,7 +2379,18 @@
           "lib/xamarinios10/_._": {}
         }
       },
-      "Xamarin.Forms/3.6.0.220655": {
+      "Xam.Plugins.Notifier/3.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/Xamarin.iOS10/Plugin.LocalNotifications.Abstractions.dll": {},
+          "lib/Xamarin.iOS10/Plugin.LocalNotifications.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/Plugin.LocalNotifications.Abstractions.dll": {},
+          "lib/Xamarin.iOS10/Plugin.LocalNotifications.dll": {}
+        }
+      },
+      "Xamarin.Forms/3.6.0.293080": {
         "type": "package",
         "compile": {
           "lib/Xamarin.iOS10/Xamarin.Forms.Core.dll": {},
@@ -2510,12 +2545,13 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Microsoft.AppCenter.Push": "1.13.2",
+          "Microsoft.AppCenter.Push": "1.14.0",
           "Microsoft.Bcl": "1.1.10",
           "Microsoft.Net.Http": "2.2.29",
           "MySql.Data": "8.0.15",
           "Newtonsoft.Json": "12.0.1",
-          "Xamarin.Forms": "3.6.0.220655",
+          "Xam.Plugins.Notifier": "3.0.1",
+          "Xamarin.Forms": "3.6.0.293080",
           "ZXing.Net.Mobile": "2.4.1",
           "ZXing.Net.Mobile.Forms": "2.4.1",
           "sqlite-net-pcl": "1.5.231"
@@ -2541,7 +2577,7 @@
           "lib/netstandard1.0/Google.Protobuf.dll": {}
         }
       },
-      "Microsoft.AppCenter/1.13.2": {
+      "Microsoft.AppCenter/1.14.0": {
         "type": "package",
         "compile": {
           "lib/Xamarin.iOS10/Microsoft.AppCenter.dll": {},
@@ -2552,10 +2588,10 @@
           "lib/Xamarin.iOS10/Microsoft.AppCenter.iOS.Bindings.dll": {}
         }
       },
-      "Microsoft.AppCenter.Push/1.13.2": {
+      "Microsoft.AppCenter.Push/1.14.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.AppCenter": "1.13.2"
+          "Microsoft.AppCenter": "1.14.0"
         },
         "compile": {
           "lib/Xamarin.iOS10/Microsoft.AppCenter.Push.dll": {},
@@ -3170,7 +3206,18 @@
           "lib/xamarinios10/_._": {}
         }
       },
-      "Xamarin.Forms/3.6.0.220655": {
+      "Xam.Plugins.Notifier/3.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/Xamarin.iOS10/Plugin.LocalNotifications.Abstractions.dll": {},
+          "lib/Xamarin.iOS10/Plugin.LocalNotifications.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/Plugin.LocalNotifications.Abstractions.dll": {},
+          "lib/Xamarin.iOS10/Plugin.LocalNotifications.dll": {}
+        }
+      },
+      "Xamarin.Forms/3.6.0.293080": {
         "type": "package",
         "compile": {
           "lib/Xamarin.iOS10/Xamarin.Forms.Core.dll": {},
@@ -3325,12 +3372,13 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Microsoft.AppCenter.Push": "1.13.2",
+          "Microsoft.AppCenter.Push": "1.14.0",
           "Microsoft.Bcl": "1.1.10",
           "Microsoft.Net.Http": "2.2.29",
           "MySql.Data": "8.0.15",
           "Newtonsoft.Json": "12.0.1",
-          "Xamarin.Forms": "3.6.0.220655",
+          "Xam.Plugins.Notifier": "3.0.1",
+          "Xamarin.Forms": "3.6.0.293080",
           "ZXing.Net.Mobile": "2.4.1",
           "ZXing.Net.Mobile.Forms": "2.4.1",
           "sqlite-net-pcl": "1.5.231"
@@ -3359,10 +3407,10 @@
         "lib/netstandard1.0/Google.Protobuf.xml"
       ]
     },
-    "Microsoft.AppCenter/1.13.2": {
-      "sha512": "cpVIrVh1AzUj2s7ENwSJqV70JIH/NvptmdN3P3tejwa+YX+icYR+nKyg9ftmzmlEOCwylJ1XSPMwkE2yNXaE6A==",
+    "Microsoft.AppCenter/1.14.0": {
+      "sha512": "yr+IT4ABH/Pg2+/UuhH5qfJ5oZvuxHUMSnBpLpYHSThWDMEGVTNdZTGOf1HUL9h2UW9V+Ty/lVUV9mpavnZoSA==",
       "type": "package",
-      "path": "microsoft.appcenter/1.13.2",
+      "path": "microsoft.appcenter/1.14.0",
       "files": [
         ".signature.p7s",
         "lib/MonoAndroid403/Microsoft.AppCenter.Android.Bindings.dll",
@@ -3377,14 +3425,14 @@
         "lib/portable-net45+win8+wpa81+wp8/Microsoft.AppCenter.xml",
         "lib/uap10.0/Microsoft.AppCenter.dll",
         "lib/uap10.0/Microsoft.AppCenter.xml",
-        "microsoft.appcenter.1.13.2.nupkg.sha512",
+        "microsoft.appcenter.1.14.0.nupkg.sha512",
         "microsoft.appcenter.nuspec"
       ]
     },
-    "Microsoft.AppCenter.Push/1.13.2": {
-      "sha512": "95SmTDZyVkaiK+kUnnWmjwVY4fwkJg8h0fUTMkefKMAQQRuf/ZefmW0agpmiRwYxRg3G32mfPkNz9irIwn+u0Q==",
+    "Microsoft.AppCenter.Push/1.14.0": {
+      "sha512": "tETmipC+ByfvxSKN1zJ5Kc2HTwtGlR5d0ah5Mi3HZWeLrWgrpCn9mOK+JjEnIhZ0SQhYzJHociTV3dXXTQTqrA==",
       "type": "package",
-      "path": "microsoft.appcenter.push/1.13.2",
+      "path": "microsoft.appcenter.push/1.14.0",
       "files": [
         ".signature.p7s",
         "lib/MonoAndroid403/Microsoft.AppCenter.Push.Android.Bindings.dll",
@@ -3394,7 +3442,7 @@
         "lib/netstandard1.0/Microsoft.AppCenter.Push.dll",
         "lib/portable-net45+win8+wpa81+wp8/Microsoft.AppCenter.Push.dll",
         "lib/uap10.0/Microsoft.AppCenter.Push.dll",
-        "microsoft.appcenter.push.1.13.2.nupkg.sha512",
+        "microsoft.appcenter.push.1.14.0.nupkg.sha512",
         "microsoft.appcenter.push.nuspec"
       ]
     },
@@ -6529,10 +6577,44 @@
         "system.xml.xdocument.nuspec"
       ]
     },
-    "Xamarin.Forms/3.6.0.220655": {
-      "sha512": "ltCTV5Tez9zTbg9f6UunegHPWRzfVHKGHeLOmXeJvNFEPwXrHDwjCcRqMqNISLRjzWxT1MuC9wgKdMoxGdBLqQ==",
+    "Xam.Plugins.Notifier/3.0.1": {
+      "sha512": "2xV8ZSXm0Fo+zAxt2tXw3/mlBSqZ0nR46fJW1a8Yr6mGqcDNbhEGlKJoEUTkLd7gYEMIIx5bVUaMUi34yHGF4w==",
       "type": "package",
-      "path": "xamarin.forms/3.6.0.220655",
+      "path": "xam.plugins.notifier/3.0.1",
+      "files": [
+        ".signature.p7s",
+        "lib/MonoAndroid10/Plugin.LocalNotifications.Abstractions.dll",
+        "lib/MonoAndroid10/Plugin.LocalNotifications.Abstractions.xml",
+        "lib/MonoAndroid10/Plugin.LocalNotifications.XML",
+        "lib/MonoAndroid10/Plugin.LocalNotifications.dll",
+        "lib/MonoAndroid10/Plugin.LocalNotifications.pdb",
+        "lib/UAP10/Plugin.LocalNotifications.Abstractions.dll",
+        "lib/UAP10/Plugin.LocalNotifications.Abstractions.xml",
+        "lib/UAP10/Plugin.LocalNotifications.XML",
+        "lib/UAP10/Plugin.LocalNotifications.dll",
+        "lib/UAP10/Plugin.LocalNotifications.pdb",
+        "lib/UAP10/Plugin.LocalNotifications.pri",
+        "lib/Xamarin.Mac20/Plugin.LocalNotifications.Abstractions.dll",
+        "lib/Xamarin.Mac20/Plugin.LocalNotifications.Abstractions.xml",
+        "lib/Xamarin.Mac20/Plugin.LocalNotifications.dll",
+        "lib/Xamarin.Mac20/Plugin.LocalNotifications.xml",
+        "lib/Xamarin.iOS10/Plugin.LocalNotifications.Abstractions.dll",
+        "lib/Xamarin.iOS10/Plugin.LocalNotifications.Abstractions.xml",
+        "lib/Xamarin.iOS10/Plugin.LocalNotifications.XML",
+        "lib/Xamarin.iOS10/Plugin.LocalNotifications.dll",
+        "lib/netstandard1.0/Plugin.LocalNotifications.Abstractions.dll",
+        "lib/netstandard1.0/Plugin.LocalNotifications.Abstractions.xml",
+        "lib/netstandard1.0/Plugin.LocalNotifications.deps.json",
+        "lib/netstandard1.0/Plugin.LocalNotifications.dll",
+        "lib/netstandard1.0/Plugin.LocalNotifications.xml",
+        "xam.plugins.notifier.3.0.1.nupkg.sha512",
+        "xam.plugins.notifier.nuspec"
+      ]
+    },
+    "Xamarin.Forms/3.6.0.293080": {
+      "sha512": "o7GH+huLZMGlBxFCFAV5g+P3xoYoXFPeGrZ+AI8ezt2Gey/ZeZjSlf3nR3DzZKClVsCTvJS8Z5rVlC1dexSv+A==",
+      "type": "package",
+      "path": "xamarin.forms/3.6.0.293080",
       "files": [
         ".signature.p7s",
         "build/MonoAndroid10/proguard.cfg",
@@ -6689,7 +6771,7 @@
         "lib/uap10.0/Xamarin.Forms.Xaml.dll",
         "lib/uap10.0/Xamarin.Forms.Xaml.pdb",
         "lib/uap10.0/Xamarin.Forms.Xaml.xml",
-        "xamarin.forms.3.6.0.220655.nupkg.sha512",
+        "xamarin.forms.3.6.0.293080.nupkg.sha512",
         "xamarin.forms.nuspec"
       ]
     },
@@ -6748,7 +6830,7 @@
       "Microsoft.Net.Http >= 2.2.29",
       "MySql.Data >= 8.0.15",
       "Newtonsoft.Json >= 12.0.1",
-      "Xamarin.Forms >= 3.6.0.220655",
+      "Xamarin.Forms >= 3.6.0.293080",
       "sqlite-net-pcl >= 1.5.231"
     ]
   },
@@ -6805,7 +6887,7 @@
           },
           "Xamarin.Forms": {
             "target": "Package",
-            "version": "[3.6.0.220655, )"
+            "version": "[3.6.0.293080, )"
           },
           "sqlite-net-pcl": {
             "target": "Package",

@@ -1,41 +1,23 @@
 ﻿<Properties StartupConfiguration="{10E2A7FF-2BF5-4C5C-9609-9DF2634FB291}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="../../../../Projects/trackerApp/trackerApp/Views/GoalsPage.xaml.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="DeepSeaWorldApp Status">
     <Files>
-      <File FileName="DeepSeaWorldApp/Views/HomePage.xaml.cs" Line="83" Column="58" />
-      <File FileName="DeepSeaWorldApp/Services/MockDataStore.cs" Line="95" Column="29" />
-      <File FileName="../../../../Projects/trackerApp/trackerApp/Data/GoalDatabase.cs" Line="27" Column="52" />
-      <File FileName="../../../../Projects/trackerApp/trackerApp/Models/Goal.cs" Line="1" Column="1" />
-      <File FileName="DeepSeaWorldApp/Services/IDataStore.cs" Line="13" Column="44" />
-      <File FileName="DeepSeaWorldApp/Services/GoalDatabase.cs" Line="32" Column="30" />
-      <File FileName="DeepSeaWorldApp/Views/MapPage.xaml" Line="6" Column="5" />
-      <File FileName="DeepSeaWorldApp/Views/MapPage.xaml.cs" Line="18" Column="13" />
-      <File FileName="../../../../Projects/trackerApp/trackerApp/ViewModel/GoalEntryViewModel.cs" Line="1" Column="1" />
-      <File FileName="../../../../Projects/trackerApp/trackerApp/Views/GoalsPage.xaml" Line="96" Column="1" />
-      <File FileName="../../../../Projects/trackerApp/trackerApp/Views/GoalsPage.xaml.cs" Line="1" Column="1" />
+      <File FileName="DeepSeaWorldApp/Views/HomePage.xaml" />
+      <File FileName="DeepSeaWorldApp/Views/HomePage.xaml.cs" Line="23" Column="37" />
+      <File FileName="DeepSeaWorldApp/Views/MainPage.xaml" />
+      <File FileName="DeepSeaWorldApp/Views/NotificationPage.xaml.cs" Line="17" Column="10" />
+      <File FileName="DeepSeaWorldApp/Views/NotificationPage.xaml" />
+      <File FileName="DeepSeaWorldApp Status" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="DeepSeaWorldApp" expanded="True">
+          <Node name="DeepSeaWorldApp" expanded="True" selected="True">
             <Node name="DeepSeaWorldApp" expanded="True">
-              <Node name="Models" expanded="True" />
-              <Node name="Services" expanded="True" />
-              <Node name="Views" expanded="True">
-                <Node name="HomePage.xaml" expanded="True" />
-                <Node name="MapPage.xaml" expanded="True" />
+              <Node name="Dependencies" expanded="True">
+                <Node name="PackageDependencies" expanded="True" />
               </Node>
-            </Node>
-          </Node>
-          <Node name="trackerApp" expanded="True">
-            <Node name="trackerApp" expanded="True">
-              <Node name="Data" expanded="True" />
-              <Node name="Models" expanded="True" />
-              <Node name="Services" expanded="True" />
-              <Node name="ViewModel" expanded="True" />
               <Node name="Views" expanded="True">
-                <Node name="GoalsPage.xaml" expanded="True">
-                  <Node name="GoalsPage.xaml.cs" selected="True" />
-                </Node>
+                <Node name="NotificationPage.xaml" expanded="True" />
               </Node>
             </Node>
           </Node>
@@ -43,10 +25,10 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.ItemProperties.DeepSeaWorldApp.Android AndroidDesignerPreferredTheme="Theme.DeviceDefault.NoActionBar.Fullscreen" PreferredExecutionTarget="Android.Android_Accelerated_Nougat" />
+  <MonoDevelop.Ide.ItemProperties.DeepSeaWorldApp.Android AndroidDesignerPreferredTheme="Theme.DeviceDefault.NoActionBar.Fullscreen" AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.my_device" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.DeepSeaWorldApp.iOS automaticSigning="False" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.CF4C450C-D700-4EBB-BC59-FD07156F63F5" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" />
+  <MonoDevelop.Ide.ItemProperties.DeepSeaWorldApp.iOS automaticSigning="False" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.47891c6bfa5fddd3860f568ae2b9465887eee4e0" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
