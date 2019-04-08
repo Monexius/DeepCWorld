@@ -20,11 +20,7 @@ namespace DeepSeaWorldApp.DBClasses
             public string FAQ_Anwswere { get; set; }
         }
 
-        // list of data from faq table
-        public class FAQList
-        {
-            public FAQ[] Faq { get; set; }
-        }
+
 
         public class Events
         {
@@ -44,11 +40,6 @@ namespace DeepSeaWorldApp.DBClasses
             public string Event_Time { get; set; }
         }
 
-        // list of data from events table
-        public class EventsList
-        {
-            public Events[] Events { get; set; }
-        }
 
         public class Exhibition
         {
@@ -69,14 +60,9 @@ namespace DeepSeaWorldApp.DBClasses
             [JsonProperty("Exhibition_Name")]
             public string Exhibition_Name { get; set; }
             [JsonProperty("QRCodes_Name")]
-            public string QRCode_Name { get; }
+            public string QRCodes_Name { get; set; }
         }
 
-        // list of data from Exhibition table
-        public class ExhibitionList
-        {
-            public Exception[] Exhibitions { get; set; }
-        }
 
         public class Map
         {
@@ -86,11 +72,6 @@ namespace DeepSeaWorldApp.DBClasses
             public string Map_IMG { get; set; }
         }
 
-        // list of data from Map table
-        public class MapList
-        {
-            public Map[] Map { get; set; }
-        }
 
         public class News
         {
@@ -108,12 +89,6 @@ namespace DeepSeaWorldApp.DBClasses
             public string Notifications { get; set; }
         }
 
-        // list of data from News table
-        public class NewsList
-        {
-            public News[] News { get; set; }
-        }
-
         public class QRCodes
         {
             [JsonProperty("QRCodes_ID")][PrimaryKey]
@@ -126,111 +101,15 @@ namespace DeepSeaWorldApp.DBClasses
             public int QRCodes_Pos { get; set; }
         }
 
-        // list of data from QRCodes table
-        public class QRCodesList
+        public class DataTb
         {
-            public QRCodes QRs { get; set; }
+            public List<FAQ> FAQ { get; set; }
+            public List<Events> Events { get; set; }
+            public List<Exhibition> Exhibition { get; set; }
+            public List<Map> Map { get; set; }
+            public List<News> News { get; set; }
+            public List<QRCodes> QRCodes { get; set; }
         }
-
-
-     
-        public class Data
-        {
-            [JsonProperty("FAQ_ID")]
-            public int FAQ_ID { get; set; }
-            [JsonProperty("FAQ_Question")]
-            public string FAQ_Question { get; set; }
-            [JsonProperty("FAQ_Anwesere")]
-            public string FAQ_Anwswere { get; set; }
-
-            [JsonProperty("Event_ID")]
-            public string Event_ID { get; set; }
-            [JsonProperty("Event_Name")]
-            public string Event_Name { get; set; }
-            [JsonProperty("Event_Description")]
-            public string Event_Description { get; set; }
-            [JsonProperty("Event_IMG")]
-            public string Event_IMG { get; set; }
-            [JsonProperty("Event_Location")]
-            public string Event_Location { get; set; }
-            [JsonProperty("Event_Day")]
-            public string Event_Day { get; set; }
-            [JsonProperty("Event_Time")]
-            public string Event_Time { get; set; }
-
-            [JsonProperty("Exhibition_ID")]
-            [PrimaryKey]
-            public string Exhibition_ID { get; set; }
-            [JsonProperty("Exhibition_QRCode_Pos")]
-            public string Exhibition_QRCode_Pos { get; }
-            [JsonProperty("Exhibition_Description")]
-            public string Exhibition_Description { get; set; }
-            [JsonProperty("Exhibition_IMG_Name")]
-            public string Exhibition_IMG_Name { get; set; }
-            [JsonProperty("Exhibition_IMG")]
-            public string Exhibition_IMG { get; set; }
-            [JsonProperty("Exhibition_Video_Name")]
-            public string Exhibition_Video_Name { get; set; }
-            [JsonProperty("Exhibition_Video")]
-            public string Exhibition_Video { get; set; }
-            [JsonProperty("Exhibition_Name")]
-            public string Exhibition_Name { get; set; }
-            [JsonProperty("QRCodes_Name")]
-            public string QRCode_Name { get; }
-
-            [JsonProperty("Map_ID")]
-            [PrimaryKey]
-            public string Map_ID { get; set; }
-            [JsonProperty("Map_IMG")]
-            public string Map_IMG { get; set; }
-
-            [JsonProperty("News_ID")]
-            [PrimaryKey]
-            public string News_ID { get; set; }
-            [JsonProperty("News_Title")]
-            public string News_Title { get; set; }
-            [JsonProperty("News_Brief_Info")]
-            public string News_Brief_Info { get; set; }
-            [JsonProperty("News_IMG")]
-            public string News_IMG { get; set; }
-            [JsonProperty("News_Article")]
-            public string News_Article { get; set; }
-            [JsonProperty("Notification")]
-            public string Notifications { get; set; }
-
-            [JsonProperty("QRCodes_ID")]
-            [PrimaryKey]
-            public string QRCodes_ID { get; set; }
-            [JsonProperty("QRCode_Name")]
-            public string QRCodes_Name { get; set; }
-            [JsonProperty("QRCode_IMG")]
-            public string QRCodes_IMG { get; set; }
-            [JsonProperty("QRCodes_Pos")]
-            public string QRCodes_Pos { get; set; }
-        }
-
-        public class DbList
-        {
-            public IList<Data> DataList { get; set; }
-        }
-
-        public class DataL
-        {
-            public FAQ FList { get; set; }
-            public Events EList { get; set; }
-            public Exhibition ExList { get; set; }
-            public Map MList { get; set; }
-            public News NList { get; set; }
-            public QRCodes QrList { get; set; }
-        }
-
-        public class DataList
-        {
-            public IList<DataL> DataL { get; set; }
-        }
-
-
-
     }
 
 }

@@ -23,8 +23,10 @@ namespace DeepSeaWorldApp.Droid
         }
 
         // connection and retriving data from server database, serialization of data to json  
-        public async Task<List<Data>> MySQLConnection(Data ts, DataL dataL)
+        public async Task<DataTb> MySQLConnection()
         {
+
+            DataTb dataTb = new DataTb();
 
             HttpClient client = new HttpClient();
             Uri url = new Uri("http://10.0.2.2/scripts/dbContent.php");
@@ -53,11 +55,26 @@ namespace DeepSeaWorldApp.Droid
             // preparing data for deserialization
             var fq = faq[0].ToString().Trim().Insert(faq[0].ToString().Length,"]");
             var ev = events[0].ToString().Trim().Insert(0, "[").Insert(events[0].ToString().Length+1,"]");
+            var ex = exhibition[0].ToString().Trim().Insert(0, "[").Insert(exhibition[0].ToString().Length+1, "]");
+            var mp = map[0].ToString().Trim().Insert(0, "[").Insert(map[0].ToString().Length+1, "]");
+            var nws = news[0].ToString().Trim().Insert(0, "[").Insert(news[0].ToString().Length+1, "]");
+            var qr = qrcodes[0].ToString().Trim().Insert(0, "[");
 
 
             // deserializatyion of data in json format to responding classes
             List<FAQ> flist = JsonConvert.DeserializeObject<List<FAQ>>(fq);
             List<Events> elist = JsonConvert.DeserializeObject<List<Events>>(ev);
+            List<Exhibition> exlist = JsonConvert.DeserializeObject<List<Exhibition>>(ex);
+            List<Map> mlist = JsonConvert.DeserializeObject<List<Map>>(mp);
+            List<News> nlist = JsonConvert.DeserializeObject<List<News>>(nws);
+            List<QRCodes> qrlist = JsonConvert.DeserializeObject<List<QRCodes>>(qr);
+
+            dataTb.FAQ = flist;
+            dataTb.Events = elist;
+            dataTb.Exhibition = exlist;
+            dataTb.Map = mlist;
+            dataTb.News = nlist;
+            dataTb.QRCodes = qrlist;
 
 
             // testing writer for files --- to be cut off
@@ -88,31 +105,15 @@ namespace DeepSeaWorldApp.Droid
             using (JsonWriter writer6 = new JsonTextWriter(st6))
             {
                 JsonSerializer serializer = new JsonSerializer();
-                serializer.Serialize(writer, fq);
-                serializer.Serialize(writer2, ev);
-                serializer.Serialize(writer3, exhibition);
-                serializer.Serialize(writer4, map);
-                serializer.Serialize(writer5, news);
-                serializer.Serialize(writer6, qrcodes);
+                serializer.Serialize(writer, flist);
+                serializer.Serialize(writer2, elist);
+                serializer.Serialize(writer3, exlist);
+                serializer.Serialize(writer4, mlist);
+                serializer.Serialize(writer5, nlist);
+                serializer.Serialize(writer6, dataTb);
             }
 
-
-
-            // mocup class for returm - will be changed for DataL
-            List<Data> list = new List<Data>();
-
-            return list;
-        }
-
-        // adding data to json array
-        private JArray Loop(HttpResponseMessage msg, JArray s)
-        {
-            if (msg.Content != null)
-            {
-                var data = msg.Content.ReadAsStringAsync().Result;
-                s.Add(data);
-            }
-            return s;
+            return dataTb;
         }
 
     }

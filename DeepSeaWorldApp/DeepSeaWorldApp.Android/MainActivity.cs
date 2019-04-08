@@ -9,7 +9,9 @@ using static DeepSeaWorldApp.DBClasses.DBs;
 using Android.Support.V4.App;
 using Android;
 using Android.Support.V4.Content;
-
+using System.IO;
+using Newtonsoft.Json;
+using System.Collections.Generic;
 
 namespace DeepSeaWorldApp.Droid
 {
@@ -19,7 +21,6 @@ namespace DeepSeaWorldApp.Droid
         App app;
         bool hasNotified = false;
         System.Timers.Timer timer = new System.Timers.Timer();
-        Data[] ls;
 
         protected override async void OnCreate(Bundle savedInstanceState)
         {
@@ -38,16 +39,36 @@ namespace DeepSeaWorldApp.Droid
                 app = new App();
                 LoadApplication(app);
 
-                MySQLSync<Data> sync = new MySQLSync<Data>();
-              //  await sync.MySQLConnection(ls);
-                //ls.Faq = sync.MySQLConnection(ls.Faq).Result;
+                MySQLSync<DataTb> sync = new MySQLSync<DataTb>();
+                //  await sync.MySQLConnection();
 
-                
+                DeepSeaWorldSQLiteConnectionAndroid deepSeaWorld = new DeepSeaWorldSQLiteConnectionAndroid();
 
-                DeepSeaWorldSQLiteConnectionAndroid dbsync = new DeepSeaWorldSQLiteConnectionAndroid();
-                //   await dbsync.GetItemAsync();
-              //  await dbsync.SaveItemAsync(ls);
 
+                MySqlDBCon mySql = new MySqlDBCon();
+                DataTb data = new DataTb();
+                data = await mySql.MySQLConnection();
+
+                deepSeaWorld.TableAsync();
+                await deepSeaWorld.GetItemAsyncFAQ();
+                await deepSeaWorld.InsertOrUpdateTableAsync(data);
+
+
+
+
+                //List<DataTb> ls = new List<DataTb>();
+
+                //ls.Add(data);
+                string per = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
+                string path = Android.OS.Environment.ExternalStorageDirectory.AbsolutePath;
+                string fileName6 = "pp.txt";
+                string fPath6 = Path.Combine(path, fileName6);
+                using (StreamWriter st6 = new StreamWriter(fPath6))
+                using (JsonWriter writer6 = new JsonTextWriter(st6))
+                {
+                    JsonSerializer serializer = new JsonSerializer();
+                    serializer.Serialize(writer6, per);
+                }
 
             }
             catch(Exception ex)
@@ -92,7 +113,7 @@ namespace DeepSeaWorldApp.Droid
                 hasNotified = false;
 
                 return true;
-            }catch(WebException ex)
+            }catch (WebException)
             {
                 if (!hasNotified)
                     hasNotified = false;

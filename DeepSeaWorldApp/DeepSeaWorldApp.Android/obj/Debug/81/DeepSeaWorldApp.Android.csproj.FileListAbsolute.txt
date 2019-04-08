@@ -367,7 +367,5 @@ C:\Users\Kamilos\Source\Repos\Monexius\DeepCWorld\DeepSeaWorldApp\DeepSeaWorldAp
 C:\Users\Kamilos\Source\Repos\Monexius\DeepCWorld\DeepSeaWorldApp\DeepSeaWorldApp.Android\obj\Debug\81\android\assets\Xamarin.Forms.Core.pdb
 C:\Users\Kamilos\Source\Repos\Monexius\DeepCWorld\DeepSeaWorldApp\DeepSeaWorldApp.Android\obj\Debug\81\android\assets\Xamarin.Forms.Platform.Android.pdb
 C:\Users\Kamilos\Source\Repos\Monexius\DeepCWorld\DeepSeaWorldApp\DeepSeaWorldApp.Android\obj\Debug\81\android\assets\Xamarin.Forms.Xaml.pdb
-C:\Users\Kamilos\Source\Repos\Monexius\DeepCWorld\DeepSeaWorldApp\DeepSeaWorldApp\bin\Debug\netstandard2.0\DeepSeaWorldApp.dll
-C:\Users\Kamilos\Source\Repos\Monexius\DeepCWorld\DeepSeaWorldApp\DeepSeaWorldApp.Android\bin\Debug\DeepSeaWorldApp.dll.mdb
 C:\Users\Kamilos\Source\Repos\Monexius\DeepCWorld\DeepSeaWorldApp\DeepSeaWorldApp.Android\obj\Debug\81\linksrc\DeepSeaWorldApp.dll.mdb
 C:\Users\Kamilos\Source\Repos\Monexius\DeepCWorld\DeepSeaWorldApp\DeepSeaWorldApp.Android\obj\Debug\81\linksrc\Xamarin.Essentials.dll.mdb

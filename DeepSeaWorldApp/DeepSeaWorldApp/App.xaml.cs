@@ -30,6 +30,8 @@ namespace DeepSeaWorldApp
             DeepSeaWorldMySQLDBConn<DBs> mySQLDataBaseCheck = new DeepSeaWorldMySQLDBConn<DBs>();
             //  mySQLDataBaseCheck.tablesData;
 
+        
+
 
         }
 
@@ -45,6 +47,7 @@ namespace DeepSeaWorldApp
 
         protected void OnAppearing()
         {
+
             MessagingCenter.Subscribe<MainPage>(this, "Internet connection has been lost", (sender) =>
             {
                 Device.BeginInvokeOnMainThread(() => { App.Current.MainPage.DisplayAlert("No internet Connection", "connection lost", "ok"); });
