@@ -1,11 +1,15 @@
-﻿<Properties StartupConfiguration="{10E2A7FF-2BF5-4C5C-9609-9DF2634FB291}|Default">
+﻿<Properties GitUserInfo="UsingGIT" StartupConfiguration="{10E2A7FF-2BF5-4C5C-9609-9DF2634FB291}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="DeepSeaWorldApp Status">
     <Files>
-      <File FileName="DeepSeaWorldApp/Views/HomePage.xaml" />
-      <File FileName="DeepSeaWorldApp/Views/HomePage.xaml.cs" Line="23" Column="37" />
-      <File FileName="DeepSeaWorldApp/Views/MainPage.xaml" />
-      <File FileName="DeepSeaWorldApp/Views/NotificationPage.xaml.cs" Line="17" Column="10" />
-      <File FileName="DeepSeaWorldApp/Views/NotificationPage.xaml" />
+      <File FileName="DeepSeaWorldApp/Services/FAQDatabase.cs" Line="25" Column="57" />
+      <File FileName="DeepSeaWorldApp/Views/FAQPage.xaml.cs" Line="23" Column="34" />
+      <File FileName="DeepSeaWorldApp.iOS/Main.cs" Line="17" Column="1" />
+      <File FileName="DeepSeaWorldApp/DeepSeaWorldSQLiteConnectionService.cs" Line="32" Column="1" />
+      <File FileName="DeepSeaWorldApp/DeepSeaWorldMySQLDBConn.cs" Line="1" Column="1" />
+      <File FileName="DeepSeaWorldApp/App.xaml.cs" Line="64" Column="1" />
+      <File FileName="DeepSeaWorldApp/Views/QRContentPage.xaml.cs" Line="57" Column="2" />
+      <File FileName="DeepSeaWorldApp/Views/QRContentPage.xaml" />
+      <File FileName="DeepSeaWorldApp/Views/QRPage.xaml.cs" Line="14" Column="1" />
       <File FileName="DeepSeaWorldApp Status" />
     </Files>
     <Pads>
@@ -13,22 +17,25 @@
         <State name="__root__">
           <Node name="DeepSeaWorldApp" expanded="True" selected="True">
             <Node name="DeepSeaWorldApp" expanded="True">
-              <Node name="Dependencies" expanded="True">
-                <Node name="PackageDependencies" expanded="True" />
-              </Node>
+              <Node name="Services" expanded="True" />
               <Node name="Views" expanded="True">
-                <Node name="NotificationPage.xaml" expanded="True" />
+                <Node name="FAQPage.xaml" expanded="True" />
+                <Node name="QRContentPage.xaml" expanded="True" />
+                <Node name="QRPage.xaml" expanded="True" />
               </Node>
+              <Node name="App.xaml" expanded="True" />
             </Node>
+            <Node name="DeepSeaWorldApp.Android" expanded="True" />
+            <Node name="DeepSeaWorldApp.iOS" expanded="True" />
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.ItemProperties.DeepSeaWorldApp.Android AndroidDesignerPreferredTheme="Theme.DeviceDefault.NoActionBar.Fullscreen" AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.my_device" />
+  <MonoDevelop.Ide.ItemProperties.DeepSeaWorldApp.Android AndroidDesignerPreferredTheme="Theme.DeviceDefault.NoActionBar.Fullscreen" AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.SelectDevice" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" />
-  <MonoDevelop.Ide.ItemProperties.DeepSeaWorldApp.iOS automaticSigning="False" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.47891c6bfa5fddd3860f568ae2b9465887eee4e0" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.DeepSeaWorldApp.iOS automaticSigning="False" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.766FAE8B-F935-4F0D-B8FD-2F9E28753399" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

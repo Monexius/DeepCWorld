@@ -6,7 +6,8 @@ namespace DeepSeaWorldApp.Models
 {
     public class Event
     {
-        [PrimaryKey, AutoIncrement]
+        [PrimaryKey]
+        public int ID { get; set; }
         public string Id { get; set; }
         public string Time { get; set; }
         public string Name { get; set; }

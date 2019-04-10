@@ -5,10 +5,8 @@ using DeepSeaWorldApp.Views;
 using SQLite;
 using DeepSeaWorldApp.Services;
 using System.IO;
-using Plugin.LocalNotifications;
 using System.Collections.Generic;
 using DeepSeaWorldApp.Models;
-using trackerApp.Models;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace DeepSeaWorldApp
@@ -16,6 +14,7 @@ namespace DeepSeaWorldApp
     public partial class App : Application
     {
         static FAQDatabase faqdatabase;
+
 
         public static FAQDatabase Database
         {
@@ -29,6 +28,8 @@ namespace DeepSeaWorldApp
             }
         }
 
+
+
         public App()
         {
 
@@ -36,23 +37,26 @@ namespace DeepSeaWorldApp
 
             MainPage = new MainPage();
 
-        }
-        protected void LoadData()
-        {
-            var faqs = new List<FAQ>();
-            var mockFAQ = new List<FAQ>
-                {
-                    new FAQ {Question="Question1", Answer="Answer1" },
-                    new FAQ {Question="Question2", Answer="Answer2" },
-                    new FAQ {Question="Question3", Answer="Answer3" },
 
-                };
 
-            foreach (var e in mockFAQ)
-            {
-                App.Database.SaveFAQAsync(e);
-            }
         }
+
+        //protected void LoadData()
+        //{
+        //        var faqs = new List<FAQ>();
+        //        var mockFAQ = new List<FAQ>
+        //        {
+        //            new FAQ {Question="QuestionA", Answer="Answer1" },
+        //            new FAQ {Question="QuestionB", Answer="Answer2" },
+        //            new FAQ {Question="QuestionC", Answer="Answer3" },
+
+        //        };
+
+        //        foreach (var e in mockFAQ)
+        //        {
+        //            Database.SaveFAQAsync(e);
+        //        }
+        //}
 
         protected override void OnStart()
         {
@@ -80,7 +84,6 @@ namespace DeepSeaWorldApp
         {
             // Handle when your app resumes
         }
-
 
     }
 }

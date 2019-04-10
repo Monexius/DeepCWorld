@@ -15,7 +15,7 @@ namespace DeepSeaWorldApp.Views
 
         void Handle_Clicked(object sender, System.EventArgs e)
         {
-            CrossLocalNotifications.Current.Show("title", "body", 101, DateTime.Now.AddSeconds(40));
+            CrossLocalNotifications.Current.Show("title", "body", 101, DateTime.Now.AddSeconds(30));
         }
     }
 }

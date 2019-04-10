@@ -13,21 +13,41 @@ namespace DeepSeaWorldApp.Services
 
         public FAQDatabase(string dbPath)
         {
+
             _database = new SQLiteAsyncConnection(dbPath);
             _database.CreateTableAsync<FAQ>().Wait();
-
-            var faqs = new List<FAQ>();
-            var mockFAQ = new List<FAQ>
-                {
-                    new FAQ {Question="Question1", Answer="Answer1" },
-                    new FAQ {Question="Question2", Answer="Answer2" },
-                    new FAQ {Question="Question3", Answer="Answer3" },
-                };
-
-            foreach (var e in mockFAQ)
+            LoadData();
+            String question = _database.GetAsync<FAQ>(1).Result.Question;
+            Console.WriteLine("Question: " + question);
+            String question1 = _database.GetAsync<FAQ>(2).Result.Question;
+            Console.WriteLine("Question: " + question1);
+            String question2 = _database.GetAsync<FAQ>(3).Result.Question;
+            Console.WriteLine("Question: " + question2);
+        }
+        public void LoadData()
+        {
+            Console.WriteLine("DATABASE COUNTER: " + _database.Table<FAQ>().CountAsync().Result);
+            if (_database.Table<FAQ>().CountAsync().Result == 0)
             {
+                Console.WriteLine("DATABASE COUNTER: " + _database.Table<FAQ>().CountAsync().Result);
+                // only insert the data if it doesn't already exist
+                var newFAQ = new FAQ();
+                newFAQ.ID = 1;
+                newFAQ.Question = "QuestionT";
+                newFAQ.Answer = "AnswerT";
+                _database.InsertAsync(newFAQ);
 
-                SaveFAQAsync(e);
+                var newFAQ2 = new FAQ();
+                newFAQ2.ID = 2;
+                newFAQ2.Question = "QuestionU";
+                newFAQ2.Answer = "AnswerU";
+                _database.InsertAsync(newFAQ2);
+
+                var newFAQ3 = new FAQ();
+                newFAQ3.ID = 3;
+                newFAQ3.Question = "QuestionV";
+                newFAQ3.Answer = "AnswerV";
+                _database.InsertAsync(newFAQ3);
             }
         }
 
