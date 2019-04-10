@@ -42,7 +42,7 @@ namespace DeepSeaWorldApp.iOS
         public void TableAsync()
         {
             SQLiteAsyncConnection db = CreateConnection();
-            db.CreateTableAsync<FAQ>().Wait();
+            db.CreateTableAsync<FAQL>().Wait();
             db.CreateTableAsync<Events>().Wait();
             db.CreateTableAsync<Exhibition>().Wait();
             db.CreateTableAsync<Map>().Wait();
@@ -50,33 +50,28 @@ namespace DeepSeaWorldApp.iOS
             db.CreateTableAsync<QRCodes>().Wait();
         }
 
-        //public Task<List<FAQ>> GetItemAsyncFAQ()
-        //{
-        //    List<FAQ> a = dataT.FAQ;
-        //    return CreateConnection().Table<FAQ>().ToListAsync();
-        //}
-
-        public async Task<FAQ> GetItemAsyncFAQ()
+        public Task<List<FAQL>> GetItemAsyncFAQ()
         {
-            dataT = await mySql.MySQLConnection();
-            List<FAQ> a = dataT.FAQ;
-            FAQ ab = new FAQ();
-            ab = a.First();
-            return await CreateConnection().Table<FAQ>().Where(i => i.ID == ab.ID).FirstOrDefaultAsync();
+            return CreateConnection().Table<FAQL>().ToListAsync();
+        }
+
+        public async Task<FAQL> GetItemAsyncFAQ(int id)
+        {
+            return await CreateConnection().Table<FAQL>().Where(i => i.ID == id).FirstOrDefaultAsync();
         }
 
 
         public async Task InsertOrUpdateTableAsync(DataTb a)
         {
 
-            a = await mySql.MySQLConnection();
-            List<FAQ> faq = new List<FAQ>();
-            faq = a.FAQ;
+            FAQL fAQL = new FAQL();
 
-            foreach (FAQ f in faq)
+            foreach (FAQ f in a.FAQ)
             {
-                if (f.ID != 0)
-                {
+                fAQL.FAQ_Question = f.FAQ_Question;
+                fAQL.FAQ_Anwswere = f.FAQ_Anwswere;
+                if (f.FAQ_ID != 0)
+                {            
                     await CreateConnection().UpdateAsync(f);
                 }
                 else
@@ -84,6 +79,15 @@ namespace DeepSeaWorldApp.iOS
                     await CreateConnection().InsertAsync(f);
                 }
             }
+        }
+
+        [Table("FAQ")]
+        public class FAQL
+        {
+            [PrimaryKey, AutoIncrement]
+            public int ID { get; set; }
+            public string FAQ_Question { get; set; }
+            public string FAQ_Anwswere { get; set; }
         }
 
     }

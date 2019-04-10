@@ -9,11 +9,11 @@ namespace DeepSeaWorldApp.DBClasses
     // database data variables for synchronization
     public class DBs
     {
-
+        [Table("FAQ")]
         public class FAQ 
         {
             [JsonProperty("FAQ_ID")][PrimaryKey]
-            public int ID { get; set; }
+            public int FAQ_ID { get; set; }
             [JsonProperty("FAQ_Question")]
             public string FAQ_Question { get; set; }
             [JsonProperty("FAQ_Anwswere")]
@@ -21,11 +21,11 @@ namespace DeepSeaWorldApp.DBClasses
         }
 
 
-
+        [Table("Events")]
         public class Events
         {
             [JsonProperty("Event_ID")][PrimaryKey]
-            public int ID { get; set; }
+            public int Events_ID { get; set; }
             [JsonProperty("Event_Name")]
             public string Event_Name { get; set; }
             [JsonProperty("Event_Description")]
@@ -40,11 +40,11 @@ namespace DeepSeaWorldApp.DBClasses
             public string Event_Time { get; set; }
         }
 
-
+        [Table("Exhibition")]
         public class Exhibition
         {
             [JsonProperty("Exhibition_ID")][PrimaryKey]
-            public int ID { get; set; }
+            public int Exhibition_ID { get; set; }
             [JsonProperty("Exhibition_QRCode_Pos")]
             public int Exhibition_QRCode_Pos { get; }
             [JsonProperty("Exhibition_Description")]
@@ -63,20 +63,20 @@ namespace DeepSeaWorldApp.DBClasses
             public string QRCodes_Name { get; set; }
         }
 
-
+        [Table("Map")]
         public class Map
         {
             [JsonProperty("Map_ID")][PrimaryKey]
-            public int ID { get; set; }
+            public int Map_ID { get; set; }
             [JsonProperty("Map_IMG")]
             public string Map_IMG { get; set; }
         }
 
-
+        [Table("News")]
         public class News
         {
             [JsonProperty("News_ID")][PrimaryKey]
-            public int ID { get; set; }
+            public int News_ID { get; set; }
             [JsonProperty("News_Title")]
             public string News_Title { get; set; }
             [JsonProperty("News_Brief_Info")]
@@ -89,10 +89,11 @@ namespace DeepSeaWorldApp.DBClasses
             public string Notifications { get; set; }
         }
 
+        [Table("QRCodes")]
         public class QRCodes
         {
             [JsonProperty("QRCodes_ID")][PrimaryKey]
-            public int ID { get; set; }
+            public int QRCodes_ID { get; set; }
             [JsonProperty("QRCode_Name")]
             public string QRCodes_Name { get; set; }
             [JsonProperty("QRCode_IMG")]

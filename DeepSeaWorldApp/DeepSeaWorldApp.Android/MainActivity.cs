@@ -39,9 +39,6 @@ namespace DeepSeaWorldApp.Droid
                 app = new App();
                 LoadApplication(app);
 
-                MySQLSync<DataTb> sync = new MySQLSync<DataTb>();
-                //  await sync.MySQLConnection();
-
                 DeepSeaWorldSQLiteConnectionAndroid deepSeaWorld = new DeepSeaWorldSQLiteConnectionAndroid();
 
 
@@ -50,16 +47,21 @@ namespace DeepSeaWorldApp.Droid
                 data = await mySql.MySQLConnection();
 
                 deepSeaWorld.TableAsync();
-                await deepSeaWorld.GetItemAsyncFAQ();
-                await deepSeaWorld.InsertOrUpdateTableAsync(data);
+
+                foreach (FAQ f in data.FAQ)
+                {
+                    await deepSeaWorld.InsertOrUpdateTableAsyncFAQ(f);
+                }
 
 
+                //List<FAQ> fs = new List<FAQ>();
+                //fs = data.FAQ;
+                //await deepSeaWorld.InsertOrUpdateTableAsyncFAQDb(fs);
 
 
                 //List<DataTb> ls = new List<DataTb>();
 
                 //ls.Add(data);
-                string per = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
                 string path = Android.OS.Environment.ExternalStorageDirectory.AbsolutePath;
                 string fileName6 = "pp.txt";
                 string fPath6 = Path.Combine(path, fileName6);
@@ -67,7 +69,7 @@ namespace DeepSeaWorldApp.Droid
                 using (JsonWriter writer6 = new JsonTextWriter(st6))
                 {
                     JsonSerializer serializer = new JsonSerializer();
-                    serializer.Serialize(writer6, per);
+                    serializer.Serialize(writer6, deepSeaWorld.GetItemAsyncFAQ());
                 }
 
             }
