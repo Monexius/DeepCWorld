@@ -42,7 +42,7 @@
                 </OnPlatform>
             </NavigationPage.Icon>
             <x:Arguments>
-                <views:QRPage />
+                <views:QRScannerPage />
             </x:Arguments>
         </NavigationPage>
         

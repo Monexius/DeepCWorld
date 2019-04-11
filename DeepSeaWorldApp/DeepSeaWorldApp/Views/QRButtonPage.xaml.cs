@@ -13,7 +13,7 @@ namespace DeepSeaWorldApp.Views
         }
         private void ButtonClicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new QRPage());
+            Navigation.PushAsync(new QRScannerPage());
         }
     }
 }

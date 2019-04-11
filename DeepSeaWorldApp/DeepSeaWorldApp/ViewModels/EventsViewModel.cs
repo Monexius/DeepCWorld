@@ -34,6 +34,8 @@ namespace DeepSeaWorldApp.ViewModels
             {
                 Events.Clear();
                 var events = await DataStore.GetItemsAsync(true);
+
+
                 foreach (var e in events)
                 {
                     int eventHour = Convert.ToInt32(e.Time.Substring(0, 2));

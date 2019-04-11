@@ -7,6 +7,9 @@ using DeepSeaWorldApp.Services;
 using System.IO;
 using System.Collections.Generic;
 using DeepSeaWorldApp.Models;
+using Newtonsoft.Json;
+using DeepSeaWorldApp.DBClasses;
+using Xamarin.Essentials;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace DeepSeaWorldApp
@@ -29,6 +32,7 @@ namespace DeepSeaWorldApp
         }
 
 
+        public object DisplayAllert { get; private set; }
 
         public App()
         {
@@ -36,8 +40,6 @@ namespace DeepSeaWorldApp
             InitializeComponent();
 
             MainPage = new MainPage();
-
-
 
         }
 
@@ -60,18 +62,9 @@ namespace DeepSeaWorldApp
 
         protected override void OnStart()
         {
-            // Handle when your app starts
-            //DeepSeaWorldSQLiteConnectionService conn = new DeepSeaWorldSQLiteConnectionService();        
-
-            //if (conn.connTest() == true)
-            //{
-            //    App.Current.MainPage.DisplayAlert("Connection", "true", "ok");
-            //}
-            //else
-            //{
-            //    App.Current.MainPage.DisplayAlert("Connection", "false", "not ok");
-            //}
-
+            //Handle when your app starts
+            DeepSeaWorldMySQLDBConn<DBs> mySQLDataBaseCheck = new DeepSeaWorldMySQLDBConn<DBs>();
+            //  mySQLDataBaseCheck.tablesData;
 
         }
 
@@ -83,6 +76,15 @@ namespace DeepSeaWorldApp
         protected override void OnResume()
         {
             // Handle when your app resumes
+        }
+
+        protected void OnAppearing()
+        {
+
+            MessagingCenter.Subscribe<MainPage>(this, "Internet connection has been lost", (sender) =>
+            {
+                Device.BeginInvokeOnMainThread(() => { App.Current.MainPage.DisplayAlert("No internet Connection", "connection lost", "ok"); });
+            });
         }
 
     }

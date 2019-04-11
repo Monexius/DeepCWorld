@@ -5,6 +5,7 @@ using DeepSeaWorldApp.Services;
 using DeepSeaWorldApp.Models;
 using DeepSeaWorldApp.ViewModels;
 using System.Threading.Tasks;
+using static DeepSeaWorldApp.DBClasses.DBs;
 
 namespace DeepSeaWorldApp.Views
 {
@@ -22,6 +23,7 @@ namespace DeepSeaWorldApp.Views
             homebox2.Source = "fish1.jpg";
             homebox3.Source = "fish1.jpg";
             homebox4.Source = "fish1.jpg";
+            DataTb dataTb = new DataTb();
 
             Device.StartTimer(TimeSpan.FromSeconds(1), () =>
             {

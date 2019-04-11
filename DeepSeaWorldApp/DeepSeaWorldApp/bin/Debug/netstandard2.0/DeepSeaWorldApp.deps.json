@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETStandard,Version=v2.0/",
-    "signature": "be247de29bff22e35724cf773ee63a1511741a84"
+    "signature": "dd885bc2424d69ef1a2556e62d838c9d4dd99c40"
   },
   "compilationOptions": {},
   "targets": {
@@ -15,7 +15,9 @@
           "MySql.Data": "8.0.15",
           "NETStandard.Library": "2.0.3",
           "Newtonsoft.Json": "12.0.1",
+          "System.Json": "4.5.0",
           "Xam.Plugins.Notifier": "3.0.1",
+          "Xamarin.Essentials": "1.1.0",
           "Xamarin.Forms": "3.6.0.293080",
           "ZXing.Net.Mobile": "2.4.1",
           "ZXing.Net.Mobile.Forms": "2.4.1",
@@ -155,6 +157,22 @@
           }
         }
       },
+      "System.Json/4.5.0": {
+        "runtime": {
+          "lib/netstandard2.0/System.Json.dll": {
+            "assemblyVersion": "2.0.6.0",
+            "fileVersion": "4.6.26515.6"
+          }
+        }
+      },
+      "System.Numerics.Vectors/4.5.0": {
+        "runtime": {
+          "lib/netstandard2.0/System.Numerics.Vectors.dll": {
+            "assemblyVersion": "4.1.4.0",
+            "fileVersion": "4.6.26515.6"
+          }
+        }
+      },
       "System.Security.AccessControl/4.4.0": {
         "dependencies": {
           "System.Security.Principal.Windows": "4.4.0"
@@ -208,6 +226,17 @@
             "fileVersion": "1.0.0.0"
           },
           "lib/netstandard1.0/Plugin.LocalNotifications.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Xamarin.Essentials/1.1.0": {
+        "dependencies": {
+          "System.Numerics.Vectors": "4.5.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Xamarin.Essentials.dll": {
             "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
           }
@@ -363,6 +392,20 @@
       "path": "system.configuration.configurationmanager/4.4.1",
       "hashPath": "system.configuration.configurationmanager.4.4.1.nupkg.sha512"
     },
+    "System.Json/4.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-YIbZuXh5pInsAoI/MzLtAX+6XEqSLaO5NcE3lkM7tcY/Qb9xudamYe1/cg7KMKBRQyk1SFVD2iA2SCZtS7fs9w==",
+      "path": "system.json/4.5.0",
+      "hashPath": "system.json.4.5.0.nupkg.sha512"
+    },
+    "System.Numerics.Vectors/4.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-nATsBTD2CKr4AYN6eRszhX4sptImWmBJwB/U6XKCWWfnCcrTBw8XSCm3QA9gjppkHTr8OkXUY21MR91D3QZXsw==",
+      "path": "system.numerics.vectors/4.5.0",
+      "hashPath": "system.numerics.vectors.4.5.0.nupkg.sha512"
+    },
     "System.Security.AccessControl/4.4.0": {
       "type": "package",
       "serviceable": true,
@@ -404,6 +447,13 @@
       "sha512": "sha512-2xV8ZSXm0Fo+zAxt2tXw3/mlBSqZ0nR46fJW1a8Yr6mGqcDNbhEGlKJoEUTkLd7gYEMIIx5bVUaMUi34yHGF4w==",
       "path": "xam.plugins.notifier/3.0.1",
       "hashPath": "xam.plugins.notifier.3.0.1.nupkg.sha512"
+    },
+    "Xamarin.Essentials/1.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-AGismQb55pszEQ/ZIv9O1U2YyaF2gHdBdAUO79+biHf1s7AL2R++DIvmf7Z+wtfhZrB9wxhXAkOUuYHgpY6oTw==",
+      "path": "xamarin.essentials/1.1.0",
+      "hashPath": "xamarin.essentials.1.1.0.nupkg.sha512"
     },
     "Xamarin.Forms/3.6.0.293080": {
       "type": "package",
