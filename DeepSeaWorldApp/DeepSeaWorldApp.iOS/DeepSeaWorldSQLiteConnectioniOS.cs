@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace DeepSeaWorldApp.iOS
 {
-    class DeepSeaWorldSQLiteConnectioniOS : DeepSeaWorldSQLiteInterface
+    class DeepSeaWorldSQLiteConnectioniOS 
     {
 
         MySqlDBCon mySql = new MySqlDBCon();
