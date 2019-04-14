@@ -41,27 +41,12 @@ namespace DeepSeaWorldApp.Droid
 
                 DeepSeaWorldSQLiteConnectionAndroid deepSeaWorld = new DeepSeaWorldSQLiteConnectionAndroid();
 
-
                 MySqlDBCon mySql = new MySqlDBCon();
                 DataTb data = new DataTb();
-                data = await mySql.MySQLConnection();
+                data = await mySql.MySQLConnection(); // connection and data catch from mySQL db on server
+                deepSeaWorld.TableAsync(); // table async - creation of local db tables
+                await deepSeaWorld.InsertUpdateTables(data); // insert data to local db
 
-                deepSeaWorld.TableAsync();
-
-                foreach (FAQ f in data.FAQ)
-                {
-                    await deepSeaWorld.InsertOrUpdateTableAsyncFAQ(f);
-                }
-
-
-                //List<FAQ> fs = new List<FAQ>();
-                //fs = data.FAQ;
-                //await deepSeaWorld.InsertOrUpdateTableAsyncFAQDb(fs);
-
-
-                //List<DataTb> ls = new List<DataTb>();
-
-                //ls.Add(data);
                 string path = Android.OS.Environment.ExternalStorageDirectory.AbsolutePath;
                 string fileName6 = "pp.txt";
                 string fPath6 = Path.Combine(path, fileName6);
@@ -69,7 +54,7 @@ namespace DeepSeaWorldApp.Droid
                 using (JsonWriter writer6 = new JsonTextWriter(st6))
                 {
                     JsonSerializer serializer = new JsonSerializer();
-                    serializer.Serialize(writer6, deepSeaWorld.GetItemAsyncFAQ());
+                    serializer.Serialize(writer6, deepSeaWorld.GetItemAsyncExhibition(1));
                 }
 
             }
@@ -83,7 +68,6 @@ namespace DeepSeaWorldApp.Droid
         {
             global::ZXing.Net.Mobile.Android.PermissionsHandler.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
-
 
         // networrk connection timer
         private void Timer_Elapsed(object sender, EventArgs e)

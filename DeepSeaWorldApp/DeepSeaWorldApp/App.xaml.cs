@@ -27,11 +27,6 @@ namespace DeepSeaWorldApp
 
         protected override void OnStart()
         {
-            DeepSeaWorldMySQLDBConn<DBs> mySQLDataBaseCheck = new DeepSeaWorldMySQLDBConn<DBs>();
-            //  mySQLDataBaseCheck.tablesData;
-
-        
-
 
         }
 
