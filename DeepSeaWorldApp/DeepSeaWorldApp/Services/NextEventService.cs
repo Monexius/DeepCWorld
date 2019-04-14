@@ -1,5 +1,7 @@
 ﻿using System;
-
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using DeepSeaWorldApp.Models;
 using Xamarin.Forms;
 
 namespace DeepSeaWorldApp.Services
@@ -13,8 +15,10 @@ namespace DeepSeaWorldApp.Services
 
         public static string GetNextEventTime()
         {
+
             int currentMinute = DateTime.Now.Minute;
             int currentHour = DateTime.Now.Hour;
+            DateTime CurrentTime = DateTime.Now;
             string nextEventTime;
             int nextEventMinute = GetNextEventMinute();
             int nextEventHour = GetNextEventHour();

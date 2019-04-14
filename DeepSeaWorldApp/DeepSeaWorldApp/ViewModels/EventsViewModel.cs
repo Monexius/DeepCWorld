@@ -8,6 +8,7 @@ using Xamarin.Forms;
 using DeepSeaWorldApp.Models;
 using DeepSeaWorldApp.Views;
 using DeepSeaWorldApp.Services;
+using System.Linq;
 
 namespace DeepSeaWorldApp.ViewModels
 {
@@ -34,8 +35,8 @@ namespace DeepSeaWorldApp.ViewModels
             {
                 Events.Clear();
                 var events = await DataStore.GetItemsAsync(true);
-
-
+                //events = events.OrderBy(x => x.Time);
+                //change this to be more dynamic and not just based on 30 / 60
                 foreach (var e in events)
                 {
                     int eventHour = Convert.ToInt32(e.Time.Substring(0, 2));

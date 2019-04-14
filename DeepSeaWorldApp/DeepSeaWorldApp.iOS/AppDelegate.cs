@@ -27,13 +27,28 @@ namespace DeepSeaWorldApp.iOS
             ZXing.Net.Mobile.Forms.iOS.Platform.Init();
             LoadApplication(new App());
             //// Request notification permissions from the user
-            //UNUserNotificationCenter.Current.RequestAuthorization(UNAuthorizationOptions.Alert, (approved, err) => {
-            //    // Handle approval
-            //});
-            //// Get current notification settings
-            //UNUserNotificationCenter.Current.GetNotificationSettings((settings) => {
-            //    var alertsAllowed = (settings.AlertSetting == UNNotificationSetting.Enabled);
-            //});
+            if (UIDevice.CurrentDevice.CheckSystemVersion(10, 0))
+            {
+                // Ask the user for permission to get notifications on iOS 10.0+
+                UNUserNotificationCenter.Current.RequestAuthorization(
+                        UNAuthorizationOptions.Alert | UNAuthorizationOptions.Badge | UNAuthorizationOptions.Sound,
+                        (approved, error) => { });
+            }
+            else if (UIDevice.CurrentDevice.CheckSystemVersion(8, 0))
+            {
+                // Ask the user for permission to get notifications on iOS 8.0+
+                var settings = UIUserNotificationSettings.GetSettingsForTypes(
+                        UIUserNotificationType.Alert | UIUserNotificationType.Badge | UIUserNotificationType.Sound,
+                        new NSSet());
+
+                UIApplication.SharedApplication.RegisterUserNotificationSettings(settings);
+            }
+            //UINavigationBar.Appearance.BarTintColor = UIColor.FromPatternImage(UIImage.FromFile("deep_sea.png"));
+            //// To change Text Colors to white here
+            //UINavigationBar.Appearance.TintColor = UIColor.Black;
+            //// To change Title Text colors to white here
+            //UINavigationBar.Appearance.SetTitleTextAttributes(new UITextAttributes() { TextColor = UIColor.Black });
+            //UINavigationBar.Appearance.SetBackgroundImage(UIImage.FromFile("banner.png"), UIBarMetrics.Default);
 
             return base.FinishedLaunching(app, options);
 

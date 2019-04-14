@@ -12,70 +12,85 @@ namespace DeepSeaWorldApp.Views
     public partial class HomePage : ContentPage
     {
         string eventName = "init";
+        //get event data
         public IDataStore<Event> DataStore => DependencyService.Get<IDataStore<Event>>() ?? new MockDataStore();
         Event eventEvent;
         public HomePage()
         {
             InitializeComponent();
 
-            promoImage.Source = "fish1.jpg";
+            //promoImage.Source = "fish1.jpg";
             homebox1.Source = "fish1.jpg";
             homebox2.Source = "fish1.jpg";
-            homebox3.Source = "fish1.jpg";
-            homebox4.Source = "fish1.jpg";
-            DataTb dataTb = new DataTb();
+            //homebox3.Source = "fish1.jpg";
+            //homebox4.Source = "fish1.jpg";
+            eventNameText.Text = "event";
+            eventTimeText.Text = "time";
+
 
             Device.StartTimer(TimeSpan.FromSeconds(1), () =>
             {
-                int currentMinute = DateTime.Now.Minute;
-                int currentHour = DateTime.Now.Hour;
-                string nextEventTime;
-                int nextEventMinute;
-                int nextEventHour;
-                int startsInMinutes;
-                int startsInHours;
-                string nextEventMinuteString = "00";
+                var next = GetNextEvent();
+                Event nextE = next.Result;
 
-                if (currentMinute < 30)
+                //new code to get starts in time
+                DateTime time = Convert.ToDateTime(nextE.Time);
+                DateTime time2 = time.AddMinutes(1);
+                TimeSpan diff1 = time2.Subtract(DateTime.Now);
+
+                eventNameText.Text = nextE.Name;
+                eventBridgeText.Text = "starts in";
+                if (nextE.Name.Equals("No more events today"))
                 {
-                    nextEventMinute = 30;
-                    nextEventMinuteString = "30";
-                    nextEventHour = currentHour;
-
+                    eventTimeText.Text = "";
+                    eventBridgeText.Text = "";
+                }
+                else if (diff1.Hours < 1)
+                {
+                    if (diff1.Minutes < 1)
+                    {
+                        eventTimeText.Text = "has started";
+                        eventBridgeText.Text = "";
+                    }
+                    else if (diff1.Minutes == 1)
+                    {
+                        Device.BeginInvokeOnMainThread(() => eventTimeText.Text = diff1.Minutes + " minute");
+                    }
+                    else
+                    {
+                        Device.BeginInvokeOnMainThread(() => eventTimeText.Text = diff1.Minutes + " minutes");
+                    }
+                }
+                else if (diff1.Hours == 1)
+                {
+                    if(diff1.Minutes == 0)
+                    {
+                        Device.BeginInvokeOnMainThread(() => eventTimeText.Text = diff1.Hours + " hour");
+                    }
+                    else if(diff1.Minutes == 1)
+                    {
+                        Device.BeginInvokeOnMainThread(() => eventTimeText.Text = diff1.Hours + " hour " + diff1.Minutes + " minute");
+                    }
+                    else
+                    {
+                        Device.BeginInvokeOnMainThread(() => eventTimeText.Text = diff1.Hours + " hour " + diff1.Minutes + " minutes");
+                    }
                 }
                 else
                 {
-                    nextEventMinute = 60;
-                    nextEventMinuteString = "00";
-                    nextEventHour = currentHour + 1;
+                    if (diff1.Minutes == 0)
+                    {
+                        Device.BeginInvokeOnMainThread(() => eventTimeText.Text = diff1.Hours + " hours");
+                    }
+                    else if (diff1.Minutes == 1)
+                    {
+                        Device.BeginInvokeOnMainThread(() => eventTimeText.Text = diff1.Hours + " hours " + diff1.Minutes + " minute");
+                    }
+                    else
+                    {
+                        Device.BeginInvokeOnMainThread(() => eventTimeText.Text = diff1.Hours + " hours " + diff1.Minutes + " minutes");
+                    }
                 }
-
-                nextEventTime = nextEventHour.ToString() + ":" + nextEventMinuteString;
-                var getevent = GetItemByTime(nextEventTime);
-                Event e = getevent.Result;
-                eventName = e.Name;
-                eventEvent = e;
-
-                //eventName =  //get event name based on the nextEventTime by getting the event where the time variable == nextEventTime
-                startsInMinutes = nextEventMinute - currentMinute;
-                startsInHours = nextEventHour - currentHour - 1;
-
-                string nextEventStartsIn;
-
-                if (startsInHours < 1)
-                {
-                    nextEventStartsIn = eventName + " starts in " + startsInMinutes.ToString() + " minutes";
-                }
-                else if (startsInHours == 1)
-                {
-                    nextEventStartsIn = eventName + " starts in " + startsInHours.ToString() + " hour " + startsInMinutes.ToString() + " minutes";
-                }
-                else
-                {
-                    nextEventStartsIn = eventName + " starts in " + startsInHours.ToString() + " hours " + startsInMinutes.ToString() + " minutes";
-                }
-
-                Device.BeginInvokeOnMainThread(() => timerText.Text = nextEventStartsIn);
                 return true;
             });
 
@@ -86,32 +101,26 @@ namespace DeepSeaWorldApp.Views
         {
             return await DataStore.GetItemByTime(time);
         }
+        async Task<Event> GetNextEvent()
+        {
+            return await DataStore.GetNextEvent();
+        }
 
         void OnViewMapClicked(object sender, System.EventArgs e)
         {
             //load map page and pass eventName. maybe use modal?
             Navigation.PushAsync(new EventDetailPage(eventEvent));
         }
-        void OnFAQClicked(object sender, System.EventArgs e)
-        {
-            Navigation.PushAsync(new SettingsPage());
-        }
-        void OnSettingsClicked(object sender, System.EventArgs e)
-        {
-            Navigation.PushAsync(new FAQPage());
-        }
-        void OnPromoClicked(object sender, System.EventArgs e)
-        {
-            string name = promoImage.Source.ToString();
-            Navigation.PushAsync(new NewsDetailPage(name));
-        }
+
         void OnBox1Clicked(object sender, System.EventArgs e)
         {
-
+            string name = homebox1.Source.ToString();
+            Navigation.PushAsync(new NewsDetailPage(name));
         }
         void OnBox2Clicked(object sender, System.EventArgs e)
         {
-
+            string name = homebox2.Source.ToString();
+            Navigation.PushAsync(new NewsDetailPage(name));
         }
         void OnBox3Clicked(object sender, System.EventArgs e)
         {

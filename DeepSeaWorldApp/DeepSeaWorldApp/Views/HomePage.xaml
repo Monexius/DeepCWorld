@@ -14,17 +14,13 @@
             <Color x:Key="LightTextColor">#999999</Color>
         </ResourceDictionary>
     </ContentPage.Resources>
-    <ContentPage.ToolbarItems>
-        <ToolbarItem Text="?"
-                     Clicked="OnFAQClicked" />
-    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="*" />
-                <RowDefinition Height="2*" />
-                <RowDefinition Height="3*" />
-                <RowDefinition Height="3*" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
@@ -35,20 +31,31 @@
 <!--            <Label x:Name="timerText" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" 
                    Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3"
                    BackgroundColor="White" FontSize="24" TextColor="Red" />-->
-            <Button CornerRadius="0" x:Name="timerText" Text="" Clicked="OnViewMapClicked" 
+<!--            <Button CornerRadius="0" x:Name="timerText" Text="" 
+                    Clicked="OnViewMapClicked" 
                     Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
-                    BackgroundColor="Silver" FontSize="18">
-            </Button>
-            <ImageButton x:Name="promoImage" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
-                         Source="deep_sea.png" Clicked="OnPromoClicked"/>
-            <ImageButton x:Name="homebox1" Source="fish1.jpg" Grid.Row="2" Grid.Column="0"
+                    BackgroundColor="White" FontSize="18"/>-->
+            <Label x:Name="eventNameText" Text="next event name" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
+                   FontSize="20" HorizontalTextAlignment="Center"/>
+            <Label x:Name="eventBridgeText" Text="eventBridgeText" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"
+                   FontSize="12" HorizontalTextAlignment="Center"/>
+            <Label x:Name="eventTimeText" Text="eventTimeText" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"
+                   FontSize="20" HorizontalTextAlignment="Center"/>
+            
+            
+            <ImageButton x:Name="homebox1" Grid.Row="4" Grid.Column="0"
+                         Source="deep_sea.png" Clicked="OnBox1Clicked"/>
+            <ImageButton x:Name="homebox2" Grid.Row="4" Grid.Column="1"
+                         Source="deep_sea.png" Clicked="OnBox2Clicked"/>
+            
+<!--        <ImageButton x:Name="homebox1" Source="fish1.jpg" Grid.Row="2" Grid.Column="0"
                          Clicked="OnBox1Clicked"/>
             <ImageButton x:Name="homebox2" Source="fish1.jpg" Grid.Row="2" Grid.Column="1"
                          Clicked="OnBox2Clicked"/>
             <ImageButton x:Name="homebox3" Source="fish1.jpg" Grid.Row="3" Grid.Column="0"
                          Clicked="OnBox3Clicked"/>
             <ImageButton x:Name="homebox4" Source="fish1.jpg" Grid.Row="3" Grid.Column="1"
-                         Clicked="OnBox4Clicked"/>
+                         Clicked="OnBox4Clicked"/>-->
         </Grid>
     </ContentPage.Content>
 </ContentPage>

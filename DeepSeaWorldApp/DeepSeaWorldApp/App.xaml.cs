@@ -10,6 +10,8 @@ using DeepSeaWorldApp.Models;
 using Newtonsoft.Json;
 using DeepSeaWorldApp.DBClasses;
 using Xamarin.Essentials;
+using Plugin.LocalNotifications;
+using System.Threading.Tasks;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace DeepSeaWorldApp
@@ -17,7 +19,7 @@ namespace DeepSeaWorldApp
     public partial class App : Application
     {
         static FAQDatabase faqdatabase;
-
+        public IDataStore<Event> DataStore => DependencyService.Get<IDataStore<Event>>() ?? new MockDataStore();
 
         public static FAQDatabase Database
         {
@@ -31,41 +33,53 @@ namespace DeepSeaWorldApp
             }
         }
 
-
-        public object DisplayAllert { get; private set; }
-
         public App()
         {
 
             InitializeComponent();
-
             MainPage = new MainPage();
-
+            if (DesignMode.IsDesignModeEnabled)
+            {
+                return;
+            }
+            ScheduleNotifications();
         }
 
-        //protected void LoadData()
-        //{
-        //        var faqs = new List<FAQ>();
-        //        var mockFAQ = new List<FAQ>
-        //        {
-        //            new FAQ {Question="QuestionA", Answer="Answer1" },
-        //            new FAQ {Question="QuestionB", Answer="Answer2" },
-        //            new FAQ {Question="QuestionC", Answer="Answer3" },
+        protected void ScheduleNotifications()
+        {
+            List<Event> Events = new List<Event>();
+            Events = GetEvents().Result;
+            CrossLocalNotifications.Current.Show(Events[0].Name, "starts at " + Events[0].Time, 101, DateTime.Now.AddSeconds(10));
+            int i = 0;
+            foreach (var g in Events)
+            {
+                DateTime time = Convert.ToDateTime(g.Time);
+                DateTime time2 = time.AddMinutes(-5);
+                TimeSpan diff1 = time2.Subtract(DateTime.Now);
+                TimeSpan zero = TimeSpan.FromSeconds(0);
 
-        //        };
-
-        //        foreach (var e in mockFAQ)
-        //        {
-        //            Database.SaveFAQAsync(e);
-        //        }
-        //}
-
+                if(diff1 > zero)
+                {
+                    CrossLocalNotifications.Current.Show(g.Name, "starts at " + g.Time, i, DateTime.Now.Add(diff1));
+                }
+                i++;
+            }
+        }
+        async Task<List<Event>> GetEvents()
+        {
+            var events = await DataStore.GetItemsAsync(true);
+            List<Event> Events = new List<Event>();
+            foreach (var e in events)
+            {
+                Events.Add(e);
+            }
+            return Events;
+        }
         protected override void OnStart()
         {
             //Handle when your app starts
             DeepSeaWorldMySQLDBConn<DBs> mySQLDataBaseCheck = new DeepSeaWorldMySQLDBConn<DBs>();
-            //  mySQLDataBaseCheck.tablesData;
-
+            //mySQLDataBaseCheck.tablesData;
         }
 
         protected override void OnSleep()

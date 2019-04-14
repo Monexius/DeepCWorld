@@ -36,5 +36,7 @@
 	<string>Allow camera access to scan QR codes</string>
 	<key>CFBundleName</key>
 	<string>DeepSeaWorldApp</string>
+	<key>XSLaunchImageAssets</key>
+	<string>Assets.xcassets/LaunchImage.launchimage</string>
 </dict>
 </plist>

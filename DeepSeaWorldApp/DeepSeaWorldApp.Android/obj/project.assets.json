@@ -5088,6 +5088,7 @@
         "lib/monoandroid80/Xamarin.Essentials.pdb",
         "lib/monoandroid80/Xamarin.Essentials.xml",
         "lib/monoandroid81/Xamarin.Essentials.dll",
+        "lib/monoandroid81/Xamarin.Essentials.dll.mdb",
         "lib/monoandroid81/Xamarin.Essentials.pdb",
         "lib/monoandroid81/Xamarin.Essentials.xml",
         "lib/monoandroid90/Xamarin.Essentials.dll",
@@ -5487,13 +5488,5 @@
         }
       }
     }
-  },
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file /Users/james/Documents/GitHub/DeepCWorld/DeepSeaWorldApp/DeepSeaWorldApp.Android/obj/DeepSeaWorldApp.Android.csproj.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  }
 }

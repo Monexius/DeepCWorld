@@ -11,6 +11,7 @@ namespace DeepSeaWorldApp.Services
         Task<bool> DeleteItemAsync(string id);
         Task<T> GetItemAsync(string id);
         Task<T> GetItemByTime(string time);
+        Task<T> GetNextEvent();
         Task<IEnumerable<T>> GetItemsAsync(bool forceRefresh = false);
     }
 }
