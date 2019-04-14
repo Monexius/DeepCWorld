@@ -56,6 +56,7 @@ C:\Users\Kamilos\Source\Repos\Monexius\DeepCWorld\DeepSeaWorldApp\DeepSeaWorldAp
 C:\Users\Kamil\Source\Repos\Monexius\DeepCWorld\DeepSeaWorldApp\DeepSeaWorldApp\bin\Debug\netstandard2.0\DeepSeaWorldApp.deps.json
 C:\Users\Kamil\Source\Repos\Monexius\DeepCWorld\DeepSeaWorldApp\DeepSeaWorldApp\bin\Debug\netstandard2.0\DeepSeaWorldApp.dll
 C:\Users\Kamil\Source\Repos\Monexius\DeepCWorld\DeepSeaWorldApp\DeepSeaWorldApp\bin\Debug\netstandard2.0\DeepSeaWorldApp.pdb
+C:\Users\Kamil\Source\Repos\Monexius\DeepCWorld\DeepSeaWorldApp\DeepSeaWorldApp\obj\Debug\netstandard2.0\DeepSeaWorldApp.csprojAssemblyReference.cache
 C:\Users\Kamil\Source\Repos\Monexius\DeepCWorld\DeepSeaWorldApp\DeepSeaWorldApp\obj\Debug\netstandard2.0\App.xaml.g.cs
 C:\Users\Kamil\Source\Repos\Monexius\DeepCWorld\DeepSeaWorldApp\DeepSeaWorldApp\obj\Debug\netstandard2.0\Views\AboutPage.xaml.g.cs
 C:\Users\Kamil\Source\Repos\Monexius\DeepCWorld\DeepSeaWorldApp\DeepSeaWorldApp\obj\Debug\netstandard2.0\Views\EventsPage.xaml.g.cs
@@ -71,4 +72,3 @@ C:\Users\Kamil\Source\Repos\Monexius\DeepCWorld\DeepSeaWorldApp\DeepSeaWorldApp\
 C:\Users\Kamil\Source\Repos\Monexius\DeepCWorld\DeepSeaWorldApp\DeepSeaWorldApp\obj\Debug\netstandard2.0\XamlC.stamp
 C:\Users\Kamil\Source\Repos\Monexius\DeepCWorld\DeepSeaWorldApp\DeepSeaWorldApp\obj\Debug\netstandard2.0\DeepSeaWorldApp.dll
 C:\Users\Kamil\Source\Repos\Monexius\DeepCWorld\DeepSeaWorldApp\DeepSeaWorldApp\obj\Debug\netstandard2.0\DeepSeaWorldApp.pdb
-C:\Users\Kamil\Source\Repos\Monexius\DeepCWorld\DeepSeaWorldApp\DeepSeaWorldApp\obj\Debug\netstandard2.0\DeepSeaWorldApp.csprojAssemblyReference.cache

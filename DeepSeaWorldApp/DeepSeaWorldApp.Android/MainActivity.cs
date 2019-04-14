@@ -9,9 +9,6 @@ using static DeepSeaWorldApp.DBClasses.DBs;
 using Android.Support.V4.App;
 using Android;
 using Android.Support.V4.Content;
-using System.IO;
-using Newtonsoft.Json;
-using System.Collections.Generic;
 
 namespace DeepSeaWorldApp.Droid
 {
@@ -39,6 +36,7 @@ namespace DeepSeaWorldApp.Droid
                 app = new App();
                 LoadApplication(app);
 
+                // SQLite connection, table creation, update, insert and get class
                 DeepSeaWorldSQLiteConnectionAndroid deepSeaWorld = new DeepSeaWorldSQLiteConnectionAndroid();
 
                 MySqlDBCon mySql = new MySqlDBCon();
@@ -46,16 +44,6 @@ namespace DeepSeaWorldApp.Droid
                 data = await mySql.MySQLConnection(); // connection and data catch from mySQL db on server
                 deepSeaWorld.TableAsync(); // table async - creation of local db tables
                 await deepSeaWorld.InsertUpdateTables(data); // insert data to local db
-
-                string path = Android.OS.Environment.ExternalStorageDirectory.AbsolutePath;
-                string fileName6 = "pp.txt";
-                string fPath6 = Path.Combine(path, fileName6);
-                using (StreamWriter st6 = new StreamWriter(fPath6))
-                using (JsonWriter writer6 = new JsonTextWriter(st6))
-                {
-                    JsonSerializer serializer = new JsonSerializer();
-                    serializer.Serialize(writer6, deepSeaWorld.GetItemAsyncExhibition(1));
-                }
 
             }
             catch(Exception ex)

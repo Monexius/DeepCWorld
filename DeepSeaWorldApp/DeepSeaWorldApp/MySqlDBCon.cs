@@ -3,12 +3,9 @@ using Newtonsoft.Json;
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.IO;
 using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
-using Xamarin.Forms.PlatformConfiguration;
 using static DeepSeaWorldApp.DBClasses.DBs;
 
 [assembly: Dependency(typeof(MySqlDBCon))]

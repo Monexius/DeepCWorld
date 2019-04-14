@@ -1,10 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using DeepSeaWorldApp.iOS;
-using Foundation;
-using UIKit;
 using Xamarin.Forms;
 using SQLite;
 using System.IO;
@@ -12,7 +8,6 @@ using static DeepSeaWorldApp.DBClasses.DBs;
 using System.Threading.Tasks;
 
 [assembly: Dependency(typeof(DeepSeaWorldSQLiteConnectioniOS))]
-
 
 namespace DeepSeaWorldApp.iOS
 {
@@ -28,6 +23,7 @@ namespace DeepSeaWorldApp.iOS
 
         }
 
+        // creating sqlite connection
         public SQLite.SQLiteAsyncConnection CreateConnection()
         {
             var SQLiteFile = "DeepSeaWorldSQLite.db";
@@ -52,6 +48,8 @@ namespace DeepSeaWorldApp.iOS
             db.CreateTableAsync<QRCodes>().Wait();
         }
 
+
+        // Insert, update all tables in local db
         public async Task InsertUpdateTables(DataTb data)
         {
             foreach (FAQ f in data.FAQ)
@@ -276,6 +274,7 @@ namespace DeepSeaWorldApp.iOS
             }
         }
 
+        // FAQ table class 
         [Table("FAQ")]
         public class FAQL
         {
@@ -285,6 +284,7 @@ namespace DeepSeaWorldApp.iOS
             public string FAQ_Anwswere { get; set; }
         }
 
+        // Events table class 
         [Table("Events")]
         public class EventsL
         {
@@ -298,6 +298,7 @@ namespace DeepSeaWorldApp.iOS
             public string Event_Time { get; set; }
         }
 
+        // Exhibition table class 
         [Table("Exhibition")]
         public class ExhibitionL
         {
@@ -313,6 +314,7 @@ namespace DeepSeaWorldApp.iOS
             public string QRCodes_Name { get; set; }
         }
 
+        // Map table class 
         [Table("Map")]
         public class MapL
         {
@@ -321,6 +323,7 @@ namespace DeepSeaWorldApp.iOS
             public string Map_IMG { get; set; }
         }
 
+        // News table class 
         [Table("News")]
         public class NewsL
         {
@@ -333,6 +336,7 @@ namespace DeepSeaWorldApp.iOS
             public string Notifications { get; set; }
         }
 
+        // QRCodes table class 
         [Table("QRCodes")]
         public class QRCodesL
         {

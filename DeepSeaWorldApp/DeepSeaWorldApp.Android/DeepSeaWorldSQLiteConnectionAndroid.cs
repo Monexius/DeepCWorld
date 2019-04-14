@@ -1,12 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using Xamarin.Forms;
 using SQLite;
 using System.Threading.Tasks;
 using static DeepSeaWorldApp.DBClasses.DBs;
 using Android.Util;
-using Android.Content.Res;
 
 [assembly: Dependency(typeof(DeepSeaWorldApp.Droid.DeepSeaWorldSQLiteConnectionAndroid))]
 
@@ -46,6 +44,7 @@ namespace DeepSeaWorldApp.Droid
             db.CreateTableAsync<QRCodes>().Wait();
         }
 
+        // Insert, update all tables in local db
         public async Task InsertUpdateTables(DataTb data)
         {
             foreach(FAQ f in data.FAQ)
@@ -276,6 +275,8 @@ namespace DeepSeaWorldApp.Droid
             }
         }
 
+
+        // FAQ table class 
         [Table("FAQ")]
         public class FAQL
         {
@@ -285,6 +286,7 @@ namespace DeepSeaWorldApp.Droid
             public string FAQ_Anwswere { get; set; }
         }
 
+        // Events table class 
         [Table("Events")]
         public class EventsL
         {
@@ -298,6 +300,7 @@ namespace DeepSeaWorldApp.Droid
             public string Event_Time { get; set; }
         }
 
+        // Exhibition table class 
         [Table("Exhibition")]
         public class ExhibitionL
         {
@@ -313,6 +316,7 @@ namespace DeepSeaWorldApp.Droid
             public string QRCodes_Name { get; set; }
         }
 
+        // Map table class 
         [Table("Map")]
         public class MapL
         {
@@ -321,6 +325,7 @@ namespace DeepSeaWorldApp.Droid
             public string Map_IMG { get; set; }
         }
 
+        // News table class 
         [Table("News")]
         public class NewsL
         {
@@ -333,6 +338,7 @@ namespace DeepSeaWorldApp.Droid
             public string Notifications { get; set; }
         }
 
+        // QRCodes table class 
         [Table("QRCodes")]
         public class QRCodesL
         {
