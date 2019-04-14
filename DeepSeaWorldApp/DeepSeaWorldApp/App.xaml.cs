@@ -1,14 +1,6 @@
-﻿using System;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using DeepSeaWorldApp.Views;
-using SQLite;
-using System.IO;
-using Newtonsoft.Json;
-using DeepSeaWorldApp.DBClasses;
-using Xamarin.Essentials;
-using System.Collections.Generic;
-using static DeepSeaWorldApp.DBClasses.DBs;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace DeepSeaWorldApp
@@ -20,9 +12,7 @@ namespace DeepSeaWorldApp
         public App()
         {
             InitializeComponent();
-
             MainPage = new MainPage();
-
         }
 
         protected override void OnStart()
