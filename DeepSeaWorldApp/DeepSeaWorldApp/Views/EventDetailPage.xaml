@@ -30,7 +30,7 @@
                    HorizontalTextAlignment="Center"/>
             <Image Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Source="{Binding Event.Image}"
                    HorizontalOptions="Center"/>
-            <ImageButton Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Source="floormap.jpg"
+            <ImageButton Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Source="deep_sea.png"
                    HorizontalOptions="Center" Clicked="OnMapClicked"/>
         </Grid>
     </StackLayout>

@@ -53,5 +53,10 @@ namespace DeepSeaWorldApp.Views
             base.OnDisappearing();
             //Navigation.PopAsync();
         }
+
+        void BackButtonClicked(object sender, System.EventArgs e)
+        {
+            this.Navigation.PopToRootAsync();
+        }
     }
 }

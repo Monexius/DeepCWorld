@@ -5,7 +5,10 @@
              Title="{Binding Name}" 
              x:Name="BrowseItemsPage"
              BackgroundImage="background.png">
-
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="X" Clicked="BackButtonClicked"/>
+    </ContentPage.ToolbarItems>
+   
     <ContentPage.Content>
         <StackLayout>
             <ListView x:Name="ItemsListView" ItemsSource="{Binding Exhibits}" 

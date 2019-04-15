@@ -36,6 +36,7 @@ namespace DeepSeaWorldApp.Droid
                 timer.Interval = 2000;
                 timer.Elapsed += Timer_Elapsed;
                 PermissionCheck(); // storage permission 
+                CameraPermissionCheck();
                 ZXing.Net.Mobile.Forms.Android.Platform.Init();
                 global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
                 app = new App();
@@ -55,33 +56,33 @@ namespace DeepSeaWorldApp.Droid
                     await deepSeaWorld.InsertOrUpdateTableAsyncFAQ(f);
                 }
 
-            base.OnCreate(savedInstanceState);
-            ZXing.Net.Mobile.Forms.Android.Platform.Init();
-            global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
+                base.OnCreate(savedInstanceState);
+                ZXing.Net.Mobile.Forms.Android.Platform.Init();
+                global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
 
-            //var prefs = Application.Context.GetSharedPreferences("name", FileCreationMode.Private);
-            //if (!prefs.Contains("FirstExecution"))
-            //{
-            //    //Do your stuff on first execution here...
-            //    var faqs = new List<FAQ>();
-            //    var mockFAQ = new List<FAQ>
-            //    {
-            //        new FAQ {Question="QuestionA", Answer="Answer1" },
-            //        new FAQ {Question="QuestionB", Answer="Answer2" },
-            //        new FAQ {Question="QuestionC", Answer="Answer3" },
+                //var prefs = Application.Context.GetSharedPreferences("name", FileCreationMode.Private);
+                //if (!prefs.Contains("FirstExecution"))
+                //{
+                //    //Do your stuff on first execution here...
+                //    var faqs = new List<FAQ>();
+                //    var mockFAQ = new List<FAQ>
+                //    {
+                //        new FAQ {Question="QuestionA", Answer="Answer1" },
+                //        new FAQ {Question="QuestionB", Answer="Answer2" },
+                //        new FAQ {Question="QuestionC", Answer="Answer3" },
 
-            //    };
+                //    };
 
-            //    foreach (var e in mockFAQ)
-            //    {
-            //        App.Database.SaveFAQAsync(e);
-            //    }
-            //    var editor = prefs.Edit();
-            //    editor.PutBoolean("FirstExecution", false);
-            //    editor.Commit();
-            //}
+                //    foreach (var e in mockFAQ)
+                //    {
+                //        App.Database.SaveFAQAsync(e);
+                //    }
+                //    var editor = prefs.Edit();
+                //    editor.PutBoolean("FirstExecution", false);
+                //    editor.Commit();
+                //}
 
-            LoadApplication(new App());
+                LoadApplication(new App());
 
                 //List<FAQ> fs = new List<FAQ>();
                 //fs = data.FAQ;
@@ -162,6 +163,16 @@ namespace DeepSeaWorldApp.Droid
                 StoragePermission();
             }
         }
+        private void CameraPermissionCheck()
+        {
+            if (ContextCompat.CheckSelfPermission(this, Manifest.Permission.Camera) == (int)Permission.Granted)
+            {
+            }
+            else
+            {
+                CameraPermission();
+            }
+        }
 
         // permit for storage access
         private void StoragePermission()
@@ -176,5 +187,19 @@ namespace DeepSeaWorldApp.Droid
             }
         }
 
+
+        // permit for camera access
+        private void CameraPermission()
+        {
+            if (ActivityCompat.ShouldShowRequestPermissionRationale(this, Manifest.Permission.Camera))
+            {
+                var requirePermission = new String[] { Manifest.Permission.Camera };
+                ActivityCompat.RequestPermissions(this, requirePermission, (int)RequestedPermission.Granted);
+            }
+            else
+            {
+                ActivityCompat.RequestPermissions(this, new String[] { Manifest.Permission.Camera }, (int)RequestedPermission.Required);
+            }
+        }
     }
 }

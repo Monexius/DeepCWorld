@@ -10,6 +10,7 @@ namespace DeepSeaWorldApp.Views
         public QRButtonPage()
         {
             InitializeComponent();
+
         }
         private void ButtonClicked(object sender, EventArgs e)
         {

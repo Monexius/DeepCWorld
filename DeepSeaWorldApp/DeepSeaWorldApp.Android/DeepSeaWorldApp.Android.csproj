@@ -119,12 +119,7 @@
     <AndroidResource Include="Resources\mipmap-xxhdpi\ic_launcher.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\ic_launcher.png" />
     <AndroidResource Include="Resources\drawable\mdpi_320x480_android.png" />
-    <AndroidResource Include="Resources\drawable\fish1.jpg" />
-    <AndroidResource Include="Resources\drawable\floormap.jpg" />
     <AndroidResource Include="Resources\drawable\background.png" />
-    <AndroidResource Include="Resources\drawable\fish2.jpg" />
-    <AndroidResource Include="Resources\drawable\fish3.jpg" />
-    <AndroidResource Include="Resources\drawable\fish4.jpg" />
     <AndroidResource Include="Resources\drawable\events.png" />
     <AndroidResource Include="Resources\drawable\faq.png" />
     <AndroidResource Include="Resources\drawable\map.png" />

@@ -24,3 +24,6 @@
 /Users/james/Documents/GitHub/DeepCWorld/DeepSeaWorldApp/DeepSeaWorldApp/obj/Debug/netstandard2.0/DeepSeaWorldApp.dll
 /Users/james/Documents/GitHub/DeepCWorld/DeepSeaWorldApp/DeepSeaWorldApp/obj/Debug/netstandard2.0/DeepSeaWorldApp.pdb
 /Users/james/Documents/GitHub/DeepCWorld/DeepSeaWorldApp/DeepSeaWorldApp/obj/Debug/netstandard2.0/DeepSeaWorldApp.csprojAssemblyReference.cache
+/Users/james/Documents/GitHub/DeepCWorld/DeepSeaWorldApp/DeepSeaWorldApp/bin/Debug/netstandard2.0/Xamarin.iOS.dll
+/Users/james/Documents/GitHub/DeepCWorld/DeepSeaWorldApp/DeepSeaWorldApp/bin/Debug/netstandard2.0/Xamarin.iOS.pdb
+/Users/james/Documents/GitHub/DeepCWorld/DeepSeaWorldApp/DeepSeaWorldApp/obj/Debug/netstandard2.0/DeepSeaWorldApp.csproj.CopyComplete

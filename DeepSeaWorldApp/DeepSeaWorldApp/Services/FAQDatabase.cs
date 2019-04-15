@@ -17,12 +17,12 @@ namespace DeepSeaWorldApp.Services
             _database = new SQLiteAsyncConnection(dbPath);
             _database.CreateTableAsync<FAQ>().Wait();
             LoadData();
-            String question = _database.GetAsync<FAQ>(1).Result.Question;
-            Console.WriteLine("Question: " + question);
-            String question1 = _database.GetAsync<FAQ>(2).Result.Question;
-            Console.WriteLine("Question: " + question1);
-            String question2 = _database.GetAsync<FAQ>(3).Result.Question;
-            Console.WriteLine("Question: " + question2);
+            //String question = _database.GetAsync<FAQ>(1).Result.Question;
+            //Console.WriteLine("Question: " + question);
+            //String question1 = _database.GetAsync<FAQ>(2).Result.Question;
+            //Console.WriteLine("Question: " + question1);
+            //String question2 = _database.GetAsync<FAQ>(3).Result.Question;
+            //Console.WriteLine("Question: " + question2);
         }
         public void LoadData()
         {

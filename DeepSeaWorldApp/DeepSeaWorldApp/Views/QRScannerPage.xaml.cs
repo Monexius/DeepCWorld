@@ -14,7 +14,7 @@ namespace DeepSeaWorldApp.Views
 
         public QRScannerPage()
         {
-            InitializeComponent();
+
         }
 
 
@@ -22,6 +22,7 @@ namespace DeepSeaWorldApp.Views
         {
             Device.BeginInvokeOnMainThread(async () =>
             {
+                //await Navigation.PushAsync(new NavigationPage(new QRContentPage(result.Text)));
                 if (result.Text == "F767-348G56")
                 {
                     //await DisplayAlert("Scanned result", result.Text, "if yes");
@@ -35,9 +36,16 @@ namespace DeepSeaWorldApp.Views
             });
         }
 
+        //void BackButtonClicked(object sender, System.EventArgs e)
+        //{
+        //    this.Navigation.PopModalAsync();
+        //}
+
         protected override void OnAppearing()
         {
             base.OnAppearing();
+
+            InitializeComponent();
             //_scanView.IsScanning = true;
         }
 
@@ -45,6 +53,8 @@ namespace DeepSeaWorldApp.Views
         {
             base.OnDisappearing();
             //_scanView.IsScanning = false;
+            //_scanView.Navigation.PopModalAsync();
+            //_scanView.Navigation.RemovePage(this);
         }
     }
 }

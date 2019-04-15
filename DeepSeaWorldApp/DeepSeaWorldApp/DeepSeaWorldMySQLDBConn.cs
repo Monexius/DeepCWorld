@@ -18,8 +18,8 @@ namespace DeepSeaWorldApp
 {
     class DeepSeaWorldMySQLDBConn<T> where T : class 
     {
-        public List<T> sync;
-        readonly Task<List<T>> TsAsync;
+        //public List<T> sync;
+        //readonly Task<List<T>> TsAsync;
 
         public DeepSeaWorldMySQLDBConn()
         {
@@ -27,12 +27,12 @@ namespace DeepSeaWorldApp
             //sync = DependencyService.Get<IMySQlSyncInterface<T>>().Data;
         }
 
-       public List<T> tablesData
-        {
-            get => sync;
-            set => this.tablesData = TsAsync.Result;
+       //public List<T> tablesData
+        //{
+            //get => sync;
+            //set => this.tablesData = TsAsync.Result;
         }
 
     }
 
-}
+//}

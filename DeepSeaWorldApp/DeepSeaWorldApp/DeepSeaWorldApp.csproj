@@ -45,6 +45,9 @@
     <Reference Include="Xamarin.iOS">
       <HintPath>..\..\..\..\..\..\..\Library\Frameworks\Xamarin.iOS.framework\Versions\12.2.1.16\lib\mono\Xamarin.iOS\Xamarin.iOS.dll</HintPath>
     </Reference>
+    <Reference Include="Xamarin.iOS">
+      <HintPath>..\..\..\..\..\..\..\Library\Frameworks\Xamarin.iOS.framework\Versions\12.8.0.0\lib\mono\Xamarin.iOS\Xamarin.iOS.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Update="Views\QRScannerPage.xaml.cs">
