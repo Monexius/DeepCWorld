@@ -1,7 +1,7 @@
-﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using DeepSeaWorldApp.Views;
+<<<<<<< HEAD
 using SQLite;
 using DeepSeaWorldApp.Services;
 using System.IO;
@@ -12,6 +12,8 @@ using DeepSeaWorldApp.DBClasses;
 using Xamarin.Essentials;
 using Plugin.LocalNotifications;
 using System.Threading.Tasks;
+=======
+>>>>>>> 8bd50b11df48e65f54d71c8b89a35888caaa50bf
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace DeepSeaWorldApp
@@ -35,6 +37,7 @@ namespace DeepSeaWorldApp
 
         public App()
         {
+<<<<<<< HEAD
 
             InitializeComponent();
             MainPage = new MainPage();
@@ -43,6 +46,10 @@ namespace DeepSeaWorldApp
                 return;
             }
             ScheduleNotifications();
+=======
+            InitializeComponent();
+            MainPage = new MainPage();
+>>>>>>> 8bd50b11df48e65f54d71c8b89a35888caaa50bf
         }
 
         protected void ScheduleNotifications()
@@ -77,9 +84,13 @@ namespace DeepSeaWorldApp
         }
         protected override void OnStart()
         {
+<<<<<<< HEAD
             //Handle when your app starts
             DeepSeaWorldMySQLDBConn<DBs> mySQLDataBaseCheck = new DeepSeaWorldMySQLDBConn<DBs>();
             //mySQLDataBaseCheck.tablesData;
+=======
+
+>>>>>>> 8bd50b11df48e65f54d71c8b89a35888caaa50bf
         }
 
         protected override void OnSleep()

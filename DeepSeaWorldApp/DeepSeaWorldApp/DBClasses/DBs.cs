@@ -1,6 +1,5 @@
 ﻿using Newtonsoft.Json;
 using SQLite;
-using System;
 using System.Collections.Generic;
 
 
@@ -46,7 +45,7 @@ namespace DeepSeaWorldApp.DBClasses
             [JsonProperty("Exhibition_ID")][PrimaryKey]
             public int Exhibition_ID { get; set; }
             [JsonProperty("Exhibition_QRCode_Pos")]
-            public int Exhibition_QRCode_Pos { get; }
+            public int Exhibition_QRCode_Pos { get; set; }
             [JsonProperty("Exhibition_Description")]
             public string Exhibition_Description { get; set; }
             [JsonProperty("Exhibition_IMG_Name")]
@@ -59,7 +58,7 @@ namespace DeepSeaWorldApp.DBClasses
             public string Exhibition_Video { get; set; }
             [JsonProperty("Exhibition_Name")]
             public string Exhibition_Name { get; set; }
-            [JsonProperty("QRCodes_Name")]
+            [JsonProperty("QRCode_Name")]
             public string QRCodes_Name { get; set; }
         }
 

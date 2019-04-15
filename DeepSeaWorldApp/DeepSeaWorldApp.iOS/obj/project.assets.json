@@ -7105,11 +7105,16 @@
     ]
   },
   "packageFolders": {
+<<<<<<< HEAD
     "/Users/james/.nuget/packages/": {}
+=======
+    "C:\\Users\\Kamil\\.nuget\\packages\\": {}
+>>>>>>> 8bd50b11df48e65f54d71c8b89a35888caaa50bf
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "/Users/james/Documents/GitHub/DeepCWorld/DeepSeaWorldApp/DeepSeaWorldApp.iOS/DeepSeaWorldApp.iOS.csproj",
       "projectName": "DeepSeaWorldApp.iOS",
       "projectPath": "/Users/james/Documents/GitHub/DeepCWorld/DeepSeaWorldApp/DeepSeaWorldApp.iOS/DeepSeaWorldApp.iOS.csproj",
@@ -7119,18 +7124,36 @@
       "skipContentFileWrite": true,
       "configFilePaths": [
         "/Users/james/.config/NuGet/NuGet.Config"
+=======
+      "projectUniqueName": "C:\\Users\\Kamil\\Source\\Repos\\Monexius\\DeepCWorld\\DeepSeaWorldApp\\DeepSeaWorldApp.iOS\\DeepSeaWorldApp.iOS.csproj",
+      "projectName": "DeepSeaWorldApp.iOS",
+      "projectPath": "C:\\Users\\Kamil\\Source\\Repos\\Monexius\\DeepCWorld\\DeepSeaWorldApp\\DeepSeaWorldApp.iOS\\DeepSeaWorldApp.iOS.csproj",
+      "packagesPath": "C:\\Users\\Kamil\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Kamil\\Source\\Repos\\Monexius\\DeepCWorld\\DeepSeaWorldApp\\DeepSeaWorldApp.iOS\\obj\\",
+      "projectStyle": "PackageReference",
+      "skipContentFileWrite": true,
+      "configFilePaths": [
+        "C:\\Users\\Kamil\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+>>>>>>> 8bd50b11df48e65f54d71c8b89a35888caaa50bf
       ],
       "originalTargetFrameworks": [
         "xamarinios10"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "xamarinios10": {
           "projectReferences": {
+<<<<<<< HEAD
             "/Users/james/Documents/GitHub/DeepCWorld/DeepSeaWorldApp/DeepSeaWorldApp/DeepSeaWorldApp.csproj": {
               "projectPath": "/Users/james/Documents/GitHub/DeepCWorld/DeepSeaWorldApp/DeepSeaWorldApp/DeepSeaWorldApp.csproj"
+=======
+            "C:\\Users\\Kamil\\Source\\Repos\\Monexius\\DeepCWorld\\DeepSeaWorldApp\\DeepSeaWorldApp\\DeepSeaWorldApp.csproj": {
+              "projectPath": "C:\\Users\\Kamil\\Source\\Repos\\Monexius\\DeepCWorld\\DeepSeaWorldApp\\DeepSeaWorldApp\\DeepSeaWorldApp.csproj"
+>>>>>>> 8bd50b11df48e65f54d71c8b89a35888caaa50bf
             }
           }
         }

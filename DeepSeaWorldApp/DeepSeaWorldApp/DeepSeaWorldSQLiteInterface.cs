@@ -1,4 +1,4 @@
-﻿using DeepSeaWorldApp.DBClasses;
+using DeepSeaWorldApp.DBClasses;
 using SQLite;
 using System;
 using System.Collections.Generic;

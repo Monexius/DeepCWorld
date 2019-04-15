@@ -12,8 +12,11 @@ using static DeepSeaWorldApp.DBClasses.DBs;
 using Android.Support.V4.App;
 using Android;
 using Android.Support.V4.Content;
+<<<<<<< HEAD
 using System.IO;
 using Newtonsoft.Json;
+=======
+>>>>>>> 8bd50b11df48e65f54d71c8b89a35888caaa50bf
 
 namespace DeepSeaWorldApp.Droid
 {
@@ -42,11 +45,12 @@ namespace DeepSeaWorldApp.Droid
                 app = new App();
                 LoadApplication(app);
 
+                // SQLite connection, table creation, update, insert and get class
                 DeepSeaWorldSQLiteConnectionAndroid deepSeaWorld = new DeepSeaWorldSQLiteConnectionAndroid();
-
 
                 MySqlDBCon mySql = new MySqlDBCon();
                 DataTb data = new DataTb();
+<<<<<<< HEAD
                 data = await mySql.MySQLConnection();
 
                 deepSeaWorld.TableAsync();
@@ -101,6 +105,11 @@ namespace DeepSeaWorldApp.Droid
                     JsonSerializer serializer = new JsonSerializer();
                     serializer.Serialize(writer6, deepSeaWorld.GetItemAsyncFAQ());
                 }
+=======
+                data = await mySql.MySQLConnection(); // connection and data catch from mySQL db on server
+                deepSeaWorld.TableAsync(); // table async - creation of local db tables
+                await deepSeaWorld.InsertUpdateTables(data); // insert data to local db
+>>>>>>> 8bd50b11df48e65f54d71c8b89a35888caaa50bf
 
             }
             catch(Exception ex)
@@ -113,7 +122,6 @@ namespace DeepSeaWorldApp.Droid
         {
             global::ZXing.Net.Mobile.Android.PermissionsHandler.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
-
 
         // networrk connection timer
         private void Timer_Elapsed(object sender, EventArgs e)

@@ -1,4 +1,4 @@
-﻿using DeepSeaWorldApp.DBClasses;
+using DeepSeaWorldApp.DBClasses;
 using MySql.Data.MySqlClient;
 using Newtonsoft.Json;
 using System;

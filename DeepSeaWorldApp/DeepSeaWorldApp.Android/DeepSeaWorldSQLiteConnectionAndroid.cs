@@ -1,18 +1,16 @@
 ﻿using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using Xamarin.Forms;
 using SQLite;
 using System.Threading.Tasks;
 using static DeepSeaWorldApp.DBClasses.DBs;
 using Android.Util;
-using Android.Content.Res;
 
 [assembly: Dependency(typeof(DeepSeaWorldApp.Droid.DeepSeaWorldSQLiteConnectionAndroid))]
 
 namespace DeepSeaWorldApp.Droid
 {
-    public class DeepSeaWorldSQLiteConnectionAndroid : DeepSeaWorldSQLiteInterface 
+    public class DeepSeaWorldSQLiteConnectionAndroid
     {
 
         MySqlDBCon mySql = new MySqlDBCon();
@@ -27,15 +25,14 @@ namespace DeepSeaWorldApp.Droid
         // creating sqlite connection
         public SQLiteAsyncConnection CreateConnection()
         {
-             string documentDir = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
-            //AssetManager assets = this.Assets;
-            //string documentDir = ;
+            string documentDir = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
             string sqliteFile = "DeepSeaWorldSQLite.db";
             string path = Path.Combine(documentDir, sqliteFile);
             var conn = new SQLiteAsyncConnection(path);
             return conn;
         }
 
+        // Creating Tables in local db
         public void TableAsync()
         {
             SQLiteAsyncConnection db = CreateConnection();
@@ -47,14 +44,116 @@ namespace DeepSeaWorldApp.Droid
             db.CreateTableAsync<QRCodes>().Wait();
         }
 
+        // Insert, update all tables in local db
+        public async Task InsertUpdateTables(DataTb data)
+        {
+            foreach(FAQ f in data.FAQ)
+            {
+                await InsertOrUpdateTableAsyncFAQ(f);
+                Log.Debug("FAQ_TB INSERT", f.ToString());
+            }
+
+            foreach (Events e in data.Events)
+            {
+                await InsertOrUpdateTableAsyncEvents(e);
+                Log.Debug("Events_TB INSERT", e.ToString());
+            }
+
+            foreach (Exhibition ex in data.Exhibition)
+            {
+                await InsertOrUpdateTableAsyncExhibition(ex);
+                Log.Debug("Exhibition_TB INSERT", ex.ToString());
+            }
+
+            foreach (Map m in data.Map)
+            {
+                await InsertOrUpdateTableAsyncMap(m);
+                Log.Debug("Map_TB INSERT", m.ToString());
+            }
+
+            foreach (News n in data.News)
+            {
+                await InsertOrUpdateTableAsyncNews(n);
+                Log.Debug("News_TB INSERT", n.ToString());
+            }
+
+            foreach (QRCodes qr in data.QRCodes)
+            {
+                await InsertOrUpdateTableAsyncQRCodes(qr);
+                Log.Debug("QRCodes_TB INSERT", qr.ToString());
+            }
+        }
+        
+        // Get local db table items from FAQ 
         public Task<List<FAQ>> GetItemAsyncFAQ()
         {
             return CreateConnection().Table<FAQ>().ToListAsync();
         }
 
-        public async Task<FAQL> GetItemAsyncFAQ(int id)
+        // Get local db table items from Events
+        public Task<List<Events>> GetItemAsyncEvents()
         {
-            return await CreateConnection().Table<FAQL>().Where(i => i.FAQ_ID == id).FirstOrDefaultAsync();
+            return CreateConnection().Table<Events>().ToListAsync();
+        }
+
+        // Get local db table items from Exhibition
+        public Task<List<Exhibition>> GetItemAsyncExhibition()
+        {
+            return CreateConnection().Table<Exhibition>().ToListAsync();
+        }
+
+        // Get local db table items from Map
+        public Task<List<Map>> GetItemAsyncMap()
+        {
+            return CreateConnection().Table<Map>().ToListAsync();
+        }
+
+        // Get local db table items from News
+        public Task<List<News>> GetItemAsyncNews()
+        {
+            return CreateConnection().Table<News>().ToListAsync();
+        }
+
+        // Get local db table items from QRCodes
+        public Task<List<QRCodes>> GetItemAsyncQRCodes()
+        {
+            return CreateConnection().Table<QRCodes>().ToListAsync();
+        }
+
+        // Get local db item from FAQ table depending on id
+        public Task<FAQL> GetItemAsyncFAQ(int id)
+        {
+            return CreateConnection().Table<FAQL>().Where(i => i.FAQ_ID == id).FirstOrDefaultAsync();
+        }
+
+        // Get local db item from Events table depending on id
+        public Task<EventsL> GetItemAsyncEvents(int id)
+        {
+            return CreateConnection().Table<EventsL>().Where(i => i.Events_ID == id).FirstOrDefaultAsync();
+        }
+
+        // Get local db item from Exhibition table depending on id
+        public Task<ExhibitionL> GetItemAsyncExhibition(int id)
+        {
+            return CreateConnection().Table<ExhibitionL>().Where(i => i.Exhibition_ID == id).FirstOrDefaultAsync();
+        }
+
+        // Get local db item from Map table depending on id
+        public Task<MapL> GetItemAsyncMap(int id)
+        {
+            return CreateConnection().Table<MapL>().Where(i => i.Map_ID == id).FirstOrDefaultAsync();
+        }
+
+        // Get local db item from News table depending on id
+        public Task<NewsL> GetItemAsyncNews(int id)
+        {
+            return CreateConnection().Table<NewsL>().Where(i => i.News_ID == id).FirstOrDefaultAsync();
+        }
+
+        // Get local db item from QRCodes table depending on id
+        public Task<QRCodesL> GetItemAsyncQRCodes(int id)
+        {
+            return CreateConnection().Table<QRCodesL>().Where(i => i.QRCodes_ID == id).FirstOrDefaultAsync();
         }
 
         // FAQ table insert update data
@@ -176,6 +275,8 @@ namespace DeepSeaWorldApp.Droid
             }
         }
 
+
+        // FAQ table class 
         [Table("FAQ")]
         public class FAQL
         {
@@ -185,6 +286,7 @@ namespace DeepSeaWorldApp.Droid
             public string FAQ_Anwswere { get; set; }
         }
 
+        // Events table class 
         [Table("Events")]
         public class EventsL
         {
@@ -198,6 +300,7 @@ namespace DeepSeaWorldApp.Droid
             public string Event_Time { get; set; }
         }
 
+        // Exhibition table class 
         [Table("Exhibition")]
         public class ExhibitionL
         {
@@ -213,6 +316,7 @@ namespace DeepSeaWorldApp.Droid
             public string QRCodes_Name { get; set; }
         }
 
+        // Map table class 
         [Table("Map")]
         public class MapL
         {
@@ -221,6 +325,7 @@ namespace DeepSeaWorldApp.Droid
             public string Map_IMG { get; set; }
         }
 
+        // News table class 
         [Table("News")]
         public class NewsL
         {
@@ -233,6 +338,7 @@ namespace DeepSeaWorldApp.Droid
             public string Notifications { get; set; }
         }
 
+        // QRCodes table class 
         [Table("QRCodes")]
         public class QRCodesL
         {
