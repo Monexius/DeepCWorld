@@ -1,6 +1,10 @@
 ﻿using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using DeepSeaWorldApp.Views;
+using static DeepSeaWorldApp.DBClasses.DBs;
+using Xamarin.Forms.Internals;
+using System;
+using static DeepSeaWorldApp.SQLiteDB;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace DeepSeaWorldApp
@@ -13,11 +17,31 @@ namespace DeepSeaWorldApp
         {
             InitializeComponent();
             MainPage = new MainPage();
+
+          
+
+        }
+
+        protected async void DataAsync()
+        {
+            SQLiteDB deepSeaWorld = new SQLiteDB();
+
+            MySqlDBCon mySql = new MySqlDBCon();
+            DataTb data = new DataTb();
+            data = await mySql.MySQLConnection(); // connection and data catch from mySQL db on server
+            deepSeaWorld.TableAsync(); // table async - creation of local db tables
+            await deepSeaWorld.InsertUpdateTables(data); // insert data to local db
+
+            FAQL fAQL = new FAQL();
+            fAQL = await deepSeaWorld.GetItemAsyncFAQ(1);
+
+            Console.WriteLine(fAQL.FAQ_Question);
         }
 
         protected override void OnStart()
         {
-
+            DataAsync();
+            
         }
 
         protected override void OnSleep()

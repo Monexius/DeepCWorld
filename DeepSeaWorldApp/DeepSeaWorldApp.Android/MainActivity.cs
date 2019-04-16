@@ -36,14 +36,14 @@ namespace DeepSeaWorldApp.Droid
                 app = new App();
                 LoadApplication(app);
 
-                // SQLite connection, table creation, update, insert and get class
-                DeepSeaWorldSQLiteConnectionAndroid deepSeaWorld = new DeepSeaWorldSQLiteConnectionAndroid();
+                //// SQLite connection, table creation, update, insert and get class
+                //DeepSeaWorldSQLiteConnectionAndroid deepSeaWorld = new DeepSeaWorldSQLiteConnectionAndroid();
 
-                MySqlDBCon mySql = new MySqlDBCon();
-                DataTb data = new DataTb();
-                data = await mySql.MySQLConnection(); // connection and data catch from mySQL db on server
-                deepSeaWorld.TableAsync(); // table async - creation of local db tables
-                await deepSeaWorld.InsertUpdateTables(data); // insert data to local db
+                //MySqlDBCon mySql = new MySqlDBCon();
+                //DataTb data = new DataTb();
+                //data = await mySql.MySQLConnection(); // connection and data catch from mySQL db on server
+                //deepSeaWorld.TableAsync(); // table async - creation of local db tables
+                //await deepSeaWorld.InsertUpdateTables(data); // insert data to local db
 
             }
             catch(Exception ex)

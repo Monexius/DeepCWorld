@@ -28,7 +28,7 @@ namespace DeepSeaWorldApp.iOS
         {
             var SQLiteFile = "DeepSeaWorldSQLite.db";
 
-            string folder = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+            string folder = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
             string directory = Path.Combine(folder, "..", "Library", "Databases");
             string path = Path.Combine(directory, SQLiteFile);
             var conn = new SQLite.SQLiteAsyncConnection(path);
