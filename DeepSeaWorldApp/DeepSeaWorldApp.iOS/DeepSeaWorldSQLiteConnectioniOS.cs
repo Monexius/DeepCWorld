@@ -56,6 +56,7 @@ namespace DeepSeaWorldApp.iOS
             foreach (FAQ f in data.FAQ)
             {
                 await InsertOrUpdateTableAsyncFAQ(f);
+                Console.WriteLine("FAQ");
             }
 
             foreach (Events e in data.Events)

@@ -27,7 +27,6 @@ namespace DeepSeaWorldApp.Views
             eventNameText.Text = "event";
             eventTimeText.Text = "time";
 
-
             Device.StartTimer(TimeSpan.FromSeconds(1), () =>
             {
                 var next = GetNextEvent();
@@ -132,4 +131,6 @@ namespace DeepSeaWorldApp.Views
         }
 
     }
+
+
 }

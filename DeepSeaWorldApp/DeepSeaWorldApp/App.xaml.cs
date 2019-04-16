@@ -1,7 +1,6 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using DeepSeaWorldApp.Views;
-<<<<<<< HEAD
 using SQLite;
 using DeepSeaWorldApp.Services;
 using System.IO;
@@ -12,8 +11,8 @@ using DeepSeaWorldApp.DBClasses;
 using Xamarin.Essentials;
 using Plugin.LocalNotifications;
 using System.Threading.Tasks;
-=======
->>>>>>> 8bd50b11df48e65f54d71c8b89a35888caaa50bf
+using System;
+using static DeepSeaWorldApp.DBClasses.DBs;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace DeepSeaWorldApp
@@ -37,8 +36,6 @@ namespace DeepSeaWorldApp
 
         public App()
         {
-<<<<<<< HEAD
-
             InitializeComponent();
             MainPage = new MainPage();
             if (DesignMode.IsDesignModeEnabled)
@@ -46,12 +43,16 @@ namespace DeepSeaWorldApp
                 return;
             }
             ScheduleNotifications();
-=======
-            InitializeComponent();
-            MainPage = new MainPage();
->>>>>>> 8bd50b11df48e65f54d71c8b89a35888caaa50bf
+            //DataTb data = new DataTb();
+            //data = GetDB().Result;
+            //Console.WriteLine("COUNT: " + data.Events.Count);
+            //Console.WriteLine("0 NAME: " + data.Events[0].Event_Name);
         }
-
+        async Task<DataTb> GetDB()
+        {
+            MySqlDBCon dbcon = new MySqlDBCon();
+            return await dbcon.MySQLConnection();
+        }
         protected void ScheduleNotifications()
         {
             List<Event> Events = new List<Event>();
@@ -84,13 +85,8 @@ namespace DeepSeaWorldApp
         }
         protected override void OnStart()
         {
-<<<<<<< HEAD
             //Handle when your app starts
-            DeepSeaWorldMySQLDBConn<DBs> mySQLDataBaseCheck = new DeepSeaWorldMySQLDBConn<DBs>();
-            //mySQLDataBaseCheck.tablesData;
-=======
 
->>>>>>> 8bd50b11df48e65f54d71c8b89a35888caaa50bf
         }
 
         protected override void OnSleep()

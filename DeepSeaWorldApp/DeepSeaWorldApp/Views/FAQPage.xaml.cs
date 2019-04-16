@@ -25,6 +25,7 @@ namespace DeepSeaWorldApp.Views
             base.OnAppearing();
 
             listView.ItemsSource = await App.Database.GetFAQsAsync();
+            
             //BindingContext = viewModel = new FAQViewModel();
             //if (viewModel.FAQ.Count == 0)
                 //viewModel.LoadItemsCommand.Execute(null);

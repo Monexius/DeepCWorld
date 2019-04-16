@@ -43,9 +43,9 @@
                    FontSize="20" HorizontalTextAlignment="Center"/>
             
             
-            <ImageButton x:Name="homebox1" Grid.Row="4" Grid.Column="0"
+            <ImageButton x:Name="homebox1" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2"
                          Source="deep_sea.png" Clicked="OnBox1Clicked"/>
-            <ImageButton x:Name="homebox2" Grid.Row="4" Grid.Column="1"
+            <ImageButton x:Name="homebox2" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2"
                          Source="deep_sea.png" Clicked="OnBox2Clicked"/>
             
 <!--        <ImageButton x:Name="homebox1" Source="fish1.jpg" Grid.Row="2" Grid.Column="0"
