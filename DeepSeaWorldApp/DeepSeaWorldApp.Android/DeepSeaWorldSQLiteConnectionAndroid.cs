@@ -25,7 +25,7 @@ namespace DeepSeaWorldApp.Droid
         // creating sqlite connection
         public SQLiteAsyncConnection CreateConnection()
         {
-            string documentDir = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
+            string documentDir = System.Environment.GetFolderPath(System.Environment.SpecialFolder.LocalApplicationData);
             string sqliteFile = "DeepSeaWorldSQLite.db";
             string path = Path.Combine(documentDir, sqliteFile);
             var conn = new SQLiteAsyncConnection(path);
@@ -330,7 +330,7 @@ namespace DeepSeaWorldApp.Droid
         public class NewsL
         {
             [PrimaryKey, AutoIncrement]
-            public int News_ID { get; set; }
+            public int News_ID { get; set; }  
             public string News_Title { get; set; }
             public string News_Brief_Info { get; set; }
             public string News_IMG { get; set; }
@@ -341,6 +341,7 @@ namespace DeepSeaWorldApp.Droid
         // QRCodes table class 
         [Table("QRCodes")]
         public class QRCodesL
+
         {
             [PrimaryKey, AutoIncrement]
             public int QRCodes_ID { get; set; }

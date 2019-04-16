@@ -2,9 +2,6 @@ using System;
 using Android.App;
 using Android.Content.PM;
 using Android.OS;
-using Android.Content;
-using System.Collections.Generic;
-using DeepSeaWorldApp.Models;
 using Android.Net;
 using DeepSeaWorldApp.Views;
 using System.Net;
@@ -12,11 +9,6 @@ using static DeepSeaWorldApp.DBClasses.DBs;
 using Android.Support.V4.App;
 using Android;
 using Android.Support.V4.Content;
-<<<<<<< HEAD
-using System.IO;
-using Newtonsoft.Json;
-=======
->>>>>>> 8bd50b11df48e65f54d71c8b89a35888caaa50bf
 
 namespace DeepSeaWorldApp.Droid
 {
@@ -39,80 +31,22 @@ namespace DeepSeaWorldApp.Droid
                 timer.Interval = 2000;
                 timer.Elapsed += Timer_Elapsed;
                 PermissionCheck(); // storage permission 
-                CameraPermissionCheck();
                 ZXing.Net.Mobile.Forms.Android.Platform.Init();
                 global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
                 app = new App();
                 LoadApplication(app);
 
-                // SQLite connection, table creation, update, insert and get class
-                DeepSeaWorldSQLiteConnectionAndroid deepSeaWorld = new DeepSeaWorldSQLiteConnectionAndroid();
+                //// SQLite connection, table creation, update, insert and get class
+                //DeepSeaWorldSQLiteConnectionAndroid deepSeaWorld = new DeepSeaWorldSQLiteConnectionAndroid();
 
-                MySqlDBCon mySql = new MySqlDBCon();
-                DataTb data = new DataTb();
-<<<<<<< HEAD
-                data = await mySql.MySQLConnection();
-
-                deepSeaWorld.TableAsync();
-
-                foreach (DBClasses.DBs.FAQ f in data.FAQ)
-                {
-                    await deepSeaWorld.InsertOrUpdateTableAsyncFAQ(f);
-                }
-
-                base.OnCreate(savedInstanceState);
-                ZXing.Net.Mobile.Forms.Android.Platform.Init();
-                global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
-
-                //var prefs = Application.Context.GetSharedPreferences("name", FileCreationMode.Private);
-                //if (!prefs.Contains("FirstExecution"))
-                //{
-                //    //Do your stuff on first execution here...
-                //    var faqs = new List<FAQ>();
-                //    var mockFAQ = new List<FAQ>
-                //    {
-                //        new FAQ {Question="QuestionA", Answer="Answer1" },
-                //        new FAQ {Question="QuestionB", Answer="Answer2" },
-                //        new FAQ {Question="QuestionC", Answer="Answer3" },
-
-                //    };
-
-                //    foreach (var e in mockFAQ)
-                //    {
-                //        App.Database.SaveFAQAsync(e);
-                //    }
-                //    var editor = prefs.Edit();
-                //    editor.PutBoolean("FirstExecution", false);
-                //    editor.Commit();
-                //}
-
-                LoadApplication(new App());
-
-                //List<FAQ> fs = new List<FAQ>();
-                //fs = data.FAQ;
-                //await deepSeaWorld.InsertOrUpdateTableAsyncFAQDb(fs);
-
-
-                //List<DataTb> ls = new List<DataTb>();
-
-                //ls.Add(data);
-                string path = Android.OS.Environment.ExternalStorageDirectory.AbsolutePath;
-                string fileName6 = "pp.txt";
-                string fPath6 = Path.Combine(path, fileName6);
-                using (StreamWriter st6 = new StreamWriter(fPath6))
-                using (JsonWriter writer6 = new JsonTextWriter(st6))
-                {
-                    JsonSerializer serializer = new JsonSerializer();
-                    serializer.Serialize(writer6, deepSeaWorld.GetItemAsyncFAQ());
-                }
-=======
-                data = await mySql.MySQLConnection(); // connection and data catch from mySQL db on server
-                deepSeaWorld.TableAsync(); // table async - creation of local db tables
-                await deepSeaWorld.InsertUpdateTables(data); // insert data to local db
->>>>>>> 8bd50b11df48e65f54d71c8b89a35888caaa50bf
+                //MySqlDBCon mySql = new MySqlDBCon();
+                //DataTb data = new DataTb();
+                //data = await mySql.MySQLConnection(); // connection and data catch from mySQL db on server
+                //deepSeaWorld.TableAsync(); // table async - creation of local db tables
+                //await deepSeaWorld.InsertUpdateTables(data); // insert data to local db
 
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 throw ex;
             }
@@ -129,11 +63,12 @@ namespace DeepSeaWorldApp.Droid
             timer.Stop();
             ConnectivityManager connectivityManager = (ConnectivityManager)GetSystemService(ConnectivityService);
             NetworkInfo networkInfo = connectivityManager.ActiveNetworkInfo;
-            if(networkInfo.Type == ConnectivityType.Wifi || networkInfo.Type == ConnectivityType.Mobile && !CheckInternetConnection() && !hasNotified)
+            if (networkInfo.Type == ConnectivityType.Wifi || networkInfo.Type == ConnectivityType.Mobile && !CheckInternetConnection() && !hasNotified)
             {
                 hasNotified = true;
                 Xamarin.Forms.MessagingCenter.Send<MainPage>(app.MainPage as MainPage, "Internet Connection has been lost");
-            }else
+            }
+            else
             {
                 Xamarin.Forms.MessagingCenter.Send<MainPage>(app.MainPage as MainPage, "Internet Connection");
             }
@@ -153,7 +88,8 @@ namespace DeepSeaWorldApp.Droid
                 hasNotified = false;
 
                 return true;
-            }catch (WebException)
+            }
+            catch (WebException)
             {
                 if (!hasNotified)
                     hasNotified = false;
@@ -164,50 +100,28 @@ namespace DeepSeaWorldApp.Droid
         // checking access to storage
         private void PermissionCheck()
         {
-            if(ContextCompat.CheckSelfPermission(this, Manifest.Permission.WriteExternalStorage) == (int)Permission.Granted)
-            {
-            }else
-            {
-                StoragePermission();
-            }
-        }
-        private void CameraPermissionCheck()
-        {
-            if (ContextCompat.CheckSelfPermission(this, Manifest.Permission.Camera) == (int)Permission.Granted)
+            if (ContextCompat.CheckSelfPermission(this, Manifest.Permission.WriteExternalStorage) == (int)Permission.Granted)
             {
             }
             else
             {
-                CameraPermission();
+                StoragePermission();
             }
         }
 
         // permit for storage access
         private void StoragePermission()
         {
-            if(ActivityCompat.ShouldShowRequestPermissionRationale(this, Manifest.Permission.WriteExternalStorage))
+            if (ActivityCompat.ShouldShowRequestPermissionRationale(this, Manifest.Permission.WriteExternalStorage))
             {
                 var requirePermission = new String[] { Manifest.Permission.WriteExternalStorage };
                 ActivityCompat.RequestPermissions(this, requirePermission, (int)RequestedPermission.Granted);
-            }else
+            }
+            else
             {
                 ActivityCompat.RequestPermissions(this, new String[] { Manifest.Permission.WriteExternalStorage }, (int)RequestedPermission.Required);
             }
         }
 
-
-        // permit for camera access
-        private void CameraPermission()
-        {
-            if (ActivityCompat.ShouldShowRequestPermissionRationale(this, Manifest.Permission.Camera))
-            {
-                var requirePermission = new String[] { Manifest.Permission.Camera };
-                ActivityCompat.RequestPermissions(this, requirePermission, (int)RequestedPermission.Granted);
-            }
-            else
-            {
-                ActivityCompat.RequestPermissions(this, new String[] { Manifest.Permission.Camera }, (int)RequestedPermission.Required);
-            }
-        }
     }
 }

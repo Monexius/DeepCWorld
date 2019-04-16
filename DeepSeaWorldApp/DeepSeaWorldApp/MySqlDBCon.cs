@@ -25,8 +25,8 @@ namespace DeepSeaWorldApp
             DataTb dataTb = new DataTb();
 
             HttpClient client = new HttpClient();
-            Uri url = new Uri("http://10.0.2.2/scripts/dbContent.php");
-            client.BaseAddress = new Uri("http://10.0.2.2/");
+            Uri url = new Uri("http://localhost:8888/scripts/dbContent.php");
+            client.BaseAddress = new Uri("http://localhost");
 
             var resp = await client.GetAsync(url); // responce from web client service (async with Mysql db)
             string content = resp.Content.ReadAsStringAsync().Result;

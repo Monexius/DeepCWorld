@@ -20,8 +20,8 @@ namespace DeepSeaWorldApp.Views
             InitializeComponent();
 
             //promoImage.Source = "fish1.jpg";
-            homebox1.Source = "fish1.jpg";
-            homebox2.Source = "fish1.jpg";
+            //homebox1.Source = "fish1.jpg";
+            //homebox2.Source = "fish1.jpg";
             //homebox3.Source = "fish1.jpg";
             //homebox4.Source = "fish1.jpg";
             eventNameText.Text = "event";
