@@ -13,6 +13,10 @@ using Plugin.LocalNotifications;
 using System.Threading.Tasks;
 using System;
 using static DeepSeaWorldApp.DBClasses.DBs;
+using static DeepSeaWorldApp.DBClasses.DBs;
+using Xamarin.Forms.Internals;
+using System;
+using static DeepSeaWorldApp.SQLiteDB;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace DeepSeaWorldApp
@@ -48,11 +52,14 @@ namespace DeepSeaWorldApp
             //Console.WriteLine("COUNT: " + data.Events.Count);
             //Console.WriteLine("0 NAME: " + data.Events[0].Event_Name);
         }
-        async Task<DataTb> GetDB()
-        {
-            MySqlDBCon dbcon = new MySqlDBCon();
-            return await dbcon.MySQLConnection();
-        }
+        //async Task<DataTb> GetDB()
+        //{
+        //    MySqlDBCon dbcon = new MySqlDBCon();
+        //    return await dbcon.MySQLConnection();
+
+          
+
+        //}
         protected void ScheduleNotifications()
         {
             List<Event> Events = new List<Event>();
@@ -83,10 +90,26 @@ namespace DeepSeaWorldApp
             }
             return Events;
         }
+
+        protected async void DataAsync()
+        {
+            SQLiteDB deepSeaWorld = new SQLiteDB();
+
+            MySqlDBCon mySql = new MySqlDBCon();
+            DataTb data = new DataTb();
+            data = await mySql.MySQLConnection(); // connection and data catch from mySQL db on server
+            deepSeaWorld.TableAsync(); // table async - creation of local db tables
+            await deepSeaWorld.InsertUpdateTables(data); // insert data to local db
+
+            FAQL fAQL = new FAQL();
+            fAQL = await deepSeaWorld.GetItemAsyncFAQ(1);
+
+            Console.WriteLine(fAQL.FAQ_Question);
+        }
         protected override void OnStart()
         {
-            //Handle when your app starts
-
+            DataAsync();
+            
         }
 
         protected override void OnSleep()

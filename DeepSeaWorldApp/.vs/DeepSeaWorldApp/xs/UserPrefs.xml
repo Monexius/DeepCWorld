@@ -1,35 +1,31 @@
 ﻿<Properties GitUserInfo="UsingGIT" StartupConfiguration="{10E2A7FF-2BF5-4C5C-9609-9DF2634FB291}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="DeepSeaWorldApp.iOS/Main.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="DeepSeaWorldApp Status">
     <Files>
-      <File FileName="DeepSeaWorldApp/Views/FAQPage.xaml.cs" Line="28" Column="1" />
-      <File FileName="DeepSeaWorldApp/Views/HomePage.xaml.cs" Line="28" Column="41" />
-      <File FileName="DeepSeaWorldApp/App.xaml.cs" Line="54" Column="50" />
-      <File FileName="DeepSeaWorldApp/MySqlDBCon.cs" Line="22" Column="52" />
-      <File FileName="DeepSeaWorldApp.iOS/DeepSeaWorldSQLiteConnectioniOS.cs" Line="33" Column="63" />
-      <File FileName="DeepSeaWorldApp.iOS/Main.cs" Line="11" Column="22" />
+      <File FileName="DeepSeaWorldApp/Views/HomePage.xaml" />
+      <File FileName="DeepSeaWorldApp/Views/HomePage.xaml.cs" Line="24" Column="15" />
+      <File FileName="DeepSeaWorldApp/App.xaml.cs" Line="111" Column="25" />
+      <File FileName="DeepSeaWorldApp/MySqlDBCon.cs" Line="28" Column="32" />
+      <File FileName="DeepSeaWorldApp Status" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="DeepSeaWorldApp" expanded="True">
+          <Node name="DeepSeaWorldApp" expanded="True" selected="True">
             <Node name="DeepSeaWorldApp" expanded="True">
-              <Node name="Models" expanded="True" />
-              <Node name="Services" expanded="True" />
               <Node name="Views" expanded="True">
-                <Node name="FAQPage.xaml" expanded="True" />
                 <Node name="HomePage.xaml" expanded="True" />
+                <Node name="MainPage.xaml" expanded="True" />
               </Node>
               <Node name="App.xaml" expanded="True" />
             </Node>
-            <Node name="DeepSeaWorldApp.iOS" expanded="True">
-              <Node name="Main.cs" selected="True" />
-            </Node>
+            <Node name="DeepSeaWorldApp.Android" expanded="True" />
+            <Node name="DeepSeaWorldApp.iOS" expanded="True" />
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.ItemProperties.DeepSeaWorldApp.Android PreferredExecutionTarget="Android.ZX1B24Q82G" />
+  <MonoDevelop.Ide.ItemProperties.DeepSeaWorldApp.Android PreferredExecutionTarget="Android.my_device" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" />
   <MonoDevelop.Ide.ItemProperties.DeepSeaWorldApp.iOS automaticSigning="False" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.47891c6bfa5fddd3860f568ae2b9465887eee4e0" />
