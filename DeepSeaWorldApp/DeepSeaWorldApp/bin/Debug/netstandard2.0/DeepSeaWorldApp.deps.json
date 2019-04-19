@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETStandard,Version=v2.0/",
-    "signature": "dd885bc2424d69ef1a2556e62d838c9d4dd99c40"
+    "signature": "0f29987acbf209bc7d70b5e21b4abdfaed75feb9"
   },
   "compilationOptions": {},
   "targets": {
@@ -18,7 +18,7 @@
           "System.Json": "4.5.0",
           "Xam.Plugins.Notifier": "3.0.1",
           "Xamarin.Essentials": "1.1.0",
-          "Xamarin.Forms": "3.6.0.293080",
+          "Xamarin.Forms": "3.6.0.344457",
           "ZXing.Net.Mobile": "2.4.1",
           "ZXing.Net.Mobile.Forms": "2.4.1",
           "sqlite-net-pcl": "1.5.231",
@@ -243,7 +243,7 @@
           }
         }
       },
-      "Xamarin.Forms/3.6.0.293080": {
+      "Xamarin.Forms/3.6.0.344457": {
         "runtime": {
           "lib/netstandard2.0/Xamarin.Forms.Core.dll": {
             "assemblyVersion": "2.0.0.0",
@@ -277,7 +277,7 @@
       },
       "ZXing.Net.Mobile.Forms/2.4.1": {
         "dependencies": {
-          "Xamarin.Forms": "3.6.0.293080",
+          "Xamarin.Forms": "3.6.0.344457",
           "ZXing.Net.Mobile": "2.4.1"
         },
         "runtime": {
@@ -464,12 +464,12 @@
       "path": "xamarin.essentials/1.1.0",
       "hashPath": "xamarin.essentials.1.1.0.nupkg.sha512"
     },
-    "Xamarin.Forms/3.6.0.293080": {
+    "Xamarin.Forms/3.6.0.344457": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-o7GH+huLZMGlBxFCFAV5g+P3xoYoXFPeGrZ+AI8ezt2Gey/ZeZjSlf3nR3DzZKClVsCTvJS8Z5rVlC1dexSv+A==",
-      "path": "xamarin.forms/3.6.0.293080",
-      "hashPath": "xamarin.forms.3.6.0.293080.nupkg.sha512"
+      "sha512": "sha512-YTPYiRg5q8Q1AgkjX9mx2/0wfCNyoSfztvvWw9HY4qM1lmOgkAxAbbtY8zi3fCPUXhfZrCAgRvJYNS8VM519kQ==",
+      "path": "xamarin.forms/3.6.0.344457",
+      "hashPath": "xamarin.forms.3.6.0.344457.nupkg.sha512"
     },
     "ZXing.Net.Mobile/2.4.1": {
       "type": "package",

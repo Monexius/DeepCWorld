@@ -25,8 +25,17 @@ namespace DeepSeaWorldApp
             DataTb dataTb = new DataTb();
 
             HttpClient client = new HttpClient();
-            Uri url = new Uri("http://localhost:8888/scripts/dbContent.php");
-            client.BaseAddress = new Uri("http://localhost");
+            Uri url;
+            if(Device.RuntimePlatform == Device.iOS)
+            {
+                url = new Uri("http://localhost:8888/scripts/dbContent.php");
+                client.BaseAddress = new Uri("http://localhost:8888/");
+            }
+            else
+            {
+                url = new Uri("http://10.0.2.2/scripts/dbContent.php");
+                client.BaseAddress = new Uri("http://10.0.2.2/");
+            }
 
             var resp = await client.GetAsync(url); // responce from web client service (async with Mysql db)
             string content = resp.Content.ReadAsStringAsync().Result;

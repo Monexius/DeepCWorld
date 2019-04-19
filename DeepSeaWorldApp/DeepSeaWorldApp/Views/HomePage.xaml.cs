@@ -11,7 +11,6 @@ namespace DeepSeaWorldApp.Views
 {
     public partial class HomePage : ContentPage
     {
-        string eventName = "init";
         //get event data
         public IDataStore<Event> DataStore => DependencyService.Get<IDataStore<Event>>() ?? new MockDataStore();
         Event eventEvent;

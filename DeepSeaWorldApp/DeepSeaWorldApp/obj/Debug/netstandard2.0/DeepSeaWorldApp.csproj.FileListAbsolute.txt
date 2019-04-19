@@ -75,7 +75,11 @@ C:/Users/Kamil/Source/Repos/Monexius/DeepCWorld/DeepSeaWorldApp/DeepSeaWorldApp/
 C:/Users/Kamil/Source/Repos/Monexius/DeepCWorld/DeepSeaWorldApp/DeepSeaWorldApp/obj/Debug/netstandard2.0/DeepSeaWorldApp.dll
 C:/Users/Kamil/Source/Repos/Monexius/DeepCWorld/DeepSeaWorldApp/DeepSeaWorldApp/obj/Debug/netstandard2.0/DeepSeaWorldApp.pdb
 >>>>>>> 8bd50b11df48e65f54d71c8b89a35888caaa50bf
-/Users/james/Documents/GitHub/DeepCWorld/DeepSeaWorldApp/DeepSeaWorldApp/obj/Debug/netstandard2.0/DeepSeaWorldApp.csprojAssemblyReference.cache
+/Users/james/Documents/GitHub/DeepCWorld/DeepSeaWorldApp/DeepSeaWorldApp/bin/Debug/netstandard2.0/DeepSeaWorldApp.deps.json
+/Users/james/Documents/GitHub/DeepCWorld/DeepSeaWorldApp/DeepSeaWorldApp/bin/Debug/netstandard2.0/DeepSeaWorldApp.dll
+/Users/james/Documents/GitHub/DeepCWorld/DeepSeaWorldApp/DeepSeaWorldApp/bin/Debug/netstandard2.0/DeepSeaWorldApp.pdb
+/Users/james/Documents/GitHub/DeepCWorld/DeepSeaWorldApp/DeepSeaWorldApp/bin/Debug/netstandard2.0/Xamarin.iOS.dll
+/Users/james/Documents/GitHub/DeepCWorld/DeepSeaWorldApp/DeepSeaWorldApp/bin/Debug/netstandard2.0/Xamarin.iOS.pdb
 /Users/james/Documents/GitHub/DeepCWorld/DeepSeaWorldApp/DeepSeaWorldApp/obj/Debug/netstandard2.0/App.xaml.g.cs
 /Users/james/Documents/GitHub/DeepCWorld/DeepSeaWorldApp/DeepSeaWorldApp/obj/Debug/netstandard2.0/Views/EventDetailPage.xaml.g.cs
 /Users/james/Documents/GitHub/DeepCWorld/DeepSeaWorldApp/DeepSeaWorldApp/obj/Debug/netstandard2.0/Views/EventsPage.xaml.g.cs
@@ -95,12 +99,8 @@ C:/Users/Kamil/Source/Repos/Monexius/DeepCWorld/DeepSeaWorldApp/DeepSeaWorldApp/
 /Users/james/Documents/GitHub/DeepCWorld/DeepSeaWorldApp/DeepSeaWorldApp/obj/Debug/netstandard2.0/DeepSeaWorldApp.csproj.CoreCompileInputs.cache
 /Users/james/Documents/GitHub/DeepCWorld/DeepSeaWorldApp/DeepSeaWorldApp/obj/Debug/netstandard2.0/DeepSeaWorldApp.AssemblyInfoInputs.cache
 /Users/james/Documents/GitHub/DeepCWorld/DeepSeaWorldApp/DeepSeaWorldApp/obj/Debug/netstandard2.0/DeepSeaWorldApp.AssemblyInfo.cs
-/Users/james/Documents/GitHub/DeepCWorld/DeepSeaWorldApp/DeepSeaWorldApp/bin/Debug/netstandard2.0/DeepSeaWorldApp.deps.json
-/Users/james/Documents/GitHub/DeepCWorld/DeepSeaWorldApp/DeepSeaWorldApp/bin/Debug/netstandard2.0/DeepSeaWorldApp.dll
-/Users/james/Documents/GitHub/DeepCWorld/DeepSeaWorldApp/DeepSeaWorldApp/bin/Debug/netstandard2.0/DeepSeaWorldApp.pdb
-/Users/james/Documents/GitHub/DeepCWorld/DeepSeaWorldApp/DeepSeaWorldApp/bin/Debug/netstandard2.0/Xamarin.iOS.dll
-/Users/james/Documents/GitHub/DeepCWorld/DeepSeaWorldApp/DeepSeaWorldApp/bin/Debug/netstandard2.0/Xamarin.iOS.pdb
 /Users/james/Documents/GitHub/DeepCWorld/DeepSeaWorldApp/DeepSeaWorldApp/obj/Debug/netstandard2.0/XamlC.stamp
 /Users/james/Documents/GitHub/DeepCWorld/DeepSeaWorldApp/DeepSeaWorldApp/obj/Debug/netstandard2.0/DeepSeaWorldApp.csproj.CopyComplete
 /Users/james/Documents/GitHub/DeepCWorld/DeepSeaWorldApp/DeepSeaWorldApp/obj/Debug/netstandard2.0/DeepSeaWorldApp.dll
 /Users/james/Documents/GitHub/DeepCWorld/DeepSeaWorldApp/DeepSeaWorldApp/obj/Debug/netstandard2.0/DeepSeaWorldApp.pdb
+/Users/james/Documents/GitHub/DeepCWorld/DeepSeaWorldApp/DeepSeaWorldApp/obj/Debug/netstandard2.0/DeepSeaWorldApp.csprojAssemblyReference.cache

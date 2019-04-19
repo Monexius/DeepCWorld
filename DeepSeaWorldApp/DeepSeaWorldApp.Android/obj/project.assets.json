@@ -920,7 +920,7 @@
           "lib/monoandroid81/Xamarin.Android.Support.CustomTabs.dll": {}
         },
         "build": {
-          "build/monoandroid81/_._": {}
+          "build/monoandroid81/Xamarin.Android.Support.CustomTabs.targets": {}
         }
       },
       "Xamarin.Android.Support.Design/28.0.0.1": {
@@ -1189,14 +1189,15 @@
           "build/MonoAndroid80/_._": {}
         }
       },
-      "Xamarin.Forms/3.6.0.293080": {
+      "Xamarin.Forms/3.6.0.344457": {
         "type": "package",
         "dependencies": {
-          "Xamarin.Android.Support.Design": "27.0.2",
-          "Xamarin.Android.Support.v4": "27.0.2",
-          "Xamarin.Android.Support.v7.AppCompat": "27.0.2",
-          "Xamarin.Android.Support.v7.CardView": "27.0.2",
-          "Xamarin.Android.Support.v7.MediaRouter": "27.0.2"
+          "Xamarin.Android.Support.CustomTabs": "28.0.0.1",
+          "Xamarin.Android.Support.Design": "28.0.0.1",
+          "Xamarin.Android.Support.v4": "28.0.0.1",
+          "Xamarin.Android.Support.v7.AppCompat": "28.0.0.1",
+          "Xamarin.Android.Support.v7.CardView": "28.0.0.1",
+          "Xamarin.Android.Support.v7.MediaRouter": "28.0.0.1"
         },
         "compile": {
           "lib/MonoAndroid81/FormsViewGroup.dll": {},
@@ -1296,7 +1297,7 @@
           "System.Json": "4.5.0",
           "Xam.Plugins.Notifier": "3.0.1",
           "Xamarin.Essentials": "1.1.0",
-          "Xamarin.Forms": "3.6.0.293080",
+          "Xamarin.Forms": "3.6.0.344457",
           "ZXing.Net.Mobile": "2.4.1",
           "ZXing.Net.Mobile.Forms": "2.4.1",
           "sqlite-net-pcl": "1.5.231"
@@ -5148,10 +5149,10 @@
         "xamarin.firebase.messaging.nuspec"
       ]
     },
-    "Xamarin.Forms/3.6.0.293080": {
-      "sha512": "o7GH+huLZMGlBxFCFAV5g+P3xoYoXFPeGrZ+AI8ezt2Gey/ZeZjSlf3nR3DzZKClVsCTvJS8Z5rVlC1dexSv+A==",
+    "Xamarin.Forms/3.6.0.344457": {
+      "sha512": "YTPYiRg5q8Q1AgkjX9mx2/0wfCNyoSfztvvWw9HY4qM1lmOgkAxAbbtY8zi3fCPUXhfZrCAgRvJYNS8VM519kQ==",
       "type": "package",
-      "path": "xamarin.forms/3.6.0.293080",
+      "path": "xamarin.forms/3.6.0.344457",
       "files": [
         ".signature.p7s",
         "build/MonoAndroid10/proguard.cfg",
@@ -5308,7 +5309,7 @@
         "lib/uap10.0/Xamarin.Forms.Xaml.dll",
         "lib/uap10.0/Xamarin.Forms.Xaml.pdb",
         "lib/uap10.0/Xamarin.Forms.Xaml.xml",
-        "xamarin.forms.3.6.0.293080.nupkg.sha512",
+        "xamarin.forms.3.6.0.344457.nupkg.sha512",
         "xamarin.forms.nuspec"
       ]
     },
@@ -5398,7 +5399,7 @@
       "Xamarin.Android.Support.v7.CardView >= 28.0.0.1",
       "Xamarin.Android.Support.v7.MediaRouter >= 28.0.0.1",
       "Xamarin.Essentials >= 1.1.0",
-      "Xamarin.Forms >= 3.6.0.293080",
+      "Xamarin.Forms >= 3.6.0.344457",
       "sqlite-net-pcl >= 1.5.231"
     ]
   },
@@ -5479,7 +5480,7 @@
           },
           "Xamarin.Forms": {
             "target": "Package",
-            "version": "[3.6.0.293080, )"
+            "version": "[3.6.0.344457, )"
           },
           "sqlite-net-pcl": {
             "target": "Package",

@@ -13,9 +13,7 @@ using Plugin.LocalNotifications;
 using System.Threading.Tasks;
 using System;
 using static DeepSeaWorldApp.DBClasses.DBs;
-using static DeepSeaWorldApp.DBClasses.DBs;
 using Xamarin.Forms.Internals;
-using System;
 using static DeepSeaWorldApp.SQLiteDB;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
@@ -47,19 +45,16 @@ namespace DeepSeaWorldApp
                 return;
             }
             ScheduleNotifications();
-            //DataTb data = new DataTb();
-            //data = GetDB().Result;
-            //Console.WriteLine("COUNT: " + data.Events.Count);
+            //List<DBs.FAQ> faq = new List<DBs.FAQ>();
+            //faq = GetDB().Result;
+            //Console.WriteLine("FAQ ZEROOO: " + faq[0].FAQ_Question);
             //Console.WriteLine("0 NAME: " + data.Events[0].Event_Name);
         }
-        //async Task<DataTb> GetDB()
-        //{
-        //    MySqlDBCon dbcon = new MySqlDBCon();
-        //    return await dbcon.MySQLConnection();
-
-          
-
-        //}
+        async Task<List<DBs.FAQ>> GetDB()
+        {
+            SQLiteDB dbcon = new SQLiteDB();
+            return await dbcon.GetItemAsyncFAQ();
+        }
         protected void ScheduleNotifications()
         {
             List<Event> Events = new List<Event>();
@@ -109,7 +104,10 @@ namespace DeepSeaWorldApp
         protected override void OnStart()
         {
             DataAsync();
-            
+            //List<DBs.FAQ> faq = new List<DBs.FAQ>();
+            //faq = GetDB().Result;
+             //Console.WriteLine("FAQ ZEROOO: " + faq[0].FAQ_Question);
+            //Console.WriteLine("0 NAME: " + data.Events[0].Event_Name);
         }
 
         protected override void OnSleep()
