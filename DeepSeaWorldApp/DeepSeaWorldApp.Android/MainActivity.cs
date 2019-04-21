@@ -38,7 +38,6 @@ namespace DeepSeaWorldApp.Droid
 
                 // SQLite connection, table creation, update, insert and get class
                 DeepSeaWorldSQLiteConnectionAndroid deepSeaWorld = new DeepSeaWorldSQLiteConnectionAndroid();
-
                 MySqlDBCon mySql = new MySqlDBCon();
                 DataTb data = new DataTb();
                 data = await mySql.MySQLConnection(); // connection and data catch from mySQL db on server

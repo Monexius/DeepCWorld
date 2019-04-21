@@ -136,5 +136,38 @@ namespace DeepSeaWorldApp.Services
 
             return await Task.FromResult(nextE);
         }
+
+        //public async Task<List<Event>> GetNextEvents()
+        //{
+        //    DateTime now = DateTime.Now;
+        //    List<Event> nextEvents = new List<Event>();
+        //    Event nextE = new Event();
+
+        //    foreach (var x in events)
+        //    {
+        //        DateTime time = Convert.ToDateTime(x.Time).AddMinutes(5);
+        //        //if time hasn't passed, add to next events list
+        //        if (time.TimeOfDay.Hours > now.TimeOfDay.Hours)
+        //        {
+        //            nextEvents.Add(x);
+        //        }
+        //        else if (time.TimeOfDay.Hours == now.TimeOfDay.Hours)
+        //        {
+        //            if (time.TimeOfDay.Minutes > now.TimeOfDay.Minutes)
+        //            {
+        //                nextEvents.Add(x);
+        //            }
+        //        }
+        //    }
+        //    bool NextisEmpty = !nextEvents.Any();
+        //    if (NextisEmpty)
+        //    {
+        //        Event fail = new Event { Id = Guid.NewGuid().ToString(), Time = "00:00", Name = "No more events today", Location = "" };
+        //        return await Task.FromResult(fail);
+        //    }
+        //    nextE = nextEvents[0];
+
+        //    return await Task.FromResult(nextE);
+        //}
     }
 }
