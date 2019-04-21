@@ -891,7 +891,8 @@
           }
         },
         "build": {
-          "build/_._": {}
+          "build/Xamarin.Forms.props": {},
+          "build/Xamarin.Forms.targets": {}
         }
       },
       "ZXing.Net.Mobile/2.4.1": {
@@ -1755,7 +1756,8 @@
           }
         },
         "build": {
-          "build/_._": {}
+          "build/Xamarin.Forms.props": {},
+          "build/Xamarin.Forms.targets": {}
         }
       },
       "ZXing.Net.Mobile/2.4.1": {
@@ -2619,7 +2621,8 @@
           }
         },
         "build": {
-          "build/_._": {}
+          "build/Xamarin.Forms.props": {},
+          "build/Xamarin.Forms.targets": {}
         }
       },
       "ZXing.Net.Mobile/2.4.1": {
@@ -3483,7 +3486,8 @@
           }
         },
         "build": {
-          "build/_._": {}
+          "build/Xamarin.Forms.props": {},
+          "build/Xamarin.Forms.targets": {}
         }
       },
       "ZXing.Net.Mobile/2.4.1": {
@@ -7097,6 +7101,7 @@
       "MySql.Data >= 8.0.15",
       "Newtonsoft.Json >= 12.0.1",
       "System.IO.Compression >= 4.3.0",
+      "Xamarin.Forms >= 3.6.0.344457",
       "sqlite-net-pcl >= 1.5.231"
     ]
   },
@@ -7154,6 +7159,10 @@
           "System.IO.Compression": {
             "target": "Package",
             "version": "[4.3.0, )"
+          },
+          "Xamarin.Forms": {
+            "target": "Package",
+            "version": "[3.6.0.344457, )"
           },
           "sqlite-net-pcl": {
             "target": "Package",
