@@ -33,7 +33,7 @@ namespace DeepSeaWorldApp
             }
             else
             {
-                url = new Uri("http://10.0.2.2/scripts/dbContentAndroid.php");
+                url = new Uri("http://10.0.2.2/scripts/dbContent.php");
                 client.BaseAddress = new Uri("http://10.0.2.2/");
             }
 
@@ -82,9 +82,9 @@ namespace DeepSeaWorldApp
             dataTb.QRCodes = qrlist;
             foreach (var e in dataTb.Events)
             {
-                Console.WriteLine("events in MySqlDBCon " + e);
+                Console.WriteLine(e);
             }
-            Console.WriteLine("End of MySqlDBCon");
+
 
             return dataTb;
         }

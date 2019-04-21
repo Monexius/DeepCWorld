@@ -38,11 +38,11 @@
                                 <ColumnDefinition Width="*"/>
                                 <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
-                                <Label HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" Text="{Binding Event_Time}" 
+                                <Label HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" Text="{Binding Time}" 
                                        Style="{DynamicResource ListItemTextStyle}" FontSize="24" />
-                                <Label HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Text="{Binding Event_Name}"
+                                <Label HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Text="{Binding Name}"
                                        Style="{DynamicResource ListItemDetailTextStyle}" FontSize="24" />
-                                <Label HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Text="{Binding Event_Location}" 
+                                <Label HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Text="{Binding Location}" 
                                        Style="{DynamicResource ListItemTextStyle}" FontSize="18" />
                                 
                             </Grid>

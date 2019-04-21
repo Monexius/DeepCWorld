@@ -6,7 +6,6 @@ using DeepSeaWorldApp.Models;
 using DeepSeaWorldApp.ViewModels;
 using System.Threading.Tasks;
 using static DeepSeaWorldApp.DBClasses.DBs;
-using DeepSeaWorldApp.DBClasses;
 
 namespace DeepSeaWorldApp.Views
 {
@@ -18,23 +17,6 @@ namespace DeepSeaWorldApp.Views
         public HomePage()
         {
             InitializeComponent();
-            //Console.WriteLine("TEST 6");
-            ////events list
-            //List<DBs.Events> events = new List<DBs.Events>();
-            //Console.WriteLine("TEST 7");
-            //SQLiteDB dbcon = new SQLiteDB();
-            //Console.WriteLine("TEST 8");
-            //get list of events from db
-
-            //events = dbcon.GetItemAsyncEvents().Result;
-            //int i = 0;
-            //foreach(var e in events)
-            //{
-            //    Console.WriteLine("EVENT: " + i + " " + e.Event_Name);
-            //    i++;
-            //}
-            //Console.WriteLine("TEST 9");
-            //Console.WriteLine("EVENT ZEROOO: " + events[0].Event_Name);
 
             //promoImage.Source = "fish1.jpg";
             //homebox1.Source = "fish1.jpg";
@@ -111,12 +93,6 @@ namespace DeepSeaWorldApp.Views
             });
 
 
-        }
-
-        async Task<List<DBs.Events>> GetEventsDB()
-        {
-            SQLiteDB dbcon = new SQLiteDB();
-            return await dbcon.GetItemAsyncEvents();
         }
 
         async Task<Event> GetItemByTime(string time)

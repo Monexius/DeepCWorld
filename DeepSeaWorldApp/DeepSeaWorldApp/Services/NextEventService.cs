@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using DeepSeaWorldApp.Models;
 using Xamarin.Forms;
-using static DeepSeaWorldApp.DBClasses.DBs;
 
 namespace DeepSeaWorldApp.Services
 {
@@ -62,6 +60,7 @@ namespace DeepSeaWorldApp.Services
             return nextEventHour;
         }
 
+<<<<<<< HEAD
         //called from: EventsViewModel
         public static List<Events> GetNextEvents(List<Events> events)
         {
@@ -116,6 +115,8 @@ namespace DeepSeaWorldApp.Services
             }
             return nextEvents;
         }
+=======
+>>>>>>> parent of 5e07e74... events data synced to app. still duplicates issue
     }
 }
 

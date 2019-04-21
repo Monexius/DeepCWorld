@@ -40,19 +40,20 @@ namespace DeepSeaWorldApp
         {
             InitializeComponent();
             MainPage = new MainPage();
-            Console.WriteLine("TEST1");
             if (DesignMode.IsDesignModeEnabled)
             {
                 return;
             }
-            Console.WriteLine("Test2");
             ScheduleNotifications();
+            //List<DBs.FAQ> faq = new List<DBs.FAQ>();
+            //faq = GetDB().Result;
+            //Console.WriteLine("FAQ ZEROOO: " + faq[0].FAQ_Question);
             //Console.WriteLine("0 NAME: " + data.Events[0].Event_Name);
         }
-        async Task<List<DBs.Events>> GetEventsDB()
+        async Task<List<DBs.FAQ>> GetDB()
         {
             SQLiteDB dbcon = new SQLiteDB();
-            return await dbcon.GetItemAsyncEvents();
+            return await dbcon.GetItemAsyncFAQ();
         }
         protected void ScheduleNotifications()
         {
@@ -102,13 +103,10 @@ namespace DeepSeaWorldApp
         }
         protected override void OnStart()
         {
-            Console.WriteLine("TEST 3");
             DataAsync();
-            Console.WriteLine("TEST 4");
-            //List<DBs.Events> events = new List<DBs.Events>();
-            //events = GetEventsDB().Result;
-            //Console.WriteLine("FAQ ZEROOO: " + events[0].Event_Name);
-            //Console.WriteLine("TEST 5");
+            //List<DBs.FAQ> faq = new List<DBs.FAQ>();
+            //faq = GetDB().Result;
+             //Console.WriteLine("FAQ ZEROOO: " + faq[0].FAQ_Question);
             //Console.WriteLine("0 NAME: " + data.Events[0].Event_Name);
         }
 

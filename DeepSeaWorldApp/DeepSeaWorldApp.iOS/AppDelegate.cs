@@ -23,7 +23,6 @@ namespace DeepSeaWorldApp.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
-            Console.WriteLine("TEST start of FinishedLaunching");
             global::Xamarin.Forms.Forms.Init();
             ZXing.Net.Mobile.Forms.iOS.Platform.Init();
             LoadApplication(new App());
@@ -50,7 +49,7 @@ namespace DeepSeaWorldApp.iOS
             //// To change Title Text colors to white here
             //UINavigationBar.Appearance.SetTitleTextAttributes(new UITextAttributes() { TextColor = UIColor.Black });
             //UINavigationBar.Appearance.SetBackgroundImage(UIImage.FromFile("banner.png"), UIBarMetrics.Default);
-            Console.WriteLine("End of FinishedLaunching, pre return");
+
             return base.FinishedLaunching(app, options);
 
         }
