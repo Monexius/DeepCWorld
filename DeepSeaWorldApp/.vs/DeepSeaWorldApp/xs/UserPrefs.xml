@@ -1,28 +1,30 @@
 ﻿<Properties GitUserInfo="UsingGIT" StartupConfiguration="{10E2A7FF-2BF5-4C5C-9609-9DF2634FB291}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="DeepSeaWorldApp Status">
-    <Files>
-      <File FileName="DeepSeaWorldApp/DeepSeaWorldApp.csproj" Line="1" Column="1" />
-      <File FileName="../../../../../../Library/Frameworks/Mono.framework/Versions/5.18.1/lib/mono/msbuild/15.0/bin/Microsoft.Common.CurrentVersion.targets" Line="5939" Column="40" />
-      <File FileName="DeepSeaWorldApp Status" />
-    </Files>
+  <MonoDevelop.Ide.Workbench>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="DeepSeaWorldApp" expanded="True" selected="True">
             <Node name="DeepSeaWorldApp" expanded="True">
-              <Node name="DBClasses" expanded="True" />
-              <Node name="Services" expanded="True" />
-              <Node name="ViewModels" expanded="True" />
-              <Node name="Views" expanded="True">
-                <Node name="EventsPage.xaml" expanded="True" />
-                <Node name="FAQPage.xaml" expanded="True" />
-                <Node name="QRContentPage.xaml" expanded="True" />
-                <Node name="QRScannerPage.xaml" expanded="True" />
-                <Node name="VideoPage.xaml" expanded="True" />
+              <Node name="Dependencies" expanded="True">
+                <Node name="AssemblyDependencies" expanded="True" />
+                <Node name="PackageDependencies" expanded="True">
+                  <Node name="Xamarin.Essentials" expanded="True" />
+                </Node>
               </Node>
+            </Node>
+            <Node name="DeepSeaWorldApp.Android" expanded="True">
+              <Node name="References" expanded="True" />
+              <Node name="Packages" expanded="True" />
             </Node>
             <Node name="DeepSeaWorldApp.iOS" expanded="True">
               <Node name="References" expanded="True" />
+              <Node name="Packages" expanded="True" />
+            </Node>
+          </Node>
+          <Node name="trackerApp" expanded="True">
+            <Node name="trackerApp.Android" expanded="True">
+              <Node name="References" expanded="True" />
+              <Node name="Packages" expanded="True" />
             </Node>
           </Node>
         </State>
@@ -32,7 +34,7 @@
   <MonoDevelop.Ide.ItemProperties.DeepSeaWorldApp.Android PreferredExecutionTarget="Android.my_device" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" />
-  <MonoDevelop.Ide.ItemProperties.DeepSeaWorldApp.iOS automaticSigning="False" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.47891c6bfa5fddd3860f568ae2b9465887eee4e0" />
+  <MonoDevelop.Ide.ItemProperties.DeepSeaWorldApp.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.47891c6bfa5fddd3860f568ae2b9465887eee4e0" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
