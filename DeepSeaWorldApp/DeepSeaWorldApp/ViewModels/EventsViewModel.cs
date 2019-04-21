@@ -41,11 +41,11 @@ namespace DeepSeaWorldApp.ViewModels
                 SQLiteDB dbcon = new SQLiteDB();
                 //get list of events from db
                 events = dbcon.GetItemAsyncEvents().Result;
-                Console.WriteLine("ALL EVENTS: ");
+                //Console.WriteLine("ALL EVENTS: ");
                 int i = 0;
                 foreach (var a in events)
                 {
-                    Console.WriteLine(a.Event_Time + " " + i + " " + a.Event_Name);
+                    //Console.WriteLine(a.Event_Time + " " + i + " " + a.Event_Name);
                     i++;
                 }
                 events = NextEventService.GetNextEvents(events);
@@ -57,10 +57,14 @@ namespace DeepSeaWorldApp.ViewModels
                     Console.WriteLine(a.Event_Time + " " + k + " " + a.Event_Name);
                     k++;
                 }
-                foreach(var e in events)
+                foreach (var e in events)
                 {
+
                     Events.Add(e);
                 }
+                Console.WriteLine(DateTime.UtcNow.Day);
+                Console.WriteLine(DateTime.Now.Day);
+                Console.WriteLine(DateTime.Now.DayOfWeek);
             }
             catch (Exception ex)
             {

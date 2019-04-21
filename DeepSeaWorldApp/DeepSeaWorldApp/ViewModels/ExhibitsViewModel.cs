@@ -5,54 +5,39 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 
-using DeepSeaWorldApp.Models;
 using DeepSeaWorldApp.Views;
+using static DeepSeaWorldApp.DBClasses.DBs;
+using System.Collections.Generic;
+using static Java.Util.Jar.Attributes;
 
 namespace DeepSeaWorldApp.ViewModels
 {
     public class ExhibitsViewModel : BaseViewModel2
     {
-        public ObservableCollection<Exhibit> Exhibits { get; set; }
-        public Command LoadExhibitsCommand { get; set; }
+        public Exhibition Exhibition { get; }
 
         public ExhibitsViewModel()
         {
-            Title = "Deep Sea World";
-            Exhibits = new ObservableCollection<Exhibit>();
-            LoadExhibitsCommand = new Command(async () => await ExecuteLoadItemsCommand());
-
-            //MessagingCenter.Subscribe<NewExhibitPage, Exhibit>(this, "AddExhibit", async (obj, exhibit) =>
-            //{
-            //    var newExhibit = exhibit as Exhibit;
-            //    Exhibits.Add(newExhibit);
-            //    await DataStore.AddItemAsync(newExhibit);
-            //});
-        }
-
-        async Task ExecuteLoadItemsCommand()
-        {
-            if (IsBusy)
-                return;
-
-            IsBusy = true;
-
-            try
+            Exhibition = new Exhibition
             {
-                Exhibits.Clear();
-                var exhibits = await DataStore.GetItemsAsync(true);
-                foreach (var exhibit in exhibits)
+                Exhibition_Name = "name",
+            };
+        }
+        public ExhibitsViewModel(string qrcode)
+        {
+            Exhibition e = new Exhibition();
+            SQLiteDB db = new SQLiteDB();
+            List<Exhibition> list = new List<Exhibition>();
+            list = db.GetItemAsyncExhibition().Result;
+            foreach(var i in list)
+            {
+                if(i.QRCodes_Name.Equals(qrcode))
                 {
-                    Exhibits.Add(exhibit);
+                    e = i;
                 }
             }
-            catch (Exception ex)
-            {
-                Debug.WriteLine(ex);
-            }
-            finally
-            {
-                IsBusy = false;
-            }
+
         }
     }
+
 }

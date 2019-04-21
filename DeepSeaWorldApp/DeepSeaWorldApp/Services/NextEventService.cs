@@ -55,7 +55,7 @@ namespace DeepSeaWorldApp.Services
             {
                 nextEventHour = currentHour;
             }
-            else if(nextEventMinute == 60)
+            else if (nextEventMinute == 60)
             {
                 nextEventHour = currentHour;
             }
@@ -65,23 +65,44 @@ namespace DeepSeaWorldApp.Services
         //called from: EventsViewModel
         public static List<Events> GetNextEvents(List<Events> events)
         {
+            Console.WriteLine("GetNextEvents is running");
             DateTime now = DateTime.Now;
             List<Events> nextEvents = new List<Events>();
+            //List<Events> events2 = new List<Events>();
             Events nextE = new Events();
+            bool holidays = false;
+            //foreach(var x in events)
+            //{
+            //    //    if(!(x.Event_Name.Contains("Snapping")))
+            //    //    {
+            //    //        Console.WriteLine(x.Event_Name + " does not contain snapping");
+            //    //        events2.Add(x);
+            //    //    }
+            //    if (x.Event_Day.Contains("Sunday"))
+            //    {
+            //        Console.WriteLine(x.Event_Name + " does not contain snapping");
+            //        events2.Add(x);
+            //    }
+
+            //}
 
             foreach (var x in events)
             {
                 DateTime time = Convert.ToDateTime(x.Event_Time).AddMinutes(5);
                 //if time hasn't passed, add to next events list
-                if (time.TimeOfDay.Hours > now.TimeOfDay.Hours)
+                if ((x.Event_Day.Contains("Daily")) || (x.Event_Day.Contains(now.DayOfWeek.ToString()))
+                        || (x.Event_Day.Contains("Holidays") && holidays == true))
                 {
-                    nextEvents.Add(x);
-                }
-                else if (time.TimeOfDay.Hours == now.TimeOfDay.Hours)
-                {
-                    if (time.TimeOfDay.Minutes > now.TimeOfDay.Minutes)
+                    if (time.TimeOfDay.Hours > now.TimeOfDay.Hours)
                     {
                         nextEvents.Add(x);
+                    }
+                    else if (time.TimeOfDay.Hours == now.TimeOfDay.Hours)
+                    {
+                        if (time.TimeOfDay.Minutes > now.TimeOfDay.Minutes)
+                        {
+                                nextEvents.Add(x);
+                        }
                     }
                 }
             }

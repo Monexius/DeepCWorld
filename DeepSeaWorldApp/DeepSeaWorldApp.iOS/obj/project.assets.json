@@ -7100,6 +7100,7 @@
       "Microsoft.Net.Http >= 2.2.29",
       "MySql.Data >= 8.0.15",
       "Newtonsoft.Json >= 12.0.1",
+      "System.IO.Compression >= 4.3.0",
       "Xamarin.Forms >= 3.6.0.344457",
       "sqlite-net-pcl >= 1.5.231"
     ]
@@ -7154,6 +7155,10 @@
           "Newtonsoft.Json": {
             "target": "Package",
             "version": "[12.0.1, )"
+          },
+          "System.IO.Compression": {
+            "target": "Package",
+            "version": "[4.3.0, )"
           },
           "Xamarin.Forms": {
             "target": "Package",

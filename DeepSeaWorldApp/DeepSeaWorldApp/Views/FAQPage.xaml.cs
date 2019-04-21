@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using Xamarin.Forms;
-using DeepSeaWorldApp.Models;
 using DeepSeaWorldApp.Services;
 using DeepSeaWorldApp.ViewModels;
+using static DeepSeaWorldApp.DBClasses.DBs;
 
 namespace DeepSeaWorldApp.Views
 {
@@ -23,8 +23,10 @@ namespace DeepSeaWorldApp.Views
         protected override async void OnAppearing()
         {
             base.OnAppearing();
-
-            listView.ItemsSource = await App.Database.GetFAQsAsync();
+            SQLiteDB sQLiteDB = new SQLiteDB();
+            List<FAQ> faq = new List<FAQ>();
+            faq = sQLiteDB.GetItemAsyncFAQ().Result;
+            listView.ItemsSource = faq;
             
             //BindingContext = viewModel = new FAQViewModel();
             //if (viewModel.FAQ.Count == 0)

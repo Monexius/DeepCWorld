@@ -45,8 +45,6 @@ namespace DeepSeaWorldApp.Views
         {
             base.OnAppearing();
 
-            if (viewModel.Exhibits.Count == 0)
-                viewModel.LoadExhibitsCommand.Execute(null);
         }
         protected override void OnDisappearing()
         {

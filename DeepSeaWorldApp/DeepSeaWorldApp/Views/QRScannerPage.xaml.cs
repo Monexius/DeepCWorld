@@ -27,7 +27,7 @@ namespace DeepSeaWorldApp.Views
                 {
                     //await DisplayAlert("Scanned result", result.Text, "if yes");
                     //await Navigation.PopToRootAsync();
-                    await Navigation.PushAsync(new QRContentPage());
+                    await Navigation.PushAsync(new VideoPage(result.Text));
                 }
                 else
                 {

@@ -18,22 +18,11 @@ namespace DeepSeaWorldApp.Views
     {
         ExhibitsViewModel viewModel;
 
-        public VideoPage()
+        public VideoPage(string qrcode)
         {
             InitializeComponent();
 
-            BindingContext = viewModel = new ExhibitsViewModel();
-        }
-
-        async void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
-        {
-            var exhibit = args.SelectedItem as Exhibit;
-            if (exhibit == null)
-                return;
-            await Navigation.PushAsync(new FeatureDetailPage(new ExhibitDetailViewModel(exhibit)));
-
-            // Manually deselect item.
-            ItemsListView.SelectedItem = null;
+            BindingContext = viewModel = new ExhibitsViewModel(qrcode);
         }
 
         //async void AddItem_Clicked(object sender, EventArgs e)
@@ -44,9 +33,6 @@ namespace DeepSeaWorldApp.Views
         protected override void OnAppearing()
         {
             base.OnAppearing();
-
-            if (viewModel.Exhibits.Count == 0)
-                viewModel.LoadExhibitsCommand.Execute(null);
         }
         protected override void OnDisappearing()
         {
