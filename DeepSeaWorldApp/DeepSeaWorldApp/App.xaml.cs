@@ -21,6 +21,8 @@ namespace DeepSeaWorldApp
     public partial class App : Application
     {
         static FAQDatabase faqdatabase;
+        static EventsDatabase eventsdatabase;
+        static ExhibitionDatabase exhibitiondatabase;
         public IDataStore<Events> DataStore => DependencyService.Get<IDataStore<Events>>() ?? new MockDataStore();
 
         public static FAQDatabase Database
@@ -34,7 +36,28 @@ namespace DeepSeaWorldApp
                 return faqdatabase;
             }
         }
-
+        public static EventsDatabase EventsDatabase
+        {
+            get
+            {
+                if (eventsdatabase == null)
+                {
+                    eventsdatabase = new EventsDatabase(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Events.db3"));
+                }
+                return eventsdatabase;
+            }
+        }
+        public static ExhibitionDatabase ExhibitionDatabase
+        {
+            get
+            {
+                if (exhibitiondatabase == null)
+                {
+                    exhibitiondatabase = new ExhibitionDatabase(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Exhibition.db3"));
+                }
+                return exhibitiondatabase;
+            }
+        }
         public App()
         {
             InitializeComponent();
@@ -98,7 +121,7 @@ namespace DeepSeaWorldApp
         }
         protected override void OnStart()
         {
-            DataAsync();
+            //DataAsync();
             //List<DBs.FAQ> faq = new List<DBs.FAQ>();
             //faq = GetDB().Result;
             //Console.WriteLine("FAQ ZEROOO: " + faq[0].FAQ_Question);

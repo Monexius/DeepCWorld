@@ -94,7 +94,6 @@
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="DeepSeaWorldSQLiteConnectioniOS.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <None Include="Entitlements.plist" />
@@ -113,6 +112,27 @@
     <BundleResource Include="Resources\home.png" />
     <BundleResource Include="Resources\LaunchImage.png" />
     <BundleResource Include="Resources\banner.png" />
+    <Compile Include="DeepSeaWorldSQLiteConnectioniOS.cs" />
+    <BundleResource Include="Resources\glowfish.jpeg" />
+    <BundleResource Include="Resources\school.jpeg" />
+    <BundleResource Include="Resources\ray.jpeg" />
+    <BundleResource Include="Resources\ray2.jpeg" />
+    <BundleResource Include="Resources\seal.jpeg" />
+    <BundleResource Include="Resources\seal2.jpeg" />
+    <BundleResource Include="Resources\frog.jpeg" />
+    <BundleResource Include="Resources\shark.jpeg" />
+    <BundleResource Include="Resources\dory.jpeg" />
+    <BundleResource Include="Resources\catfish.jpeg" />
+    <BundleResource Include="Resources\turtle.jpeg" />
+    <BundleResource Include="Resources\shark2.jpeg" />
+    <BundleResource Include="Resources\shark3.jpeg" />
+    <BundleResource Include="Resources\lizard.jpeg" />
+    <BundleResource Include="Resources\millipede.jpeg" />
+    <BundleResource Include="Resources\lobster.jpeg" />
+    <BundleResource Include="Resources\seal3.jpeg" />
+    <BundleResource Include="Resources\octopus.jpeg" />
+    <BundleResource Include="Resources\nemo.jpeg" />
+    <BundleResource Include="Resources\stripedfish.jpeg" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />

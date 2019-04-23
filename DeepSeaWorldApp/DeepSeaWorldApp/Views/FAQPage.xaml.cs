@@ -21,11 +21,11 @@ namespace DeepSeaWorldApp.Views
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            SQLiteDB sQLiteDB = new SQLiteDB();
-            List<FAQ> faq = new List<FAQ>();
-            faq = sQLiteDB.GetItemAsyncFAQ().Result;
-            listView.ItemsSource = faq;
-            //listView.ItemsSource = App.Database.GetFAQsAsync();
+            //SQLiteDB sQLiteDB = new SQLiteDB();
+            //List<FAQ> faq = new List<FAQ>();
+            //faq = sQLiteDB.GetItemAsyncFAQ().Result;
+            //listView.ItemsSource = faq;
+            listView.ItemsSource = App.Database.GetFAQsAsync().Result;
             
             //BindingContext = viewModel = new FAQViewModel();
             //if (viewModel.FAQ.Count == 0)

@@ -35,34 +35,18 @@ namespace DeepSeaWorldApp.ViewModels
             try
             {
                 Events.Clear();
-                List<Events> events = new List<Events>();
                 SQLiteDB dbcon = new SQLiteDB();
+                List<Events> events = new List<Events>();
                 //get list of events from db
-                events = dbcon.GetItemAsyncEvents().Result;
-                //Console.WriteLine("ALL EVENTS: ");
-                int i = 0;
-                foreach (var a in events)
-                {
-                    //Console.WriteLine(a.Event_Time + " " + i + " " + a.Event_Name);
-                    i++;
-                }
+                //events = dbcon.GetItemAsyncEvents().Result;
+                events = App.EventsDatabase.GetEventsAsync().Result;
+                Console.WriteLine("EVENT ONE: " + events[0].Event_Name);
                 events = NextEventService.GetNextEvents(events);
-                Console.WriteLine(DateTime.UtcNow);
-                Console.WriteLine("NEXT EVENTS: ");
-                int k = 0;
-                foreach (var a in events)
-                {
-                    Console.WriteLine(a.Event_Time + " " + k + " " + a.Event_Name);
-                    k++;
-                }
                 foreach (var e in events)
                 {
 
                     Events.Add(e);
                 }
-                Console.WriteLine(DateTime.UtcNow.Day);
-                Console.WriteLine(DateTime.Now.Day);
-                Console.WriteLine(DateTime.Now.DayOfWeek);
             }
             catch (Exception ex)
             {

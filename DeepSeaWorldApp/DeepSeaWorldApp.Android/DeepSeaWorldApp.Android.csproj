@@ -123,6 +123,27 @@
     <AndroidResource Include="Resources\drawable\map.png" />
     <AndroidResource Include="Resources\drawable\qr.png" />
     <AndroidResource Include="Resources\drawable\banner.png" />
+    <AndroidResource Include="Resources\drawable\glowfish.jpeg" />
+    <AndroidResource Include="Resources\drawable\school.jpeg" />
+    <AndroidResource Include="Resources\drawable\ray.jpeg" />
+    <AndroidResource Include="Resources\drawable\ray2.jpeg" />
+    <AndroidResource Include="Resources\drawable\seal.jpeg" />
+    <AndroidResource Include="Resources\drawable\seal2.jpeg" />
+    <AndroidResource Include="Resources\drawable\frog.jpeg" />
+    <AndroidResource Include="Resources\drawable\shark.jpeg" />
+    <AndroidResource Include="Resources\drawable\dory.jpeg" />
+    <AndroidResource Include="Resources\drawable\catfish.jpeg" />
+    <AndroidResource Include="Resources\drawable\turtle.jpeg" />
+    <AndroidResource Include="Resources\drawable\shark2.jpeg" />
+    <AndroidResource Include="Resources\drawable\shark3.jpeg" />
+    <AndroidResource Include="Resources\drawable\lizard.jpeg" />
+    <AndroidResource Include="Resources\drawable\millipede.jpeg" />
+    <AndroidResource Include="Resources\drawable\lobster.jpeg" />
+    <AndroidResource Include="Resources\drawable\seal3.jpeg" />
+    <AndroidResource Include="Resources\drawable\octopus.jpeg" />
+    <AndroidResource Include="Resources\drawable\nemo.jpeg" />
+    <AndroidResource Include="Resources\drawable\stripedfish.jpeg" />
+    <AndroidResource Include="Resources\drawable\floormap.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable-hdpi\" />

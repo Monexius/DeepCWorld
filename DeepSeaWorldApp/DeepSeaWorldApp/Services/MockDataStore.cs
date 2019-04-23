@@ -40,7 +40,7 @@ namespace DeepSeaWorldApp.Services
 
         public async Task<bool> UpdateItemAsync(Events e)
         {
-            var oldEvent = events.Where((Events arg) => arg.Id == e.Id).FirstOrDefault();
+            var oldEvent = events.Where((Events arg) => arg.Events_ID == e.Events_ID).FirstOrDefault();
             events.Remove(oldEvent);
             events.Add(e);
 

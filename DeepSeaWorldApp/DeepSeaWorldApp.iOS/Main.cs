@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using DeepSeaWorldApp;
 using DeepSeaWorldApp.iOS;
 using UIKit;
@@ -13,17 +14,15 @@ namespace DeepSeaWorldApp.iOS
         {
             // if you want to use a different Application Delegate class from "AppDelegate"
             // you can specify it here.
-            Console.WriteLine("Main.cs");
             UIApplication.Main(args, null, "AppDelegate");
-            Secondary();
+            //Secondary();
         }
         static async System.Threading.Tasks.Task Secondary()
         {
             DeepSeaWorldSQLiteConnectioniOS deepSeaWorld = new DeepSeaWorldSQLiteConnectioniOS();
-
             MySqlDBCon mySql = new MySqlDBCon();
             DataTb data = new DataTb();
-            data = await mySql.MySQLConnection(); // connection and data catch from mySQL db on server
+            data = await mySql.MySQLConnection();
             deepSeaWorld.TableAsync(); // table async - creation of local db tables
             await deepSeaWorld.InsertUpdateTables(data); // insert data to local db
 
@@ -34,7 +33,7 @@ namespace DeepSeaWorldApp.iOS
             //data = await mySql.MySQLConnection(); // connection and data catch from mySQL db on server
             //deepSeaWorld.TableAsync(); // table async - creation of local db tables
             //await deepSeaWorld.InsertUpdateTables(data); // insert data to local db
-
         }
+
     }
 }

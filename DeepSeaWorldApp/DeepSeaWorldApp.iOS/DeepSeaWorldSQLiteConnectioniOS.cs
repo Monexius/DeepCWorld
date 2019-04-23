@@ -14,7 +14,7 @@ namespace DeepSeaWorldApp.iOS
     class DeepSeaWorldSQLiteConnectioniOS 
     {
 
-        MySqlDBCon mySql = new MySqlDBCon();
+        //MySqlDBCon mySql = new MySqlDBCon();
         DataTb dataT = new DataTb();
 
 
@@ -40,10 +40,12 @@ namespace DeepSeaWorldApp.iOS
         // Creating Tables in local db
         public void TableAsync()
         {
+            Console.WriteLine("tableasync runs");
             SQLiteAsyncConnection db = CreateConnection();
+
             db.CreateTableAsync<FAQ>().Wait();
             db.CreateTableAsync<Events>().Wait();
-            db.CreateTableAsync<Exhibition>().Wait();
+            db.CreateTableAsync<Events>().Wait();
             db.CreateTableAsync<Map>().Wait();
             db.CreateTableAsync<News>().Wait();
             db.CreateTableAsync<QRCodes>().Wait();

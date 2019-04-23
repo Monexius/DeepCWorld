@@ -1,3 +1,8 @@
+/Users/james/Documents/GitHub/DeepCWorld/DeepSeaWorldApp/DeepSeaWorldApp/bin/Debug/netstandard2.0/DeepSeaWorldApp.deps.json
+/Users/james/Documents/GitHub/DeepCWorld/DeepSeaWorldApp/DeepSeaWorldApp/bin/Debug/netstandard2.0/DeepSeaWorldApp.dll
+/Users/james/Documents/GitHub/DeepCWorld/DeepSeaWorldApp/DeepSeaWorldApp/bin/Debug/netstandard2.0/DeepSeaWorldApp.pdb
+/Users/james/Documents/GitHub/DeepCWorld/DeepSeaWorldApp/DeepSeaWorldApp/bin/Debug/netstandard2.0/Mono.Android.dll
+/Users/james/Documents/GitHub/DeepCWorld/DeepSeaWorldApp/DeepSeaWorldApp/bin/Debug/netstandard2.0/Mono.Android.pdb
 /Users/james/Documents/GitHub/DeepCWorld/DeepSeaWorldApp/DeepSeaWorldApp/obj/Debug/netstandard2.0/App.xaml.g.cs
 /Users/james/Documents/GitHub/DeepCWorld/DeepSeaWorldApp/DeepSeaWorldApp/obj/Debug/netstandard2.0/Views/EventDetailPage.xaml.g.cs
 /Users/james/Documents/GitHub/DeepCWorld/DeepSeaWorldApp/DeepSeaWorldApp/obj/Debug/netstandard2.0/Views/EventsPage.xaml.g.cs
@@ -15,13 +20,8 @@
 /Users/james/Documents/GitHub/DeepCWorld/DeepSeaWorldApp/DeepSeaWorldApp/obj/Debug/netstandard2.0/DeepSeaWorldApp.csproj.CoreCompileInputs.cache
 /Users/james/Documents/GitHub/DeepCWorld/DeepSeaWorldApp/DeepSeaWorldApp/obj/Debug/netstandard2.0/DeepSeaWorldApp.AssemblyInfoInputs.cache
 /Users/james/Documents/GitHub/DeepCWorld/DeepSeaWorldApp/DeepSeaWorldApp/obj/Debug/netstandard2.0/DeepSeaWorldApp.AssemblyInfo.cs
-/Users/james/Documents/GitHub/DeepCWorld/DeepSeaWorldApp/DeepSeaWorldApp/obj/Debug/netstandard2.0/DeepSeaWorldApp.csprojAssemblyReference.cache
-/Users/james/Documents/GitHub/DeepCWorld/DeepSeaWorldApp/DeepSeaWorldApp/obj/Debug/netstandard2.0/DeepSeaWorldApp.dll
-/Users/james/Documents/GitHub/DeepCWorld/DeepSeaWorldApp/DeepSeaWorldApp/obj/Debug/netstandard2.0/DeepSeaWorldApp.pdb
-/Users/james/Documents/GitHub/DeepCWorld/DeepSeaWorldApp/DeepSeaWorldApp/bin/Debug/netstandard2.0/DeepSeaWorldApp.deps.json
-/Users/james/Documents/GitHub/DeepCWorld/DeepSeaWorldApp/DeepSeaWorldApp/bin/Debug/netstandard2.0/DeepSeaWorldApp.dll
-/Users/james/Documents/GitHub/DeepCWorld/DeepSeaWorldApp/DeepSeaWorldApp/bin/Debug/netstandard2.0/DeepSeaWorldApp.pdb
-/Users/james/Documents/GitHub/DeepCWorld/DeepSeaWorldApp/DeepSeaWorldApp/bin/Debug/netstandard2.0/Mono.Android.dll
-/Users/james/Documents/GitHub/DeepCWorld/DeepSeaWorldApp/DeepSeaWorldApp/bin/Debug/netstandard2.0/Mono.Android.pdb
 /Users/james/Documents/GitHub/DeepCWorld/DeepSeaWorldApp/DeepSeaWorldApp/obj/Debug/netstandard2.0/XamlC.stamp
 /Users/james/Documents/GitHub/DeepCWorld/DeepSeaWorldApp/DeepSeaWorldApp/obj/Debug/netstandard2.0/DeepSeaWorldApp.csproj.CopyComplete
+/Users/james/Documents/GitHub/DeepCWorld/DeepSeaWorldApp/DeepSeaWorldApp/obj/Debug/netstandard2.0/DeepSeaWorldApp.dll
+/Users/james/Documents/GitHub/DeepCWorld/DeepSeaWorldApp/DeepSeaWorldApp/obj/Debug/netstandard2.0/DeepSeaWorldApp.pdb
+/Users/james/Documents/GitHub/DeepCWorld/DeepSeaWorldApp/DeepSeaWorldApp/obj/Debug/netstandard2.0/DeepSeaWorldApp.csprojAssemblyReference.cache

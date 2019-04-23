@@ -11,7 +11,7 @@ namespace DeepSeaWorldApp.Views
     public partial class HomePage : ContentPage
     {
         //get event data
-        public IDataStore<Events> DataStore => DependencyService.Get<IDataStore<Events>>() ?? new MockDataStore();
+        //public IDataStore<Events> DataStore => DependencyService.Get<IDataStore<Events>>() ?? new MockDataStore();
         //Events eventEvent;
         public HomePage()
         {
@@ -28,7 +28,7 @@ namespace DeepSeaWorldApp.Views
             Device.StartTimer(TimeSpan.FromSeconds(1), () =>
             {
                 var next = GetNextEvent();
-                Events nextE = next.Result;
+                Events nextE = next;
 
                 //new code to get starts in time
                 DateTime time = Convert.ToDateTime(nextE.Event_Time);
@@ -94,13 +94,9 @@ namespace DeepSeaWorldApp.Views
 
         }
 
-        async Task<Events> GetItemByTime(string time)
+        static Events GetNextEvent()
         {
-            return await DataStore.GetItemByTime(time);
-        }
-        async Task<Events> GetNextEvent()
-        {
-            return await DataStore.GetNextEvent();
+            return NextEventService.GetNextEvent();
         }
 
         void OnViewMapClicked(object sender, System.EventArgs e)

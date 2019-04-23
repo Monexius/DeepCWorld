@@ -64,9 +64,9 @@ namespace DeepSeaWorldApp.Services
         //called from: EventsViewModel
         public static List<Events> GetNextEvents(List<Events> events)
         {
-            Console.WriteLine("GetNextEvents is running");
             DateTime now = DateTime.Now;
             List<Events> nextEvents = new List<Events>();
+
             //List<Events> events2 = new List<Events>();
             Events nextE = new Events();
             bool holidays = false;
@@ -100,7 +100,7 @@ namespace DeepSeaWorldApp.Services
                     {
                         if (time.TimeOfDay.Minutes > now.TimeOfDay.Minutes)
                         {
-                                nextEvents.Add(x);
+                            nextEvents.Add(x);
                         }
                     }
                 }
@@ -114,6 +114,16 @@ namespace DeepSeaWorldApp.Services
                 return FailEvents;
             }
             return nextEvents;
+        }
+        //called from: EventsViewModel
+        public static Events GetNextEvent()
+        {
+            DateTime now = DateTime.Now;
+            List<Events> events = new List<Events>();
+            events = App.EventsDatabase.GetEventsAsync().Result;
+            events = GetNextEvents(events);
+            return events[0];
+
         }
     }
 }

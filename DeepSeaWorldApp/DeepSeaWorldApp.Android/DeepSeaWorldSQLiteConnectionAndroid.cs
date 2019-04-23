@@ -38,7 +38,7 @@ namespace DeepSeaWorldApp.Droid
             SQLiteAsyncConnection db = CreateConnection();
             db.CreateTableAsync<FAQ>().Wait();
             db.CreateTableAsync<Events>().Wait();
-            db.CreateTableAsync<Exhibition>().Wait();
+            db.CreateTableAsync<Events>().Wait();
             db.CreateTableAsync<Map>().Wait();
             db.CreateTableAsync<News>().Wait();
             db.CreateTableAsync<QRCodes>().Wait();
@@ -59,7 +59,7 @@ namespace DeepSeaWorldApp.Droid
                 Log.Debug("Events_TB INSERT", e.ToString());
             }
 
-            foreach (Exhibition ex in data.Exhibition)
+            foreach (Events ex in data.Exhibition)
             {
                 await InsertOrUpdateTableAsyncExhibition(ex);
                 Log.Debug("Exhibition_TB INSERT", ex.ToString());
@@ -97,9 +97,9 @@ namespace DeepSeaWorldApp.Droid
         }
 
         // Get local db table items from Exhibition
-        public Task<List<Exhibition>> GetItemAsyncExhibition()
+        public Task<List<Events>> GetItemAsyncExhibition()
         {
-            return CreateConnection().Table<Exhibition>().ToListAsync();
+            return CreateConnection().Table<Events>().ToListAsync();
         }
 
         // Get local db table items from Map
@@ -196,7 +196,7 @@ namespace DeepSeaWorldApp.Droid
         }
 
         // exhibition table insert/update
-        public async Task InsertOrUpdateTableAsyncExhibition(Exhibition ex)
+        public async Task InsertOrUpdateTableAsyncExhibition(Events ex)
         {
             ExhibitionL exhibitionL = new ExhibitionL();
 
