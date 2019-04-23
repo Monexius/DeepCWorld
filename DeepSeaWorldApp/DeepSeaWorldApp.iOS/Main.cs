@@ -1,3 +1,4 @@
+using System;
 using DeepSeaWorldApp;
 using DeepSeaWorldApp.iOS;
 using UIKit;
@@ -12,6 +13,7 @@ namespace DeepSeaWorldApp.iOS
         {
             // if you want to use a different Application Delegate class from "AppDelegate"
             // you can specify it here.
+            Console.WriteLine("Main.cs");
             UIApplication.Main(args, null, "AppDelegate");
             Secondary();
         }

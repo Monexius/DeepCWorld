@@ -16,19 +16,19 @@
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-            <Label Margin="5" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Text="{Binding Event.Name}"
+            <Label Margin="5" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Text="{Binding Event.Event_Name}"
                    FontSize="18" FontAttributes="Bold"
                    HorizontalTextAlignment="Center"/>
-            <Label Margin="5" Grid.Row="1" Grid.Column="0" Text="{Binding Event.Time}"
+            <Label Margin="5" Grid.Row="1" Grid.Column="0" Text="{Binding Event.Event_Time}"
                    FontSize="14" FontAttributes="Bold"
                    HorizontalTextAlignment="Center"/>
-            <Label Margin="5" Grid.Row="1" Grid.Column="1" Text="{Binding Event.Location}"
+            <Label Margin="5" Grid.Row="1" Grid.Column="1" Text="{Binding Event.Event_Location}"
                    FontSize="14"
                    HorizontalTextAlignment="Center"/>
-            <Label Margin="5" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Text="{Binding Event.Description}"
+            <Label Margin="5" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Text="{Binding Event.Event_Description}"
                    FontSize="12" FontAttributes="Bold"
                    HorizontalTextAlignment="Center"/>
-            <Image Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Source="{Binding Event.Image}"
+            <Image Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Source="deep_sea.png"
                    HorizontalOptions="Center"/>
             <ImageButton Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Source="deep_sea.png"
                    HorizontalOptions="Center" Clicked="OnMapClicked"/>

@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-using DeepSeaWorldApp.Models;
 using DeepSeaWorldApp.Views;
 using DeepSeaWorldApp.ViewModels;
+using static DeepSeaWorldApp.DBClasses.DBs;
 
 namespace DeepSeaWorldApp.Views
 {
@@ -27,10 +27,10 @@ namespace DeepSeaWorldApp.Views
 
         async void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
         {
-            var exhibit = args.SelectedItem as Exhibit;
-            if (exhibit == null)
+            var exhibition = args.SelectedItem as Exhibition;
+            if (exhibition == null)
                 return;
-            await Navigation.PushAsync(new FeatureDetailPage(new ExhibitDetailViewModel(exhibit)));
+            await Navigation.PushAsync(new FeatureDetailPage(new ExhibitDetailViewModel(exhibition)));
 
             // Manually deselect item.
             ItemsListView.SelectedItem = null;

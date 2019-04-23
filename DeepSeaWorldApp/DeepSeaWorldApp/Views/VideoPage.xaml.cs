@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-using DeepSeaWorldApp.Models;
 using DeepSeaWorldApp.Views;
 using DeepSeaWorldApp.ViewModels;
 
@@ -17,6 +16,13 @@ namespace DeepSeaWorldApp.Views
     public partial class VideoPage : ContentPage
     {
         ExhibitsViewModel viewModel;
+
+        public VideoPage()
+        {
+            InitializeComponent();
+
+            BindingContext = viewModel = new ExhibitsViewModel();
+        }
 
         public VideoPage(string qrcode)
         {

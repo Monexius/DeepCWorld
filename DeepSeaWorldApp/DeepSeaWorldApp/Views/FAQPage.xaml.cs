@@ -12,21 +12,20 @@ namespace DeepSeaWorldApp.Views
     public partial class FAQPage : ContentPage
     {
         //static FAQDatabase database;
-        FAQViewModel viewModel;
         public FAQPage()
         {
             InitializeComponent();
 
         }
 
-
-        protected override async void OnAppearing()
+        protected override void OnAppearing()
         {
             base.OnAppearing();
             SQLiteDB sQLiteDB = new SQLiteDB();
             List<FAQ> faq = new List<FAQ>();
             faq = sQLiteDB.GetItemAsyncFAQ().Result;
             listView.ItemsSource = faq;
+            //listView.ItemsSource = App.Database.GetFAQsAsync();
             
             //BindingContext = viewModel = new FAQViewModel();
             //if (viewModel.FAQ.Count == 0)

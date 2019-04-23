@@ -3,8 +3,8 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-using DeepSeaWorldApp.Models;
 using DeepSeaWorldApp.ViewModels;
+using static DeepSeaWorldApp.DBClasses.DBs;
 
 namespace DeepSeaWorldApp.Views
 {
@@ -16,10 +16,10 @@ namespace DeepSeaWorldApp.Views
         public EventDetailPage(EventDetailViewModel viewModel)
         {
             InitializeComponent();
-
+            Console.WriteLine("in eventdetailpage: " + viewModel.Event.Event_Name);
             BindingContext = this.viewModel = viewModel;
         }
-        public EventDetailPage(Event eventEvent)
+        public EventDetailPage(Events eventEvent)
         {
             InitializeComponent();
             BindingContext = new MapViewModel(eventEvent);
@@ -32,11 +32,11 @@ namespace DeepSeaWorldApp.Views
         {
             InitializeComponent();
 
-            var e = new Event
+            var e = new Events
             {
-                Time = "10:30",
-                Name = "Event One",
-                Location = "Location One"
+                Event_Time = "10:30",
+                Event_Name = "Event One",
+                Event_Location = "Location One"
             };
 
             viewModel = new EventDetailViewModel(e);

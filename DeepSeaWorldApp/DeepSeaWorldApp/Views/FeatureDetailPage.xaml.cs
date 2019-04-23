@@ -3,8 +3,8 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-using DeepSeaWorldApp.Models;
 using DeepSeaWorldApp.ViewModels;
+using static DeepSeaWorldApp.DBClasses.DBs;
 
 namespace DeepSeaWorldApp.Views
 {
@@ -23,16 +23,15 @@ namespace DeepSeaWorldApp.Views
         public FeatureDetailPage()
         {
             InitializeComponent();
-            var exhibit = new Exhibit
+            var exhibition = new Exhibition
             {
-                Name = "Name 1",
-                Image1 = "image 1",
-                Text1 = "text 1",
-                Text2 = "text 2",
-                Text3 = "text 3"
+                Exhibition_Name = "Name 1",
+                Exhibition_IMG = "image 1",
+                Exhibition_Description = "text 1",
+                Exhibition_Video = "text 2",
             };
 
-            viewModel = new ExhibitDetailViewModel(exhibit);
+            viewModel = new ExhibitDetailViewModel(exhibition);
             BindingContext = viewModel;
         }
     }

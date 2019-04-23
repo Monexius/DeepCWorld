@@ -5,14 +5,14 @@ using System.Runtime.CompilerServices;
 
 using Xamarin.Forms;
 
-using DeepSeaWorldApp.Models;
 using DeepSeaWorldApp.Services;
+using static DeepSeaWorldApp.DBClasses.DBs;
 
 namespace DeepSeaWorldApp.ViewModels
 {
     public class BaseViewModel : INotifyPropertyChanged
     {
-        public IDataStore<Event> DataStore => DependencyService.Get<IDataStore<Event>>() ?? new MockDataStore();
+        public IDataStore<Events> DataStore => DependencyService.Get<IDataStore<Events>>() ?? new MockDataStore();
 
         bool isBusy = false;
         public bool IsBusy

@@ -37,6 +37,7 @@ namespace DeepSeaWorldApp.DBClasses
             public string Event_Day { get; set; }
             [JsonProperty("Event_Time")]
             public string Event_Time { get; set; }
+            public string Id { get; internal set; }
         }
 
         [Table("Exhibition")]

@@ -1,36 +1,27 @@
-﻿using System;
-using System.Collections.ObjectModel;
-using System.Diagnostics;
-using System.Threading.Tasks;
-
-using Xamarin.Forms;
-
-using DeepSeaWorldApp.Models;
-using DeepSeaWorldApp.Views;
-using DeepSeaWorldApp.Services;
+﻿
+using static DeepSeaWorldApp.DBClasses.DBs;
 
 namespace DeepSeaWorldApp.ViewModels
 {
     public class MapViewModel
     {
-        public Event Event { get; }
+        public Events Event { get; }
 
         public MapViewModel()
         {
-            Event = new Event
+            Event = new Events
             {
-                Name = "name",
+                Event_Name = "name",
             };
         }
-        public MapViewModel(Event e)
+        public MapViewModel(Events e)
         {
-            Event = new Event
+            Event = new Events
             {
-                Name = e.Name,
-                Location = e.Location,
-                Time = e.Time,
-                Description = e.Description,
-                Image = e.Image,
+                Event_Name = "event2",
+                Event_Location = e.Event_Location,
+                Event_Time = e.Event_Time,
+                Event_Description = e.Event_Description,
             };
         }
     }

@@ -1,28 +1,26 @@
 ﻿using System;
-
-using DeepSeaWorldApp.Models;
+using static DeepSeaWorldApp.DBClasses.DBs;
 
 namespace DeepSeaWorldApp.ViewModels
 {
     public class EventDetailViewModel : BaseViewModel
     {
-        public Event Event { get; set; }
+        public Events Event { get; }
         public EventDetailViewModel()
         {
-            Event = new Event
+            Event = new Events
             {
-                Name = "name",
+                Event_Name = "name",
             };
         }
-        public EventDetailViewModel(Event e)
+        public EventDetailViewModel(Events e)
         {
-            Event = new Event
+            Event = new Events
             {
-                Name = e.Name,
-                Location = e.Location,
-                Time = e.Time,
-                Description = e.Description,
-                Image = e.Image,
+                Event_Name = e.Event_Name,
+                Event_Location = e.Event_Location,
+                Event_Time = e.Event_Time,
+                Event_Description = e.Event_Description,
             };
         }
     }

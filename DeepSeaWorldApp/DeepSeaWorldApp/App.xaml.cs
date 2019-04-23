@@ -5,7 +5,6 @@ using SQLite;
 using DeepSeaWorldApp.Services;
 using System.IO;
 using System.Collections.Generic;
-using DeepSeaWorldApp.Models;
 using Newtonsoft.Json;
 using DeepSeaWorldApp.DBClasses;
 using Xamarin.Essentials;
@@ -22,7 +21,7 @@ namespace DeepSeaWorldApp
     public partial class App : Application
     {
         static FAQDatabase faqdatabase;
-        public IDataStore<Event> DataStore => DependencyService.Get<IDataStore<Event>>() ?? new MockDataStore();
+        public IDataStore<Events> DataStore => DependencyService.Get<IDataStore<Events>>() ?? new MockDataStore();
 
         public static FAQDatabase Database
         {
@@ -45,10 +44,6 @@ namespace DeepSeaWorldApp
                 return;
             }
             ScheduleNotifications();
-            //List<DBs.FAQ> faq = new List<DBs.FAQ>();
-            //faq = GetDB().Result;
-            //Console.WriteLine("FAQ ZEROOO: " + faq[0].FAQ_Question);
-            //Console.WriteLine("0 NAME: " + data.Events[0].Event_Name);
         }
         async Task<List<DBs.FAQ>> GetDB()
         {
@@ -57,28 +52,28 @@ namespace DeepSeaWorldApp
         }
         protected void ScheduleNotifications()
         {
-            List<Event> Events = new List<Event>();
+            List<Events> Events = new List<Events>();
             Events = GetEvents().Result;
-            CrossLocalNotifications.Current.Show(Events[0].Name, "starts at " + Events[0].Time, 101, DateTime.Now.AddSeconds(10));
+            CrossLocalNotifications.Current.Show(Events[0].Event_Name, "starts at " + Events[0].Event_Time, 101, DateTime.Now.AddSeconds(10));
             int i = 0;
             foreach (var g in Events)
             {
-                DateTime time = Convert.ToDateTime(g.Time);
+                DateTime time = Convert.ToDateTime(g.Event_Time);
                 DateTime time2 = time.AddMinutes(-5);
                 TimeSpan diff1 = time2.Subtract(DateTime.Now);
                 TimeSpan zero = TimeSpan.FromSeconds(0);
 
-                if(diff1 > zero)
+                if (diff1 > zero)
                 {
-                    CrossLocalNotifications.Current.Show(g.Name, "starts at " + g.Time, i, DateTime.Now.Add(diff1));
+                    CrossLocalNotifications.Current.Show(g.Event_Name, "starts at " + g.Event_Time, i, DateTime.Now.Add(diff1));
                 }
                 i++;
             }
         }
-        async Task<List<Event>> GetEvents()
+        async Task<List<Events>> GetEvents()
         {
             var events = await DataStore.GetItemsAsync(true);
-            List<Event> Events = new List<Event>();
+            List<Events> Events = new List<Events>();
             foreach (var e in events)
             {
                 Events.Add(e);
@@ -106,7 +101,7 @@ namespace DeepSeaWorldApp
             DataAsync();
             //List<DBs.FAQ> faq = new List<DBs.FAQ>();
             //faq = GetDB().Result;
-             //Console.WriteLine("FAQ ZEROOO: " + faq[0].FAQ_Question);
+            //Console.WriteLine("FAQ ZEROOO: " + faq[0].FAQ_Question);
             //Console.WriteLine("0 NAME: " + data.Events[0].Event_Name);
         }
 

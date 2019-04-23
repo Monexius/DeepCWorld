@@ -1,15 +1,14 @@
 ﻿using System;
-
-using DeepSeaWorldApp.Models;
+using static DeepSeaWorldApp.DBClasses.DBs;
 
 namespace DeepSeaWorldApp.ViewModels
 {
     public class FeatureDetailViewModel : BaseViewModel
     {
-        public Event Event { get; set; }
-        public FeatureDetailViewModel(Event e = null)
+        public Events Event { get; set; }
+        public FeatureDetailViewModel(Events e = null)
         {
-            Title = e?.Time;
+            Title = e?.Event_Time;
             Event = e;
         }
     }

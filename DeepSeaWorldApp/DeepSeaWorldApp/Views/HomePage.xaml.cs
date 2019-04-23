@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using Xamarin.Forms;
 using DeepSeaWorldApp.Services;
-using DeepSeaWorldApp.Models;
 using DeepSeaWorldApp.ViewModels;
 using System.Threading.Tasks;
 using static DeepSeaWorldApp.DBClasses.DBs;
@@ -12,12 +11,12 @@ namespace DeepSeaWorldApp.Views
     public partial class HomePage : ContentPage
     {
         //get event data
-        public IDataStore<Event> DataStore => DependencyService.Get<IDataStore<Event>>() ?? new MockDataStore();
-        Event eventEvent;
+        public IDataStore<Events> DataStore => DependencyService.Get<IDataStore<Events>>() ?? new MockDataStore();
+        //Events eventEvent;
         public HomePage()
         {
             InitializeComponent();
-
+            Console.WriteLine("Homepage");
             //promoImage.Source = "fish1.jpg";
             //homebox1.Source = "fish1.jpg";
             //homebox2.Source = "fish1.jpg";
@@ -29,16 +28,16 @@ namespace DeepSeaWorldApp.Views
             Device.StartTimer(TimeSpan.FromSeconds(1), () =>
             {
                 var next = GetNextEvent();
-                Event nextE = next.Result;
+                Events nextE = next.Result;
 
                 //new code to get starts in time
-                DateTime time = Convert.ToDateTime(nextE.Time);
+                DateTime time = Convert.ToDateTime(nextE.Event_Time);
                 DateTime time2 = time.AddMinutes(1);
                 TimeSpan diff1 = time2.Subtract(DateTime.Now);
 
-                eventNameText.Text = nextE.Name;
+                eventNameText.Text = nextE.Event_Name;
                 eventBridgeText.Text = "starts in";
-                if (nextE.Name.Equals("No more events today"))
+                if (nextE.Event_Name.Equals("No more events today"))
                 {
                     eventTimeText.Text = "";
                     eventBridgeText.Text = "";
@@ -95,11 +94,11 @@ namespace DeepSeaWorldApp.Views
 
         }
 
-        async Task<Event> GetItemByTime(string time)
+        async Task<Events> GetItemByTime(string time)
         {
             return await DataStore.GetItemByTime(time);
         }
-        async Task<Event> GetNextEvent()
+        async Task<Events> GetNextEvent()
         {
             return await DataStore.GetNextEvent();
         }
@@ -107,19 +106,9 @@ namespace DeepSeaWorldApp.Views
         void OnViewMapClicked(object sender, System.EventArgs e)
         {
             //load map page and pass eventName. maybe use modal?
-            Navigation.PushAsync(new EventDetailPage(eventEvent));
+            Navigation.PushAsync(new EventDetailPage());
         }
 
-        void OnBox1Clicked(object sender, System.EventArgs e)
-        {
-            string name = homebox1.Source.ToString();
-            Navigation.PushAsync(new NewsDetailPage(name));
-        }
-        void OnBox2Clicked(object sender, System.EventArgs e)
-        {
-            string name = homebox2.Source.ToString();
-            Navigation.PushAsync(new NewsDetailPage(name));
-        }
         void OnBox3Clicked(object sender, System.EventArgs e)
         {
 

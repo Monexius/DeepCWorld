@@ -8,7 +8,6 @@ using Xamarin.Forms;
 using DeepSeaWorldApp.Views;
 using static DeepSeaWorldApp.DBClasses.DBs;
 using System.Collections.Generic;
-using static Java.Util.Jar.Attributes;
 
 namespace DeepSeaWorldApp.ViewModels
 {
@@ -36,7 +35,6 @@ namespace DeepSeaWorldApp.ViewModels
                     e = i;
                 }
             }
-
         }
     }
 

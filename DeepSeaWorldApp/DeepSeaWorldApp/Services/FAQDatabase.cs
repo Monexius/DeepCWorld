@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using SQLite;
-using DeepSeaWorldApp.Models;
 using System.IO;
 using System;
+using static DeepSeaWorldApp.DBClasses.DBs;
 
 namespace DeepSeaWorldApp.Services
 {
@@ -32,21 +32,21 @@ namespace DeepSeaWorldApp.Services
                 Console.WriteLine("DATABASE COUNTER: " + _database.Table<FAQ>().CountAsync().Result);
                 // only insert the data if it doesn't already exist
                 var newFAQ = new FAQ();
-                newFAQ.ID = 1;
-                newFAQ.Question = "QuestionT";
-                newFAQ.Answer = "AnswerT";
+                newFAQ.FAQ_ID = 1;
+                newFAQ.FAQ_Question = "Question1";
+                newFAQ.FAQ_Anwswere = "Answer1";
                 _database.InsertAsync(newFAQ);
 
                 var newFAQ2 = new FAQ();
-                newFAQ2.ID = 2;
-                newFAQ2.Question = "QuestionU";
-                newFAQ2.Answer = "AnswerU";
+                newFAQ2.FAQ_ID = 2;
+                newFAQ2.FAQ_Question = "Question2";
+                newFAQ2.FAQ_Anwswere = "Answer2";
                 _database.InsertAsync(newFAQ2);
 
                 var newFAQ3 = new FAQ();
-                newFAQ3.ID = 3;
-                newFAQ3.Question = "QuestionV";
-                newFAQ3.Answer = "AnswerV";
+                newFAQ3.FAQ_ID = 3;
+                newFAQ3.FAQ_Question = "Question3";
+                newFAQ3.FAQ_Anwswere = "Answer3";
                 _database.InsertAsync(newFAQ3);
             }
         }
@@ -59,13 +59,13 @@ namespace DeepSeaWorldApp.Services
         public Task<FAQ> GetFAQAsync(int id)
         {
             return _database.Table<FAQ>()
-                            .Where(i => i.ID == id)
+                            .Where(i => i.FAQ_ID == id)
                             .FirstOrDefaultAsync();
         }
 
         public Task<int> SaveFAQAsync(FAQ faq)
         {
-            if (faq.ID != 0)
+            if (faq.FAQ_ID != 0)
             {
                 return _database.UpdateAsync(faq);
             }

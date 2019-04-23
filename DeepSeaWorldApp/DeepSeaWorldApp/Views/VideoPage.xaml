@@ -32,7 +32,7 @@
                 </video:VideoPlayer>
                 <Label HorizontalTextAlignment="Center" 
                        Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" 
-                       Text="{Binding Name}" 
+                       Text="{Binding Exhibition.Exhibition_Name}" 
                        FontSize="24" />
                 <ImageButton Source="deep_sea.png" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"
                              Clicked="ImageButtonClicked"/>
@@ -40,7 +40,7 @@
                              Clicked="ImageButton2Clicked"/>
                 <Label HorizontalTextAlignment="Center" 
                        Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" 
-                       Text="{Binding Description}"
+                       Text="{Binding Exhibition.Exhibition_Description}"
                        FontSize="20" />          
             </Grid>
         </StackLayout>

@@ -1,15 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-
-using DeepSeaWorldApp.Models;
-using DeepSeaWorldApp.Views;
 using DeepSeaWorldApp.ViewModels;
+using static DeepSeaWorldApp.DBClasses.DBs;
+using System;
 
 namespace DeepSeaWorldApp.Views
 {
@@ -25,9 +18,10 @@ namespace DeepSeaWorldApp.Views
 
         async void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
         {
-            var item = args.SelectedItem as Event;
+            var item = args.SelectedItem as Events;
             if (item == null)
                 return;
+            Console.WriteLine(item.Event_Name);
             await Navigation.PushAsync(new EventDetailPage(new EventDetailViewModel(item)));
 
             // Manually deselect item.

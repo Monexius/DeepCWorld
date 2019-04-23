@@ -2,40 +2,26 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using DeepSeaWorldApp.Models;
+using static DeepSeaWorldApp.DBClasses.DBs;
 
 namespace DeepSeaWorldApp.Services
 {
-    public class MockDataStore : IDataStore<Event>
+    public class MockDataStore : IDataStore<Events>
     {
-        List<Event> events;
+        List<Events> events;
 
         public MockDataStore()
         {
-            events = new List<Event>();
-            var mockEvents = new List<Event>
+            events = new List<Events>();
+            var mockEvents = new List<Events>
             {
-                new Event { Id = Guid.NewGuid().ToString(), Time = "10:30", Name="Meet a Reptile", Location="Shark Classroom"},
-                new Event { Id = Guid.NewGuid().ToString(), Time = "11:00", Name="Daily Morning Feed", Location="Various"},
-                new Event { Id = Guid.NewGuid().ToString(), Time = "12:30", Name="Seal Feed", Location= "Seal Harbour"},
-                new Event { Id = Guid.NewGuid().ToString(), Time = "11:30", Name="Rockpool Encounter", Location="Rockpool Main Hall"},
-                new Event { Id = Guid.NewGuid().ToString(), Time = "12:00", Name="Seahorse Talk", Location="Rockpool Main Hall"},
-                new Event { Id = Guid.NewGuid().ToString(), Time = "13:00", Name="Ocean Feed", Location="Underwater Tunnel"},
-                new Event { Id = Guid.NewGuid().ToString(), Time = "13:30", Name="Rain Forest Talk", Location="The Swamp",
-                Description="rain forest talk description...", Image="deep_sea.png"},
-                new Event { Id = Guid.NewGuid().ToString(), Time = "14:00", Name="Creepy Crawly Encounter", Location="Shark Classroom"},
-                new Event { Id = Guid.NewGuid().ToString(), Time = "15:30", Name="Daily Afternoon Feed", Location="Various"},
-                new Event { Id = Guid.NewGuid().ToString(), Time = "15:00", Name="Seal Feed", Location="Seal Harbour"},
-                new Event { Id = Guid.NewGuid().ToString(), Time = "14:30", Name="Meet a Reptile", Location="Shark Classroom"},
-                new Event { Id = Guid.NewGuid().ToString(), Time = "16:00", Name="Underwater Safari", Location="Underwater Tunnel"},
-                new Event { Id = Guid.NewGuid().ToString(), Time = "16:30", Name="Rockpool Encounter", Location="Rockpool Main Hall",
-                Description="rockpool encounter description...", Image="deep_sea.png"},
-                new Event { Id = Guid.NewGuid().ToString(), Time = "17:00", Name="Creepy Crawly Encounter", Location="Shark Classroom",
-                Description="creepy crawly encounter description...", Image="deep_sea.png"},
+                new Events { Events_ID = 0, Event_Time = "10:30", Event_Name="Meet a Reptile", Event_Location="Shark Classroom"},
+                new Events { Events_ID = 1, Event_Time = "11:00", Event_Name="Daily Morning Feed", Event_Location="Various"},
+                new Events { Events_ID = 2, Event_Time = "12:30", Event_Name="Seal Feed", Event_Location= "Seal Harbour"}
             };
             //order events by time
             var orderByTime = from s in mockEvents
-                                orderby s.Time
+                                orderby s.Event_Time
                                 select s;
             foreach (var e in orderByTime)
             {
@@ -45,74 +31,74 @@ namespace DeepSeaWorldApp.Services
 
         }
 
-        public async Task<bool> AddItemAsync(Event e)
+        public async Task<bool> AddItemAsync(Events e)
         {
             events.Add(e);
 
             return await Task.FromResult(true);
         }
 
-        public async Task<bool> UpdateItemAsync(Event e)
+        public async Task<bool> UpdateItemAsync(Events e)
         {
-            var oldEvent = events.Where((Event arg) => arg.Id == e.Id).FirstOrDefault();
+            var oldEvent = events.Where((Events arg) => arg.Id == e.Id).FirstOrDefault();
             events.Remove(oldEvent);
             events.Add(e);
 
             return await Task.FromResult(true);
         }
 
-        public async Task<bool> DeleteItemAsync(string id)
+        public async Task<bool> DeleteItemAsync(int id)
         {
-            var oldEvent = events.Where((Event arg) => arg.Id == id).FirstOrDefault();
+            var oldEvent = events.Where((Events arg) => arg.Events_ID == id).FirstOrDefault();
             events.Remove(oldEvent);
 
             return await Task.FromResult(true);
         }
 
-        public async Task<Event> GetItemAsync(string id)
+        public async Task<Events> GetItemAsync(int id)
         {
-            return await Task.FromResult(events.FirstOrDefault(s => s.Id == id));
+            return await Task.FromResult(events.FirstOrDefault(s => s.Events_ID == id));
         }
 
-        public async Task<IEnumerable<Event>> GetItemsAsync(bool forceRefresh = false)
+        public async Task<IEnumerable<Events>> GetItemsAsync(bool forceRefresh = false)
         {
             return await Task.FromResult(events);
         }
 
-        public async Task<Event> GetItemByTime(string time)
+        public async Task<Events> GetItemByTime(string time)
         {
-            Event e = new Event();
+            Events e = new Events();
 
-            Event fail = new Event
+            Events fail = new Events
             {
-                Id = Guid.NewGuid().ToString(),
-                Time = "10:30",
-                Name = "FAIL",
-                Location = "Shark Classroom"
+                Events_ID = 100,
+                Event_Time = "10:30",
+                Event_Name = "FAIL",
+                Event_Location = "Shark Classroom"
             };
             foreach (var i in events)
             {
-                if (i.Time == time)
+                if (i.Event_Time == time)
                 {
                     e = i;
                 }
             }
-            if (e.Name == "")
+            if (e.Event_Name == "")
             {
                 e = fail;
             }
             return await Task.FromResult(e);
         }
 
-        public async Task<Event> GetNextEvent()
+        public async Task<Events> GetNextEvent()
         {
             DateTime now = DateTime.Now;
-            List<Event> nextEvents = new List<Event>();
-            Event nextE = new Event();
+            List<Events> nextEvents = new List<Events>();
+            Events nextE = new Events();
 
             foreach (var x in events)
             {
-                DateTime time = Convert.ToDateTime(x.Time).AddMinutes(5);
+                DateTime time = Convert.ToDateTime(x.Event_Time).AddMinutes(5);
                 //if time hasn't passed, add to next events list
                 if (time.TimeOfDay.Hours > now.TimeOfDay.Hours)
                 {
@@ -129,7 +115,7 @@ namespace DeepSeaWorldApp.Services
             bool NextisEmpty = !nextEvents.Any();
             if (NextisEmpty)
             {
-                Event fail = new Event { Id = Guid.NewGuid().ToString(), Time = "00:00", Name = "No more events today", Location = "" };
+                Events fail = new Events { Events_ID = 100, Event_Time = "00:00", Event_Name = "No more events today", Event_Location = "" };
                 return await Task.FromResult(fail);
             }
             nextE = nextEvents[0]; 

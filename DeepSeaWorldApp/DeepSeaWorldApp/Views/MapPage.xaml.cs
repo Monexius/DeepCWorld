@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using DeepSeaWorldApp.Models;
 using DeepSeaWorldApp.ViewModels;
 using Xamarin.Forms;
 
