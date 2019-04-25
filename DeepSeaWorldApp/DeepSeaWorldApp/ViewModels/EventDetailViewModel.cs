@@ -1,5 +1,4 @@
-﻿using System;
-using static DeepSeaWorldApp.DBClasses.DBs;
+﻿using static DeepSeaWorldApp.DBClasses.DBs;
 
 namespace DeepSeaWorldApp.ViewModels
 {

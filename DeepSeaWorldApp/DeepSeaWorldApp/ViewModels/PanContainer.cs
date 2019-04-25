@@ -1,4 +1,16 @@
-﻿using System;
+﻿//This code is a transformation of the following:
+
+//Title: WorkingWithGestures
+//Author: David Britch
+//Date: 20/04/2019
+//Availability: https://github.com/xamarin/xamarin-forms-samples/tree/master/WorkingWithGestures
+
+//Title: How to mix the pinch and pan gesture for image control together?
+//Author: EddieM
+//Date: 01/04/2018
+//Availability: https://forums.xamarin.com/discussion/77726/how-to-mix-the-pinch-and-pan-gesture-for-image-control-together
+
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
 

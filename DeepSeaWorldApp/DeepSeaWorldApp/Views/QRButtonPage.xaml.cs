@@ -14,7 +14,14 @@ namespace DeepSeaWorldApp.Views
         }
         private void ButtonClicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new QRScannerPage());
+            if(Device.RuntimePlatform == Device.Android)
+            {
+                Navigation.PushModalAsync(new QRScannerPage());
+            }
+            else if(Device.RuntimePlatform == Device.iOS)
+            {
+                Navigation.PushAsync(new QRScannerPage());
+            }
         }
     }
 }

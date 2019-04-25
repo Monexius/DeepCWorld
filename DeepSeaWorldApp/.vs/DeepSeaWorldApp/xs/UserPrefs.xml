@@ -1,35 +1,23 @@
 ﻿<Properties GitUserInfo="UsingGIT" StartupConfiguration="{596D3C9C-9A0C-4BD5-9EB6-D37ACD885166}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="DeepSeaWorldApp Status">
     <Files>
+      <File FileName="DeepSeaWorldApp/Views/QRScannerPage.xaml.cs" Line="41" Column="18" />
+      <File FileName="DeepSeaWorldApp/Views/VideoPage.xaml.cs" Line="29" Column="38" />
+      <File FileName="DeepSeaWorldApp/Views/VideoPage.xaml" />
+      <File FileName="../../../../Downloads/VideoPlayerDemos/VideoPlayerDemos/VideoPlayerDemos.Android/MainActivity.cs" Line="28" Column="10" />
+      <File FileName="DeepSeaWorldApp.Android/MainActivity.cs" Line="104" Column="1" />
       <File FileName="DeepSeaWorldApp Status" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="DeepSeaWorldApp" expanded="True" selected="True">
-            <Node name="DeepSeaWorldApp" expanded="True">
-              <Node name="DB" expanded="True" />
-              <Node name="DBClasses" expanded="True" />
-              <Node name="FormsVideoLibrary" expanded="True" />
-              <Node name="Services" expanded="True" />
-              <Node name="Views" expanded="True">
-                <Node name="HomePage.xaml" expanded="True" />
-                <Node name="MainPage.xaml" expanded="True" />
-                <Node name="MapPage.xaml" expanded="True" />
-              </Node>
-            </Node>
-            <Node name="DeepSeaWorldApp.Android" expanded="True">
-              <Node name="Resources" expanded="True">
-                <Node name="layout" expanded="True" />
-              </Node>
-            </Node>
-            <Node name="DeepSeaWorldApp.iOS" expanded="True" />
-          </Node>
+          <Node name="DeepSeaWorldApp" selected="True" />
+          <Node name="VideoPlayerDemos" expanded="True" />
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.ItemProperties.DeepSeaWorldApp.Android AndroidDesignerPreferredTheme="Theme.DeviceDefault.Light.NoActionBar.Fullscreen" PreferredExecutionTarget="Android.YT9117QE1J" />
+  <MonoDevelop.Ide.ItemProperties.DeepSeaWorldApp.Android AndroidDesignerPreferredTheme="Theme.DeviceDefault" PreferredExecutionTarget="Android.YT9117QE1J" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.ItemProperties.DeepSeaWorldApp.iOS automaticSigning="False" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.47891c6bfa5fddd3860f568ae2b9465887eee4e0" />

@@ -5,6 +5,7 @@ using Xamarin.Forms.Xaml;
 
 using DeepSeaWorldApp.ViewModels;
 using static DeepSeaWorldApp.DBClasses.DBs;
+using System.Threading.Tasks;
 
 namespace DeepSeaWorldApp.Views
 {
@@ -17,14 +18,6 @@ namespace DeepSeaWorldApp.Views
             InitializeComponent();
             BindingContext = this.viewModel = viewModel;
             timeloc.Text = viewModel.Event.Event_Time + " at " + viewModel.Event.Event_Location;
-        }
-        public EventDetailPage(Events eventEvent)
-        {
-            InitializeComponent();
-            BindingContext = new MapViewModel(eventEvent);
-            //get location associated with eventName
-            //display different image depending on location, displaying map with that location highlighted
-            //using switch case?
         }
 
         public EventDetailPage()

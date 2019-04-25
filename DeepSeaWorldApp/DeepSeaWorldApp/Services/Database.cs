@@ -5,18 +5,22 @@ using static DeepSeaWorldApp.DBClasses.DBs;
 
 namespace DeepSeaWorldApp.Services
 {
-    public class EventsDatabase
+    public class Database
     {
         readonly SQLiteAsyncConnection _database;
 
-        public EventsDatabase(string dbPath)
+        public Database(string dbPath)
         {
             _database = new SQLiteAsyncConnection(dbPath);
             _database.CreateTableAsync<Events>().Wait();
-            LoadData();
+            _database.CreateTableAsync<Exhibition>().Wait();
+            _database.CreateTableAsync<FAQ>().Wait();
+            LoadEventsData();
+            LoadExhibitionData();
+            LoadFAQData();
         }
 
-        public void LoadData()
+        public void LoadEventsData()
         {
             if (_database.Table<Events>().CountAsync().Result == 0)
             {
@@ -51,6 +55,125 @@ namespace DeepSeaWorldApp.Services
                     _database.InsertAsync(e);
                 }
             }
+        }
+
+        public void LoadExhibitionData()
+        {
+            if (_database.Table<Exhibition>().CountAsync().Result == 0)
+            {
+                // only insert the data if it doesn't already exist
+                List<Exhibition> exhibitions = new List<Exhibition>
+                {
+                    new Exhibition {Exhibition_ID=0,
+                                    Exhibition_IMG="seal3.jpeg",
+                                    Exhibition_Name="Seals",
+                                    Exhibition_Video="sealv.mp4",
+                                    Exhibition_IMG_Name="img", Exhibition_Video_Name="vid",
+                                    Exhibition_Description="Common seals are skilled predators, believe it or not! By storing oxygen in their muscles and blood, rather than in their lungs, they can dive for up to 30 minutes, searching for their favourite food. They eat plenty of different things, but they love small sea creatures like oily fish, squid, and molluscs the most!",
+                                    QRCodes_Name="F767-348G56"},
+                    new Exhibition {Exhibition_ID=1,
+                                    Exhibition_IMG="shark2.jpeg",
+                                    Exhibition_Name="Sand Sharks",
+                                    Exhibition_Video="fish.mp4",
+                                    Exhibition_IMG_Name="img", Exhibition_Video_Name="vid",
+                                    Exhibition_Description="The Sand Tiger shark is the largest shark on display at Deep Sea World and can grow up to three and a half metres in length.\nSand Tiger sharks are also known as grey nurse or ragged tooth sharks and are normally found around Australia, Africa and America.",
+                                    QRCodes_Name="F767-459E36"}
+                };
+                foreach (var e in exhibitions)
+                {
+                    _database.InsertAsync(e);
+                }
+            }
+        }
+
+        public void LoadFAQData()
+        {
+            if (_database.Table<FAQ>().CountAsync().Result == 0)
+            {
+                // only insert the data if it doesn't already exist
+                var newFAQ = new FAQ();
+                newFAQ.FAQ_ID = 1;
+                newFAQ.FAQ_Question = "Question1";
+                newFAQ.FAQ_Anwswere = "Answer1";
+                _database.InsertAsync(newFAQ);
+
+                var newFAQ2 = new FAQ();
+                newFAQ2.FAQ_ID = 2;
+                newFAQ2.FAQ_Question = "Question2";
+                newFAQ2.FAQ_Anwswere = "Answer2";
+                _database.InsertAsync(newFAQ2);
+
+                var newFAQ3 = new FAQ();
+                newFAQ3.FAQ_ID = 3;
+                newFAQ3.FAQ_Question = "Question3";
+                newFAQ3.FAQ_Anwswere = "Answer3";
+                _database.InsertAsync(newFAQ3);
+            }
+        }
+
+        public Task<List<FAQ>> GetFAQsAsync()
+        {
+            return _database.Table<FAQ>().ToListAsync();
+        }
+
+        public Task<FAQ> GetFAQAsync(int id)
+        {
+            return _database.Table<FAQ>()
+                            .Where(i => i.FAQ_ID == id)
+                            .FirstOrDefaultAsync();
+        }
+
+        public Task<int> SaveFAQAsync(FAQ faq)
+        {
+            if (faq.FAQ_ID != 0)
+            {
+                return _database.UpdateAsync(faq);
+            }
+            else
+            {
+                return _database.InsertAsync(faq);
+            }
+        }
+
+        public Task<int> DeleteFAQAsync(FAQ faq)
+        {
+            return _database.DeleteAsync(faq);
+        }
+
+
+        public Task<List<Exhibition>> GetExhibitionsAsync()
+        {
+            return _database.Table<Exhibition>().ToListAsync();
+        }
+
+        public Task<Exhibition> GetExhibitionsAsync(int id)
+        {
+            return _database.Table<Exhibition>()
+                            .Where(i => i.Exhibition_ID == id)
+                            .FirstOrDefaultAsync();
+        }
+        public Task<Exhibition> GetExhibitionsAsync(string qrcode)
+        {
+            return _database.Table<Exhibition>()
+                            .Where(i => i.QRCodes_Name == qrcode)
+                            .FirstOrDefaultAsync();
+        }
+
+        public Task<int> SaveExhibitionAsync(Exhibition exhibition)
+        {
+            if (exhibition.Exhibition_ID != 0)
+            {
+                return _database.UpdateAsync(exhibition);
+            }
+            else
+            {
+                return _database.InsertAsync(exhibition);
+            }
+        }
+
+        public Task<int> DeleteExhibitionAsync(Exhibition exhibition)
+        {
+            return _database.DeleteAsync(exhibition);
         }
 
         public Task<List<Events>> GetEventsAsync()

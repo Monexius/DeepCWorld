@@ -1,17 +1,8 @@
-﻿using System;
-using System.Collections.ObjectModel;
-using System.Diagnostics;
-using System.Threading.Tasks;
-
-using Xamarin.Forms;
-
-using DeepSeaWorldApp.Views;
-using static DeepSeaWorldApp.DBClasses.DBs;
-using System.Collections.Generic;
+﻿using static DeepSeaWorldApp.DBClasses.DBs;
 
 namespace DeepSeaWorldApp.ViewModels
 {
-    public class ExhibitsViewModel : BaseViewModel2
+    public class ExhibitsViewModel : BaseViewModel
     {
         public Exhibition Exhibition { get; }
 
@@ -38,15 +29,6 @@ namespace DeepSeaWorldApp.ViewModels
             };
         }
 
-        public ExhibitsViewModel(string result)
-        {
-            Exhibition = new Exhibition
-            {
-                Exhibition_ID = 1,
-                Exhibition_IMG = "deep_sea.png",
-                Exhibition_Name = "name",
-            };
-        }
     }
 
 }

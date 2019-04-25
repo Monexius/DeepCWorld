@@ -6,7 +6,6 @@
              Title="{Binding Exhibition.Exhibition_Name}"
              x:Name="BrowseItemsPage"
              BackgroundImage="background.png">
-
     <ContentPage.Content>
         <StackLayout>
             <ScrollView>
@@ -23,7 +22,7 @@
                 <video:VideoPlayer x:Name="videoPlayer" 
                                    Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
                 </video:VideoPlayer>
-                <ImageButton Source="{Binding Exhibition.Exhibition_IMG}" 
+                <ImageButton BackgroundColor="Transparent" Source="{Binding Exhibition.Exhibition_IMG}" 
                              Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
                              />
                 <Label Text="Did you know?" 

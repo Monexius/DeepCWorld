@@ -1,18 +1,14 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using DeepSeaWorldApp.Views;
-using SQLite;
 using DeepSeaWorldApp.Services;
 using System.IO;
 using System.Collections.Generic;
-using Newtonsoft.Json;
 using DeepSeaWorldApp.DBClasses;
-using Xamarin.Essentials;
 using Plugin.LocalNotifications;
 using System.Threading.Tasks;
 using System;
 using static DeepSeaWorldApp.DBClasses.DBs;
-using Xamarin.Forms.Internals;
 using static DeepSeaWorldApp.SQLiteDB;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
@@ -20,45 +16,22 @@ namespace DeepSeaWorldApp
 {
     public partial class App : Application
     {
-        static FAQDatabase faqdatabase;
-        static EventsDatabase eventsdatabase;
-        static ExhibitionDatabase exhibitiondatabase;
-        public IDataStore<Events> DataStore => DependencyService.Get<IDataStore<Events>>() ?? new MockDataStore();
+        static Database database;
         public static double ScreenWidth;
         public static double ScreenHeight;
-        public static FAQDatabase Database
+
+        public static Database Database
         {
             get
             {
-                if (faqdatabase == null)
+                if (database == null)
                 {
-                    faqdatabase = new FAQDatabase(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "FAQs.db3"));
+                    database = new Database(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "database.db3"));
                 }
-                return faqdatabase;
+                return database;
             }
         }
-        public static EventsDatabase EventsDatabase
-        {
-            get
-            {
-                if (eventsdatabase == null)
-                {
-                    eventsdatabase = new EventsDatabase(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Events.db3"));
-                }
-                return eventsdatabase;
-            }
-        }
-        public static ExhibitionDatabase ExhibitionDatabase
-        {
-            get
-            {
-                if (exhibitiondatabase == null)
-                {
-                    exhibitiondatabase = new ExhibitionDatabase(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Exhibition.db3"));
-                }
-                return exhibitiondatabase;
-            }
-        }
+
         public App()
         {
             InitializeComponent();
@@ -77,7 +50,7 @@ namespace DeepSeaWorldApp
         protected void ScheduleNotifications()
         {
             List<Events> Events = new List<Events>();
-            Events = GetEvents().Result;
+            Events = App.database.GetEventsAsync().Result;
             int i = 0;
             foreach (var g in Events)
             {
@@ -92,16 +65,6 @@ namespace DeepSeaWorldApp
                 }
                 i++;
             }
-        }
-        async Task<List<Events>> GetEvents()
-        {
-            var events = await DataStore.GetItemsAsync(true);
-            List<Events> Events = new List<Events>();
-            foreach (var e in events)
-            {
-                Events.Add(e);
-            }
-            return Events;
         }
 
         protected async void DataAsync()

@@ -3,16 +3,10 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-using Xamarin.Forms;
-
-using DeepSeaWorldApp.Services;
-using static DeepSeaWorldApp.DBClasses.DBs;
-
 namespace DeepSeaWorldApp.ViewModels
 {
     public class BaseViewModel : INotifyPropertyChanged
     {
-        public IDataStore<Events> DataStore => DependencyService.Get<IDataStore<Events>>() ?? new MockDataStore();
 
         bool isBusy = false;
         public bool IsBusy

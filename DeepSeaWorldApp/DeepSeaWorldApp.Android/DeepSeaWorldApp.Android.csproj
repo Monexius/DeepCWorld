@@ -79,7 +79,8 @@
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SplashActivity.cs" />
+    <Compile Include="FormsVideoLibrary\VideoPicker.cs" />
+    <Compile Include="FormsVideoLibrary\VideoPlayerRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\DeepSeaWorldSQLite" />
@@ -127,12 +128,10 @@
     <AndroidResource Include="Resources\drawable\glowfish.jpeg" />
     <AndroidResource Include="Resources\drawable\school.jpeg" />
     <AndroidResource Include="Resources\drawable\ray.jpeg" />
-    <AndroidResource Include="Resources\drawable\ray2.jpeg" />
     <AndroidResource Include="Resources\drawable\seal.jpeg" />
     <AndroidResource Include="Resources\drawable\seal2.jpeg" />
     <AndroidResource Include="Resources\drawable\frog.jpeg" />
     <AndroidResource Include="Resources\drawable\shark.jpeg" />
-    <AndroidResource Include="Resources\drawable\dory.jpeg" />
     <AndroidResource Include="Resources\drawable\catfish.jpeg" />
     <AndroidResource Include="Resources\drawable\turtle.jpeg" />
     <AndroidResource Include="Resources\drawable\shark2.jpeg" />
@@ -142,20 +141,23 @@
     <AndroidResource Include="Resources\drawable\lobster.jpeg" />
     <AndroidResource Include="Resources\drawable\seal3.jpeg" />
     <AndroidResource Include="Resources\drawable\octopus.jpeg" />
-    <AndroidResource Include="Resources\drawable\nemo.jpeg" />
     <AndroidResource Include="Resources\drawable\stripedfish.jpeg" />
     <AndroidResource Include="Resources\drawable\floormap.jpg" />
-    <AndroidResource Include="Resources\drawable\DSW_001.mp4" />
-    <AndroidResource Include="Resources\drawable\sealv.mp4" />
     <AndroidResource Include="Resources\drawable\cafe.png" />
     <AndroidResource Include="Resources\drawable\shop.png" />
     <AndroidResource Include="Resources\drawable\floormap2.jpg" />
+    <AndroidResource Include="Resources\raw\fish.mp4">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AndroidResource>
+    <AndroidResource Include="Resources\raw\sealv.mp4" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable-hdpi\" />
     <Folder Include="Resources\drawable-xhdpi\" />
     <Folder Include="Resources\drawable-xxhdpi\" />
     <Folder Include="Resources\drawable-xxxhdpi\" />
+    <Folder Include="Resources\raw\" />
+    <Folder Include="FormsVideoLibrary\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DeepSeaWorldApp\DeepSeaWorldApp.csproj">

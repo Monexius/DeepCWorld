@@ -6,6 +6,7 @@
             x:Class="DeepSeaWorldApp.Views.MainPage" 
             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
             BackgroundImage="background.png"
+            android:TabbedPage.ToolbarPlacement="Bottom"
             >
     <TabbedPage.Children>
         <NavigationPage Title="Home" ClassId="btnHome" Icon="home.png">

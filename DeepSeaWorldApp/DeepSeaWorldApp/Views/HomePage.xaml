@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage BackgroundImage="background.png" 
-             xmlns="http://xamarin.com/schemas/2014/forms" 
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-             x:Class="DeepSeaWorldApp.Views.HomePage" 
-             xmlns:vm="clr-namespace:DeepSeaWorldApp.ViewModels" 
-             Title="Deep Sea World">
-
+<ContentPage BackgroundImage="background.png" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="DeepSeaWorldApp.Views.HomePage" xmlns:vm="clr-namespace:DeepSeaWorldApp.ViewModels" Title="Deep Sea World">
     <ContentPage.Resources>
         <ResourceDictionary>
-            <!--Page Level Resources: Compatibile with Xamarin Live Player -->
             <Color x:Key="Primary">#2196F3</Color>
             <Color x:Key="Accent">#96d1ff</Color>
             <Color x:Key="LightTextColor">#999999</Color>
@@ -27,48 +20,28 @@
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                <Frame x:Name="nexteventframe" 
-                       BorderColor="Blue" BackgroundColor="Transparent"
-                       Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
-                       Margin="10" Padding="10">
+                <Frame x:Name="nexteventframe" BorderColor="Blue" BackgroundColor="Transparent" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Margin="10" Padding="10">
                     <Frame.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="NextEventTapped"/>
+                        <TapGestureRecognizer Tapped="NextEventTapped" />
                     </Frame.GestureRecognizers>
-                        <StackLayout>
-                            <Label x:Name="eventNameText" Text="next event name"
-                                   FontSize="24" HorizontalTextAlignment="Center"/>
-                            <Label x:Name="eventBridgeText" Text="starts in"
-                                   FontSize="14" HorizontalTextAlignment="Center"/>
-                            <Label x:Name="eventTimeText" Text="eventTimeText"
-                                   FontSize="24" HorizontalTextAlignment="Center"/>
-                            <Image x:Name="eventImage" Source="deep_sea.png"/>
-                        </StackLayout>
+                    <StackLayout>
+                        <Label x:Name="eventNameText" Text="next event name" FontSize="24" HorizontalTextAlignment="Center" />
+                        <Label x:Name="eventBridgeText" Text="starts in" FontSize="14" HorizontalTextAlignment="Center" />
+                        <Label x:Name="eventTimeText" Text="eventTimeText" FontSize="24" HorizontalTextAlignment="Center" />
+                        <Image x:Name="eventImage" Source="deep_sea.png" />
+                    </StackLayout>
                 </Frame>
-                
-                <Frame x:Name="feature1" 
-                       BorderColor="Blue" BackgroundColor="Transparent"
-                       Grid.Row="2" Grid.Column="0"
-                       Margin="10" Padding="0">
-                            <Image x:Name="homebox1" Source="shop.png"
-                                   BackgroundColor="Transparent"/>
+                <Frame x:Name="feature1" BorderColor="Blue" BackgroundColor="Transparent" Grid.Row="2" Grid.Column="0" Margin="10" Padding="0">
+                    <Image x:Name="homebox1" Source="shop.png" BackgroundColor="Transparent" />
                 </Frame>
-                
-                <Frame x:Name="feature2" 
-                       BorderColor="Blue" BackgroundColor="Transparent"
-                       Grid.Row="2" Grid.Column="1"
-                       Margin="10" Padding="10">
-                            <Image x:Name="homebox2"
-                             Source="cafe.png" BackgroundColor="Transparent"/>
+                <Frame x:Name="feature2" BorderColor="Blue" BackgroundColor="Transparent" Grid.Row="2" Grid.Column="1" Margin="10" Padding="10">
+                    <Image x:Name="homebox2" Source="cafe.png" BackgroundColor="Transparent" />
                 </Frame>
-                
-                <Frame x:Name="feature3" 
-                       BorderColor="Blue" BackgroundColor="Transparent"
-                       Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
-                       Margin="10" Padding="10">
-                        <Frame.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="QRTapped"/>
-                        </Frame.GestureRecognizers>
-                        <Grid>
+                <Frame x:Name="feature3" BorderColor="Blue" BackgroundColor="Transparent" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Margin="10" Padding="10">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="QRTapped" />
+                    </Frame.GestureRecognizers>
+                    <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="*" />
                         </Grid.RowDefinitions>
@@ -77,23 +50,10 @@
                             <ColumnDefinition Width="*" />
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
-                            <Image Grid.Row="0" Grid.Column="0" x:Name="homebox3"
-                             Source="qr.png" BackgroundColor="Transparent"/>
-                            <Label Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" 
-                                   Text="Scan these QR codes using this app for exhibit extras"
-                                   VerticalTextAlignment="Center"
-                                   FontSize="20"/>
-                        </Grid>
+                        <Image Grid.Row="0" Grid.Column="0" x:Name="homebox3" Source="qr.png" BackgroundColor="Transparent" />
+                        <Label Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Text="Scan these QR codes using this app for exhibit extras" VerticalTextAlignment="Center" FontSize="20" />
+                    </Grid>
                 </Frame>
-                
-    <!--        <ImageButton x:Name="homebox1" Source="fish1.jpg" Grid.Row="2" Grid.Column="0"
-                             Clicked="OnBox1Clicked"/>
-                <ImageButton x:Name="homebox2" Source="fish1.jpg" Grid.Row="2" Grid.Column="1"
-                             Clicked="OnBox2Clicked"/>
-                <ImageButton x:Name="homebox3" Source="fish1.jpg" Grid.Row="3" Grid.Column="0"
-                             Clicked="OnBox3Clicked"/>
-                <ImageButton x:Name="homebox4" Source="fish1.jpg" Grid.Row="3" Grid.Column="1"
-                             Clicked="OnBox4Clicked"/>-->
             </Grid>
         </ScrollView>
     </ContentPage.Content>

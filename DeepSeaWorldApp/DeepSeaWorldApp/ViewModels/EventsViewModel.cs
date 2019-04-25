@@ -2,12 +2,8 @@
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Threading.Tasks;
-
 using Xamarin.Forms;
-
-using DeepSeaWorldApp.Views;
 using DeepSeaWorldApp.Services;
-using System.Linq;
 using System.Collections.Generic;
 using static DeepSeaWorldApp.DBClasses.DBs;
 
@@ -34,17 +30,20 @@ namespace DeepSeaWorldApp.ViewModels
 
             try
             {
+                //empty events collection
                 Events.Clear();
-                SQLiteDB dbcon = new SQLiteDB();
+
+                //get events from database
                 List<Events> events = new List<Events>();
-                //get list of events from db
-                //events = dbcon.GetItemAsyncEvents().Result;
-                events = App.EventsDatabase.GetEventsAsync().Result;
-                Console.WriteLine("EVENT ONE: " + events[0].Event_Name);
-                events = NextEventService.GetNextEvents(events);
+                events = App.Database.GetEventsAsync().Result;
+
+                //get next events
+                NextEventService n = new NextEventService();
+                events = n.GetNextEvents(events).Result;
+
+                //add next events to collection
                 foreach (var e in events)
                 {
-
                     Events.Add(e);
                 }
             }

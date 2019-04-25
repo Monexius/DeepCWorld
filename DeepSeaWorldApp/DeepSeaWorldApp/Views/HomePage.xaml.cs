@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using Xamarin.Forms;
 using DeepSeaWorldApp.Services;
 using DeepSeaWorldApp.ViewModels;
@@ -11,35 +10,27 @@ namespace DeepSeaWorldApp.Views
     public partial class HomePage : ContentPage
     {
         Events nextE = new Events();
-        //get event data
-        //public IDataStore<Events> DataStore => DependencyService.Get<IDataStore<Events>>() ?? new MockDataStore();
-        //Events eventEvent;
+
         public HomePage()
         {
             InitializeComponent();
-            Console.WriteLine("Homepage");
-            //promoImage.Source = "fish1.jpg";
-            //homebox1.Source = "fish1.jpg";
-            //homebox2.Source = "fish1.jpg";
-            //homebox3.Source = "fish1.jpg";
-            //homebox4.Source = "fish1.jpg";
-            eventNameText.Text = "event";
-            eventTimeText.Text = "time";
 
             Device.StartTimer(TimeSpan.FromSeconds(1), () =>
             {
+                //get next event
                 var next = GetNextEvent();
-                nextE = next;
+                nextE = next.Result;
 
-                //new code to get starts in time
-                DateTime time = Convert.ToDateTime(nextE.Event_Time);
-                DateTime time2 = time.AddMinutes(1);
-                TimeSpan diff1 = time2.Subtract(DateTime.Now);
+                //new code to get "starts in" time
+                DateTime time = Convert.ToDateTime(nextE.Event_Time);   //time of next event
+                DateTime time2 = time.AddMinutes(1);                    //add 1 minute to round up
+                TimeSpan diff1 = time2.Subtract(DateTime.Now);          //difference between next event and current time
 
+                //set UI elements based on next event object
                 eventNameText.Text = nextE.Event_Name;
-                //eventLocText.Text = nextE.Event_Location;
                 eventImage.Source = nextE.Event_IMG;
-                eventBridgeText.Text = "starts in";
+
+                //next event text display changes
                 if (nextE.Event_Name.Equals("No more events today"))
                 {
                     eventTimeText.Text = "";
@@ -63,11 +54,11 @@ namespace DeepSeaWorldApp.Views
                 }
                 else if (diff1.Hours == 1)
                 {
-                    if(diff1.Minutes == 0)
+                    if (diff1.Minutes == 0)
                     {
                         Device.BeginInvokeOnMainThread(() => eventTimeText.Text = diff1.Hours + " hour");
                     }
-                    else if(diff1.Minutes == 1)
+                    else if (diff1.Minutes == 1)
                     {
                         Device.BeginInvokeOnMainThread(() => eventTimeText.Text = diff1.Hours + " hour " + diff1.Minutes + " minute");
                     }
@@ -98,34 +89,22 @@ namespace DeepSeaWorldApp.Views
 
         }
 
+        //when next event timer frame is tapped
         void NextEventTapped(object sender, System.EventArgs e)
         {
             Navigation.PushAsync(new EventDetailPage(new EventDetailViewModel(nextE)));
         }
 
+        //when QR code info frame is tapped
         void QRTapped(object sender, System.EventArgs e)
         {
             Navigation.PushAsync(new QRScannerPage());
         }
 
-        static Events GetNextEvent()
+        async Task<Events> GetNextEvent()
         {
-            return NextEventService.GetNextEvent();
-        }
-
-        void OnViewMapClicked(object sender, System.EventArgs e)
-        {
-            //load map page and pass eventName. maybe use modal?
-            Navigation.PushAsync(new EventDetailPage());
-        }
-
-        void OnBox3Clicked(object sender, System.EventArgs e)
-        {
-
-        }
-        void OnBox4Clicked(object sender, System.EventArgs e)
-        {
-
+            NextEventService n = new NextEventService();
+            return await n.GetNextEvent();
         }
 
     }

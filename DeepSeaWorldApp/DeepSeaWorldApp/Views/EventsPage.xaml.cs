@@ -2,7 +2,6 @@
 using Xamarin.Forms.Xaml;
 using DeepSeaWorldApp.ViewModels;
 using static DeepSeaWorldApp.DBClasses.DBs;
-using System;
 
 namespace DeepSeaWorldApp.Views
 {
@@ -35,10 +34,6 @@ namespace DeepSeaWorldApp.Views
         protected override void OnAppearing()
         {
             base.OnAppearing();
-
-            //InitializeComponent(); 
-
-
         }
     }
 }

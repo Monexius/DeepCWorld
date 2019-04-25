@@ -29,20 +29,16 @@ namespace DeepSeaWorldApp.Views
             }
             Device.BeginInvokeOnMainThread(async () =>
             {
-                ex = App.ExhibitionDatabase.GetExhibitionsAsync(result.Text).Result;
-                Console.WriteLine("qrvid: " + ex.Exhibition_Video);
+                ex = App.Database.GetExhibitionsAsync(result.Text).Result;
                 //await Navigation.PushAsync(new NavigationPage(new QRContentPage(result.Text)));
-                await Navigation.PushAsync(new VideoPage(ex));
-                //if (result.Text == "F767-348G56")
-                //{
-                //    //await DisplayAlert("Scanned result", result.Text, "if yes");
-                //    //await Navigation.PopToRootAsync();
-                //    await Navigation.PushAsync(new VideoPage(result.Text));
-                //}
-                //else
-                //{
-                //    await DisplayAlert("Scanned result", result.Text, "OK");
-                //}
+                if(Device.RuntimePlatform == Device.Android)
+                {
+                    await Navigation.PushModalAsync(new NavigationPage(new VideoPage(ex)));
+                }
+                else
+                {
+                    await Navigation.PushAsync(new VideoPage(ex));
+                }
             });
         }
 
@@ -54,9 +50,8 @@ namespace DeepSeaWorldApp.Views
         protected override void OnAppearing()
         {
             base.OnAppearing();
-
-            InitializeComponent();
             IsScanning = true;
+            InitializeComponent();
             //_scanView.IsScanning = true;
         }
 
