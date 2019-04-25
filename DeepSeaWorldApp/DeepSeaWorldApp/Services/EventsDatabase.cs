@@ -13,23 +13,15 @@ namespace DeepSeaWorldApp.Services
 
         public EventsDatabase(string dbPath)
         {
-
             _database = new SQLiteAsyncConnection(dbPath);
             _database.CreateTableAsync<Events>().Wait();
             LoadData();
-            //String question = _database.GetAsync<Events>(1).Result.Question;
-            //Console.WriteLine("Question: " + question);
-            //String question1 = _database.GetAsync<Events>(2).Result.Question;
-            //Console.WriteLine("Question: " + question1);
-            //String question2 = _database.GetAsync<Events>(3).Result.Question;
-            //Console.WriteLine("Question: " + question2);
         }
+
         public void LoadData()
         {
-            Console.WriteLine("DATABASE COUNTER: " + _database.Table<Events>().CountAsync().Result);
             if (_database.Table<Events>().CountAsync().Result == 0)
             {
-                Console.WriteLine("DATABASE COUNTER: " + _database.Table<Events>().CountAsync().Result);
                 // only insert the data if it doesn't already exist
                 var events = new List<Events>
                 {
@@ -56,7 +48,7 @@ namespace DeepSeaWorldApp.Services
                     new Events { Events_ID = 20, Event_Time = "16:30",  Event_Name="Rockpool Encounter",                Event_Location= "Rockpool Main Hall",   Event_Day="Daily",                              Event_Description="Meet our animals at the Rockpool",                       Event_IMG="lobster.jpeg"},
                     new Events { Events_ID = 21, Event_Time = "17:00",  Event_Name="Creepy Crawly Encounter",           Event_Location= "Shark Classroom",      Event_Day="Saturday, Sunday, Holidays",         Event_Description="Meet our creepy crawlies",                               Event_IMG="millipede.jpeg"},
                 };
-                foreach(var e in events)
+                foreach (var e in events)
                 {
                     _database.InsertAsync(e);
                 }

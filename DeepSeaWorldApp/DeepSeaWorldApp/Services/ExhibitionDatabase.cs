@@ -17,19 +17,11 @@ namespace DeepSeaWorldApp.Services
             _database = new SQLiteAsyncConnection(dbPath);
             _database.CreateTableAsync<Exhibition>().Wait();
             LoadData();
-            //String question = _database.GetAsync<Events>(1).Result.Question;
-            //Console.WriteLine("Question: " + question);
-            //String question1 = _database.GetAsync<Events>(2).Result.Question;
-            //Console.WriteLine("Question: " + question1);
-            //String question2 = _database.GetAsync<Events>(3).Result.Question;
-            //Console.WriteLine("Question: " + question2);
         }
         public void LoadData()
         {
-            Console.WriteLine("DATABASE COUNTER: " + _database.Table<Exhibition>().CountAsync().Result);
             if (_database.Table<Exhibition>().CountAsync().Result == 0)
             {
-                Console.WriteLine("DATABASE COUNTER: " + _database.Table<Exhibition>().CountAsync().Result);
                 // only insert the data if it doesn't already exist
                 List<Exhibition> exhibitions = new List<Exhibition>
                 {

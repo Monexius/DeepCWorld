@@ -44,7 +44,6 @@
                                        Style="{DynamicResource ListItemDetailTextStyle}" FontSize="24" />
                                 <Label HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Text="{Binding Event_Location}" 
                                        Style="{DynamicResource ListItemTextStyle}" FontSize="18" />
-                                <Image Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Source="{Binding Events.Event_IMG}"/>
                                 
                             </Grid>
                         </ViewCell>

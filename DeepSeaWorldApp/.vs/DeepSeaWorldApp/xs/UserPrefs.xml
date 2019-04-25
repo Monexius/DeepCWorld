@@ -1,38 +1,29 @@
-﻿<Properties GitUserInfo="UsingGIT" StartupConfiguration="{10E2A7FF-2BF5-4C5C-9609-9DF2634FB291}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="DeepSeaWorldApp/Views/HomePage.xaml">
+﻿<Properties GitUserInfo="UsingGIT" StartupConfiguration="{596D3C9C-9A0C-4BD5-9EB6-D37ACD885166}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="DeepSeaWorldApp Status">
     <Files>
-      <File FileName="DeepSeaWorldApp/Views/EventsPage.xaml" />
-      <File FileName="DeepSeaWorldApp/Views/QRButtonPage.xaml" />
-      <File FileName="DeepSeaWorldApp/Views/HomePage.xaml" />
-      <File FileName="DeepSeaWorldApp/Views/HomePage.xaml.cs" Line="13" Column="9" />
       <File FileName="DeepSeaWorldApp Status" />
-      <File FileName="DeepSeaWorldApp/Views/EventsPage.xaml.cs" Line="26" Column="30" />
-      <File FileName="DeepSeaWorldApp/Views/MainPage.xaml.cs" Line="16" Column="2" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="DeepSeaWorldApp" expanded="True">
+          <Node name="DeepSeaWorldApp" expanded="True" selected="True">
             <Node name="DeepSeaWorldApp" expanded="True">
+              <Node name="DB" expanded="True" />
+              <Node name="DBClasses" expanded="True" />
+              <Node name="FormsVideoLibrary" expanded="True" />
               <Node name="Services" expanded="True" />
               <Node name="Views" expanded="True">
-                <Node name="EventDetailPage.xaml" expanded="True" />
-                <Node name="EventsPage.xaml" expanded="True" />
-                <Node name="HomePage.xaml" expanded="True" selected="True" />
+                <Node name="HomePage.xaml" expanded="True" />
                 <Node name="MainPage.xaml" expanded="True" />
-                <Node name="QRButtonPage.xaml" expanded="True" />
-                <Node name="QRScannerPage.xaml" expanded="True" />
-                <Node name="VideoPage.xaml" expanded="True" />
+                <Node name="MapPage.xaml" expanded="True" />
               </Node>
             </Node>
             <Node name="DeepSeaWorldApp.Android" expanded="True">
               <Node name="Resources" expanded="True">
-                <Node name="drawable" expanded="True" />
+                <Node name="layout" expanded="True" />
               </Node>
             </Node>
-            <Node name="DeepSeaWorldApp.iOS" expanded="True">
-              <Node name="Resources" expanded="True" />
-            </Node>
+            <Node name="DeepSeaWorldApp.iOS" expanded="True" />
           </Node>
         </State>
       </Pad>
@@ -40,7 +31,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.DeepSeaWorldApp.Android AndroidDesignerPreferredTheme="Theme.DeviceDefault.Light.NoActionBar.Fullscreen" PreferredExecutionTarget="Android.YT9117QE1J" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.ItemProperties.DeepSeaWorldApp.iOS automaticSigning="False" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.47891c6bfa5fddd3860f568ae2b9465887eee4e0" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />

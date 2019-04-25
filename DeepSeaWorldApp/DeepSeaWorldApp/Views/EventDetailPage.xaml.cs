@@ -12,7 +12,6 @@ namespace DeepSeaWorldApp.Views
     public partial class EventDetailPage : ContentPage
     {
         EventDetailViewModel viewModel;
-
         public EventDetailPage(EventDetailViewModel viewModel)
         {
             InitializeComponent();

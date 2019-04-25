@@ -29,6 +29,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <AndroidLinkMode>None</AndroidLinkMode>
+    <JavaMaximumHeapSize>2G</JavaMaximumHeapSize>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -148,6 +149,7 @@
     <AndroidResource Include="Resources\drawable\sealv.mp4" />
     <AndroidResource Include="Resources\drawable\cafe.png" />
     <AndroidResource Include="Resources\drawable\shop.png" />
+    <AndroidResource Include="Resources\drawable\floormap2.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable-hdpi\" />

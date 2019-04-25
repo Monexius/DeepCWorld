@@ -3,6 +3,29 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              x:Class="DeepSeaWorldApp.Views.MapPage"
              BackgroundImage="background.png"
+             xmlns:local="clr-namespace:DeepSeaWorldApp.ViewModels"
              Title="Map">
-            <Image Source="floormap.jpg" Rotation="270" Scale="1.5"/>
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Label Grid.Row="0"
+                   Text="Zoom by pinching with two fingers"
+                   FontSize="20"
+                   Margin="10,0,0,0"/>
+            <Label Grid.Row="1" 
+                   Text="Pan by sliding with one finger"
+                   FontSize="20"
+                   Margin="10,0,0,0"/>
+            <local:PanContainer Grid.Row="2">
+                <Image Source="floormap2.jpg"/>
+            </local:PanContainer>
+        </Grid>
+    </ContentPage.Content>
 </ContentPage>

@@ -16,7 +16,7 @@
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
-        <ScrollView>
+        <ScrollView HeightRequest="1000">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />
@@ -28,7 +28,7 @@
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
                 <Frame x:Name="nexteventframe" 
-                       BorderColor="White" BackgroundColor="Transparent"
+                       BorderColor="Blue" BackgroundColor="Transparent"
                        Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
                        Margin="10" Padding="10">
                     <Frame.GestureRecognizers>
@@ -46,7 +46,7 @@
                 </Frame>
                 
                 <Frame x:Name="feature1" 
-                       BorderColor="White" BackgroundColor="Transparent"
+                       BorderColor="Blue" BackgroundColor="Transparent"
                        Grid.Row="2" Grid.Column="0"
                        Margin="10" Padding="0">
                             <Image x:Name="homebox1" Source="shop.png"
@@ -54,7 +54,7 @@
                 </Frame>
                 
                 <Frame x:Name="feature2" 
-                       BorderColor="White" BackgroundColor="Transparent"
+                       BorderColor="Blue" BackgroundColor="Transparent"
                        Grid.Row="2" Grid.Column="1"
                        Margin="10" Padding="10">
                             <Image x:Name="homebox2"
@@ -62,7 +62,7 @@
                 </Frame>
                 
                 <Frame x:Name="feature3" 
-                       BorderColor="White" BackgroundColor="Transparent"
+                       BorderColor="Blue" BackgroundColor="Transparent"
                        Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
                        Margin="10" Padding="10">
                         <Frame.GestureRecognizers>

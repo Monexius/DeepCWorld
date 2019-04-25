@@ -25,6 +25,8 @@ namespace DeepSeaWorldApp.iOS
         {
             Console.WriteLine("FinishedLaunching/AppDelegate");
             global::Xamarin.Forms.Forms.Init();
+            App.ScreenWidth = UIScreen.MainScreen.Bounds.Width;
+            App.ScreenHeight = UIScreen.MainScreen.Bounds.Height;
             ZXing.Net.Mobile.Forms.iOS.Platform.Init();
             LoadApplication(new App());
             //// Request notification permissions from the user

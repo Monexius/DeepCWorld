@@ -142,6 +142,7 @@
     <BundleResource Include="Resources\sealv.mp4" />
     <BundleResource Include="Resources\shop.png" />
     <BundleResource Include="Resources\cafe.png" />
+    <BundleResource Include="Resources\floormap2.jpg" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />

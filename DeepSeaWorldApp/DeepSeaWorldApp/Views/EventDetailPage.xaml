@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              x:Class="DeepSeaWorldApp.Views.EventDetailPage"
+             xmlns:local="clr-namespace:DeepSeaWorldApp.ViewModels"
              BackgroundImage="background.png">
     <StackLayout>
         <ScrollView>
@@ -17,19 +18,21 @@
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Text="{Binding Events.Event_Title}"
+                <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Text="{Binding Event.Event_Title}"
                        FontSize="24" FontAttributes="Bold"
                        HorizontalTextAlignment="Center"/>
                 <Label x:Name="timeloc" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
                        FontSize="18" FontAttributes="Bold"
                        HorizontalTextAlignment="Center"/>
-                <Label Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Text="{Binding Events.Event_Description}"
+                <Label Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Text="{Binding Event.Event_Description}"
                        FontSize="14"
                        HorizontalTextAlignment="Center"/>
-                <Image Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Source="{Binding Events.Event_IMG}"
+                <Image Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Source="{Binding Event.Event_IMG}"
                        HorizontalOptions="Center" HeightRequest="200"/>
-                <ImageButton Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Source="floormap.jpg"
-                       HorizontalOptions="Center" HeightRequest="200" Clicked="OnMapClicked"/>
+                <ImageButton x:Name="mapIMG" Source="floormap.jpg"
+                            Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2"
+                            HorizontalOptions="Center" HeightRequest="200" Clicked="OnMapClicked">
+                </ImageButton>
             </Grid>
         </ScrollView>
     </StackLayout>

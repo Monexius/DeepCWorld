@@ -19,27 +19,39 @@ namespace DeepSeaWorldApp.Droid
         bool hasNotified = false;
         System.Timers.Timer timer = new System.Timers.Timer();
 
-        protected override async void OnCreate(Bundle savedInstanceState)
+        protected override void OnCreate(Bundle savedInstanceState)
         {
             try
             {
+                //toolbar at top of the screen
                 TabLayoutResource = Resource.Layout.Tabbar;
                 ToolbarResource = Resource.Layout.Toolbar;
 
                 base.OnCreate(savedInstanceState);
+
+                //QR scanner init
                 ZXing.Net.Mobile.Forms.Android.Platform.Init();
+
                 global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
                 app = new App();
+
+                //get and set screen width and height of device
+                var width = Resources.DisplayMetrics.WidthPixels;
+                var height = Resources.DisplayMetrics.HeightPixels;
+                var density = Resources.DisplayMetrics.Density;
+                App.ScreenWidth = (width - 0.5f) / density;
+                App.ScreenHeight = (height - 0.5f) / density;
+
                 LoadApplication(app);
 
                 // SQLite connection, table creation, update, insert and get class
-                DeepSeaWorldSQLiteConnectionAndroid deepSeaWorld = new DeepSeaWorldSQLiteConnectionAndroid();
+                //DeepSeaWorldSQLiteConnectionAndroid deepSeaWorld = new DeepSeaWorldSQLiteConnectionAndroid();
 
-                MySqlDBCon mySql = new MySqlDBCon();
-                DataTb data = new DataTb();
-                data = await mySql.MySQLConnection(); // connection and data catch from mySQL db on server
-                deepSeaWorld.TableAsync(); // table async - creation of local db tables
-                await deepSeaWorld.InsertUpdateTables(data); // insert data to local db
+                //MySqlDBCon mySql = new MySqlDBCon();
+                //DataTb data = new DataTb();
+                //data = await mySql.MySQLConnection(); // connection and data catch from mySQL db on server
+                //deepSeaWorld.TableAsync(); // table async - creation of local db tables
+                //await deepSeaWorld.InsertUpdateTables(data); // insert data to local db
 
             }
             catch (Exception ex)
@@ -47,6 +59,7 @@ namespace DeepSeaWorldApp.Droid
                 throw ex;
             }
         }
+
 
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, Permission[] grantResults)
         {

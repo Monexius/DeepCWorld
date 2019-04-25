@@ -9,7 +9,6 @@
 /Users/james/Documents/GitHub/DeepCWorld/DeepSeaWorldApp/DeepSeaWorldApp/obj/Debug/netstandard2.0/Views/HomePage.xaml.g.cs
 /Users/james/Documents/GitHub/DeepCWorld/DeepSeaWorldApp/DeepSeaWorldApp/obj/Debug/netstandard2.0/Views/MainPage.xaml.g.cs
 /Users/james/Documents/GitHub/DeepCWorld/DeepSeaWorldApp/DeepSeaWorldApp/obj/Debug/netstandard2.0/Views/MapPage.xaml.g.cs
-/Users/james/Documents/GitHub/DeepCWorld/DeepSeaWorldApp/DeepSeaWorldApp/obj/Debug/netstandard2.0/Views/NotificationPage.xaml.g.cs
 /Users/james/Documents/GitHub/DeepCWorld/DeepSeaWorldApp/DeepSeaWorldApp/obj/Debug/netstandard2.0/Views/QRButtonPage.xaml.g.cs
 /Users/james/Documents/GitHub/DeepCWorld/DeepSeaWorldApp/DeepSeaWorldApp/obj/Debug/netstandard2.0/Views/QRContentPage.xaml.g.cs
 /Users/james/Documents/GitHub/DeepCWorld/DeepSeaWorldApp/DeepSeaWorldApp/obj/Debug/netstandard2.0/Views/QRScannerPage.xaml.g.cs
@@ -21,3 +20,4 @@
 /Users/james/Documents/GitHub/DeepCWorld/DeepSeaWorldApp/DeepSeaWorldApp/obj/Debug/netstandard2.0/XamlC.stamp
 /Users/james/Documents/GitHub/DeepCWorld/DeepSeaWorldApp/DeepSeaWorldApp/obj/Debug/netstandard2.0/DeepSeaWorldApp.dll
 /Users/james/Documents/GitHub/DeepCWorld/DeepSeaWorldApp/DeepSeaWorldApp/obj/Debug/netstandard2.0/DeepSeaWorldApp.pdb
+/Users/james/Documents/GitHub/DeepCWorld/DeepSeaWorldApp/DeepSeaWorldApp/obj/Debug/netstandard2.0/DeepSeaWorldApp.csprojAssemblyReference.cache

@@ -24,7 +24,8 @@ namespace DeepSeaWorldApp
         static EventsDatabase eventsdatabase;
         static ExhibitionDatabase exhibitiondatabase;
         public IDataStore<Events> DataStore => DependencyService.Get<IDataStore<Events>>() ?? new MockDataStore();
-
+        public static double ScreenWidth;
+        public static double ScreenHeight;
         public static FAQDatabase Database
         {
             get
