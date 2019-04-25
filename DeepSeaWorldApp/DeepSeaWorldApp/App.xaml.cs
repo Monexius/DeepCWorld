@@ -77,7 +77,6 @@ namespace DeepSeaWorldApp
         {
             List<Events> Events = new List<Events>();
             Events = GetEvents().Result;
-            CrossLocalNotifications.Current.Show(Events[0].Event_Name, "starts at " + Events[0].Event_Time, 101, DateTime.Now.AddSeconds(10));
             int i = 0;
             foreach (var g in Events)
             {

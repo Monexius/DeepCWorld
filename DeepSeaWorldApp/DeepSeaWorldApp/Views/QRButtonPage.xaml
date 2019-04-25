@@ -4,7 +4,33 @@
              x:Class="DeepSeaWorldApp.Views.QRButtonPage"
              BackgroundImage="background.png">
     <ContentPage.Content>
-        <Button Text="Use Scanner"
-                Clicked="ButtonClicked"/>
+        <StackLayout>
+            <Frame x:Name="feature3" 
+                           BorderColor="White" BackgroundColor="Transparent"
+                           Margin="20,150,20,20" Padding="10">
+                <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                    <Image Grid.Row="0" Grid.Column="0" x:Name="homebox3"
+                     Source="qr.png" BackgroundColor="Transparent"/>
+                    <Label Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" 
+                           Text="Scan these QR codes using this app for exhibit extras"
+                           VerticalTextAlignment="Center"
+                           FontSize="20"/>
+                </Grid>
+            </Frame>
+            <Button Text="Use QR Scanner"
+                    Clicked="ButtonClicked"
+                    FontSize="24"
+                    TextColor="Black"
+                    BackgroundColor="white"
+                    Margin="20"/>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>

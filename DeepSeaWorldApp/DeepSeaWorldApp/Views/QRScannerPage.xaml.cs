@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using ZXing;
 using ZXing.Net.Mobile.Forms;
+using static DeepSeaWorldApp.DBClasses.DBs;
 
 namespace DeepSeaWorldApp.Views
 {
@@ -17,22 +18,31 @@ namespace DeepSeaWorldApp.Views
 
         }
 
-
         public void Handle_OnScanResult(Result result)
         {
+            IsScanning = false;
+            //Navigation.PopAsync();
+            Exhibition ex = new Exhibition();
+            if (string.IsNullOrWhiteSpace(result.Text))
+            {
+                return;
+            }
             Device.BeginInvokeOnMainThread(async () =>
             {
+                ex = App.ExhibitionDatabase.GetExhibitionsAsync(result.Text).Result;
+                Console.WriteLine("qrvid: " + ex.Exhibition_Video);
                 //await Navigation.PushAsync(new NavigationPage(new QRContentPage(result.Text)));
-                if (result.Text == "F767-348G56")
-                {
-                    //await DisplayAlert("Scanned result", result.Text, "if yes");
-                    //await Navigation.PopToRootAsync();
-                    await Navigation.PushAsync(new VideoPage(result.Text));
-                }
-                else
-                {
-                    await DisplayAlert("Scanned result", result.Text, "OK");
-                }
+                await Navigation.PushAsync(new VideoPage(ex));
+                //if (result.Text == "F767-348G56")
+                //{
+                //    //await DisplayAlert("Scanned result", result.Text, "if yes");
+                //    //await Navigation.PopToRootAsync();
+                //    await Navigation.PushAsync(new VideoPage(result.Text));
+                //}
+                //else
+                //{
+                //    await DisplayAlert("Scanned result", result.Text, "OK");
+                //}
             });
         }
 
@@ -46,12 +56,14 @@ namespace DeepSeaWorldApp.Views
             base.OnAppearing();
 
             InitializeComponent();
+            IsScanning = true;
             //_scanView.IsScanning = true;
         }
 
         protected override void OnDisappearing()
         {
             base.OnDisappearing();
+            IsScanning = false;
             //_scanView.IsScanning = false;
             //_scanView.Navigation.PopModalAsync();
             //_scanView.Navigation.RemovePage(this);

@@ -10,6 +10,7 @@ namespace DeepSeaWorldApp.Views
 {
     public partial class HomePage : ContentPage
     {
+        Events nextE = new Events();
         //get event data
         //public IDataStore<Events> DataStore => DependencyService.Get<IDataStore<Events>>() ?? new MockDataStore();
         //Events eventEvent;
@@ -28,7 +29,7 @@ namespace DeepSeaWorldApp.Views
             Device.StartTimer(TimeSpan.FromSeconds(1), () =>
             {
                 var next = GetNextEvent();
-                Events nextE = next;
+                nextE = next;
 
                 //new code to get starts in time
                 DateTime time = Convert.ToDateTime(nextE.Event_Time);
@@ -36,6 +37,8 @@ namespace DeepSeaWorldApp.Views
                 TimeSpan diff1 = time2.Subtract(DateTime.Now);
 
                 eventNameText.Text = nextE.Event_Name;
+                //eventLocText.Text = nextE.Event_Location;
+                eventImage.Source = nextE.Event_IMG;
                 eventBridgeText.Text = "starts in";
                 if (nextE.Event_Name.Equals("No more events today"))
                 {
@@ -89,9 +92,20 @@ namespace DeepSeaWorldApp.Views
                     }
                 }
                 return true;
+
             });
 
 
+        }
+
+        void NextEventTapped(object sender, System.EventArgs e)
+        {
+            Navigation.PushAsync(new EventDetailPage(new EventDetailViewModel(nextE)));
+        }
+
+        void QRTapped(object sender, System.EventArgs e)
+        {
+            Navigation.PushAsync(new QRScannerPage());
         }
 
         static Events GetNextEvent()

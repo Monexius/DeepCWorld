@@ -9,6 +9,8 @@ using Xamarin.Forms.Xaml;
 
 using DeepSeaWorldApp.Views;
 using DeepSeaWorldApp.ViewModels;
+using static DeepSeaWorldApp.DBClasses.DBs;
+using DeepSeaWorldApp.FormsVideoLibrary;
 
 namespace DeepSeaWorldApp.Views
 {
@@ -24,11 +26,20 @@ namespace DeepSeaWorldApp.Views
             BindingContext = viewModel = new ExhibitsViewModel();
         }
 
-        public VideoPage(string qrcode)
+        public VideoPage(Exhibition ex)
         {
             InitializeComponent();
 
-            BindingContext = viewModel = new ExhibitsViewModel(qrcode);
+            BindingContext = viewModel = new ExhibitsViewModel(ex);
+            VideoSource vid = VideoSource.FromResource(ex.Exhibition_Video);
+            videoPlayer.Source = vid;
+        }
+
+        public VideoPage(string result)
+        {
+            InitializeComponent();
+
+            BindingContext = viewModel = new ExhibitsViewModel(result);
         }
 
         //async void AddItem_Clicked(object sender, EventArgs e)
@@ -44,15 +55,6 @@ namespace DeepSeaWorldApp.Views
         {
             base.OnDisappearing();
             //Navigation.PopAsync();
-        }
-
-        void ImageButtonClicked(object sender, System.EventArgs e)
-        {
-            //to exhibit specific images
-        }
-        void ImageButton2Clicked(object sender, System.EventArgs e)
-        {
-            //to exhibit specific facts
         }
     }
 }

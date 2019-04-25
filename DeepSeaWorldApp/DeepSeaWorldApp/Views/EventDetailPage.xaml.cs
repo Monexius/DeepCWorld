@@ -16,8 +16,8 @@ namespace DeepSeaWorldApp.Views
         public EventDetailPage(EventDetailViewModel viewModel)
         {
             InitializeComponent();
-            Console.WriteLine("in eventdetailpage: " + viewModel.Event.Event_Name);
             BindingContext = this.viewModel = viewModel;
+            timeloc.Text = viewModel.Event.Event_Time + " at " + viewModel.Event.Event_Location;
         }
         public EventDetailPage(Events eventEvent)
         {
@@ -34,7 +34,7 @@ namespace DeepSeaWorldApp.Views
 
             var e = new Events
             {
-                Event_Time = "10:30",
+                Event_Time = "00:00",
                 Event_Name = "Event One",
                 Event_Location = "Location One"
             };

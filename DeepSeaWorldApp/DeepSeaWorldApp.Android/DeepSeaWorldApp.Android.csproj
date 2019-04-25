@@ -144,6 +144,10 @@
     <AndroidResource Include="Resources\drawable\nemo.jpeg" />
     <AndroidResource Include="Resources\drawable\stripedfish.jpeg" />
     <AndroidResource Include="Resources\drawable\floormap.jpg" />
+    <AndroidResource Include="Resources\drawable\DSW_001.mp4" />
+    <AndroidResource Include="Resources\drawable\sealv.mp4" />
+    <AndroidResource Include="Resources\drawable\cafe.png" />
+    <AndroidResource Include="Resources\drawable\shop.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable-hdpi\" />

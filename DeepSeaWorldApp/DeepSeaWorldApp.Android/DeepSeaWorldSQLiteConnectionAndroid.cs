@@ -59,7 +59,7 @@ namespace DeepSeaWorldApp.Droid
                 Log.Debug("Events_TB INSERT", e.ToString());
             }
 
-            foreach (Events ex in data.Exhibition)
+            foreach (Exhibition ex in data.Exhibition)
             {
                 await InsertOrUpdateTableAsyncExhibition(ex);
                 Log.Debug("Exhibition_TB INSERT", ex.ToString());
@@ -196,7 +196,7 @@ namespace DeepSeaWorldApp.Droid
         }
 
         // exhibition table insert/update
-        public async Task InsertOrUpdateTableAsyncExhibition(Events ex)
+        public async Task InsertOrUpdateTableAsyncExhibition(Exhibition ex)
         {
             ExhibitionL exhibitionL = new ExhibitionL();
 

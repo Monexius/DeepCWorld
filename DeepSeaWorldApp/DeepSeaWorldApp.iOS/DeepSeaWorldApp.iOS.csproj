@@ -56,6 +56,7 @@
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <CodesignProvision>iOS Team Provisioning Profile: com.companyname.DeepSeaWorldApp</CodesignProvision>
     <MtouchLink>None</MtouchLink>
+    <MtouchDebug>true</MtouchDebug>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
     <DebugType>none</DebugType>
@@ -103,7 +104,6 @@
     <BundleResource Include="Resources\floormap.jpg" />
     <Compile Include="FormsVideoLibrary\VideoPicker.cs" />
     <Compile Include="FormsVideoLibrary\VideoPlayerRenderer.cs" />
-    <BundleResource Include="Resources\DSW_001.mp4" />
     <BundleResource Include="Resources\background.png" />
     <BundleResource Include="Resources\events.png" />
     <BundleResource Include="Resources\faq.png" />
@@ -133,6 +133,15 @@
     <BundleResource Include="Resources\octopus.jpeg" />
     <BundleResource Include="Resources\nemo.jpeg" />
     <BundleResource Include="Resources\stripedfish.jpeg" />
+    <BundleResource Include="Resources\DSW_001.mp4">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </BundleResource>
+    <BundleResource Include="Resources\fish.mp4">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </BundleResource>
+    <BundleResource Include="Resources\sealv.mp4" />
+    <BundleResource Include="Resources\shop.png" />
+    <BundleResource Include="Resources\cafe.png" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
@@ -197,7 +206,7 @@
       <Version>8.0.15</Version>
     </PackageReference>
     <PackageReference Include="Newtonsoft.Json">
-      <Version>12.0.1</Version>
+      <Version>12.0.2</Version>
     </PackageReference>
     <PackageReference Include="sqlite-net-pcl">
       <Version>1.5.231</Version>
