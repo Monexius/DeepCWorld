@@ -12,8 +12,6 @@ namespace DeepSeaWorldApp.ViewModels
 {
     public class BaseViewModel : INotifyPropertyChanged
     {
-        public IDataStore<Events> DataStore => DependencyService.Get<IDataStore<Events>>() ?? new MockDataStore();
-
         bool isBusy = false;
         public bool IsBusy
         {

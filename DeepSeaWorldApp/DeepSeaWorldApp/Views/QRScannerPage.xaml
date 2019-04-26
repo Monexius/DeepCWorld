@@ -8,15 +8,3 @@
     Title="QR Code Scanner"
     OnScanResult="Handle_OnScanResult">
 </zxing:ZXingScannerPage>
-
-<!-- <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-             x:Class="DeepSeaWorldApp.Views.QRScannerPage" 
-             xmlns:zxing="clr-namespace:ZXing.Net.Mobile.Forms;assembly=ZXing.Net.Mobile.Forms" 
-             Title="QR Scanner" >
-    <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Refresh" />
-        <ToolbarItem Text="B" Clicked="BackButtonClicked"/>
-    </ContentPage.ToolbarItems>
-        <zxing:ZXingScannerView x:Name="_scanView" OnScanResult="Handle_OnScanResult" IsScanning="true" />
-</ContentPage> -->

@@ -15,10 +15,12 @@ namespace DeepSeaWorldApp.iOS
             // you can specify it here.
             Console.WriteLine("Main.cs");
             UIApplication.Main(args, null, "AppDelegate");
-            Secondary();
+            Console.WriteLine("after UIApplication");
+            //Secondary();
         }
         static async System.Threading.Tasks.Task Secondary()
         {
+            Console.WriteLine("Secondary");
             DeepSeaWorldSQLiteConnectioniOS deepSeaWorld = new DeepSeaWorldSQLiteConnectioniOS();
 
             MySqlDBCon mySql = new MySqlDBCon();
@@ -26,14 +28,6 @@ namespace DeepSeaWorldApp.iOS
             data = await mySql.MySQLConnection(); // connection and data catch from mySQL db on server
             deepSeaWorld.TableAsync(); // table async - creation of local db tables
             await deepSeaWorld.InsertUpdateTables(data); // insert data to local db
-
-            //DeepSeaWorldSQLiteConnectioniOS deepSeaWorld = new DeepSeaWorldSQLiteConnectioniOS();
-
-            //MySqlDBCon mySql = new MySqlDBCon();
-            //DataTb data = new DataTb();
-            //data = await mySql.MySQLConnection(); // connection and data catch from mySQL db on server
-            //deepSeaWorld.TableAsync(); // table async - creation of local db tables
-            //await deepSeaWorld.InsertUpdateTables(data); // insert data to local db
 
         }
     }

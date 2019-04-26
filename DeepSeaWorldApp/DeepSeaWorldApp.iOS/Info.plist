@@ -46,6 +46,8 @@
 			<dict>
 				<key>NSTemporaryExceptionAllowsInsecureHTTPLoads</key>
 				<true/>
+				<key>Custom Property</key>
+				<string></string>
 			</dict>
 		</dict>
 		<key>NSAllowsArbitraryLoads</key>

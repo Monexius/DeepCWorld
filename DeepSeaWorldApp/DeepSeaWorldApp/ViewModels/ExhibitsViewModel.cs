@@ -1,17 +1,8 @@
-﻿using System;
-using System.Collections.ObjectModel;
-using System.Diagnostics;
-using System.Threading.Tasks;
-
-using Xamarin.Forms;
-
-using DeepSeaWorldApp.Views;
-using static DeepSeaWorldApp.DBClasses.DBs;
-using System.Collections.Generic;
+﻿using static DeepSeaWorldApp.DBClasses.DBs;
 
 namespace DeepSeaWorldApp.ViewModels
 {
-    public class ExhibitsViewModel : BaseViewModel2
+    public class ExhibitsViewModel : BaseViewModel
     {
         public Exhibition Exhibition { get; }
 
@@ -22,20 +13,22 @@ namespace DeepSeaWorldApp.ViewModels
                 Exhibition_Name = "name",
             };
         }
-        public ExhibitsViewModel(string qrcode)
+        public ExhibitsViewModel(Exhibition ex)
         {
-            Exhibition e = new Exhibition();
-            SQLiteDB db = new SQLiteDB();
-            List<Exhibition> list = new List<Exhibition>();
-            list = db.GetItemAsyncExhibition().Result;
-            foreach(var i in list)
+            Exhibition = new Exhibition
             {
-                if(i.QRCodes_Name.Equals(qrcode))
-                {
-                    e = i;
-                }
-            }
+                Exhibition_ID = ex.Exhibition_ID,
+                Exhibition_IMG = ex.Exhibition_IMG,
+                Exhibition_Name = ex.Exhibition_Name,
+                Exhibition_Video = ex.Exhibition_Video,
+                Exhibition_IMG_Name = ex.Exhibition_IMG_Name,
+                Exhibition_Video_Name = ex.Exhibition_Video_Name,
+                Exhibition_QRCode_Pos = ex.Exhibition_QRCode_Pos,
+                Exhibition_Description = ex.Exhibition_Description,
+                QRCodes_Name = ex.QRCodes_Name
+            };
         }
+
     }
 
 }

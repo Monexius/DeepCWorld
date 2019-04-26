@@ -20,25 +20,14 @@ namespace DeepSeaWorldApp
 {
     public partial class App : Application
     {
-        static FAQDatabase faqdatabase;
-        public IDataStore<Events> DataStore => DependencyService.Get<IDataStore<Events>>() ?? new MockDataStore();
-
-        public static FAQDatabase Database
-        {
-            get
-            {
-                if (faqdatabase == null)
-                {
-                    faqdatabase = new FAQDatabase(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "FAQs.db3"));
-                }
-                return faqdatabase;
-            }
-        }
-
+        public static double ScreenWidth;
+        public static double ScreenHeight;
         public App()
         {
+            Console.WriteLine("App");
             InitializeComponent();
             MainPage = new MainPage();
+            Console.WriteLine("App after MainPage");
             if (DesignMode.IsDesignModeEnabled)
             {
                 return;
@@ -72,7 +61,8 @@ namespace DeepSeaWorldApp
         }
         async Task<List<Events>> GetEvents()
         {
-            var events = await DataStore.GetItemsAsync(true);
+            SQLiteDB db = new SQLiteDB();
+            var events = await db.GetItemAsyncEvents();
             List<Events> Events = new List<Events>();
             foreach (var e in events)
             {
@@ -98,7 +88,7 @@ namespace DeepSeaWorldApp
         }
         protected override void OnStart()
         {
-            DataAsync();
+            //DataAsync();
             //List<DBs.FAQ> faq = new List<DBs.FAQ>();
             //faq = GetDB().Result;
             //Console.WriteLine("FAQ ZEROOO: " + faq[0].FAQ_Question);

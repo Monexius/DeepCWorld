@@ -135,6 +135,11 @@ namespace DeepSeaWorldApp
         {
             return CreateConnection().Table<ExhibitionL>().Where(i => i.Exhibition_ID == id).FirstOrDefaultAsync();
         }
+        // Get local db item from Exhibition table depending on id
+        public Task<Exhibition> GetItemAsyncExhibitionQR(string qrcode)
+        {
+            return CreateConnection().Table<Exhibition>().Where(i => i.QRCodes_Name == qrcode).FirstOrDefaultAsync();
+        }
 
         // Get local db item from Map table depending on id
         public Task<MapL> GetItemAsyncMap(int id)

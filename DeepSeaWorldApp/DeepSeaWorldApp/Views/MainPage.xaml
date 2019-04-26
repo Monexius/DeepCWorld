@@ -5,70 +5,39 @@
             xmlns:views="clr-namespace:DeepSeaWorldApp.Views" 
             x:Class="DeepSeaWorldApp.Views.MainPage" 
             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
-            android:TabbedPage.ToolbarPlacement="Bottom"
             BackgroundImage="background.png"
+            android:TabbedPage.ToolbarPlacement="Bottom"
             >
     <TabbedPage.Children>
-        <NavigationPage Title="Home" ClassId="btnHome">
-            <NavigationPage.Icon>
-                <OnPlatform x:TypeArguments="FileImageSource">
-                    <On Platform="iOS" Value="home.png" />
-                    <On Platform="Android" Value="home.png" />
-                </OnPlatform>
-            </NavigationPage.Icon>
+        <NavigationPage Title="Home" ClassId="btnHome" Icon="home.png">
             <x:Arguments>
                 <views:HomePage />
             </x:Arguments>
         </NavigationPage>
         
-        <NavigationPage Title="Events" ClassId="btnMap">
-            <NavigationPage.Icon>
-                <OnPlatform x:TypeArguments="FileImageSource">
-                    <On Platform="iOS" Value="events.png" />
-                    <On Platform="Android" Value="events.png" />
-                </OnPlatform>
-            </NavigationPage.Icon>
+        <NavigationPage Title="Events" ClassId="btnMap" Icon="events.png">
             <x:Arguments>
                 <views:EventsPage />
             </x:Arguments>
         </NavigationPage>
         
-        <NavigationPage Title="Scanner" ClassId="btnSchedule">
-            <NavigationPage.Icon>
-                <OnPlatform x:TypeArguments="FileImageSource">
-                    <On Platform="iOS" Value="qr.png" />
-                    <On Platform="Android" Value="qr.png" />
-                </OnPlatform>
-            </NavigationPage.Icon>
+        <NavigationPage Title="Scanner" ClassId="btnSchedule" Icon="qr.png">
             <x:Arguments>
                 <views:QRButtonPage />
             </x:Arguments>
         </NavigationPage>
         
-        <NavigationPage Title="Map" ClassId="btnSettings">
-            <NavigationPage.Icon>
-                <OnPlatform x:TypeArguments="FileImageSource">
-                    <On Platform="iOS" Value="map.png" />
-                    <On Platform="Android" Value="map.png" />
-                </OnPlatform>
-            </NavigationPage.Icon>
+        <NavigationPage Title="Map" ClassId="btnSettings" Icon="map.png">
             <x:Arguments>
-                <views:NotificationPage />
+                <views:MapPage />
             </x:Arguments>
         </NavigationPage>
         
-        <NavigationPage Title="FAQ" ClassId="btnSettings">
-            <NavigationPage.Icon>
-                <OnPlatform x:TypeArguments="FileImageSource">
-                    <On Platform="iOS" Value="faq.png" />
-                    <On Platform="Android" Value="faq.png" />
-                </OnPlatform>
-            </NavigationPage.Icon>
+        <NavigationPage Title="FAQ" ClassId="btnSettings" Icon="faq.png">
             <x:Arguments>
                 <views:FAQPage/>
             </x:Arguments>
         </NavigationPage>
-        
         
     </TabbedPage.Children>
 </TabbedPage>

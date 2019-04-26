@@ -1,5 +1,4 @@
-﻿using System;
-using static DeepSeaWorldApp.DBClasses.DBs;
+﻿using static DeepSeaWorldApp.DBClasses.DBs;
 
 namespace DeepSeaWorldApp.ViewModels
 {
@@ -21,6 +20,9 @@ namespace DeepSeaWorldApp.ViewModels
                 Event_Location = e.Event_Location,
                 Event_Time = e.Event_Time,
                 Event_Description = e.Event_Description,
+                Event_IMG = e.Event_IMG,
+                Events_ID = e.Events_ID,
+                Event_Day = e.Event_Day
             };
         }
     }

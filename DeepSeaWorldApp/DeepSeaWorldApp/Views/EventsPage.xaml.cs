@@ -2,7 +2,6 @@
 using Xamarin.Forms.Xaml;
 using DeepSeaWorldApp.ViewModels;
 using static DeepSeaWorldApp.DBClasses.DBs;
-using System;
 
 namespace DeepSeaWorldApp.Views
 {
@@ -14,6 +13,10 @@ namespace DeepSeaWorldApp.Views
         public EventsPage()
         {
             InitializeComponent();
+
+            BindingContext = viewModel = new EventsViewModel();
+            if (viewModel.Events.Count == 0)
+                viewModel.LoadItemsCommand.Execute(null);
         }
 
         async void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
@@ -21,7 +24,6 @@ namespace DeepSeaWorldApp.Views
             var item = args.SelectedItem as Events;
             if (item == null)
                 return;
-            Console.WriteLine(item.Event_Name);
             await Navigation.PushAsync(new EventDetailPage(new EventDetailViewModel(item)));
 
             // Manually deselect item.
@@ -32,12 +34,6 @@ namespace DeepSeaWorldApp.Views
         protected override void OnAppearing()
         {
             base.OnAppearing();
-
-            //InitializeComponent(); 
-
-            BindingContext = viewModel = new EventsViewModel();
-            if (viewModel.Events.Count == 0)
-                viewModel.LoadItemsCommand.Execute(null);
         }
     }
 }

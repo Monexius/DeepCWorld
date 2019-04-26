@@ -8,6 +8,7 @@
     <ContentPage.Content>
         <StackLayout>
             <ListView x:Name="listView"
+                      BackgroundColor="#d3e4ff"
                       VerticalOptions="FillAndExpand" 
                       HasUnevenRows="true" 
                       CachingStrategy="RecycleElement" 
