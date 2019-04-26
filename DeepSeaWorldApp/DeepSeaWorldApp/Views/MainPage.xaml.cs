@@ -5,17 +5,12 @@ using Xamarin.Forms;
 
 namespace DeepSeaWorldApp.Views
 {
-    public partial class MainPage : ContentPage
+    public partial class MainPage : TabbedPage
     {
-
         public MainPage()
         {
             InitializeComponent();
-            Console.WriteLine("MainPage");
         }
-        void Handle_Clicked(object sender, System.EventArgs e)
-        {
-            Navigation.PushModalAsync(new NavigationPage(new MainTabbedPage()));
-        }
+
     }
 }

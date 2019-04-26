@@ -24,15 +24,8 @@ namespace DeepSeaWorldApp
         public static double ScreenHeight;
         public App()
         {
-            Console.WriteLine("App");
             InitializeComponent();
-            MainPage = new MainPage();
-            Console.WriteLine("App after MainPage");
-            if (DesignMode.IsDesignModeEnabled)
-            {
-                return;
-            }
-            ScheduleNotifications();
+            MainPage = new StartPage();
         }
         async Task<List<DBs.FAQ>> GetDB()
         {
@@ -81,18 +74,12 @@ namespace DeepSeaWorldApp
             deepSeaWorld.TableAsync(); // table async - creation of local db tables
             await deepSeaWorld.InsertUpdateTables(data); // insert data to local db
 
-            FAQL fAQL = new FAQL();
-            fAQL = await deepSeaWorld.GetItemAsyncFAQ(1);
+            ScheduleNotifications();
 
-            Console.WriteLine(fAQL.FAQ_Question);
         }
         protected override void OnStart()
         {
-            //DataAsync();
-            //List<DBs.FAQ> faq = new List<DBs.FAQ>();
-            //faq = GetDB().Result;
-            //Console.WriteLine("FAQ ZEROOO: " + faq[0].FAQ_Question);
-            //Console.WriteLine("0 NAME: " + data.Events[0].Event_Name);
+
         }
 
         protected override void OnSleep()
