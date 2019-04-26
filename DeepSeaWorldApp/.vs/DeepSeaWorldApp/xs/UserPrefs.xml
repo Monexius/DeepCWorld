@@ -1,39 +1,29 @@
 ﻿<Properties GitUserInfo="UsingGIT" StartupConfiguration="{10E2A7FF-2BF5-4C5C-9609-9DF2634FB291}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="DeepSeaWorldApp.iOS/DeepSeaWorldSQLiteConnectioniOS.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="DeepSeaWorldApp Status">
     <Files>
       <File FileName="DeepSeaWorldApp/Views/MainTabbedPage.xaml" />
       <File FileName="DeepSeaWorldApp/Views/MainPage.xaml" />
-      <File FileName="DeepSeaWorldApp/Views/MainTabbedPage.xaml.cs" Line="16" Column="1" />
+      <File FileName="DeepSeaWorldApp/Views/MainTabbedPage.xaml.cs" Line="13" Column="10" />
       <File FileName="DeepSeaWorldApp/Views/MainPage.xaml.cs" Line="13" Column="40" />
-      <File FileName="DeepSeaWorldApp/App.xaml.cs" Line="30" Column="50" />
-      <File FileName="DeepSeaWorldApp.iOS/Main.cs" Line="19" Column="15" />
+      <File FileName="DeepSeaWorldApp/App.xaml.cs" Line="120" Column="1" />
+      <File FileName="DeepSeaWorldApp.iOS/Main.cs" Line="19" Column="13" />
       <File FileName="DeepSeaWorldApp.iOS/AppDelegate.cs" Line="55" Column="57" />
       <File FileName="DeepSeaWorldApp.iOS/DeepSeaWorldSQLiteConnectioniOS.cs" Line="1" Column="1" />
+      <File FileName="DeepSeaWorldApp.iOS/Info.plist" />
+      <File FileName="DeepSeaWorldApp/DBClasses/DBsList.cs" Line="20" Column="1" />
+      <File FileName="DeepSeaWorldApp/Views/EventDetailPage.xaml.cs" Line="18" Column="35" />
+      <File FileName="DeepSeaWorldApp/MySqlDBCon.cs" Line="1" Column="1" />
+      <File FileName="DeepSeaWorldApp Status" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="DeepSeaWorldApp" expanded="True">
+          <Node name="DeepSeaWorldApp" expanded="True" selected="True">
             <Node name="DeepSeaWorldApp" expanded="True">
-              <Node name="Dependencies" expanded="True">
-                <Node name="PackageDependencies" expanded="True" />
-              </Node>
-              <Node name="Views" expanded="True">
-                <Node name="EventsPage.xaml" expanded="True" />
-                <Node name="HomePage.xaml" expanded="True" />
-                <Node name="MainPage.xaml" expanded="True" />
-                <Node name="MainTabbedPage.xaml" expanded="True" />
-                <Node name="QRButtonPage.xaml" expanded="True" />
-                <Node name="VideoPage.xaml" expanded="True" />
-              </Node>
+              <Node name="Views" expanded="True" />
               <Node name="App.xaml" expanded="True" />
             </Node>
-            <Node name="DeepSeaWorldApp.iOS" expanded="True">
-              <Node name="References" expanded="True" />
-              <Node name="Packages" expanded="True" />
-              <Node name="Resources" expanded="True" />
-              <Node name="DeepSeaWorldSQLiteConnectioniOS.cs" selected="True" />
-            </Node>
+            <Node name="DeepSeaWorldApp.iOS" expanded="True" />
           </Node>
         </State>
       </Pad>
