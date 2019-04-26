@@ -16,7 +16,7 @@ namespace DeepSeaWorldApp.iOS
             Console.WriteLine("Main.cs");
             UIApplication.Main(args, null, "AppDelegate");
             Console.WriteLine("after UIApplication");
-            Secondary();
+            //Secondary();
         }
         static async System.Threading.Tasks.Task Secondary()
         {

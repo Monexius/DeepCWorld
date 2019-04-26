@@ -24,7 +24,6 @@ namespace DeepSeaWorldApp
         public static double ScreenHeight;
         public App()
         {
-            DataAsync();
             Console.WriteLine("App");
             InitializeComponent();
             MainPage = new MainPage();

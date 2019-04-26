@@ -2,21 +2,7 @@
   "version": 3,
   "targets": {
     "Xamarin.iOS,Version=v1.0": {
-      "BouncyCastle.NetCore/1.8.3": {
-        "type": "package",
-        "dependencies": {
-          "NETStandard.Library": "1.6.0",
-          "System.Reflection": "4.3.0",
-          "System.Reflection.TypeExtensions": "4.1.0"
-        },
-        "compile": {
-          "lib/xamarinios/BouncyCastle.Crypto.dll": {}
-        },
-        "runtime": {
-          "lib/xamarinios/BouncyCastle.Crypto.dll": {}
-        }
-      },
-      "Google.Protobuf/3.6.1": {
+      "Google.Protobuf/3.5.1": {
         "type": "package",
         "dependencies": {
           "NETStandard.Library": "1.6.1"
@@ -101,11 +87,10 @@
           "lib/xamarinios10/_._": {}
         }
       },
-      "MySql.Data/8.0.16": {
+      "MySql.Data/8.0.15": {
         "type": "package",
         "dependencies": {
-          "BouncyCastle.NetCore": "1.8.3",
-          "Google.Protobuf": "3.6.1",
+          "Google.Protobuf": "3.5.1",
           "System.Configuration.ConfigurationManager": "4.4.1",
           "System.Security.Permissions": "4.4.1",
           "System.Text.Encoding.CodePages": "4.4.0"
@@ -478,15 +463,6 @@
         }
       },
       "System.Reflection.Primitives/4.3.0": {
-        "type": "package",
-        "compile": {
-          "ref/xamarinios10/_._": {}
-        },
-        "runtime": {
-          "lib/xamarinios10/_._": {}
-        }
-      },
-      "System.Reflection.TypeExtensions/4.1.0": {
         "type": "package",
         "compile": {
           "ref/xamarinios10/_._": {}
@@ -973,21 +949,7 @@
       }
     },
     "Xamarin.iOS,Version=v1.0/win": {
-      "BouncyCastle.NetCore/1.8.3": {
-        "type": "package",
-        "dependencies": {
-          "NETStandard.Library": "1.6.0",
-          "System.Reflection": "4.3.0",
-          "System.Reflection.TypeExtensions": "4.1.0"
-        },
-        "compile": {
-          "lib/xamarinios/BouncyCastle.Crypto.dll": {}
-        },
-        "runtime": {
-          "lib/xamarinios/BouncyCastle.Crypto.dll": {}
-        }
-      },
-      "Google.Protobuf/3.6.1": {
+      "Google.Protobuf/3.5.1": {
         "type": "package",
         "dependencies": {
           "NETStandard.Library": "1.6.1"
@@ -1072,11 +1034,10 @@
           "lib/xamarinios10/_._": {}
         }
       },
-      "MySql.Data/8.0.16": {
+      "MySql.Data/8.0.15": {
         "type": "package",
         "dependencies": {
-          "BouncyCastle.NetCore": "1.8.3",
-          "Google.Protobuf": "3.6.1",
+          "Google.Protobuf": "3.5.1",
           "System.Configuration.ConfigurationManager": "4.4.1",
           "System.Security.Permissions": "4.4.1",
           "System.Text.Encoding.CodePages": "4.4.0"
@@ -1429,15 +1390,6 @@
         }
       },
       "System.Reflection.Primitives/4.3.0": {
-        "type": "package",
-        "compile": {
-          "ref/xamarinios10/_._": {}
-        },
-        "runtime": {
-          "lib/xamarinios10/_._": {}
-        }
-      },
-      "System.Reflection.TypeExtensions/4.1.0": {
         "type": "package",
         "compile": {
           "ref/xamarinios10/_._": {}
@@ -1862,21 +1814,7 @@
       }
     },
     "Xamarin.iOS,Version=v1.0/win-x64": {
-      "BouncyCastle.NetCore/1.8.3": {
-        "type": "package",
-        "dependencies": {
-          "NETStandard.Library": "1.6.0",
-          "System.Reflection": "4.3.0",
-          "System.Reflection.TypeExtensions": "4.1.0"
-        },
-        "compile": {
-          "lib/xamarinios/BouncyCastle.Crypto.dll": {}
-        },
-        "runtime": {
-          "lib/xamarinios/BouncyCastle.Crypto.dll": {}
-        }
-      },
-      "Google.Protobuf/3.6.1": {
+      "Google.Protobuf/3.5.1": {
         "type": "package",
         "dependencies": {
           "NETStandard.Library": "1.6.1"
@@ -1961,11 +1899,10 @@
           "lib/xamarinios10/_._": {}
         }
       },
-      "MySql.Data/8.0.16": {
+      "MySql.Data/8.0.15": {
         "type": "package",
         "dependencies": {
-          "BouncyCastle.NetCore": "1.8.3",
-          "Google.Protobuf": "3.6.1",
+          "Google.Protobuf": "3.5.1",
           "System.Configuration.ConfigurationManager": "4.4.1",
           "System.Security.Permissions": "4.4.1",
           "System.Text.Encoding.CodePages": "4.4.0"
@@ -2318,15 +2255,6 @@
         }
       },
       "System.Reflection.Primitives/4.3.0": {
-        "type": "package",
-        "compile": {
-          "ref/xamarinios10/_._": {}
-        },
-        "runtime": {
-          "lib/xamarinios10/_._": {}
-        }
-      },
-      "System.Reflection.TypeExtensions/4.1.0": {
         "type": "package",
         "compile": {
           "ref/xamarinios10/_._": {}
@@ -2751,21 +2679,7 @@
       }
     },
     "Xamarin.iOS,Version=v1.0/win-x86": {
-      "BouncyCastle.NetCore/1.8.3": {
-        "type": "package",
-        "dependencies": {
-          "NETStandard.Library": "1.6.0",
-          "System.Reflection": "4.3.0",
-          "System.Reflection.TypeExtensions": "4.1.0"
-        },
-        "compile": {
-          "lib/xamarinios/BouncyCastle.Crypto.dll": {}
-        },
-        "runtime": {
-          "lib/xamarinios/BouncyCastle.Crypto.dll": {}
-        }
-      },
-      "Google.Protobuf/3.6.1": {
+      "Google.Protobuf/3.5.1": {
         "type": "package",
         "dependencies": {
           "NETStandard.Library": "1.6.1"
@@ -2850,11 +2764,10 @@
           "lib/xamarinios10/_._": {}
         }
       },
-      "MySql.Data/8.0.16": {
+      "MySql.Data/8.0.15": {
         "type": "package",
         "dependencies": {
-          "BouncyCastle.NetCore": "1.8.3",
-          "Google.Protobuf": "3.6.1",
+          "Google.Protobuf": "3.5.1",
           "System.Configuration.ConfigurationManager": "4.4.1",
           "System.Security.Permissions": "4.4.1",
           "System.Text.Encoding.CodePages": "4.4.0"
@@ -3207,15 +3120,6 @@
         }
       },
       "System.Reflection.Primitives/4.3.0": {
-        "type": "package",
-        "compile": {
-          "ref/xamarinios10/_._": {}
-        },
-        "runtime": {
-          "lib/xamarinios10/_._": {}
-        }
-      },
-      "System.Reflection.TypeExtensions/4.1.0": {
         "type": "package",
         "compile": {
           "ref/xamarinios10/_._": {}
@@ -3641,39 +3545,13 @@
     }
   },
   "libraries": {
-    "BouncyCastle.NetCore/1.8.3": {
-      "sha512": "An0cxp/uGPkMWfjAVyHJWBQ9igea74Ma8rtMnpkEwjemx8EoVo7IUIFpFfxpBgVuSbpQueKo2m/CoSxxfLHTtw==",
+    "Google.Protobuf/3.5.1": {
+      "sha512": "j/gbpRZ68sgvdi/vXI39Cj/jWG4d1dtDqfWbkjC9dErNWu/dFcIlq1LIgLscea+llZ6nzm06wz/JGziOegAL7Q==",
       "type": "package",
-      "path": "bouncycastle.netcore/1.8.3",
+      "path": "google.protobuf/3.5.1",
       "files": [
         ".signature.p7s",
-        "bouncycastle.netcore.1.8.3.nupkg.sha512",
-        "bouncycastle.netcore.nuspec",
-        "lib/Mono/BouncyCastle.Crypto.dll",
-        "lib/Mono/BouncyCastle.Crypto.xml",
-        "lib/MonoAndroid/BouncyCastle.Crypto.dll",
-        "lib/MonoAndroid/BouncyCastle.Crypto.xml",
-        "lib/MonoMac/BouncyCastle.Crypto.dll",
-        "lib/MonoMac/BouncyCastle.Crypto.xml",
-        "lib/MonoTouch/BouncyCastle.Crypto.dll",
-        "lib/MonoTouch/BouncyCastle.Crypto.xml",
-        "lib/net20/BouncyCastle.Crypto.dll",
-        "lib/net20/BouncyCastle.Crypto.xml",
-        "lib/netstandard1.3/BouncyCastle.Crypto.dll",
-        "lib/netstandard1.3/BouncyCastle.Crypto.xml",
-        "lib/netstandard2.0/BouncyCastle.Crypto.dll",
-        "lib/netstandard2.0/BouncyCastle.Crypto.xml",
-        "lib/xamarinios/BouncyCastle.Crypto.dll",
-        "lib/xamarinios/BouncyCastle.Crypto.xml"
-      ]
-    },
-    "Google.Protobuf/3.6.1": {
-      "sha512": "D/h9IZl76jjfM5VlPzG235Zdys9RKXNLYbRGm2fa6Y2UshTqAvYBPIydNOvNTEa24DER/m/zvelHlLO9n1GtNQ==",
-      "type": "package",
-      "path": "google.protobuf/3.6.1",
-      "files": [
-        ".signature.p7s",
-        "google.protobuf.3.6.1.nupkg.sha512",
+        "google.protobuf.3.5.1.nupkg.sha512",
         "google.protobuf.nuspec",
         "lib/net45/Google.Protobuf.dll",
         "lib/net45/Google.Protobuf.xml",
@@ -3950,10 +3828,10 @@
         "ref/xamarinwatchos10/_._"
       ]
     },
-    "MySql.Data/8.0.16": {
-      "sha512": "PQC4+MznUsZoUJq3CJ+NLJ8ilSOYlBjoIxVsLbyu95G93ZarB+8sUQHM5urHM6LxpKtAZ3+SFasTz8VcPjhDmA==",
+    "MySql.Data/8.0.15": {
+      "sha512": "ZKqJdSsIHoBQZbGUT6KNWdq+22NBPLxcrsnBj5BSLmVePRhrlCQew8jq38hLoJCoubdc4zP1D0xJo3DYgeuIpg==",
       "type": "package",
-      "path": "mysql.data/8.0.16",
+      "path": "mysql.data/8.0.15",
       "files": [
         ".signature.p7s",
         "lib/net452/MySql.Data.dll",
@@ -3964,7 +3842,7 @@
         "lib/netstandard1.6/MySql.Data.xml",
         "lib/netstandard2.0/MySql.Data.dll",
         "lib/netstandard2.0/MySql.Data.xml",
-        "mysql.data.8.0.16.nupkg.sha512",
+        "mysql.data.8.0.15.nupkg.sha512",
         "mysql.data.nuspec"
       ]
     },
@@ -5619,59 +5497,6 @@
         "system.reflection.primitives.nuspec"
       ]
     },
-    "System.Reflection.TypeExtensions/4.1.0": {
-      "sha512": "Wxh1rob3b2Awf74mHHRx6ZbU1OreDEeDyzWlqtf+xPAb4Byx8feK8i1IPszhIJb27UMdacSmbHvyNQCLysMMtw==",
-      "type": "package",
-      "path": "system.reflection.typeextensions/4.1.0",
-      "files": [
-        ".signature.p7s",
-        "ThirdPartyNotices.txt",
-        "dotnet_library_license.txt",
-        "lib/MonoAndroid10/_._",
-        "lib/MonoTouch10/_._",
-        "lib/net46/System.Reflection.TypeExtensions.dll",
-        "lib/net462/System.Reflection.TypeExtensions.dll",
-        "lib/netcore50/System.Reflection.TypeExtensions.dll",
-        "lib/netstandard1.5/System.Reflection.TypeExtensions.dll",
-        "lib/xamarinios10/_._",
-        "lib/xamarinmac20/_._",
-        "lib/xamarintvos10/_._",
-        "lib/xamarinwatchos10/_._",
-        "ref/MonoAndroid10/_._",
-        "ref/MonoTouch10/_._",
-        "ref/net46/System.Reflection.TypeExtensions.dll",
-        "ref/net462/System.Reflection.TypeExtensions.dll",
-        "ref/netstandard1.3/System.Reflection.TypeExtensions.dll",
-        "ref/netstandard1.3/System.Reflection.TypeExtensions.xml",
-        "ref/netstandard1.3/de/System.Reflection.TypeExtensions.xml",
-        "ref/netstandard1.3/es/System.Reflection.TypeExtensions.xml",
-        "ref/netstandard1.3/fr/System.Reflection.TypeExtensions.xml",
-        "ref/netstandard1.3/it/System.Reflection.TypeExtensions.xml",
-        "ref/netstandard1.3/ja/System.Reflection.TypeExtensions.xml",
-        "ref/netstandard1.3/ko/System.Reflection.TypeExtensions.xml",
-        "ref/netstandard1.3/ru/System.Reflection.TypeExtensions.xml",
-        "ref/netstandard1.3/zh-hans/System.Reflection.TypeExtensions.xml",
-        "ref/netstandard1.3/zh-hant/System.Reflection.TypeExtensions.xml",
-        "ref/netstandard1.5/System.Reflection.TypeExtensions.dll",
-        "ref/netstandard1.5/System.Reflection.TypeExtensions.xml",
-        "ref/netstandard1.5/de/System.Reflection.TypeExtensions.xml",
-        "ref/netstandard1.5/es/System.Reflection.TypeExtensions.xml",
-        "ref/netstandard1.5/fr/System.Reflection.TypeExtensions.xml",
-        "ref/netstandard1.5/it/System.Reflection.TypeExtensions.xml",
-        "ref/netstandard1.5/ja/System.Reflection.TypeExtensions.xml",
-        "ref/netstandard1.5/ko/System.Reflection.TypeExtensions.xml",
-        "ref/netstandard1.5/ru/System.Reflection.TypeExtensions.xml",
-        "ref/netstandard1.5/zh-hans/System.Reflection.TypeExtensions.xml",
-        "ref/netstandard1.5/zh-hant/System.Reflection.TypeExtensions.xml",
-        "ref/xamarinios10/_._",
-        "ref/xamarinmac20/_._",
-        "ref/xamarintvos10/_._",
-        "ref/xamarinwatchos10/_._",
-        "runtimes/aot/lib/netcore50/System.Reflection.TypeExtensions.dll",
-        "system.reflection.typeextensions.4.1.0.nupkg.sha512",
-        "system.reflection.typeextensions.nuspec"
-      ]
-    },
     "System.Resources.ResourceManager/4.3.0": {
       "sha512": "kGfbKPHEjQj8Uq1Apgj4jBStkRJkZ0Hdr0Jv3+aL7WGrAZVLF5Rh5h0Yc3FgDB5uXDbHiJk/WhBaZPVwKmuB1A==",
       "type": "package",
@@ -7268,7 +7093,7 @@
       "DeepSeaWorldApp >= 1.0.0",
       "Microsoft.Bcl >= 1.1.10",
       "Microsoft.Net.Http >= 2.2.29",
-      "MySql.Data >= 8.0.16",
+      "MySql.Data >= 8.0.15",
       "Newtonsoft.Json >= 12.0.2",
       "System.IO.Compression >= 4.3.0",
       "Xamarin.Forms >= 3.6.0.344457",
@@ -7320,7 +7145,7 @@
           },
           "MySql.Data": {
             "target": "Package",
-            "version": "[8.0.16, )"
+            "version": "[8.0.15, )"
           },
           "Newtonsoft.Json": {
             "target": "Package",
