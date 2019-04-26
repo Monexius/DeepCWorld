@@ -1,43 +1,17 @@
-<?xml version="1.0" encoding="utf-8"?>
-
-<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms" 
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
             xmlns:views="clr-namespace:DeepSeaWorldApp.Views" 
             x:Class="DeepSeaWorldApp.Views.MainPage" 
             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
             BackgroundImage="background.png"
-            android:TabbedPage.ToolbarPlacement="Bottom"
-            >
-    <TabbedPage.Children>
-        <NavigationPage Title="Home" ClassId="btnHome" Icon="home.png">
-            <x:Arguments>
-                <views:HomePage />
-            </x:Arguments>
-        </NavigationPage>
-        
-        <NavigationPage Title="Events" ClassId="btnMap" Icon="events.png">
-            <x:Arguments>
-                <views:EventsPage />
-            </x:Arguments>
-        </NavigationPage>
-        
-        <NavigationPage Title="Scanner" ClassId="btnSchedule" Icon="qr.png">
-            <x:Arguments>
-                <views:QRButtonPage />
-            </x:Arguments>
-        </NavigationPage>
-        
-        <NavigationPage Title="Map" ClassId="btnSettings" Icon="map.png">
-            <x:Arguments>
-                <views:MapPage />
-            </x:Arguments>
-        </NavigationPage>
-        
-        <NavigationPage Title="FAQ" ClassId="btnSettings" Icon="faq.png">
-            <x:Arguments>
-                <views:FAQPage/>
-            </x:Arguments>
-        </NavigationPage>
-        
-    </TabbedPage.Children>
-</TabbedPage>
+            android:TabbedPage.ToolbarPlacement="Bottom">
+        <ContentPage.Content>
+            <StackLayout>
+                    <Button Text="Enter Deep Sea World"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center"
+                            Clicked="Handle_Clicked"/>
+            </StackLayout>
+        </ContentPage.Content>
+</ContentPage>

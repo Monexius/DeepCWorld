@@ -100,7 +100,6 @@
     <None Include="Entitlements.plist" />
     <None Include="Info.plist" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <BundleResource Include="Resources\fish1.jpg" />
     <BundleResource Include="Resources\floormap.jpg" />
     <Compile Include="FormsVideoLibrary\VideoPicker.cs" />
     <Compile Include="FormsVideoLibrary\VideoPlayerRenderer.cs" />
@@ -115,10 +114,6 @@
     <BundleResource Include="Resources\banner.png" />
     <BundleResource Include="Resources\cafe.png" />
     <BundleResource Include="Resources\catfish.jpeg" />
-    <BundleResource Include="Resources\dory.jpeg" />
-    <BundleResource Include="Resources\fish.mp4">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </BundleResource>
     <BundleResource Include="Resources\floormap2.jpg" />
     <BundleResource Include="Resources\frog.jpeg" />
     <BundleResource Include="Resources\glowfish.jpeg" />
