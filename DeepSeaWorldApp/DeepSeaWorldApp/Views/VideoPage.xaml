@@ -19,7 +19,7 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-                <video:VideoPlayer x:Name="videoPlayer" 
+                <video:VideoPlayer x:Name="videoPlayer"
                                    Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
                 </video:VideoPlayer>
                 <ImageButton BackgroundColor="Transparent" Source="{Binding Exhibition.Exhibition_IMG}" 

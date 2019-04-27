@@ -9,7 +9,9 @@ namespace DeepSeaWorldApp.Views
     {
         public StartPage()
         {
+
             InitializeComponent();
+
         }
 
         void Handle_Clicked(object sender, System.EventArgs e)

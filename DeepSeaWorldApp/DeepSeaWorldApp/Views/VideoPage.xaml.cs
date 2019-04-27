@@ -22,8 +22,6 @@ namespace DeepSeaWorldApp.Views
         {
             InitializeComponent();
 
-            ToolbarItem item = new ToolbarItem();
-
             BindingContext = viewModel = new ExhibitsViewModel(ex);
             VideoSource vid = VideoSource.FromResource(ex.Exhibition_Video);
             videoPlayer.Source = vid;

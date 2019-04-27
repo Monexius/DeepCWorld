@@ -24,7 +24,9 @@ namespace DeepSeaWorldApp
         public static double ScreenHeight;
         public App()
         {
+            DataAsync();
             InitializeComponent();
+
             MainPage = new StartPage();
         }
         async Task<List<DBs.FAQ>> GetDB()
@@ -32,37 +34,7 @@ namespace DeepSeaWorldApp
             SQLiteDB dbcon = new SQLiteDB();
             return await dbcon.GetItemAsyncFAQ();
         }
-        protected void ScheduleNotifications()
-        {
-            List<Events> Events = new List<Events>();
-            Events = GetEvents().Result;
-            CrossLocalNotifications.Current.Show(Events[0].Event_Name, "starts at " + Events[0].Event_Time, 101, DateTime.Now.AddSeconds(10));
-            int i = 0;
-            foreach (var g in Events)
-            {
-                DateTime time = Convert.ToDateTime(g.Event_Time);
-                DateTime time2 = time.AddMinutes(-5);
-                TimeSpan diff1 = time2.Subtract(DateTime.Now);
-                TimeSpan zero = TimeSpan.FromSeconds(0);
 
-                if (diff1 > zero)
-                {
-                    CrossLocalNotifications.Current.Show(g.Event_Name, "starts at " + g.Event_Time, i, DateTime.Now.Add(diff1));
-                }
-                i++;
-            }
-        }
-        async Task<List<Events>> GetEvents()
-        {
-            SQLiteDB db = new SQLiteDB();
-            var events = await db.GetItemAsyncEvents();
-            List<Events> Events = new List<Events>();
-            foreach (var e in events)
-            {
-                Events.Add(e);
-            }
-            return Events;
-        }
 
         protected async void DataAsync()
         {
@@ -74,9 +46,8 @@ namespace DeepSeaWorldApp
             deepSeaWorld.TableAsync(); // table async - creation of local db tables
             await deepSeaWorld.InsertUpdateTables(data); // insert data to local db
 
-            ScheduleNotifications();
-
         }
+
         protected override void OnStart()
         {
 

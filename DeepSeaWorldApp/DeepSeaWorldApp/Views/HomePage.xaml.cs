@@ -13,6 +13,9 @@ namespace DeepSeaWorldApp.Views
 
         public HomePage()
         {
+            Notifications n = new Notifications();
+            n.ScheduleNotifications();
+            Console.WriteLine("homepage start");
             InitializeComponent();
 
                 Device.StartTimer(TimeSpan.FromSeconds(1), () =>

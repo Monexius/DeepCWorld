@@ -19,6 +19,7 @@ namespace DeepSeaWorldApp.Services
         //called from: EventsViewModel
         public Task<List<Events>> GetNextEvents(List<Events> events)
         {
+            Console.WriteLine("getnexteventS start");
             DateTime now = DateTime.Now;
             List<Events> nextEvents = new List<Events>();
             bool holidays = false;
@@ -51,14 +52,18 @@ namespace DeepSeaWorldApp.Services
                 FailEvents.Add(fail);
                 return Task.FromResult(FailEvents);
             }
+            Console.WriteLine("getnexteventS end");
             return Task.FromResult(nextEvents);
         }
         public async Task<Events> GetNextEvent()
         {
             List<Events> events = new List<Events>();
             SQLiteDB db = new SQLiteDB();
+            Console.WriteLine("getnextevent before getItemAsync");
             events = db.GetItemAsyncEvents().Result;
+            Console.WriteLine("getnextevent after getItemAsync, before get next event");
             events = GetNextEvents(events).Result;
+            Console.WriteLine("getnextevent after get next event");
             return await Task.FromResult(events[0]);
 
         }

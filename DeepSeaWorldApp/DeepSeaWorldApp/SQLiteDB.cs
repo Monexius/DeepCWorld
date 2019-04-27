@@ -48,37 +48,31 @@ namespace DeepSeaWorldApp
             foreach (FAQ f in data.FAQ)
             {
                 await InsertOrUpdateTableAsyncFAQ(f);
-                Console.WriteLine("FAQ_TB INSERT", f.ToString());
             }
 
             foreach (Events e in data.Events)
             {
                 await InsertOrUpdateTableAsyncEvents(e);
-                Console.WriteLine("Events_TB INSERT", e.ToString());
             }
 
             foreach (Exhibition ex in data.Exhibition)
             {
                 await InsertOrUpdateTableAsyncExhibition(ex);
-                Console.WriteLine("Exhibition_TB INSERT", ex.ToString());
             }
 
             foreach (Map m in data.Map)
             {
                 await InsertOrUpdateTableAsyncMap(m);
-                Console.WriteLine("Map_TB INSERT", m.ToString());
             }
 
             foreach (News n in data.News)
             {
                 await InsertOrUpdateTableAsyncNews(n);
-                Console.WriteLine("News_TB INSERT", n.ToString());
             }
 
             foreach (QRCodes qr in data.QRCodes)
             {
                 await InsertOrUpdateTableAsyncQRCodes(qr);
-                Console.WriteLine("QRCodes_TB INSERT", qr.ToString());
             }
         }
 
@@ -163,16 +157,34 @@ namespace DeepSeaWorldApp
         public async Task InsertOrUpdateTableAsyncFAQ(FAQ f)
         {
             FAQL fAQ = new FAQL();
-
+            SQLiteDB db = new SQLiteDB();
+            List<FAQ> fdb = new List<FAQ>();
+            fdb = db.GetItemAsyncFAQ().Result;
             fAQ.FAQ_Question = f.FAQ_Question;
             fAQ.FAQ_Anwswere = f.FAQ_Anwswere;
-            if (fAQ.FAQ_ID != 0)
+            bool dupe = false;
+            //check for duplicates
+            foreach(var a in fdb)
             {
-                await CreateConnection().UpdateAsync(fAQ);
+                if((a.FAQ_Question == f.FAQ_Question) && (a.FAQ_Anwswere == f.FAQ_Anwswere))
+                {
+                    dupe = true;
+
+                }
             }
-            else
+            //update/insert if not a duplicate
+            if(dupe == false)
             {
-                await CreateConnection().InsertAsync(fAQ);
+                if (fAQ.FAQ_ID != 0)
+                {
+
+                    await CreateConnection().UpdateAsync(fAQ);
+                }
+                else
+                {
+
+                    await CreateConnection().InsertAsync(fAQ);
+                }
             }
         }
 
@@ -181,20 +193,39 @@ namespace DeepSeaWorldApp
         {
             EventsL eventsL = new EventsL();
 
+            SQLiteDB db = new SQLiteDB();
+            List<Events> edb = new List<Events>();
+            edb = db.GetItemAsyncEvents().Result;
+
             eventsL.Event_Name = e.Event_Name;
             eventsL.Event_Description = e.Event_Description;
             eventsL.Event_IMG = e.Event_IMG;
             eventsL.Event_Location = e.Event_Location;
             eventsL.Event_Day = e.Event_Day;
             eventsL.Event_Time = e.Event_Time;
+            bool dupe = false;
+            //check for duplicates
+            foreach (var a in edb)
+            {
+                if ((a.Event_Day == e.Event_Day) && (a.Event_IMG == e.Event_IMG) && (a.Event_Name == e.Event_Name)
+                    && (a.Event_Time == e.Event_Time) && (a.Event_Location == e.Event_Location)
+                    && (a.Event_Description == e.Event_Description))
+                {
+                    dupe = true;
 
-            if (eventsL.Events_ID != 0)
-            {
-                await CreateConnection().UpdateAsync(eventsL);
+                }
             }
-            else
+            //update/insert if not a duplicate
+            if (dupe == false)
             {
-                await CreateConnection().InsertAsync(eventsL);
+                if (eventsL.Events_ID != 0)
+                {
+                    await CreateConnection().UpdateAsync(eventsL);
+                }
+                else
+                {
+                    await CreateConnection().InsertAsync(eventsL);
+                }
             }
         }
 
@@ -202,6 +233,9 @@ namespace DeepSeaWorldApp
         public async Task InsertOrUpdateTableAsyncExhibition(Exhibition ex)
         {
             ExhibitionL exhibitionL = new ExhibitionL();
+            SQLiteDB db = new SQLiteDB();
+            List<Exhibition> edb = new List<Exhibition>();
+            edb = db.GetItemAsyncExhibition().Result;
 
             exhibitionL.Exhibition_QRCode_Pos = ex.Exhibition_QRCode_Pos;
             exhibitionL.Exhibition_Description = ex.Exhibition_Description;
@@ -211,14 +245,30 @@ namespace DeepSeaWorldApp
             exhibitionL.Exhibition_Video = ex.Exhibition_Video;
             exhibitionL.Exhibition_Name = ex.Exhibition_Name;
             exhibitionL.QRCodes_Name = ex.QRCodes_Name;
+            bool dupe = false;
+            //check for duplicates
+            foreach (var a in edb)
+            {
+                if ((a.Exhibition_Description == ex.Exhibition_Description) && (a.Exhibition_IMG == ex.Exhibition_IMG) && (a.Exhibition_Name == ex.Exhibition_Name)
+                    && (a.Exhibition_Video == ex.Exhibition_Video) && (a.Exhibition_IMG_Name == ex.Exhibition_IMG_Name)
+                    && (a.Exhibition_QRCode_Pos == ex.Exhibition_QRCode_Pos) && (a.Exhibition_Video_Name == ex.Exhibition_Video_Name)
+                    && (a.QRCodes_Name == ex.QRCodes_Name))
+                {
+                    dupe = true;
 
-            if (exhibitionL.Exhibition_ID != 0)
-            {
-                await CreateConnection().UpdateAsync(exhibitionL);
+                }
             }
-            else
+            //update/insert if not a duplicate
+            if (dupe == false)
             {
-                await CreateConnection().InsertAsync(exhibitionL);
+                if (exhibitionL.Exhibition_ID != 0)
+                {
+                    await CreateConnection().UpdateAsync(exhibitionL);
+                }
+                else
+                {
+                    await CreateConnection().InsertAsync(exhibitionL);
+                }
             }
         }
 

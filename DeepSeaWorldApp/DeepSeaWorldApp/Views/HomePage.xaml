@@ -25,10 +25,10 @@
                         <TapGestureRecognizer Tapped="NextEventTapped" />
                     </Frame.GestureRecognizers>
                     <StackLayout>
-                        <Label x:Name="eventNameText" Text="next event name" FontSize="24" HorizontalTextAlignment="Center" />
-                        <Label x:Name="eventBridgeText" Text="starts in" FontSize="14" HorizontalTextAlignment="Center" />
-                        <Label x:Name="eventTimeText" Text="eventTimeText" FontSize="24" HorizontalTextAlignment="Center" />
-                        <Image x:Name="eventImage" Source="deep_sea.png" />
+                        <Label x:Name="eventNameText" Text="" FontSize="24" HorizontalTextAlignment="Center" />
+                        <Label x:Name="eventBridgeText" Text="" FontSize="14" HorizontalTextAlignment="Center" />
+                        <Label x:Name="eventTimeText" Text="" FontSize="24" HorizontalTextAlignment="Center" />
+                        <Image x:Name="eventImage" Source="" />
                     </StackLayout>
                 </Frame>
                 <Frame x:Name="feature1" BorderColor="Blue" BackgroundColor="Transparent" Grid.Row="2" Grid.Column="0" Margin="10" Padding="0">

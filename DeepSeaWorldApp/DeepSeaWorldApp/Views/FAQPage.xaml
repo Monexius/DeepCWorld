@@ -26,7 +26,7 @@
                             </Grid.ColumnDefinitions>
                                 <Label HorizontalTextAlignment="Center" VerticalTextAlignment="Center" 
                                        Grid.Row="0" Grid.Column="0"
-                                       Text="{Binding FAQ_Question}" FontSize="18" />
+                                       Text="{Binding FAQ_Question}" FontSize="18" FontAttributes="Bold"/>
                                 <Label HorizontalTextAlignment="Center" VerticalTextAlignment="Center" 
                                        Grid.Row="1" Grid.Column="0"
                                        Text="{Binding FAQ_Anwswere}" FontSize="18" />                           

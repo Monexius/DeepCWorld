@@ -21,19 +21,19 @@ namespace DeepSeaWorldApp
         // connection and retriving data from server database, serialization of data to json  
         public async Task<DataTb> MySQLConnection()
         {
-            Console.WriteLine("MySQLConnection");
             DataTb dataTb = new DataTb();
 
             HttpClient client = new HttpClient();
             Uri url;
-            if(Device.RuntimePlatform == Device.iOS)
+
+            if (Device.RuntimePlatform == Device.iOS)
             {
                 url = new Uri("http://localhost:8888/scripts/dbContent.php");
                 client.BaseAddress = new Uri("http://localhost:8888/");
             }
             else
             {
-                url = new Uri("http://10.0.2.2/scripts/dbContent.php");
+                url = new Uri("http://10.0.2.2/scripts/dbContentAndroid.php");
                 client.BaseAddress = new Uri("http://10.0.2.2/");
             }
 
@@ -80,10 +80,6 @@ namespace DeepSeaWorldApp
             dataTb.Map = mlist;
             dataTb.News = nlist;
             dataTb.QRCodes = qrlist;
-            foreach (var e in dataTb.Events)
-            {
-                Console.WriteLine(e);
-            }
 
 
             return dataTb;
