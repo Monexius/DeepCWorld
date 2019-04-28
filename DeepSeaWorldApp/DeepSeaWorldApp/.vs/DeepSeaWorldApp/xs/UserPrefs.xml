@@ -1,15 +1,12 @@
 ﻿<Properties GitUserInfo="UsingGIT">
-  <MonoDevelop.Ide.Workbench ActiveDocument="DeepSeaWorldApp Status">
-    <Files>
-      <File FileName="App.xaml" />
-      <File FileName="App.xaml.cs" Line="1" Column="1" />
-      <File FileName="DeepSeaWorldApp Status" />
-    </Files>
+  <MonoDevelop.Ide.Workbench>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="DeepSeaWorldApp" expanded="True" selected="True">
-            <Node name="DeepSeaWorldApp" expanded="True" />
+            <Node name="DeepSeaWorldApp" expanded="True">
+              <Node name="ViewModels" expanded="True" />
+            </Node>
           </Node>
         </State>
       </Pad>

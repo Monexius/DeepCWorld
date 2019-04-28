@@ -36,7 +36,7 @@ namespace DeepSeaWorldApp.ViewModels
                 //get events from database
                 List<Events> events = new List<Events>();
                 SQLiteDB db = new SQLiteDB();
-                events = db.GetItemAsyncEvents().Result;
+                events = await db.GetItemAsyncEvents();
 
                 //get next events
                 NextEventService n = new NextEventService();

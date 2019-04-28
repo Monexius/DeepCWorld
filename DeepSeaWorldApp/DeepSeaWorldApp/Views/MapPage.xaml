@@ -10,9 +10,9 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-            <Label Grid.Row="0" Text="Zoom by pinching with two fingers" FontSize="20" Margin="10,0,0,0"
+            <Label Grid.Row="0" Text="Zoom by pinching with two fingers" FontSize="Medium" Margin="10,0,0,0"
                    HorizontalTextAlignment="Center"/>
-            <Label Grid.Row="1" Text="Pan by sliding with one finger" FontSize="20" Margin="10,0,0,0"
+            <Label Grid.Row="1" Text="Pan by sliding with one finger" FontSize="Medium" Margin="10,0,0,0"
                    HorizontalTextAlignment="Center"/>
             <local:PanContainer Grid.Row="2">
                 <Image Source="floormap2.jpg" />

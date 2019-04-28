@@ -1,10 +1,8 @@
 ﻿<Properties GitUserInfo="UsingGIT" StartupConfiguration="{10E2A7FF-2BF5-4C5C-9609-9DF2634FB291}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="DeepSeaWorldApp Status">
     <Files>
+      <File FileName="DeepSeaWorldApp/Views/HomePage.xaml" />
       <File FileName="DeepSeaWorldApp/Views/EventDetailPage.xaml" />
-      <File FileName="DeepSeaWorldApp/Views/EventDetailPage.xaml.cs" Line="1" Column="1" />
-      <File FileName="DeepSeaWorldApp/ViewModels/EventDetailViewModel.cs" Line="1" Column="1" />
-      <File FileName="DeepSeaWorldApp/DBClasses/DBs.cs" Line="1" Column="1" />
       <File FileName="DeepSeaWorldApp Status" />
     </Files>
     <Pads>
@@ -12,13 +10,9 @@
         <State name="__root__">
           <Node name="DeepSeaWorldApp" expanded="True" selected="True">
             <Node name="DeepSeaWorldApp" expanded="True">
-              <Node name="DB" expanded="True" />
-              <Node name="DBClasses" expanded="True" />
-              <Node name="ViewModels" expanded="True" />
               <Node name="Views" expanded="True">
                 <Node name="EventDetailPage.xaml" expanded="True" />
-                <Node name="EventsPage.xaml" expanded="True" />
-                <Node name="StartPage.xaml" expanded="True" />
+                <Node name="HomePage.xaml" expanded="True" />
               </Node>
             </Node>
           </Node>
@@ -29,7 +23,7 @@
   <MonoDevelop.Ide.ItemProperties.DeepSeaWorldApp.Android AndroidDesignerPreferredTheme="Theme.DeviceDefault.Light.NoActionBar.Fullscreen" PreferredExecutionTarget="Android.my_device" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.DeepSeaWorldApp.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.D2F1D1D5-4FF8-4B9A-B046-DB2CA1213A69" />
+  <MonoDevelop.Ide.ItemProperties.DeepSeaWorldApp.iOS automaticSigning="False" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.45C6B444-A2FF-4125-8BF8-D979A20C03D6" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

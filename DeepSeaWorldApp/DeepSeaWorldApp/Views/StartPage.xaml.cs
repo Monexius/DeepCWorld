@@ -16,7 +16,7 @@ namespace DeepSeaWorldApp.Views
 
         void Handle_Clicked(object sender, System.EventArgs e)
         {
-            Device.BeginInvokeOnMainThread(() => App.Current.MainPage = new NavigationPage(new MainPage()));
+            Device.BeginInvokeOnMainThread(() => App.Current.MainPage = new MainPage());
         }
 
         protected override void OnDisappearing()

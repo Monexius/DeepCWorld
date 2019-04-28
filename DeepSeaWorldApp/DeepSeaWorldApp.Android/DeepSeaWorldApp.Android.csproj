@@ -145,10 +145,9 @@
     <AndroidResource Include="Resources\drawable\shop.png" />
     <AndroidResource Include="Resources\drawable\stripedfish.jpeg" />
     <AndroidResource Include="Resources\drawable\turtle.jpeg" />
-    <AndroidResource Include="Resources\raw\fish.mp4">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </AndroidResource>
-    <AndroidResource Include="Resources\raw\sealv.mp4" />
+    <AndroidResource Include="Resources\drawable\seahorse.jpg" />
+    <AndroidResource Include="Resources\drawable\starfish.jpg" />
+    <AndroidResource Include="Resources\mipmap-anydpi-v26\ic_launcher.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable-hdpi\" />
@@ -157,6 +156,7 @@
     <Folder Include="Resources\drawable-xxxhdpi\" />
     <Folder Include="FormsVideoLibrary\" />
     <Folder Include="Resources\" />
+    <Folder Include="Resources\raw\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DeepSeaWorldApp\DeepSeaWorldApp.csproj">

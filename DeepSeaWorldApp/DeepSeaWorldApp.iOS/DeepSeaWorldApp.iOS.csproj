@@ -103,7 +103,6 @@
     <BundleResource Include="Resources\floormap.jpg" />
     <Compile Include="FormsVideoLibrary\VideoPicker.cs" />
     <Compile Include="FormsVideoLibrary\VideoPlayerRenderer.cs" />
-    <BundleResource Include="Resources\DSW_001.mp4" />
     <BundleResource Include="Resources\background.png" />
     <BundleResource Include="Resources\events.png" />
     <BundleResource Include="Resources\faq.png" />
@@ -135,6 +134,8 @@
     <BundleResource Include="Resources\shop.png" />
     <BundleResource Include="Resources\stripedfish.jpeg" />
     <BundleResource Include="Resources\turtle.jpeg" />
+    <BundleResource Include="Resources\seahorse.jpg" />
+    <BundleResource Include="Resources\starfish.jpg" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />

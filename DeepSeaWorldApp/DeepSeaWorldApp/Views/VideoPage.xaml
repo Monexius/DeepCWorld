@@ -26,13 +26,13 @@
                              Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
                              />
                 <Label Text="Did you know?" 
-                       FontAttributes="Bold" FontSize="24"
+                       FontAttributes="Bold" FontSize="Large"
                        Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"
                        HorizontalTextAlignment="Center"/>
                 <Label Margin="5" HorizontalOptions="Center"
                        Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" 
                        Text="{Binding Exhibition.Exhibition_Description}"
-                       FontSize="14"/>
+                       FontSize="Medium"/>
             </Grid>
             </ScrollView>
         </StackLayout>
