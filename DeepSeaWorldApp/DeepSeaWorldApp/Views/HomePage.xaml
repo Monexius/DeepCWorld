@@ -29,7 +29,7 @@
                     </Frame.GestureRecognizers>
                     <StackLayout>
                         <Label x:Name="eventNameText" Text="" FontSize="Large" HorizontalTextAlignment="Center" />
-                        <Label x:Name="eventBridgeText" Text="" FontSize="Small" HorizontalTextAlignment="Center" />
+                        <Label x:Name="eventBridgeText" Text="starts in" FontSize="Small" HorizontalTextAlignment="Center" />
                         <Label x:Name="eventTimeText" Text="" FontSize="Large" HorizontalTextAlignment="Center" />
                         <Image x:Name="eventImage" Source="" />
                     </StackLayout>

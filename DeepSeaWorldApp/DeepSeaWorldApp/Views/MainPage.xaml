@@ -23,7 +23,7 @@
         
         <NavigationPage Title="Scanner" ClassId="btnSchedule" Icon="qr.png">
             <x:Arguments>
-                <views:VideoPage />
+                <views:QRScannerPage />
             </x:Arguments>
         </NavigationPage>
         
