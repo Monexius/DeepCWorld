@@ -55,7 +55,7 @@
       <Version>2.2.29</Version>
     </PackageReference>
     <PackageReference Include="MySql.Data">
-      <Version>8.0.15</Version>
+      <Version>8.0.16</Version>
     </PackageReference>
     <PackageReference Include="Newtonsoft.Json">
       <Version>12.0.2</Version>
@@ -125,29 +125,33 @@
     <AndroidResource Include="Resources\drawable\qr.png" />
     <AndroidResource Include="Resources\drawable\banner.png" />
     <AndroidResource Include="Resources\drawable\cafe.png" />
-    <AndroidResource Include="Resources\drawable\catfish.jpeg" />
     <AndroidResource Include="Resources\drawable\floormap.jpg" />
     <AndroidResource Include="Resources\drawable\floormap2.jpg" />
+    <AndroidResource Include="Resources\drawable\shop.png" />
+    <AndroidResource Include="Resources\mipmap-anydpi-v26\ic_launcher.png" />
+    <AndroidResource Include="Resources\drawable\catfish.jpeg" />
+    <AndroidResource Include="Resources\drawable\dory.jpeg" />
     <AndroidResource Include="Resources\drawable\frog.jpeg" />
     <AndroidResource Include="Resources\drawable\glowfish.jpeg" />
     <AndroidResource Include="Resources\drawable\lizard.jpeg" />
     <AndroidResource Include="Resources\drawable\lobster.jpeg" />
     <AndroidResource Include="Resources\drawable\millipede.jpeg" />
-    <AndroidResource Include="Resources\drawable\octopus.jpeg" />
+    <AndroidResource Include="Resources\drawable\nemo.jpeg" />
     <AndroidResource Include="Resources\drawable\ray.jpeg" />
     <AndroidResource Include="Resources\drawable\school.jpeg" />
+    <AndroidResource Include="Resources\drawable\seahorse.jpg" />
     <AndroidResource Include="Resources\drawable\seal.jpeg" />
     <AndroidResource Include="Resources\drawable\seal2.jpeg" />
-    <AndroidResource Include="Resources\drawable\seal3.jpeg" />
     <AndroidResource Include="Resources\drawable\shark.jpeg" />
     <AndroidResource Include="Resources\drawable\shark2.jpeg" />
     <AndroidResource Include="Resources\drawable\shark3.jpeg" />
-    <AndroidResource Include="Resources\drawable\shop.png" />
+    <AndroidResource Include="Resources\drawable\starfish.jpg" />
     <AndroidResource Include="Resources\drawable\stripedfish.jpeg" />
     <AndroidResource Include="Resources\drawable\turtle.jpeg" />
-    <AndroidResource Include="Resources\drawable\seahorse.jpg" />
-    <AndroidResource Include="Resources\drawable\starfish.jpg" />
-    <AndroidResource Include="Resources\mipmap-anydpi-v26\ic_launcher.png" />
+    <AndroidResource Include="Resources\drawable\savepromo.jpg" />
+    <AndroidResource Include="Resources\drawable\sharkpromo.jpg" />
+    <AndroidResource Include="Resources\drawable\vippromo.jpg" />
+    <AndroidResource Include="Resources\drawable\seaspromo.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable-hdpi\" />

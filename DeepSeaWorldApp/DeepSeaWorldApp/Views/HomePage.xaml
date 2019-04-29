@@ -15,6 +15,9 @@
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="150" />
                     <RowDefinition Height="150" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
@@ -31,7 +34,7 @@
                         <Image x:Name="eventImage" Source="" />
                     </StackLayout>
                 </Frame>
-                                <Frame x:Name="feature3" BorderColor="Blue" BackgroundColor="Transparent" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Margin="10" Padding="10">
+                <Frame x:Name="feature1" BorderColor="Blue" BackgroundColor="Transparent" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Margin="10" Padding="10">
                     <Frame.GestureRecognizers>
                         <TapGestureRecognizer Tapped="QRTapped" />
                     </Frame.GestureRecognizers>
@@ -48,11 +51,19 @@
                         <Label Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Text="Scan these QR codes using this app for exhibit extras" VerticalTextAlignment="Center" FontSize="Large" />
                     </Grid>
                 </Frame>
-                <Frame x:Name="feature1" BorderColor="Blue" BackgroundColor="Transparent" Grid.Row="2" Grid.Column="0" Margin="10" Padding="0">
-                    <Image x:Name="homebox1" Source="shop.png" BackgroundColor="Transparent" />
+                <Frame x:Name="feature2" BorderColor="Blue" BackgroundColor="Transparent" Grid.Row="2" Grid.Column="0" Margin="10" Padding="0">
+                    <Image Source="shop.png" BackgroundColor="Transparent" />
                 </Frame>
-                <Frame x:Name="feature2" BorderColor="Blue" BackgroundColor="Transparent" Grid.Row="2" Grid.Column="1" Margin="10" Padding="10">
-                    <Image x:Name="homebox2" Source="cafe.png" BackgroundColor="Transparent" />
+                <Frame x:Name="feature3" BorderColor="Blue" BackgroundColor="Transparent" Grid.Row="2" Grid.Column="1" Margin="10" Padding="10">
+                    <Image Source="cafe.png" BackgroundColor="Transparent" />
+                </Frame>
+                <Frame x:Name="feature4" BorderColor="Blue" BackgroundColor="Transparent" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" 
+                       Margin="10" Padding="10">
+                    <Image Source="seaspromo.jpg" BackgroundColor="Transparent" />
+                </Frame>
+                <Frame x:Name="feature5" BorderColor="Blue" BackgroundColor="Transparent" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" 
+                       Margin="10" Padding="10">
+                    <Image Source="savepromo.jpg" BackgroundColor="Transparent" />
                 </Frame>
             </Grid>
         </ScrollView>

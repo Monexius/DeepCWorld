@@ -65,8 +65,9 @@
     <WarningLevel>4</WarningLevel>
     <MtouchArch>ARM64</MtouchArch>
     <ConsolePause>false</ConsolePause>
-    <CodesignKey>iPhone Developer</CodesignKey>
+    <CodesignKey>iPhone Developer: jamesmichyoung@gmail.com (7953L99PG7)</CodesignKey>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <CodesignProvision>iOS Team Provisioning Profile: com.companyname.DeepSeaWorldApp</CodesignProvision>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Ad-Hoc|iPhone' ">
     <DebugType>none</DebugType>
@@ -110,32 +111,32 @@
     <BundleResource Include="Resources\qr.png" />
     <BundleResource Include="Resources\home.png" />
     <BundleResource Include="Resources\LaunchImage.png" />
-    <BundleResource Include="Resources\banner.png" />
     <BundleResource Include="Resources\cafe.png" />
-    <BundleResource Include="Resources\catfish.jpeg" />
     <BundleResource Include="Resources\floormap2.jpg" />
+    <BundleResource Include="Resources\shop.png" />
+    <BundleResource Include="Resources\catfish.jpeg" />
+    <BundleResource Include="Resources\dory.jpeg" />
     <BundleResource Include="Resources\frog.jpeg" />
     <BundleResource Include="Resources\glowfish.jpeg" />
     <BundleResource Include="Resources\lizard.jpeg" />
     <BundleResource Include="Resources\lobster.jpeg" />
     <BundleResource Include="Resources\millipede.jpeg" />
     <BundleResource Include="Resources\nemo.jpeg" />
-    <BundleResource Include="Resources\octopus.jpeg" />
     <BundleResource Include="Resources\ray.jpeg" />
-    <BundleResource Include="Resources\ray2.jpeg" />
     <BundleResource Include="Resources\school.jpeg" />
+    <BundleResource Include="Resources\seahorse.jpg" />
     <BundleResource Include="Resources\seal.jpeg" />
     <BundleResource Include="Resources\seal2.jpeg" />
-    <BundleResource Include="Resources\seal3.jpeg" />
-    <BundleResource Include="Resources\sealv.mp4" />
     <BundleResource Include="Resources\shark.jpeg" />
     <BundleResource Include="Resources\shark2.jpeg" />
     <BundleResource Include="Resources\shark3.jpeg" />
-    <BundleResource Include="Resources\shop.png" />
+    <BundleResource Include="Resources\starfish.jpg" />
     <BundleResource Include="Resources\stripedfish.jpeg" />
     <BundleResource Include="Resources\turtle.jpeg" />
-    <BundleResource Include="Resources\seahorse.jpg" />
-    <BundleResource Include="Resources\starfish.jpg" />
+    <BundleResource Include="Resources\savepromo.jpg" />
+    <BundleResource Include="Resources\sharkpromo.jpg" />
+    <BundleResource Include="Resources\vippromo.jpg" />
+    <BundleResource Include="Resources\seaspromo.jpg" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
